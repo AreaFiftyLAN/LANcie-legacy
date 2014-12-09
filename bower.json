@@ -1,0 +1,32 @@
+{
+  "name": "LANcie",
+  "version": "0.0.0",
+  "homepage": "https://github.com/WISVCH/LANcie",
+  "authors": [
+    "Sille",
+    "Rebecca",
+    "Sven",
+    "Wouter",
+    "Nordin",
+    "Paul"
+  ],
+  "description": "Website voor the most FANcy commissie die er is!!",
+  "main": "index.html",
+  "keywords": [
+    "LANcie",
+    "FANcie",
+    "AREA",
+    "51LAN",
+    "Area",
+    "FiftyLAN"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
