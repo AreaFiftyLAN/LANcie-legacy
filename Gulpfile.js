@@ -1,8 +1,10 @@
 var gulp = require('gulp'),
-        sass = require('gulp-ruby-sass'),
-        autoprefixer = require('gulp-autoprefixer'),
-        minifycss = require('gulp-minify-css'),
-        rename = require('gulp-rename');
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
+    watch = require('gulp-watch'),
+    notify = require('gulp-notify');
 
 gulp.task('express', function() {
   var express = require('express');
@@ -18,32 +20,22 @@ gulp.task('livereload', function() {
   tinylr.listen(4002);
 });
 
-function notifyLiveReload(event) {
-  var fileName = require('path').relative(__dirname, event.path);
-
-  tinylr.changed({
-    body: {
-      files: [fileName]
-    }
-  });
-}
-
-gulp.task('styles', function() {
-      return gulp.src('sass/*.scss')
-        .pipe(sass({ style: 'expanded' }))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-        .pipe(gulp.dest('css'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(gulp.dest('css'));
+gulp.task('sass', function () {
+  gulp.src('common/styles/**/*.scss')
+  .pipe(sass({ 
+    noCache: true,
+    style: "expanded",
+    lineNumbers: true,
+    loadPath: 'common/styles/main.scss'
+  }))
+  .pipe(gulp.dest('.tmp/common/css/'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('sass/*.scss', ['styles']);
-  gulp.watch('*.html', notifyLiveReload);
-  gulp.watch('css/*.css', notifyLiveReload);
+  // watch scss files
+  gulp.watch('common/styles/**/*.scss', function() {
+    gulp.run('sass');
+  });
 });
 
-gulp.task('default', ['styles', 'express', 'livereload', 'watch'], function() {
-
-});
+gulp.task('default', ['sass', 'express', 'livereload', 'watch']);

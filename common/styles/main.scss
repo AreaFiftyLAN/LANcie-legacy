@@ -1,0 +1,11 @@
+@import "_variables";
+
+// Mixin's
+@import "mixin/mixin_radial_gradient.scss";
+
+body {
+  display: block;
+  margin: 0;
+  background-color: $prime_blue;
+  @include mixin_radial_gradient($third_blue, $prime_blue);
+}

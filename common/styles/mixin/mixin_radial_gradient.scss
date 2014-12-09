@@ -1,0 +1,7 @@
+@mixin mixin_radial_gradient($a, $b) {
+  background-image: -moz-radial-gradient(75% 19%, circle farthest-side, $a, $b 100%);
+  background-image: -webkit-radial-gradient(75% 19%, circle farthest-side, $a, $b 100%);
+  background-image: -o-radial-gradient(75% 19%, circle farthest-side, $a, $b 100%);
+  background-image: -ms-radial-gradient(75% 19%, circle farthest-side, $a, $b 100%);
+  background-image: radial-gradient(75% 19%, circle farthest-side, $a, $b 100%)
+}
