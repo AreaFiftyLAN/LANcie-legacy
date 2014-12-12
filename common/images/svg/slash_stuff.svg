@@ -9860,21 +9860,21 @@ CYsMC+sK6wvrjwwM648MDflkFAAA")}
 				v28.578h14.29V74.482H489.166z M403.406,74.482h-14.29V60.193h14.29V74.482z M460.564,74.482h-14.29V60.193h14.29V74.482z"/>
 			<rect x="431.985" y="117.35" style="fill:#FDE374;" width="28.579" height="14.291"/>
 		</g>
-		<text transform="matrix(1 0 0 1 526.3457 98.8086)" style="fill:#FFE474; font-family:'OpenSans'; font-size:100.263;">AREA</text>
-		<text transform="matrix(1 0 0 1 792.2246 98.8086)" style="fill:#FFE474; font-family:'OpenSans-Bold'; font-size:100.263;">5</text>
-		<text transform="matrix(1 0 0 1 924.6436 99.7607)" style="fill:#FFE474; font-family:'OpenSans'; font-size:100.263;">AN</text>
-		<text transform="matrix(1 0 0 1 860.8174 98.8086)" style="fill:#FFE474; font-family:'OpenSans-Bold'; font-size:100.263;">L</text>
+		<text transform="matrix(1 0 0 1 526.3457 98.8086)" style="fill:#FFE474; font-family:'OpenSans'; font-size:100.2629;">AREA</text>
+		<text transform="matrix(1 0 0 1 792.2246 98.8086)" style="fill:#FFE474; font-family:'OpenSans-Bold'; font-size:100.2629;">5</text>
+		<text transform="matrix(1 0 0 1 924.6436 99.7598)" style="fill:#FFE474; font-family:'OpenSans'; font-size:100.2629;">AN</text>
+		<text transform="matrix(1 0 0 1 860.8174 98.8086)" style="fill:#FFE474; font-family:'OpenSans-Bold'; font-size:100.2629;">L</text>
 		<path style="fill:#FFE474;" d="M876.968,28.49l-1.772-1.123h-5.335l-20.666,16.318l7.257,9.135l8.254-6.576
 			c0.98-0.779,2.733-2.419,5.256-4.923l-0.004,0.111l4.464-1.401l1.47-0.312l3.939-2.087l-1.371-4.65L876.968,28.49z"/>
 		
-			<text transform="matrix(1 0 0 1 819.9248 127.8398)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:22.8633; letter-spacing:6;">12-14 JUN 2014</text>
+			<text transform="matrix(1 0 0 1 840.5908 127.5059)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:22.8633; letter-spacing:6;">12-13-14 JUNI</text>
 		
 			<text transform="matrix(1 0 0 1 527.5303 126.5156)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:22.8633; letter-spacing:6;">GAMING EVENT</text>
 	</g>
-	<g id="SEP" style="opacity:0.58;">
+	<g id="SEP" style="opacity:0.6;">
 		<rect x="311" style="fill:#FFFFFF;" width="5" height="150"/>
 	</g>
-	<g id="LEFT" style="opacity:0.58;">
+	<g id="LEFT" style="opacity:0.6;">
 		<text transform="matrix(1 0 0 1 0.002 108.707)" style="fill:#FFFFFF; font-family:'OCRAStd'; font-size:38.3016;">THE LAuNCH</text>
 		<text transform="matrix(1 0 0 1 0 65.6152)" style="fill:#FFFFFF; font-family:'Silom'; font-size:38.3016; letter-spacing:2;">be ready for</text>
 	</g>
