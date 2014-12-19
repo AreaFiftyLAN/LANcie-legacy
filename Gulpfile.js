@@ -270,20 +270,30 @@ var sizeOf = function(stream, title){
 (function(scope){
 
   gulp.task('lib:dev', function () {
+    copyComponentsToLib('dev');
     return copyBowerComponentsToLib('dev')
   });
 
   gulp.task('p-lib:dev:reload', function () {
+    copyComponentsToLib('dev');
     return copyBowerComponentsToLib('dev')
       .pipe(reload({stream: true, once: true}));
   });
 
   gulp.task('lib:package', function () {
+    copyComponentsToLib('prod');
     return copyBowerComponentsToLib('prod')
   });
 
   var copyBowerComponentsToLib = function(env){
     var src = ['lib/.bower_components/**/*.{css,js,html,swf}*'];
+    var dest = env === 'dev' ? tmpDir : distDir;
+    return gulp.src(src)
+      .pipe(gulp.dest(dest + '/lib'));
+  }.bind(scope);
+
+  var copyComponentsToLib = function(env){
+    var src = ['lib/.components/**/*.{css,js,html,swf}*'];
     var dest = env === 'dev' ? tmpDir : distDir;
     return gulp.src(src)
       .pipe(gulp.dest(dest + '/lib'));
@@ -420,6 +430,7 @@ var sizeOf = function(stream, title){
       gulp.watch(['app/images/**/*.*']                        , ['p-images:dev:reload']);
       gulp.watch(['app/public/**/*.*']                        , ['p-public:dev:reload']);
       gulp.watch(['lib/.bower_components/**/*.{css,js,html}'] , ['p-lib:dev:reload']);
+      gulp.watch(['lib/.components/**/*.{css,js,html}']       , ['p-lib:dev:reload']);
   });
 
 })(this);
