@@ -4,3 +4,5 @@ lib/.bower_components
 _vulcanized
 _dist
 _tmp
+.sublime-project
+.sublime-workspace
