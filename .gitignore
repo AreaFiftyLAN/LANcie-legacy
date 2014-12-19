@@ -5,3 +5,5 @@ _vulcanized
 _dist
 _tmp
 *.log
+*.sublime-project
+*.sublime-workspace
