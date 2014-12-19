@@ -1,13 +1,12 @@
-@import "components/components";
-
+// Core variables and mixins
 @import "components/variables";
+@import "mixins/all";
 
-// Mixin's
-@import "mixin/mixin_radial_gradient.scss";
+@import "components/components";
 
 body {
   display: block;
   margin: 0;
   background-color: $prime_blue;
-  @include mixin_radial_gradient($third_blue, $prime_blue)
+  @include gradient-radial-farthest($third_blue, $prime_blue);
 }
