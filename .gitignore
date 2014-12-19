@@ -1,6 +1,6 @@
-*.sublime-project
-*.sublime-workspace
-.sass-cache/*
-.tmp/*
-bower_components/*
-node_modules/*
+node_modules
+lib/.bower_components
+.sass-cache
+_vulcanized
+_dist
+_tmp
