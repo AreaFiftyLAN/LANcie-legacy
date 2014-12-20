@@ -12,6 +12,7 @@ var browserSync     = require('browser-sync');
 var reload          = browserSync.reload;
 var pagespeed       = require('psi');
 var stylishReporter = require('jshint-stylish');
+var gutil           = require('gulp-util');
 
 var tmpDir = '_tmp';
 var distDir = '_dist';
@@ -257,6 +258,7 @@ var sizeOf = function(stream, title){
               precision: 10,
               loadPath: ['app/styles']
         })))
+          .on('error', gutil.log)
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest(tmpDir + '/styles'))
   }.bind(scope);
