@@ -2,11 +2,16 @@
 @import "components/variables";
 @import "mixins/all";
 
-@import "components/components";
+// Core components
+@import "components/base";
+
+// Other components
+@import "components/sitebanner";
 
 body {
   display: block;
   margin: 0;
-  background-color: $prime_blue;
-  @include gradient-radial-farthest($third_blue, $prime_blue);
+  background-color: $prime_white;
+  // @include gradient-radial-farthest($third_blue, $prime_blue);
 }
+

@@ -1,0 +1,125 @@
+@import "components/variables";
+
+site-banner {
+  height: 80px;
+  padding-left: 16px;
+  background-color: lighten($prime_blue, 13%) !important;
+  -webkit-transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
+  transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
+
+  &[unresolved] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .logo { z-index: 200; }
+
+  app-bar {
+    
+    paper-button {
+      background-color: lighten($prime_blue, 13%);
+      color: $prime_yellow;
+      margin: 5px 10px;
+    }
+
+    &::shadow > #search {
+      color: $prime_yellow;
+
+      paper-icon-button::shadow > #icon {
+        fill: $prime_yellow;
+      }
+    }
+  }
+}
+
+.polymer-status-badge {
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.26);
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-size: 11px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  line-height: 1;
+  color: #fff;
+  box-sizing: border-box;
+  margin: 0 24px;
+}
+
+.bar {
+  padding: 16px !important;
+  height: 80px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.sticky {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+}
+
+#dropdown-toggle {
+  fill: $prime_yellow;
+  height: 35px;
+  width: 35px;
+}
+
+dropdown-panel {
+  position: absolute;
+  top: 75px;
+  left: 15px;
+  width: 240px;
+  z-index: 1000;
+}
+
+@media only screen and (min-width: 851px) {
+
+  scroll-area {
+    display: block;
+
+    site-banner {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: -o-flex;
+      display: flex;
+      -webkit-box-align: flex-end;
+      -webkit-align-items: flex-end;
+      -moz-align-items: flex-end;
+      -ms-align-items: flex-end;
+      -o-align-items: flex-end;
+      align-items: flex-end;
+    }
+  }
+  dropdown-panel, #dropdown-toggle  {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  site-banner {
+    height: 60px;
+    overflow: hidden;
+  }
+  app-bar, header, dropdown-panel { display: none; }
+}
