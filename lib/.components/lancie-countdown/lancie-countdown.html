@@ -1,0 +1,184 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/paper-shadow/paper-shadow.html">
+
+<link rel="import" href="/lib/core-animation/core-animation.html">
+<link rel="import" href="/lib/core-animation/core-animation-group.html">
+
+
+<polymer-element name="countdown-element">
+  
+  <template>
+    
+    <style>
+    :host div paper-shadow {
+      margin: auto 10px;
+      padding: 20px 15px 14px;
+      height: 125px;
+    }
+    :host div paper-shadow div h1 {
+      font-size: 7em;
+    }
+    </style>
+    
+    <div flex horizontal layout>
+
+      <paper-shadow z="2" vertical layout>
+        <div id="days" flex horizontal layout center>
+          <h1>{{days}}</h1>
+        </div>
+        <span horizontal layout center-justified center>days</span>
+      </paper-shadow>
+
+      <paper-shadow z="2" vertical layout>
+        <div id="hours" flex horizontal layout center>
+          <h1>{{hours}}</h1>
+        </div>
+        <span horizontal layout center-justified>hours</span>
+      </paper-shadow>
+
+      <paper-shadow z="2" vertical layout>  
+        <div id="minutes" flex horizontal layout center>
+          <h1>{{minutes}}</h1>
+        </div>
+        <span horizontal layout center-justified>minutes</span>
+      </paper-shadow>
+
+      <paper-shadow z="2" vertical layout>
+        <div id="seconds" flex horizontal layout center>
+          <h1>{{seconds}}</h1>
+        </div>
+        <span horizontal layout center-justified>seconds</span>
+      </paper-shadow>
+
+    </div>
+
+    <core-animation-group type="seq" id="raw">
+      <core-animation duration="1000">
+        <core-animation-keyframe>
+          <core-animation-prop name="transform" value="scale(1)">
+          </core-animation-prop>
+        </core-animation-keyframe>
+        <core-animation-keyframe>
+          <core-animation-prop name="transform" value="scale(1.02)">
+          </core-animation-prop>
+        </core-animation-keyframe>
+        <core-animation-keyframe>
+          <core-animation-prop name="transform" value="scale(1)">
+          </core-animation-prop>
+        </core-animation-keyframe>
+      </core-animation>
+    </core-animation-group>
+  </template>
+
+  <script>
+    Polymer("countdown-element", {
+      time: null,
+      dateStr: "",
+      days: "",
+      hours: "",
+      minutes: "",
+      seconds: "",
+
+      countHours: "0",
+      countMinutes: "0",
+      countSeconds: "0",
+
+      dayAnimation: null,
+      hoursAnimation: null,
+      minutesAnimation: null,
+      secondsAnimation: null,
+
+      ready: function() {
+        this.startUpCounter();
+      },
+
+      startUpCounter: function() {
+        var animation, till, _day, _hour, _minute, _second;
+        this.time = new Date();
+        till = this.end - this.time;
+
+        _second = 1000;
+        _minute = _second * 60;
+        _hour = _minute * 60;
+        _day = _hour * 24;
+
+        this.days = Math.floor(till / _day);
+        this.hours = Math.floor((till % _day) / _hour);
+        this.minutes = Math.floor((till % _hour) / _minute);
+        this.seconds = Math.floor((till % _minute) / _second);
+
+        if (this.days < 10) this.days = "0" + this.days;
+        if (this.hours < 10) this.hours = "0" + this.hours;
+        if (this.minutes < 10) this.minutes = "0" + this.minutes;
+        if (this.seconds < 10) this.seconds = "0" + this.seconds;
+
+        this.countHours = 23 - this.hours;
+        this.countMinutes = 59 - this.minutes;
+        this.countSeconds = 59 - this.seconds;
+
+        this.secondsAnimation = this.$.raw.cloneNode(true);
+        this.secondsAnimation.target = this.$.seconds;
+
+        this.minutesAnimation = this.$.raw.cloneNode(true);
+        this.minutesAnimation.target = this.$.minutes;
+
+        this.hoursAnimation = this.$.raw.cloneNode(true);
+        this.hoursAnimation.target = this.$.hours;
+
+        this.dayAnimation = this.$.raw.cloneNode(true);
+        this.dayAnimation.target = this.$.days;
+
+        this.secondDown();
+      },
+
+      secondDown: function() {
+        if (this.seconds-- <= 10) { this.seconds = "0" + this.seconds; }
+
+        if (this.countSeconds++ >= 59) {
+          this.minuteDown();
+          this.seconds = 59;
+          this.countSeconds = 0;
+        }
+        this.secondsAnimation.play();
+        this.async(this.secondDown, null, 1000);
+      },
+
+      minuteDown: function() {
+        if (this.minutes-- <= 10) {
+          this.minutes = "0" + this.minutes;
+        }
+
+        if (this.countMinutes++ >= 59) {
+          this.hourDown();
+          this.minutes = 59;
+          this.countMinutes = 0;
+        }
+        this.minutesAnimation.play();
+      },
+
+      hourDown: function() {
+        if (this.hours-- <= 10) {
+          this.hours = "0" + this.hours;
+        }
+
+        if (this.countHours++ >= 23) {
+          this.dayDown();
+          this.hours = 23;
+          this.countHours = 0;
+        }
+        this.hoursAnimation.play();
+      },
+
+      dayDown: function() {
+        if (this.days-- <= 10) {
+          this.days = "0" + this.days;
+        }
+        this.dayAnimation.play();
+      },
+
+      end: new Date("06/12/2015 5:00 PM")
+    });
+
+
+  </script>
+</polymer-element>
