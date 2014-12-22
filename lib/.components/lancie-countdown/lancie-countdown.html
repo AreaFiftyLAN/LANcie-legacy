@@ -20,7 +20,7 @@
     }
     </style>
     
-    <div flex horizontal layout>
+    <div flex horizontal layout center-justified>
 
       <paper-shadow z="2" vertical layout>
         <div id="days" flex horizontal layout center>
@@ -72,6 +72,9 @@
 
   <script>
     Polymer("countdown-element", {
+
+      end: "2015-06-12T17:00:00",
+
       time: null,
       dateStr: "",
       days: "",
@@ -89,13 +92,18 @@
       secondsAnimation: null,
 
       ready: function() {
+        if (this.hasAttribute('end')) {
+          this.end = this.getAttribute('end');
+        }
         this.startUpCounter();
       },
 
       startUpCounter: function() {
         var animation, till, _day, _hour, _minute, _second;
+
+        var convertedTime = new Date(this.end);
         this.time = new Date();
-        till = this.end - this.time;
+        till = convertedTime - this.time;
 
         _second = 1000;
         _minute = _second * 60;
@@ -175,10 +183,6 @@
         }
         this.dayAnimation.play();
       },
-
-      end: new Date("06/12/2015 5:00 PM")
     });
-
-
   </script>
 </polymer-element>

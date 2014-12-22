@@ -9,15 +9,17 @@
 
   <link rel="import" href="lib/polymer/polymer.html">
   <link rel="import" href="lib/font-roboto/roboto.html">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
   <!-- CORE ELEMENTS && PAPER ELEMENTS -->
   <link rel="import" href="lib/core-elements/core-elements.html">
   <link rel="import" href="lib/paper-elements/paper-elements.html">
 
   <!-- OWN ELEMENTS -->
-  <link rel="import" href="lib/scroll-area/scroll-area.html">
-  <link rel="import" href="lib/site-banner/site-banner.html">
-  <link rel="import" href="lib/app-bar/app-bar.html">
+  <link rel="import" href="lib/lancie-scroll-area/lancie-scroll-area.html">
+  <link rel="import" href="lib/lancie-site-banner/lancie-site-banner.html">
+  <link rel="import" href="lib/lancie-app-bar/lancie-app-bar.html">
+  <link rel="import" href="lib/lancie-countdown/lancie-countdown.html">
   
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="styles/lancie.css">
@@ -28,7 +30,7 @@
   <scroll-area>
     <site-banner class="main-bg  sticky" layout horizontal center start>
       <a href="/" class="logo" layout horizontal>
-        <core-image preload fade sizing="contain" style="height: 40px; width: 200px;" position="center" src="/images/logos/logo_without_date.svg"></core-image>
+        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/logo_without_date.svg"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
@@ -58,7 +60,60 @@
         </core-item>
       </dropdown-panel>
     </site-banner>
-    <main></main>
+
+    <main>
+      <section id="ready" horizontal layout center-justified>
+        <div class="overlay"></div> 
+        <div vertical layout>
+          <h1>Be ready for the LAuNCH</h1>
+          <countdown-element end="2015-01-26T23:59:59"></countdown-element>
+
+          <div horizontal center-justified layout>
+            <paper-button raised>
+              <core-icon icon="get-app"></core-icon>
+              BESTEL NU JE KAARTEN
+            </paper-button>
+          </div>
+        </div>
+      </section>
+
+      <section id="sponsors" class="content-padding">
+        <h1>Partners & Sponsoring</h1>
+        <div horizontal layout jusified>
+          <div vertical layout self-stretch>
+            <div vertical layout flex>
+              <span>Georganiseerd door</span>
+              <core-icon preload fade style="height: 100px; width: 300px;" src="https://ch.tudelft.nl/sites/default/themes/CHallenge/logo@2x.png" sizing="contain"></core-icon>
+            </div>
+            
+            <div vertical layout>
+              <span>In samenwerking met</span>
+              <core-icon end preload fade style="height: 100px; width: 300px;" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/162746_117686834971274_444181_n.jpg?oh=253db9477f8b8a5ce51b68209ed3b990&oe=5533AE88&__gda__=1430625267_6eca3378cd7656d3fd558b5bfb7f1e20" sizing="cover"></core-icon>
+            </div>
+          </div>
+          <div vertical layout flex>
+            Sponsoren
+            <div horizontal layout justified flex start>
+              <core-icon style="height: 100px; width: 230px;" src="http://placehold.it/230x100&text=Slot+1" sizing="contain"></core-icon>
+              <core-icon style="height: 100px; width: 230px;" src="http://placehold.it/230x100&text=Slot+2" sizing="contain"></core-icon>
+              <core-icon style="height: 100px; width: 230px;" src="http://placehold.it/230x100&text=Slot+3" sizing="contain"></core-icon>
+            </div>
+            <div horizontal layout justified flex end>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+4" sizing="contain"></core-icon>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+5" sizing="contain"></core-icon>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+6" sizing="contain"></core-icon>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+7" sizing="contain"></core-icon>
+            </div>
+            <div horizontal layout justified flex end>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+8" sizing="contain"></core-icon>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+9" sizing="contain"></core-icon>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+10" sizing="contain"></core-icon>
+              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+11" sizing="contain"></core-icon>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </scroll-area>
 
 </body>

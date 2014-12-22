@@ -3,7 +3,7 @@
 site-banner {
   height: 80px;
   padding-left: 16px;
-  background-color: lighten($prime_blue, 13%) !important;
+  background-color: lighten($prime_blue, 0%) !important;
   -webkit-transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
   transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
 
@@ -17,7 +17,7 @@ site-banner {
   app-bar {
     
     paper-button {
-      background-color: lighten($prime_blue, 13%);
+      background-color: lighten($prime_blue, 0%);
       color: $prime_yellow;
       margin: 5px 10px;
     }
