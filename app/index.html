@@ -20,6 +20,7 @@
   <link rel="import" href="lib/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="lib/lancie-app-bar/lancie-app-bar.html">
   <link rel="import" href="lib/lancie-countdown/lancie-countdown.html">
+  <link rel="import" href="lib/lancie-sponsors/lancie-sponsors.html">
   
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="styles/lancie.css">
@@ -62,6 +63,8 @@
     </site-banner>
 
     <main>
+
+      <?php echo "hello"; ?>
       <section id="ready" horizontal layout center-justified>
         <div class="overlay"></div> 
         <div vertical layout>
@@ -78,7 +81,7 @@
       </section>
 
       <section id="sponsors" class="content-padding">
-        <h1>Partners & Sponsoring</h1>
+        <h1>Partners & Sponsoren</h1>
         <div horizontal layout jusified>
           <div vertical layout self-stretch>
             <div vertical layout flex>
@@ -93,27 +96,15 @@
           </div>
           <div vertical layout flex>
             Sponsoren
-            <div horizontal layout justified flex start>
-              <core-icon style="height: 100px; width: 230px;" src="http://placehold.it/230x100&text=Slot+1" sizing="contain"></core-icon>
-              <core-icon style="height: 100px; width: 230px;" src="http://placehold.it/230x100&text=Slot+2" sizing="contain"></core-icon>
-              <core-icon style="height: 100px; width: 230px;" src="http://placehold.it/230x100&text=Slot+3" sizing="contain"></core-icon>
-            </div>
-            <div horizontal layout justified flex end>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+4" sizing="contain"></core-icon>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+5" sizing="contain"></core-icon>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+6" sizing="contain"></core-icon>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+7" sizing="contain"></core-icon>
-            </div>
-            <div horizontal layout justified flex end>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+8" sizing="contain"></core-icon>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+9" sizing="contain"></core-icon>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+10" sizing="contain"></core-icon>
-              <core-icon style="height: 68.2px; width: 170.5px;" src="http://placehold.it/237x100&text=Slot+11" sizing="contain"></core-icon>
-            </div>
+            <sponsors-element height="276"></sponsors-element>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- <footer>
+      <p id="copyright">&copy; Copyright 2015 W.I.S.V. 'Christiaan Huygens' | KvK: 40397077 | Phone: (015) 278 2532 | E-mail: lancie@ch.tudelft.nl</p>
+    </footer> -->
   </scroll-area>
 
 </body>
