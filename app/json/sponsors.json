@@ -1,0 +1,83 @@
+[
+  {
+    "between": false,
+    "items": [
+      {
+        "name": "OGD",
+        "height": "100px",
+        "width": "230px",
+        "src": "/images/logos/sponsors/ogd.png"
+      },
+      {
+        "name": "OGD",
+        "height": "100px",
+        "width": "230px",
+        "src": "http://placehold.it/230x100&text=Slot+2"
+      },
+      {
+        "name": "slot3",
+        "height": "100px",
+        "width": "230px",
+        "src": "http://placehold.it/230x100&text=Slot+3"
+      }
+    ]
+  },
+  {
+    "between": true,
+    "items": [
+      {
+        "name": "slot4",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+4"
+      },
+      {
+        "name": "slot5",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+5"
+      },
+      {
+        "name": "slot6",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+6"
+      },
+      {
+        "name": "slot7",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+7"
+      }
+    ]
+  },
+  {
+    "between": false,
+    "items": [
+      {
+        "name": "slot1",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+8"
+      },
+      {
+        "name": "slot2",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+9"
+      },
+      {
+        "name": "slot3",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+10"
+      },
+      {
+        "name": "slot3",
+        "height": "68.2px",
+        "width": "170.5px;",
+        "src": "http://placehold.it/230x100&text=Slot+11"
+      }
+    ]
+  }
+]

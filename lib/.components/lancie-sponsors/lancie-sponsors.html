@@ -1,14 +1,13 @@
 <link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/core-ajax/core-ajax.html">
 
-<polymer-element name="sponsors-element">
+<polymer-element name="sponsors-element" attributes="height">
   
   <template>
     
-    <style>
-
-    </style>
+    <core-ajax auto url="/scripts/json/sponsors.json" handleAs="json"></core-ajax>
     
-    <div vertical layout style="height: {{height}}px">
+    <div vertical layout style="height: {{height}}">
       <template repeat="{{row in sponsorsList}}">
 
         <template if="{{row.between}}">
@@ -31,91 +30,5 @@
     </div>
 
   </template>
-
-  <script>
-    Polymer("sponsors-element", {
-      height: "300",
-      
-      ready: function() {
-        if (this.hasAttribute('height')) {
-          this.height = this.getAttribute('height');
-        }
-
-        this.sponsorsList = [
-          {
-            between: false,
-            items: [
-              {
-                name: "slot1",
-                height: "100px", width: "230px",
-                src: "http://placehold.it/230x100&text=Slot+1"
-              },
-              {
-                name: "slot2",
-                height: "100px", width: "230px",
-                src: "http://placehold.it/230x100&text=Slot+2"
-              }, 
-              {
-                name: "slot3",
-                height: "100px", width: "230px",
-                src: "http://placehold.it/230x100&text=Slot+3"
-              }, 
-            ]
-          },
-          {
-            between: true,
-            items: [
-              {
-                name: "slot4",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+4"
-              },
-              {
-                name: "slot5",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+5"
-              }, 
-              {
-                name: "slot6",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+6"
-              },
-              {
-                name: "slot7",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+7"
-              },
-            ]
-          },
-          {
-            between: false,
-            items: [
-              {
-                name: "slot1",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+8"
-              },
-              {
-                name: "slot2",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+9"
-              }, 
-              {
-                name: "slot3",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+10"
-              },
-              {
-                name: "slot3",
-                height: "68.2px", width: "170.5px;",
-                src: "http://placehold.it/230x100&text=Slot+11"
-              },
-            ]
-          }
-        ];
-      },
-
-    });
-  </script>
-
+  <script src="/lib/lancie-sponsors/lancie-sponsors.js"></script>
 </polymer-element>
