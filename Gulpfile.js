@@ -13,6 +13,7 @@ var reload          = browserSync.reload;
 var pagespeed       = require('psi');
 var stylishReporter = require('jshint-stylish');
 var gutil           = require('gulp-util');
+var wait            = require('gulp-wait');
 
 var tmpDir = '_tmp';
 var distDir = '_dist';
@@ -315,12 +316,35 @@ var sizeOf = function(stream, title){
 
   gulp.task('p-html:dev:reload', ['p-images:dev:reload', 'p-public:dev:reload'], function(){
     return htmlDev()
+      .pipe(wait(2000))
       .pipe(reload({stream: true, once: true}));
   });
 
   var htmlDev = function(){
     return gulp.src('app/**/*.html')
       .pipe(gulp.dest(tmpDir));
+  };
+
+})(this);
+
+// --------------------------------------------------------
+// Send html to tmpDir
+// --------------------------------------------------------
+
+(function(scope){
+
+  gulp.task('json:dev', function(){
+    return htmlDev();
+  });
+
+  gulp.task('p-json:dev:reload', ['p-images:dev:reload', 'p-public:dev:reload'], function(){
+    return htmlDev()
+      .pipe(reload({stream: true, once: true}));
+  });
+
+  var htmlDev = function(){
+    return gulp.src('app/**/*.json')
+      .pipe(gulp.dest(tmpDir + "/scripts/"));
   };
 
 })(this);
@@ -433,6 +457,7 @@ var sizeOf = function(stream, title){
       gulp.watch(['app/public/**/*.*']                        , ['p-public:dev:reload']);
       gulp.watch(['lib/.bower_components/**/*.{css,js,html}'] , ['p-lib:dev:reload']);
       gulp.watch(['lib/.components/**/*.{css,js,html}']       , ['p-lib:dev:reload']);
+      gulp.watch(['app/json/**/*.json']                       , ['p-json:dev:reload']);
   });
 
 })(this);
