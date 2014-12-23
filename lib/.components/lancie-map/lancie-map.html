@@ -1,0 +1,28 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/google-map/google-map.html">
+
+<polymer-element name="lancie-map" extends="google-map">
+  <script>
+    Polymer("lancie-map", {
+      getMapOptions: function() {
+        var mapOptions = this.super();
+        mapOptions.styles = [
+          {
+            stylers: [
+              { hue: '#1a2a43' },
+              { gamma: 0.5 },
+              { weight: 0.5 }
+            ]
+          },
+          {
+            elementType: 'labels',
+            stylers: [
+              { visibility: 'off' }
+            ]
+          }
+        ];
+        return mapOptions;
+      }
+    });
+  </script>
+</polymer-element>

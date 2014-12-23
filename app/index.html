@@ -15,12 +15,15 @@
   <link rel="import" href="lib/core-elements/core-elements.html">
   <link rel="import" href="lib/paper-elements/paper-elements.html">
 
+  <link rel="import" href="lib/paper-dialog/paper-dialog.html">
+
   <!-- OWN ELEMENTS -->
   <link rel="import" href="lib/lancie-scroll-area/lancie-scroll-area.html">
   <link rel="import" href="lib/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="lib/lancie-app-bar/lancie-app-bar.html">
   <link rel="import" href="lib/lancie-countdown/lancie-countdown.html">
   <link rel="import" href="lib/lancie-sponsors/lancie-sponsors.html">
+  <link rel="import" href="lib/lancie-map/lancie-map.html">
   
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="styles/lancie.css">
@@ -35,10 +38,12 @@
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <paper-button>EVENT</paper-button>
+        <a href="#event">
+          <paper-button>EVENT</paper-button>
+        </a>
         <paper-button>TOURNAMENTS</paper-button>
         <paper-button>TICKET SALES</paper-button>
-        <paper-button>SOMETHING</paper-button>
+        <paper-button>ABOUT US</paper-button>
       </app-bar>
 
       <core-icon layout horizontal id="dropdown-toggle" icon="arrow-drop-down" aria-label="arrow-drop-down" ></core-icon>
@@ -63,8 +68,6 @@
     </site-banner>
 
     <main>
-
-      <?php echo "hello"; ?>
       <section id="ready" horizontal layout center-justified>
         <div class="overlay"></div> 
         <div vertical layout>
@@ -96,16 +99,93 @@
           </div>
           <div vertical layout flex>
             Sponsoren
-            <sponsors-element height="276"></sponsors-element>
+            <sponsors-element height="276px"></sponsors-element>
           </div>
         </div>
       </section>
+
+      <section id="event">
+        <div class="content-padding">
+          <h1>Tournooien</h1>
+
+          <div vertical layout flex>
+            <div horizontal layout justified>
+              <div vertical layout class="game  element" style="width: 243px; height: 243px;">
+                <div flex center>
+                  <h3>LOL</h3>
+                  <span>5 vs 5</span>
+                </div>
+                <ul end>
+                  <li><span>Max deelnemers</span> 100 deelnemers</li>
+                  <li><span>Teamleden</span> 5 spelers</li>
+                  <li><span>Prijzen</span> 1x chopsticks</li>
+                </ul>
+              </div>
+              <div vertical layout class="game  element" style="width: 243px; height: 243px;">
+                <div flex center>
+                  <h3>DOTA 2</h3>
+                  <span>5 vs 5</span>
+                </div>
+                <ul end>
+                  <li><span>Max deelnemers</span> 100 deelnemers</li>
+                  <li><span>Teamleden</span> 5 spelers</li>
+                  <li><span>Prijzen</span> 1x chopsticks</li>
+                </ul>
+              </div>
+              <div vertical layout class="game  element" style="width: 243px; height: 243px;">
+                <div flex center>
+                  <h3>FIFA</h3>
+                  <span>Poule + afval</span>
+                </div>
+                <ul end>
+                  <li><span>Max deelnemers</span> 48 deelnemers</li>
+                  <li><span>Teamleden</span> 5 spelers</li>
+                  <li><span>Prijzen</span> 1x chopsticks</li>
+                </ul>
+              </div>
+              <div style="width: 243px; height: 243px; background: #eeecec;">
+                
+              </div>
+            </div>
+            <br />
+            <div horizontal layout justified>
+              <div style="width: 243px; height: 243px; background: #eeecec;">
+                
+              </div>
+              <div style="width: 243px; height: 243px; background: #eeecec;">
+                
+              </div>
+              <div style="width: 243px; height: 243px; background: #eeecec;">
+                
+              </div>
+              <div style="width: 243px; height: 243px; background: #eeecec;">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="height: 300px;">
+        
+      </section>
+
+      <section id="map">
+        <lancie-map latitude="51.9951895" longitude="4.3765975" zoom="14" zoomable="false" libraries="places,geometry">
+          <google-map-marker latitude="51.9951895" longitude="4.3765975" title="Area FiftyLAN" info="AreaFiftyLAN">
+            Area FiftyLAN 2015
+          </google-map-marker>
+        </lancie-map>
+      </section>
+
     </main>
 
-    <!-- <footer>
-      <p id="copyright">&copy; Copyright 2015 W.I.S.V. 'Christiaan Huygens' | KvK: 40397077 | Phone: (015) 278 2532 | E-mail: lancie@ch.tudelft.nl</p>
-    </footer> -->
+    <footer horizontal center layout>
+      <div horizontal justified flex layout class="content-padding">
+        <p id="copyright">Copyright &copy; 2015 W.I.S.V. 'Christiaan Huygens'.</p>
+        <p id="designby">Gemaakt door de 1<sup>ste</sup> LANcie der W.I.S.V. 'Christiaan Huygens'</p>
+      </div>
+    </footer>
   </scroll-area>
-
 </body>
 </html>

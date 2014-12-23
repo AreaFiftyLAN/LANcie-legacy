@@ -10,6 +10,7 @@
 
 @import "components/section_ready";
 @import "components/section_sponsors";
+@import "components/section_event";
 
 @import "components/footer";
 
@@ -18,4 +19,13 @@ body {
   margin: 0;
   background-color: $prime_white;
   // @include gradient-radial-farthest($third_blue, $prime_blue);
+}
+
+lancie-map {
+  display: block;
+  height: 300px;
+}
+
+.ranking {
+  fill: $prime_yellow;
 }
