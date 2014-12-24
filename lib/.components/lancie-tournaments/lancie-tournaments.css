@@ -5,14 +5,14 @@
 :host .game {
   width: 243px; height: 243px;
   background-position: center;
-  background-size: 200%;
+  background-size: auto 100%;
   color: #fff;
 }
 
 :host .game div {
   padding: 10px;
   text-align: center;
-  background: rgba(26, 42, 67, 0.3);
+  background: rgba(26, 42, 67, 0.2);
 }
 
 :host .game:nth-child(4n+2) div {

@@ -1,0 +1,39 @@
+:host #info {
+  /*border: 1px solid #f00;*/
+  width: calc(33% - 17px);
+  margin: 0 10px 20px 10px;
+
+  /*display: inline-block;*/
+  position: relative;
+  box-sizing: border-box;
+}
+
+:host #info:nth-child(3n+1) {
+  margin-right: 0;
+}
+
+:host #info .number {
+  background-color: #1a2a43;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 500;
+  color: #ffe574;
+}
+
+:host #info div {
+  padding: 5px 10px 4px;
+}
+
+:host #info div h2 {
+  padding: 0; margin: 0;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+:host #info div h3 {
+  font-size: 14px;
+  margin: 0; padding: 0;
+  line-height: 14px;
+  font-weight: 100;
+}

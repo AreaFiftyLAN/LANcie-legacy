@@ -289,14 +289,14 @@ var sizeOf = function(stream, title){
   });
 
   var copyBowerComponentsToLib = function(env){
-    var src = ['lib/.bower_components/**/*.{css,js,html,swf}*'];
+    var src = ['lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'];
     var dest = env === 'dev' ? tmpDir : distDir;
     return gulp.src(src)
       .pipe(gulp.dest(dest + '/lib'));
   }.bind(scope);
 
   var copyComponentsToLib = function(env){
-    var src = ['lib/.components/**/*.{css,js,html,swf}*'];
+    var src = ['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'];
     var dest = env === 'dev' ? tmpDir : distDir;
     return gulp.src(src)
       .pipe(gulp.dest(dest + '/lib'));
