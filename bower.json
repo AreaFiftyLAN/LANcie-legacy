@@ -35,6 +35,7 @@
     "core-elements": "Polymer/core-elements#~0.5.1",
     "paper-elements": "Polymer/paper-elements#~0.5.1",
     "google-map": "GoogleWebComponents/google-map#~0.4.0",
-    "google-youtube": "GoogleWebComponents/google-youtube#~1.0.1"
+    "google-youtube": "GoogleWebComponents/google-youtube#~1.0.1",
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git"
   }
 }

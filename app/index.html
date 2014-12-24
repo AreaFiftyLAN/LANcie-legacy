@@ -23,6 +23,7 @@
   <link rel="import" href="lib/lancie-countdown/lancie-countdown.html">
   <link rel="import" href="lib/lancie-sponsors/lancie-sponsors.html">
   <link rel="import" href="lib/lancie-map/lancie-map.html">
+  <link rel="import" href="lib/lancie-tournaments/lancie-tournaments.html">
 
   <!--
   Chrome 35 has old :host behavior before :host-context addition.
@@ -53,14 +54,19 @@
   <scroll-area>
     <site-banner class="sticky" layout horizontal center start>
       <a href="/" class="logo" layout horizontal>
-        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/logo_without_date.svg"></core-image>
+        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/lancie/logo_without_date.svg"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <a href="#event">
+        <a href="#sponsors" data-scroll>
+          <paper-button>SPONSORS</paper-button>
+        </a>
+        <a data-scroll href="#event">
           <paper-button>EVENT</paper-button>
         </a>
-        <paper-button>TOURNAMENTS</paper-button>
+        <a data-scroll href="#tournament">
+          <paper-button>TOURNAMENTS</paper-button>
+        </a>
         <paper-button>TICKET SALES</paper-button>
         <paper-button>ABOUT US</paper-button>
       </app-bar>
@@ -102,86 +108,39 @@
         </div>
       </section>
 
-      <section id="sponsors" class="content-padding">
-        <h1>Partners & Sponsoren</h1>
-        <div horizontal layout jusified>
-          <div vertical layout self-stretch>
+      <section id="sponsors">
+        <div class="content-padding">
+          <h1>Partners & Sponsoren</h1>
+          <div horizontal layout jusified>
+            <div vertical layout self-stretch>
+              <div vertical layout flex>
+                <span>Georganiseerd door</span>
+                <core-icon preload fade style="height: 100px; width: 300px;" src="/images/logos/lancie/logo_CH.png" sizing="contain"></core-icon>
+              </div>
+              <div vertical layout>
+                <span>In samenwerking met</span>
+                <core-icon end preload fade style="height: 100px; width: 300px;" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/162746_117686834971274_444181_n.jpg?oh=253db9477f8b8a5ce51b68209ed3b990&oe=5533AE88&__gda__=1430625267_6eca3378cd7656d3fd558b5bfb7f1e20" sizing="cover"></core-icon>
+              </div>
+            </div>
             <div vertical layout flex>
-              <span>Georganiseerd door</span>
-              <core-icon preload fade style="height: 100px; width: 300px;" src="https://ch.tudelft.nl/sites/default/themes/CHallenge/logo@2x.png" sizing="contain"></core-icon>
+              Sponsoren
+              <sponsors-element height="276px"></sponsors-element>
             </div>
-            
-            <div vertical layout>
-              <span>In samenwerking met</span>
-              <core-icon end preload fade style="height: 100px; width: 300px;" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/162746_117686834971274_444181_n.jpg?oh=253db9477f8b8a5ce51b68209ed3b990&oe=5533AE88&__gda__=1430625267_6eca3378cd7656d3fd558b5bfb7f1e20" sizing="cover"></core-icon>
-            </div>
-          </div>
-          <div vertical layout flex>
-            Sponsoren
-            <sponsors-element height="276px"></sponsors-element>
           </div>
         </div>
       </section>
-
+      
       <section id="event">
         <div class="content-padding">
-          <h1>Tournooien</h1>
+          <h1>Evenment & Tournooien</h1>
 
-          <div vertical layout flex>
-            <div horizontal layout justified>
-              <div vertical layout class="game  element" style="width: 243px; height: 243px;">
-                <div flex center>
-                  <h3>LOL</h3>
-                  <span>5 vs 5</span>
-                </div>
-                <ul end>
-                  <li><span>Max deelnemers</span> 100 deelnemers</li>
-                  <li><span>Teamleden</span> 5 spelers</li>
-                  <li><span>Prijzen</span> 1x chopsticks</li>
-                </ul>
-              </div>
-              <div vertical layout class="game  element" style="width: 243px; height: 243px;">
-                <div flex center>
-                  <h3>DOTA 2</h3>
-                  <span>5 vs 5</span>
-                </div>
-                <ul end>
-                  <li><span>Max deelnemers</span> 100 deelnemers</li>
-                  <li><span>Teamleden</span> 5 spelers</li>
-                  <li><span>Prijzen</span> 1x chopsticks</li>
-                </ul>
-              </div>
-              <div vertical layout class="game  element" style="width: 243px; height: 243px;">
-                <div flex center>
-                  <h3>FIFA</h3>
-                  <span>Poule + afval</span>
-                </div>
-                <ul end>
-                  <li><span>Max deelnemers</span> 48 deelnemers</li>
-                  <li><span>Teamleden</span> 5 spelers</li>
-                  <li><span>Prijzen</span> 1x chopsticks</li>
-                </ul>
-              </div>
-              <div style="width: 243px; height: 243px; background: #eeecec;">
-                
-              </div>
-            </div>
-            <br />
-            <div horizontal layout justified>
-              <div style="width: 243px; height: 243px; background: #eeecec;">
-                
-              </div>
-              <div style="width: 243px; height: 243px; background: #eeecec;">
-                
-              </div>
-              <div style="width: 243px; height: 243px; background: #eeecec;">
-                
-              </div>
-              <div style="width: 243px; height: 243px; background: #eeecec;">
-                
-              </div>
-            </div>
-          </div>
+          <p>Vivamus in nisl felis. Mauris sit amet ex sed purus dignissim maximus. Donec in ante in enim vulputate efficitur. Donec sapien ante, porta a nibh vitae, iaculis porta erat. Curabitur scelerisque, massa facilisis porta ultrices, orci diam vulputate leo, id tempor erat purus vel orci. Etiam vel consectetur augue. Aliquam nibh felis, finibus eget tincidunt a, egestas sit amet odio. Pellentesque id nibh vulputate elit pretium vehicula nec ut quam. Curabitur eu interdum ligula. Etiam luctus venenatis urna nec posuere. Proin porta gravida pretium. Phasellus sed justo ex. Ut orci orci, aliquet non tincidunt sed, feugiat a tortor.</p>
+        </div>
+      </section>
+
+      <section id="tournament">
+        <div class="content-padding">
+          <tournaments-element></tournaments-element>
         </div>
       </section>
 
@@ -206,5 +165,15 @@
       </div>
     </footer>
   </scroll-area>
+
+  <script src="/lib/smooth-scroll/dist/js/smooth-scroll.js"></script>
+  <script>
+    smoothScroll.init({
+      speed: 1000, // Integer. How fast to complete the scroll in milliseconds
+      easing: 'easeInOutCubic', // Easing pattern to use
+      updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+      offset: 80, // Integer. How far to offset the scrolling anchor location in pixels
+    });
+  </script>
 </body>
 </html>

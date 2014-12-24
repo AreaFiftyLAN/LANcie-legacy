@@ -1,0 +1,32 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/core-ajax/core-ajax.html">
+<link rel="import" href="/lib/paper-shadow/paper-shadow.html">
+
+<polymer-element name="tournaments-element" attributes="height">
+  
+  <template>
+    <link rel="stylesheet" href="/lib/lancie-tournaments/lancie-tournaments.css" no-shim>
+    <core-ajax auto url="/scripts/json/tournaments.json" handleAs="json"></core-ajax>
+    
+    <div horizontal layout wrap justified>
+      <template repeat="{{tourist in tournamentsList}}">
+        <paper-shadow z="1">
+          <div vertical layout class="game" style="background-image: url({{tourist.src}});">
+            <div flex>
+              <h3>{{tourist.title}}</h3>
+              <span>{{tourist.subtitle}}</span>
+            </div>
+            <ul class="{{tourist.type}}"end>
+              
+              <li><span>Max deelnemers</span> <span>{{tourist.max_players}}</span></li>
+              <li><span>Platform</span> <span>{{tourist.platform}}</span></li>
+              <li><span>Prijzen</span> <span>{{tourist.prize}}</span></li>
+            </ul>
+          </div>
+        </paper-shadow>
+      </template>
+    </div>
+
+  </template>
+  <script src="/lib/lancie-tournaments/lancie-tournaments.js"></script>
+</polymer-element>

@@ -1,0 +1,82 @@
+[
+  {
+    "title"           : "LOL",
+    "subtitle"        : "5 vs 5",
+    "src"             : "http://img.wonderhowto.com/img/43/48/63475519925398/0/play-galio-as-strong-tank-champion-league-legends.1280x600.jpg",
+    "name"            : "League of Legends",
+    "max_players"     : "30 teams",
+    "platform"        : "PC en Mac",
+    "type"            : "gold",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "CS:GO",
+    "subtitle"        : "5 vs 5",
+    "src"             : "http://mir-css.ru/_ld/7/708.jpg",
+    "name"            : "Counter-Strike : Global Offensive",
+    "max_players"     : "30 teams",
+    "platform"        : "PC en Mac",
+    "type"            : "gold",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "SC 2",
+    "subtitle"        : "1 vs 1",
+    "src"             : "http://d1vnh8mbrp67em.cloudfront.net/image/file/8/eb/66088/2.jpg",
+    "name"            : "Starcraft 2",
+    "max_players"     : "100 deelnemers",
+    "platform"        : "PC",
+    "type"            : "gold",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "LOL",
+    "subtitle"        : "1 vs 1",
+    "src"             : "http://www.incgamers.com/wp-content/uploads/2013/07/League-of-Legends-1-1024x743.jpg",
+    "name"            : "League of Legends",
+    "max_players"     : "100 deelnemers",
+    "platform"        : "PC en Mac",
+    "type"            : "silver",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "FIFA",
+    "subtitle"        : "Toernooi",
+    "src"             : "http://media.gamer.nl/site/dump/20131003113007-661205711_1379790862.jpg",
+    "name"            : "FIFA 14",
+    "max_players"     : "90 deelnemers",
+    "platform"        : "PC",
+    "type"            : "silver",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "COD4",
+    "subtitle"        : "5 vs 5",
+    "src"             : "http://guide2games.org/wp-content/uploads/2008/02/call-of-duty4-mw21.jpg",
+    "name"            : "Call of Duty 4",
+    "max_players"     : "30 teams",
+    "platform"        : "PC en Mac",
+    "type"            : "silver",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "TMNF",
+    "subtitle"        : "Free for all",
+    "src"             : "http://users.atw.hu/tmnations4ever/kepek/stadion2.jpg",
+    "name"            : "TrackMania United Forever",
+    "max_players"     : "100 deelnemers",
+    "platform"        : "PC en Mac",
+    "type"            : "bronze",
+    "prize"           : "To be announced"
+  },
+  {
+    "title"           : "Poker",
+    "subtitle"        : "Toernooi",
+    "src"             : "http://www.poker-poker.nl/wp-content/uploads/2014/06/poker.jpg",
+    "name"            : "Pokertoernooi",
+    "max_players"     : "Geen maximum",
+    "platform"        : "Offline",
+    "type"            : "bronze",
+    "prize"           : "To be announced"
+  }
+]
