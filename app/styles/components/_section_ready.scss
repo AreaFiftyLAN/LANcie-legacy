@@ -16,22 +16,24 @@
   }
 
   h1 {
-    font-size: 3.5em !important;
-    line-height: 1em !important;
+    font-size: 3.5em;
+    line-height: 1em;
     padding-bottom: 20px;
     text-align: center;
     color: $prime_white;
     font-family: 'Source Code Pro', ;
   }
+  
 
-  countdown-element::shadow div paper-shadow {
-    background: transparentize(lighten($prime_blue, 20%), 0.3);
-    color: transparentize(lighten($prime_white, 9%), 0.2);
+  // countdown-element::shadow div paper-shadow,
+  // paper-shadow {
+  //   background: transparentize(lighten($prime_blue, 20%), 0.3);
+  //   color: transparentize(lighten($prime_white, 9%), 0.2);
 
-    span {
-      color: $prime_yellow;
-    }
-  }
+  //   span {
+  //     color: $prime_yellow;
+  //   }
+  // }
 
   paper-button {
     background: $prime_blue;
@@ -39,4 +41,5 @@
     color: $prime_yellow;
     font-size: 24px !important;
   }
+  
 }

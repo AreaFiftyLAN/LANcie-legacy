@@ -41,7 +41,7 @@
   margin: 0;
   font-size: 11px;
   line-height: 16.5px;
-  width: calc(100% - 20px);
+  /*width: calc(100%);*/
   color: #eeecec;
   background-image: url('');
 }
@@ -52,6 +52,7 @@
 
 :host .game ul li {
   text-align: right;
+  width: 223px;
 }
 
 :host .game ul li span:first-child {

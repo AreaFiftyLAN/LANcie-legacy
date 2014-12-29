@@ -4,8 +4,8 @@
 
 <polymer-element name="cprofile-element" horizontal layout wrap start-justified>
   <template>
-    <link rel="stylesheet" href="/lib/lancie-cprofile/lancie-cprofile.css" no-shim>
-    <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css" no-shim>
+    <link rel="stylesheet" href="/lib/lancie-cprofile/lancie-cprofile.css">
+    <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css">
     <core-ajax auto url="/scripts/json/members.json" handleAs="json"></core-ajax>
   
     <template repeat="{{member,i in memberList}}">
