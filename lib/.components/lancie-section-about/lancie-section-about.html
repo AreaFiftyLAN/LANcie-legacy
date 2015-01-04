@@ -1,0 +1,47 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/core-media-query/core-media-query.html">
+
+<polymer-element name="section-about" noscript>
+
+  <template>
+
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
+    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{isTablet}}"></core-media-query>
+    <core-media-query query="min-width: 1032px" queryMatches="{{isScreen}}"></core-media-query>
+
+    <style>
+    :host h1 {
+      margin-bottom: 16px;
+    }
+
+    :host .text {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    :host .text[flex] {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+    </style>
+    
+    <template if="{{!isPhone}}">
+      <h1>1<sup>ste</sup> LANcie der W.I.S.V. 'Christiaan Huygens'</h1>
+    </template>
+
+    <template if="{{isPhone}}">
+      <h1>Over ons</h1>
+    </template>
+    
+    <div horizontal?="{{isScreen}}" vertical?="{{!isScreen}}" layout>
+      <div class="text" flex?="{{isScreen}}">
+        Integer in libero tempor, sodales arcu nec, pretium purus. Suspendisse eget consectetur arcu. Nulla porta massa et urna efficitur, at vulputate justo imperdiet. Vivamus non dolor eu lorem tempor placerat. Sed euismod lacinia nunc. Aenean semper iaculis tortor vel sollicitudin. Donec fermentum leo ipsum. Integer nisl odio, elementum ullamcorper nibh et, placerat tempor risus. Aliquam feugiat dapibus sem id posuere. Maecenas dictum dui a felis sed.
+      </div>
+      <div class="members" flex?="{{isScreen}}" two?="{{isScreen}}">
+        <cprofile-element horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" ></cprofile-element>
+      </div>
+    </div>
+
+  </template>
+
+</polymer-element>

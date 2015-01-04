@@ -14,8 +14,6 @@
   <link rel="import" href="lib/core-elements/core-elements.html">
   <link rel="import" href="lib/paper-elements/paper-elements.html">
 
-  <link rel="import" href="lib/paper-dialog/paper-dialog.html">
-
   <!-- OWN ELEMENTS -->
   <link rel="import" href="lib/lancie-scroll-area/lancie-scroll-area.html">
   <link rel="import" href="lib/lancie-site-banner/lancie-site-banner.html">
@@ -26,6 +24,8 @@
   <link rel="import" href="lib/lancie-tournaments/lancie-tournaments.html">
   <link rel="import" href="lib/lancie-cprofile/lancie-cprofile.html">
 
+  <!-- SECTIONS ELEMENTS -->
+  <link rel="import" href="lib/lancie-section-about/lancie-section-about.html">
   <!--
   Chrome 35 has old :host behavior before :host-context addition.
   Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
@@ -43,11 +43,10 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 </head>
 <body unresolved>
-
   <scroll-area>
     <site-banner class="sticky" layout horizontal center start>
       <a data-scroll href="#" class="logo" layout horizontal>
-        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/lancie/logo_without_date.svg"></core-image>
+        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
@@ -141,23 +140,16 @@
 
       <section id="about">
         <div class="content-padding">
-          <h1>1<sup>ste</sup> LANcie der W.I.S.V. 'Christiaan Huygens'</h1>
-          <div horizontal layout>
-            <div class="text" flex>Nam pretium justo non velit imperdiet, sed scelerisque erat cursus. Nam risus enim, mattis vel sagittis vel, luctus sed nibh. Quisque rutrum ante erat, eu imperdiet risus efficitur ut. Phasellus at consequat eros, ac rutrum urna. Vestibulum ut consectetur risus. Praesent ut dui nisi. Morbi viverra semper mattis. Phasellus sit amet molestie sem. Ut efficitur mattis lacus.</div>
-            <div class="members" flex three>
-              <cprofile-element></cprofile-element>
-            </div>
-          </div>
-          
+          <section-about></section-about>
         </div>
       </section>
 
       <section id="map">
-        <lancie-map latitude="51.9951895" longitude="4.3765975" zoom="14" zoomable="false" libraries="places,geometry">
+        <!-- <lancie-map latitude="51.9951895" longitude="4.3765975" zoom="14" zoomable="false" libraries="places,geometry">
           <google-map-marker latitude="51.9951895" longitude="4.3765975" title="Area FiftyLAN" info="AreaFiftyLAN">
             Area FiftyLAN 2015
           </google-map-marker>
-        </lancie-map>
+        </lancie-map> -->
       </section>
 
     </main>
