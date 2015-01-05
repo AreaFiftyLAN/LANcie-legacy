@@ -1,6 +1,6 @@
 :host #info {
-  width: calc(50% - 20px);
-  margin: 0 10px 20px 10px;
+  width: calc(50% - 16px);
+  margin: 0 8px 16px 8px;
 
   position: relative;
   box-sizing: border-box;
@@ -9,7 +9,6 @@
 :host #info.vertical { 
   width: calc(33% - 20px);
 }
-/*:host #info.vertical:nth-child(2n) { border: 1px solid #ff0; }*/
 
 :host #info.phone {
   width: calc(100%);
@@ -31,7 +30,7 @@
 
 :host #info div h2 {
   padding: 0; margin: 0;
-  font-size: 20px;
+  font-size: 19px !important;
   line-height: 25px;
 }
 

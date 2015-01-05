@@ -1,16 +1,17 @@
 :host paper-shadow {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 :host .game {
-  width: 243px; height: 243px;
+  width: 222px; height: 222px;
   background-position: center;
   background-size: auto 100%;
   color: #fff;
+  margin: 10px;
 }
 
 :host .game div {
-  padding: 10px;
+  /*padding: 10px;*/
   text-align: center;
   background: rgba(26, 42, 67, 0.2);
 }
@@ -46,13 +47,13 @@
   background-image: url('');
 }
 
-:host .gold   { background: rgba(212, 175, 55, 0.95);  }
-:host .silver { background: rgba(192, 192, 192, 0.95); }
-:host .bronze { background: rgba(205, 127, 50, 0.95);  }
+:host .gold   { background: rgba(212, 175, 55, 0.9);  }
+:host .silver { background: rgba(192, 192, 192, 0.9); }
+:host .bronze { background: rgba(205, 127, 50, 0.9);  }
 
 :host .game ul li {
   text-align: right;
-  width: 223px;
+  width: 202px;
 }
 
 :host .game ul li span:first-child {
