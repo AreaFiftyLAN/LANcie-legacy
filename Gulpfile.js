@@ -442,22 +442,24 @@ var sizeOf = function(stream, title){
 
 (function(scope){
 
-  gulp.task('serve', ['p-assets:prepare:dev'], function () {
-      browserSync.init(null, {
-          server: {
-              baseDir: [tmpDir]
-          },
-          notify: false
-      });
+  gulp.task('serve', ['p-assets:prepare:dev', 'browser:init']);
 
-      gulp.watch(['app/**/*.html']                            , ['p-html:dev:reload']);
-      gulp.watch(['app/styles/**/*.{css,scss,sass}']          , ['p-styles:dev:reload']);
-      gulp.watch(['app/scripts/**/*.js']                      , ['p-scripts:dev:reload']);
-      gulp.watch(['app/images/**/*.*']                        , ['p-images:dev:reload']);
-      gulp.watch(['app/public/**/*.*']                        , ['p-public:dev:reload']);
-      gulp.watch(['lib/.bower_components/**/*.{css,js,html}'] , ['p-lib:dev:reload']);
-      gulp.watch(['lib/.components/**/*.{css,js,html}']       , ['p-lib:dev:reload']);
-      gulp.watch(['app/json/**/*.json']                       , ['p-json:dev:reload']);
+  gulp.task('browser:init', function(){
+    browserSync.init(null, {
+      server: {
+        baseDir: [tmpDir]
+      },
+      notify: false
+    });
+
+    gulp.watch(['app/**/*.html']                            , ['p-html:dev:reload']);
+    gulp.watch(['app/styles/**/*.{css,scss,sass}']          , ['p-styles:dev:reload']);
+    gulp.watch(['app/scripts/**/*.js']                      , ['p-scripts:dev:reload']);
+    gulp.watch(['app/images/**/*.*']                        , ['p-images:dev:reload']);
+    gulp.watch(['app/public/**/*.*']                        , ['p-public:dev:reload']);
+    gulp.watch(['lib/.bower_components/**/*.{css,js,html}'] , ['p-lib:dev:reload']);
+    gulp.watch(['lib/.components/**/*.{css,js,html}']       , ['p-lib:dev:reload']);
+    gulp.watch(['app/json/**/*.json']                       , ['p-json:dev:reload']);
   });
 
 })(this);
