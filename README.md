@@ -6,8 +6,9 @@ Installation & running
 --------------
 
 ### Installation
-3. [Python 2.7](https://www.python.org/downloads/release/python-279/) - voor degene die het nog niet heeft
-4. [Node.js](http://nodejs.org/download/) - Dingen
+First you need to install the following plaforms.
+3. [Python 2.7](https://www.python.org/downloads/release/python-279/)
+4. [Node.js](http://nodejs.org/download/)
 
 
 ```
