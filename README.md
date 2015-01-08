@@ -7,8 +7,9 @@ Installation & running
 ### Installation
 First you need to install the following plaforms.
 
-3. [Python 2.7](https://www.python.org/downloads/release/python-279/)
-4. [Node.js](http://nodejs.org/download/)
+3. [Python 2.7](https://www.python.org/downloads/release/python-279/) - 
+4. [Node.js](http://nodejs.org/download/) - 
+5. [Bower](http://bower.io/#install-bower) - 
 
 
 ```
