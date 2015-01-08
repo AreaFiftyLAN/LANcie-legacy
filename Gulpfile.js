@@ -131,7 +131,7 @@ var sizeOf = function(stream, title){
         }
       }))
       .pipe(gulp.dest(distDir + '/scripts'))
-      .pipe($.zopfli())
+      .pipe($.gzip())
       .pipe(gulp.dest(distDir + '/scripts'))
   }.bind(scope);
 
@@ -162,7 +162,7 @@ var sizeOf = function(stream, title){
   var imagesSymlink = function () {
     return gulp.src('app/images/**/*')
         .pipe($.symlink(tmpDir + '/images'));
-  }.bind(scope);;
+  }.bind(scope);
 
   var imagesPackage = function () {
     return gulp.src('app/images/**/*')
