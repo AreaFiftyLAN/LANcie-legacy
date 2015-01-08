@@ -1,15 +1,29 @@
 # LANcie
 De repo voor de LANcie
 
-install Python 2.7
-https://www.python.org/downloads/release/python-279/
 
-install Node.js
+Installation & running
+--------------
 
-clone the repo
+### Installation
+3. [Python 2.7](https://www.python.org/downloads/release/python-279/) - voor degene die het nog niet heeft
+4. [Node.js](http://nodejs.org/download/) - Dingen
 
-run npm install
 
-run bower install
+```
+cd [path_to_devfolder]  
+mkdir LANcie && cd $_
 
-serve with gulp serve
+git clone https://github.com/42education/web.git
+
+cd LANcie
+[sudo] npm install
+bower install
+```
+
+### Running
+
+```
+cd [path_to_devfolder]\LANcie
+gulp serve
+```
