@@ -145,11 +145,17 @@ gulp.task('lib', function(){
 
 });
 
+// Copy json files into .tmp folder
+gulp.task('json', function() {
+  var src = ['app/json/**/*.json'];
+  return gulp.src(src).pipe(gulp.dest('.tmp/scripts/json'));
+});
+
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'lib'], function () {
+gulp.task('serve', ['styles', 'lib', 'json'], function () {
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
@@ -163,6 +169,10 @@ gulp.task('serve', ['styles', 'lib'], function () {
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/json/**/*.json'], reload);
+
+  gulp.watch(['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+    'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'], ['lib', reload]);
 });
 
 // Build and serve the output from the dist build

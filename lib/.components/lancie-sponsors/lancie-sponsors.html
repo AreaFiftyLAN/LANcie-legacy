@@ -9,23 +9,11 @@
     
     <div vertical layout style="height: {{height}}">
       <template repeat="{{row in sponsorsList}}">
-
-        <template if="{{row.between}}">
-          <div horizontal layout justified flex center>
-            <template repeat="{{column in row.items}}">
-              <core-icon style="height: {{column.height}}; width: {{column.width}};" src="{{column.src}}" sizing="contain"></core-icon>
-            </template>
-          </div>
-        </template>
-
-        <template if="{{!row.between}}">
-          <div horizontal layout justified>
-            <template repeat="{{column in row.items}}">
-              <core-icon style="height: {{column.height}}; width: {{column.width}};" src="{{column.src}}" sizing="contain"></core-icon>
-            </template>
-          </div>
-        </template>
-
+        <div horizontal layout justified>
+          <template repeat="{{column in row.items}}">
+            <core-icon style="height: 92px; margin: 7px 10px; width: calc(100vw);" src="{{column.src}}" sizing="contain"></core-icon>
+          </template> 
+        </div>
       </template>
     </div>
 
