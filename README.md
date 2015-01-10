@@ -1,23 +1,23 @@
-## Installation of LANcie repo
+# Installation of LANcie repo
 
-# Install + path
-Git
-Node.js
-Python
-Ruby 2.7
+## Install + path
+- Git
+- Node.js
+- Python
+- Ruby 2.7
 
-# Git
+## Git
 git clone git@github.com:WISVCH/LANcie.git
 cd LANcie
 
-# cmd (Administrator)
+## cmd (Administrator)
 npm install -g gulp
 npm install -g bower
 npm install
 bower install
 gulp serve
 
-# Know Errors + solution
+## Know Errors + solution
 sass error: 
   gem source -a http://rubygems.org/
   y
