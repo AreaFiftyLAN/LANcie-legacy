@@ -1,3 +1,31 @@
+# Installation of LANcie repo
+
+## Install + path
+- Git
+- Node.js
+- Python
+- Ruby 2.7
+
+## Git
+git clone git@github.com:WISVCH/LANcie.git  
+cd LANcie
+
+## cmd (Administrator)
+npm install -g gulp   
+npm install -g bower   
+npm install   
+bower install   
+gulp serve    
+
+## Know Errors + solution
+sass error:   
+  gem source -a http://rubygems.org/  
+  y 
+  gem install sass  
+
+readable-stream error:  
+  npm install --save readable-stream  
+
 # [![Web Starter Kit](https://cloud.githubusercontent.com/assets/170270/3343034/ceef6e92-f899-11e3-96b9-5d9d69d97a00.png)](https://github.com/google/web-starter-kit/releases/latest)
 
 ## Overview
