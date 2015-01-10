@@ -1,9 +1,8 @@
 node_modules
-lib/.bower_components
 .sass-cache
-_vulcanized
-_dist
-_tmp
+dist
+.tmp
+lib/.bower_components
 *.log
 *.sublime-project
 *.sublime-workspace
