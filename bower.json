@@ -36,6 +36,7 @@
     "google-map": "GoogleWebComponents/google-map#~0.4.0",
     "google-youtube": "GoogleWebComponents/google-youtube#~1.0.1",
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git",
-    "components-font-awesome": "~4.2.0"
+    "components-font-awesome": "~4.2.0",
+    "ajax-form": "~1.4.0"
   }
 }
