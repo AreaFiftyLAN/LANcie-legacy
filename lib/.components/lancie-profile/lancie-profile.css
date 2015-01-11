@@ -1,0 +1,42 @@
+:host #info {
+  width: calc(50% - 16px);
+  margin: 0 8px 16px 8px;
+
+  position: relative;
+  box-sizing: border-box;
+}
+
+:host #info.vertical { 
+  width: calc(33% - 20px);
+}
+
+:host #info.phone {
+  width: calc(100%);
+  margin: 0 0 20px 0;
+}
+
+:host #info .number {
+  background-color: #1a2a43;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 500;
+  color: #ffe574;
+}
+
+:host #info div {
+  padding: 5px 10px 4px;
+}
+
+:host #info div h2 {
+  padding: 0; margin: 0;
+  font-size: 19px !important;
+  line-height: 25px;
+}
+
+:host #info div h3 {
+  font-size: 14px;
+  margin: 0; padding: 0;
+  line-height: 14px;
+  font-weight: 100;
+}
