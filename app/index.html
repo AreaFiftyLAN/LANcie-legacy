@@ -23,6 +23,7 @@
   <link rel="import" href="lib/lancie-map/lancie-map.html">
   <link rel="import" href="lib/lancie-tournaments/lancie-tournaments.html">
   <link rel="import" href="lib/lancie-cprofile/lancie-cprofile.html">
+  <link rel="import" href="lib/lancie-profile/lancie-profile.html">
 
   <!-- SECTIONS ELEMENTS -->
   <link rel="import" href="lib/lancie-section-about/lancie-section-about.html">
@@ -62,6 +63,9 @@
         <paper-button>TICKET SALES</paper-button>
         <a href="#about" data-scroll>
           <paper-button>ABOUT US</paper-button>
+        </a>
+        <a href="#profile" data-scroll>
+          <paper-button>Profiel</paper-button>
         </a>
       </app-bar>
 
@@ -141,6 +145,15 @@
       <section id="about">
         <div class="content-padding">
           <section-about></section-about>
+        </div>
+      </section>
+
+      <section id="profile">
+        <div class="content-padding">
+          <h1>Profiel</h1>
+
+          <p>Vivamus in nisl felis. Mauris sit amet ex sed purus dignissim maximus. Donec in ante in enim vulputate efficitur. Donec sapien ante, porta a nibh vitae, iaculis porta erat. Curabitur scelerisque, massa facilisis porta ultrices, orci diam vulputate leo, id tempor erat purus vel orci. Etiam vel consectetur augue. Aliquam nibh felis, finibus eget tincidunt a, egestas sit amet odio. Pellentesque id nibh vulputate elit pretium vehicula nec ut quam. Curabitur eu interdum ligula. Etiam luctus venenatis urna nec posuere. Proin porta gravida pretium. Phasellus sed justo ex. Ut orci orci, aliquet non tincidunt sed, feugiat a tortor.</p>
+          <profile-element horizontal?="{{!isPhone}}" vertical?="{{isPhone}}"></profile-element>
         </div>
       </section>
 
