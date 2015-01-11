@@ -5,7 +5,7 @@
 
   <template>
     
-     <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
     <core-media-query query="(min-width : 582px) and (max-width : 851px)" queryMatches="{{isTablet}}"></core-media-query>
     
     <h1>Partners & Sponsoren</h1>
@@ -13,11 +13,15 @@
       <div horizontal?="{{isTablet}}" vertical?="{{!isTablet && !isPhone}}" layout class="main-sponsors {{isPhone ? 'xsmall' : ''}}" around-jusified>
         <div vertical layout flex>
           <span>Georganiseerd door</span>
-          <core-icon preload fade style="height: 100px; width: {{isTablet || isPhone ? '100%' : '250px'}};" src="/images/logos/lancie/logo_CH.png" sizing="contain"></core-icon>
+          <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+            <core-icon preload fade style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0;"  src="/images/logos/lancie/logo_CH.png" sizing="contain"></core-icon>
+          </div>
         </div>
         <div vertical layout flex>
           <span>In samenwerking met</span>
-          <core-icon end preload fade style="height: 100px; width: {{isTablet || isPhone ? '100%' : '250px'}};" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/162746_117686834971274_444181_n.jpg?oh=253db9477f8b8a5ce51b68209ed3b990&oe=5533AE88&__gda__=1430625267_6eca3378cd7656d3fd558b5bfb7f1e20" sizing="cover"></core-icon>
+          <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+            <core-icon preload fade style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0;"  src="/images/logos/sponsors/sc_logo.png" sizing="cover"></core-icon>
+          </div>
         </div>
       </div>
       <div vertical layout flex?="{{!isTablet && !isPhone}}" class="secondary-sponsors">

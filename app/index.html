@@ -27,6 +27,7 @@
   <!-- SECTIONS ELEMENTS -->
   <link rel="import" href="lib/lancie-section-about/lancie-section-about.html">
   <link rel="import" href="lib/lancie-section-sponsors/lancie-section-sponsors.html">
+  <link rel="import" href="lib/lancie-section-ready/lancie-section-ready.html">
   <!--
   Chrome 35 has old :host behavior before :host-context addition.
   Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
@@ -88,18 +89,9 @@
     </site-banner>
 
     <main>
-      <section id="ready" horizontal layout center-justified>
-        <div class="overlay"></div> 
-        <div vertical layout>
-          <h1>Be ready for the LAuNCH</h1>
-          <countdown-element end="2015-01-26T23:59:59"></countdown-element>
-
-          <div horizontal center-justified layout>
-            <paper-button raised>
-              <core-icon icon="get-app"></core-icon>
-              BESTEL NU JE KAARTEN
-            </paper-button>
-          </div>
+      <section id="ready">
+        <div class="content-padding">
+          <section-ready></section-ready>
         </div>
       </section>
 

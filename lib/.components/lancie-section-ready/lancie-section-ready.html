@@ -1,0 +1,26 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/core-media-query/core-media-query.html">
+
+<polymer-element name="section-ready" noscript>
+
+  <template>
+
+    <core-media-query query="max-width: 721px" queryMatches="{{isPhone}}"></core-media-query>
+    
+    <div class="overlay"></div> 
+    <div vertical layout>
+      <h1>Be ready for the LAuNCH</h1>
+
+      <countdown-element end="2015-01-26T23:59:59" style="display: {{isPhone ? 'none' : ''}}"></countdown-element>
+
+      <div horizontal center-justified layout>
+        <paper-button raised>
+          <core-icon icon="get-app"></core-icon>
+          BESTEL NU JE KAARTEN
+        </paper-button>
+      </div>
+    </div>
+
+  </template>
+
+</polymer-element>
