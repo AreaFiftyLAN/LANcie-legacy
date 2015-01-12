@@ -19,12 +19,12 @@
     <core-media-query query="min-width: 1032px" queryMatches="{{isScreen}}"></core-media-query>
 
     <core-ajax auto 
-      url="https://areafiftylan.nl/api/UserController.php?id=2" 
+      url="https://areafiftylan.nl/api/api/index.php?update/User/2" 
       handleAs="json"></core-ajax>
 
      <div id="info" class="{{isScreen ? 'horizontal' : ''}}{{isTablet ? 'vertical' : ''}}{{isPhone ? 'phone' : ''}}" horizontal layout>
         <!-- <paper-shadow id="shadow" z="1" fit animated></paper-shadow> -->
-        <form id="profileForm" is="ajax-form" action="https://areafiftylan.nl/api/UserController.php" method="post">
+        <form id="profileForm" is="ajax-form" action="https://areafiftylan.nl/api/api/index.php?update/User/2" method="post">
           <section>
             <paper-input floatingLabel name="username" label="Gebruikersnaam:" value="{{profile.username}}"></paper-input>
             <paper-input-decorator label="Wachtwoord:" floatingLabel>
