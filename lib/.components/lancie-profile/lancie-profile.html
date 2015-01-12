@@ -19,7 +19,7 @@
     <core-media-query query="min-width: 1032px" queryMatches="{{isScreen}}"></core-media-query>
 
     <core-ajax auto 
-      url="https://areafiftylan.nl/api/api/index.php?update/User/2" 
+      url="https://areafiftylan.nl/api/UserController.php?id=2"
       handleAs="json"></core-ajax>
 
      <div id="info" class="{{isScreen ? 'horizontal' : ''}}{{isTablet ? 'vertical' : ''}}{{isPhone ? 'phone' : ''}}" horizontal layout>
@@ -34,9 +34,9 @@
           <section>
             <core-label>
               Geslacht:
-              <core-selector id="profileAanhef" selected="{{profile.aanhef}}" valueattr="label">
-                <paper-button label="male"><i class="fa fa-male fa-3x"></i></paper-button>
-                <paper-button label="female"><i class="fa fa-female fa-3x"></i></paper-button>
+              <core-selector id="profileAanhef" selected="{{profile.geslacht}}" valueattr="label">
+                <paper-button label="m"><i class="fa fa-male fa-3x"></i></paper-button>
+                <paper-button label="f"><i class="fa fa-female fa-3x"></i></paper-button>
               </core-selector>
             </core-label>
           </section>
