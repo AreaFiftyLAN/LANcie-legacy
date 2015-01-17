@@ -1,31 +1,31 @@
 [
   {
-    "function"    : "Voorzitter",
+    "function"    : "Chairman",
     "name"        : "Sille Kamoen",
     "icon"        : "group"
   },
   {
-    "function"    : "Secretaris",
+    "function"    : "Secretary",
     "name"        : "Rebecca Glans",
     "icon"        : "female"
   },
   {
-    "function"    : "Penningmeester",
+    "function"    : "Treasurer",
     "name"        : "Sven Popping",
     "icon"        : "money"
   },
   {
-    "function"    : "Commissaris Promo",
+    "function"    : "Commissioner Promo",
     "name"        : "Wouter Kooyman",
     "icon"        : "bullhorn"
   },
   {
-    "function"    : "Commissaris Logistiek",
+    "function"    : "Commissioner Logistics",
     "name"        : "Nordin van Nes",
     "icon"        : "truck"
   },
   {
-    "function"    : "Commissaris Techniek",
+    "function"    : "Commissioner Science",
     "name"        : "Paul vd Knaap",
     "icon"        : "cogs"
   },

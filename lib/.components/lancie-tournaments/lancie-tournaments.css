@@ -3,10 +3,8 @@
 }
 
 :host .game {
-  height:   calc((100vw - 64px) / 4 - 20px);
-  width:    calc((100vw - 64px) / 4 - 20px); 
-  max-width: 222px;
-  max-height: 222px;
+  width: 222px;
+  height: 222px;
   background-position: center;
   background-size: 100% auto;
   color: #fff;
@@ -14,15 +12,15 @@
 }
 
 :host .game.medium {
-  height:   calc((100vw - 64px) / 3 - 20px);
-  width:    calc((100vw - 64px) / 3 - 20px);
+  height:   calc((100vw - 64px) / 3 - 25px);
+  width:    calc((100vw - 64px) / 3 - 25px);
   max-width: none;
   max-height: 230px;
 }
 
 :host .game.small {
-  height:   calc((100vw - 64px) / 2 - 20px);
-  width:    calc((100vw - 64px) / 2 - 20px);
+  height:   calc((100vw - 32px) / 2 - 30px);
+  width:    calc((100vw - 32px) / 2 - 30px);
   max-width: none;
   max-height: 230px;
 }

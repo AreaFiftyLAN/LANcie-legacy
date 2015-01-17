@@ -22,7 +22,7 @@
   {
     "items": [
       {
-        "name": "Sportbedrijf Bedrijf Drachten",
+        "name": "",
         "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
@@ -31,6 +31,10 @@
       },
       {
         "name": "Asus",
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
+      },
+      {
+        "name": "Bol.com",
         "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
@@ -55,6 +59,10 @@
       },
       {
         "name": "slot3",
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
+      },
+      {
+        "name": "Bol.com",
         "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       }
     ]

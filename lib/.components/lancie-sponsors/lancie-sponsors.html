@@ -21,7 +21,13 @@
 
     <template if="{{mode == 'default'}}"> 
       <div vertical layout>
-        <template repeat="{{row in sponsorsList}}">
+        <template repeat="{{row, i in sponsorsList}}">
+          <template if="{{i == 0}}">
+            Premium sponsors:
+          </template>
+          <template if="{{i == 1}}">
+            Sponsors:
+          </template>
           <div horizontal layout justified >
             <template repeat="{{column in row.items}}">
               <div style="width: calc(100% / {{row.items.length}});">

@@ -8,8 +8,8 @@
   <template>
     <link rel="stylesheet" href="/lib/lancie-tournaments/lancie-tournaments.css">
     
-    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
-    <core-media-query query="(min-width : 582px) and (max-width : 780px)" queryMatches="{{isBetween}}"></core-media-query>
+    <core-media-query query="max-width: 479px" queryMatches="{{isPhone}}"></core-media-query>
+    <core-media-query query="(min-width : 480px) and (max-width : 780px)" queryMatches="{{isBetween}}"></core-media-query>
     <core-media-query query="(min-width : 781px) and (max-width : 1031px)" queryMatches="{{isTablet}}"></core-media-query>
     <core-media-query query="min-width: 1032px" queryMatches="{{isScreen}}"></core-media-query>
 
@@ -24,9 +24,9 @@
             <span>{{tourist.subtitle}}</span>
           </div>
           <ul class="{{tourist.type}}"end>
-            <li><span>Max deelnemers</span> <span>{{tourist.max_players}}</span></li>
+            <li><span>Max participants</span> <span>{{tourist.max_players}}</span></li>
             <li><span>Platform</span> <span>{{tourist.platform}}</span></li>
-            <li><span>Prijzen</span> <span>{{tourist.prize}}</span></li>
+            <li><span>Prizes</span> <span>{{tourist.prize}}</span></li>
           </ul>
         </div>
       </template>
