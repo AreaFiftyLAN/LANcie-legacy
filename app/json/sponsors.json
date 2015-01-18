@@ -1,82 +1,69 @@
 [
   {
-    "between": false,
     "items": [
       {
         "name": "OGD",
-        "height": "100px",
-        "width": "230px",
         "src": "/images/logos/sponsors/ogd.png"
       },
       {
         "name": "MSI",
-        "height": "100px",
-        "width": "230px",
-        "src": "http://drcaos.com//wp-content/uploads/2013/06/MSI_logo_blue-high.jpg"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "Kingston",
-        "height": "100px",
-        "width": "230px",
-        "src": "http://easycom.be/sites/default/files/Kingston_logo.jpg"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
+      },
+      {
+        "name": "Kingston",
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       }
     ]
   },
   {
-    "between": true,
     "items": [
       {
-        "name": "Sportbedrijf Bedrijf Drachten",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://sportbedrijf.fikket.nl/system/logos/4765/sellout/logo%20klein.jpg?1363002942"
+        "name": "",
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "Chio",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://www.intersnack.nl/images/Chio_Logo_groot.png"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "Asus",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://www.newphonefix.nl/media/catalog/category/Asus1.jpg"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "Bol.com",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://pers.bol.com/wp-content/gallery/logo/logo-bol-com-1335x334-zonder-r.jpg"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
+      },
+      {
+        "name": "Bol.com",
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       }
     ]
   },
   {
-    "between": false,
     "items": [
       {
         "name": "LG",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://www.herakleidon-art.gr/assets/LG-logo.jpg"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "KLM",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KLM_logo.svg/2000px-KLM_logo.svg.png"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "slot3",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "http://seriouslan.nl/media/sponsor/spam.jpg"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       },
       {
         "name": "slot3",
-        "height": "68.2px",
-        "width": "170.5px;",
-        "src": "https://media.licdn.com/media/p/2/000/203/2e4/2daa651.png"
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
+      },
+      {
+        "name": "Bol.com",
+        "src": "http://placehold.it/230x150&text=placehold.it+rocks!"
       }
     ]
   }

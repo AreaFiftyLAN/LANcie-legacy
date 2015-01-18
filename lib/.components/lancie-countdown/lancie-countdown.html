@@ -1,15 +1,17 @@
 <link rel="import" href="/lib/polymer/polymer.html">
 <link rel="import" href="/lib/paper-shadow/paper-shadow.html">
 
+<link rel="import" href="/lib/core-media-query/core-media-query.html">
 <link rel="import" href="/lib/core-animation/core-animation.html">
 <link rel="import" href="/lib/core-animation/core-animation-group.html">
 
 
-<polymer-element name="countdown-element">
-  
+<polymer-element name="countdown-element" attributes="isphone">
+  <!-- <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query> -->
   <template>
     
-    <style>
+
+    <style type="text/css">
     :host div paper-shadow {
       margin: auto 10px;
       padding: 0 15px 15px;
@@ -35,7 +37,7 @@
     </style>
     
     <div flex horizontal layout center-justified>
-
+      {{isPhone}}
       <paper-shadow z="2" vertical layout>
         <div id="days" flex horizontal layout center>
           <h1>{{days}}</h1>

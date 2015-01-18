@@ -1,21 +1,52 @@
 #ready {
   position: relative;
-  margin-top: 80px; 
-  padding-top: 45px;
-  background: url("/images/background/halo_reach.jpg");
-  background-size: 100%;
-  background-position: 50% 0%;
-  height: 490px;
+  margin-top:50px;
+  padding: 70px 0 50px;
+  min-height: 500px;
+
+  background: url("/images/background/halo_reach.jpg") center top;
+  background-size: 125% auto;
+  background-repeat: no-repeat;
+
+  /deep/ {
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      background: transparentize($third_blue, 0.6);
+      display: block;
+      height: 100%; width: 100%;
+    }
+
+    h1 {
+      z-index: 0;
+      font-size: 3.5em;
+      line-height: 1em;
+      padding-bottom: 20px;
+      text-align: center;
+      color: $prime_white;
+      font-family: 'Source Code Pro', ;
+    }
+
+    paper-button {
+      background: $prime_blue;
+      margin: 33px 10px;
+      color: $prime_yellow;
+      font-size: 24px !important;
+    }
+
+  }
 
   .overlay {
     position: absolute;
     top: 0; left: 0;
-    background: rgba(255, 255, 255, 0.3);
+    background: transparentize($third_blue, 0.6);
     display: block;
     height: 100%; width: 100%;
   }
 
   h1 {
+    z-index: 0;
     font-size: 3.5em;
     line-height: 1em;
     padding-bottom: 20px;
@@ -23,17 +54,6 @@
     color: $prime_white;
     font-family: 'Source Code Pro', ;
   }
-  
-
-  // countdown-element::shadow div paper-shadow,
-  // paper-shadow {
-  //   background: transparentize(lighten($prime_blue, 20%), 0.3);
-  //   color: transparentize(lighten($prime_white, 9%), 0.2);
-
-  //   span {
-  //     color: $prime_yellow;
-  //   }
-  // }
 
   paper-button {
     background: $prime_blue;
@@ -41,5 +61,28 @@
     color: $prime_yellow;
     font-size: 24px !important;
   }
+  
+}
+
+@media only screen and (max-width: 581px) {
+
+  #ready {
+    min-height: 0;
+    background-size: auto 100%;
+
+    /deep/ {
+
+      .overlay {
+        background: transparentize($third_blue, 0.6);
+      }
+
+    }
+
+    .overlay {
+      background: transparentize($third_blue, 0.6);
+    }
+
+  }
+
   
 }

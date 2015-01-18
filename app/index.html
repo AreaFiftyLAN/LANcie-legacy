@@ -1,12 +1,24 @@
 <!doctype html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <title>Area FiftyLAN - Gaming Event</title>
 
   <script src="lib/webcomponentsjs/webcomponents.js"></script>
 
+  <!--
+  Chrome 35 has old :host behavior before :host-context addition.
+  Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
+  to force the ShadowDOM Polyfill.
+  -->
+  <script>
+    if (!('import' in document.createElement('link'))) {
+      var Platform = {flags: {shadow: true}};
+    }
+  </script>
+  
   <link rel="import" href="lib/polymer/polymer.html">
   <link rel="import" href="lib/font-roboto/roboto.html">
 
@@ -22,22 +34,13 @@
   <link rel="import" href="lib/lancie-sponsors/lancie-sponsors.html">
   <link rel="import" href="lib/lancie-map/lancie-map.html">
   <link rel="import" href="lib/lancie-tournaments/lancie-tournaments.html">
-  <link rel="import" href="lib/lancie-cprofile/lancie-cprofile.html">
-  <link rel="import" href="lib/lancie-profile/lancie-profile.html">
+  <link rel="import" href="lib/lancie-cprofile/lancie-cprofile.html"> 
 
   <!-- SECTIONS ELEMENTS -->
   <link rel="import" href="lib/lancie-section-about/lancie-section-about.html">
-  <!--
-  Chrome 35 has old :host behavior before :host-context addition.
-  Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
-  to force the ShadowDOM Polyfill.
-  -->
-  <script>
-    if (!('import' in document.createElement('link'))) {
-      var Platform = {flags: {shadow: true}};
-    }
-  </script>
-  
+  <link rel="import" href="lib/lancie-section-sponsors/lancie-section-sponsors.html">
+  <link rel="import" href="lib/lancie-section-ready/lancie-section-ready.html">
+
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="styles/lancie.css">
   <link rel="stylesheet" href="lib/components-font-awesome/css/font-awesome.min.css" no-shim>
@@ -45,9 +48,42 @@
 </head>
 <body unresolved>
   <scroll-area>
-    <site-banner class="sticky" layout horizontal center start>
-      <a data-scroll href="#" class="logo" layout horizontal>
-        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/lancie/logo_without_date.png"></core-image>
+    <site-banner class="sticky  site-padding" layout horizontal center start>
+
+      <core-menu-button>
+        <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
+        <core-dropdown class="dropdown  core-transition-left" layered>
+          <paper-shadow z="2"></paper-shadow>
+          <core-menu>
+            <core-item label="SPONSORS" horizontal center layout>
+              <a href="#sponsors" data-scroll></a>
+            </core-item>
+
+            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
+              <a data-scroll href="#event" borderless></a>
+            </core-item>
+
+            <core-item label="TICKET SALES" horizontal center layout>
+              <a data-scroll href="#event" borderless></a>
+            </core-item>
+
+            <core-item label="MY AREA" horizontal center layout>
+              <a href="#login" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="ABOUT US" horizontal center layout>
+              <a href="#about" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="LOGOUT" horizontal center layout>
+              <a href="#logout" data-scroll borderless></a>
+            </core-item>
+          </core-menu>
+        </core-dropdown>
+      </core-menu-button>
+
+      <a data-scroll href="#" class="logo" layout horizontal start flex>
+        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
@@ -55,82 +91,32 @@
           <paper-button>SPONSORS</paper-button>
         </a>
         <a data-scroll href="#event">
-          <paper-button>EVENT</paper-button>
-        </a>
-        <a data-scroll href="#tournament">
-          <paper-button>TOURNAMENTS</paper-button>
+          <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
         </a>
         <paper-button>TICKET SALES</paper-button>
-        <a href="#about" data-scroll>
-          <paper-button>ABOUT US</paper-button>
-        </a>
-        <a href="#profile" data-scroll>
-          <paper-button>Profiel</paper-button>
+        <a href="#login" data-scroll>
+          <paper-button>MY AREA</paper-button>
         </a>
       </app-bar>
 
-      <core-icon layout horizontal id="dropdown-toggle" icon="arrow-drop-down" aria-label="arrow-drop-down" ></core-icon>
-
-      <dropdown-panel>
-        <core-item icon="social:school" label="Get Started" horizontal center layout>
-          <a href="#"></a>
-        </core-item>
-
-        <core-item icon="description" label="Guides &amp; Resources" horizontal center layout>
-          <a href="#" class="paper-button" borderless sink></a>
-        </core-item>
-
-        <core-item icon="polymer" label="Elements" horizontal center layout>
-          <a href="#"></a>
-        </core-item>
-
-        <core-item icon="view-headline" label="Blog" horizontal center layout>
-          <a href="#" target="_blank"></a>
-        </core-item>
-      </dropdown-panel>
     </site-banner>
 
     <main>
-       <section id="ready" horizontal layout center-justified>
-        <div class="overlay"></div> 
-        <div vertical layout>
-          <h1>Be ready for the LAuNCH</h1>
-          <countdown-element end="2015-01-26T23:59:59"></countdown-element>
-
-          <div horizontal center-justified layout>
-            <paper-button raised>
-              <core-icon icon="get-app"></core-icon>
-              BESTEL NU JE KAARTEN
-            </paper-button>
-          </div>
+      <section id="ready" horizontal layout center>
+        <div class="content-padding">
+          <section-ready></section-ready>
         </div>
       </section>
 
        <section id="sponsors">
         <div class="content-padding">
-          <h1>Partners & Sponsoren</h1>
-          <div horizontal layout jusified>
-            <div vertical layout self-stretch>
-              <div vertical layout flex>
-                <span>Georganiseerd door</span>
-                <core-icon preload fade style="height: 100px; width: 268px;" src="/images/logos/lancie/logo_CH.png" sizing="contain"></core-icon>
-            </div>
-              <div vertical layout>
-                <span>In samenwerking met</span>
-                <core-icon end preload fade style="height: 100px; width: 268px;" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/162746_117686834971274_444181_n.jpg?oh=253db9477f8b8a5ce51b68209ed3b990&oe=5533AE88&__gda__=1430625267_6eca3378cd7656d3fd558b5bfb7f1e20" sizing="cover"></core-icon>
-              </div>
-            </div>
-            <div vertical layout flex>
-              Sponsoren
-              <sponsors-element height="276px"></sponsors-element>
-            </div>
-          </div>
+          <section-sponsors></section-sponsors>
         </div>
       </section>
       
       <section id="event">
         <div class="content-padding">
-          <h1>Evenment & Tournooien</h1>
+          <h1>Event &amp; Tournament</h1>
 
           <p>Vivamus in nisl felis. Mauris sit amet ex sed purus dignissim maximus. Donec in ante in enim vulputate efficitur. Donec sapien ante, porta a nibh vitae, iaculis porta erat. Curabitur scelerisque, massa facilisis porta ultrices, orci diam vulputate leo, id tempor erat purus vel orci. Etiam vel consectetur augue. Aliquam nibh felis, finibus eget tincidunt a, egestas sit amet odio. Pellentesque id nibh vulputate elit pretium vehicula nec ut quam. Curabitur eu interdum ligula. Etiam luctus venenatis urna nec posuere. Proin porta gravida pretium. Phasellus sed justo ex. Ut orci orci, aliquet non tincidunt sed, feugiat a tortor.</p>
         </div>
@@ -148,15 +134,6 @@
         </div>
       </section>
 
-      <section id="profile">
-        <div class="content-padding">
-          <h1>Profiel</h1>
-
-          <p>Vivamus in nisl felis. Mauris sit amet ex sed purus dignissim maximus. Donec in ante in enim vulputate efficitur. Donec sapien ante, porta a nibh vitae, iaculis porta erat. Curabitur scelerisque, massa facilisis porta ultrices, orci diam vulputate leo, id tempor erat purus vel orci. Etiam vel consectetur augue. Aliquam nibh felis, finibus eget tincidunt a, egestas sit amet odio. Pellentesque id nibh vulputate elit pretium vehicula nec ut quam. Curabitur eu interdum ligula. Etiam luctus venenatis urna nec posuere. Proin porta gravida pretium. Phasellus sed justo ex. Ut orci orci, aliquet non tincidunt sed, feugiat a tortor.</p>
-          <profile-element horizontal?="{{!isPhone}}" vertical?="{{isPhone}}"></profile-element>
-        </div>
-      </section>
-
       <section id="map">
         <lancie-map latitude="51.9951895" longitude="4.3765975" zoom="14" zoomable="false" libraries="places,geometry">
           <google-map-marker latitude="51.9951895" longitude="4.3765975" title="Area FiftyLAN" info="AreaFiftyLAN">
@@ -170,7 +147,7 @@
     <footer horizontal center layout>
       <div horizontal justified flex layout class="content-padding">
         <p id="copyright">Copyright &copy; 2015 W.I.S.V. 'Christiaan Huygens'.</p>
-        <p id="designby">Gemaakt door de 1<sup>ste</sup> LANcie der W.I.S.V. 'Christiaan Huygens'</p>
+        <p id="designby" class="notonmobile">Created by the 1<sup>ste</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</p>
       </div>
     </footer>
   </scroll-area>

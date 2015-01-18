@@ -1,33 +1,56 @@
 <link rel="import" href="/lib/polymer/polymer.html">
 <link rel="import" href="/lib/core-ajax/core-ajax.html">
 
-<polymer-element name="sponsors-element" attributes="height">
+<polymer-element name="sponsors-element" attributes="mode">
   
   <template>
     
     <core-ajax auto url="/json/sponsors.json" handleAs="json"></core-ajax>
     
-    <div vertical layout style="height: {{height}}">
-      <template repeat="{{row in sponsorsList}}">
-
-        <template if="{{row.between}}">
-          <div horizontal layout justified flex center>
+    <template if="{{mode == 'phone'}}"> 
+      <div horizontal wrap layout>
+        <template repeat="{{row, i in sponsorsList}}">
+          <template if="{{i == 0}}">
+            Premium sponsors
             <template repeat="{{column in row.items}}">
-              <core-icon style="height: {{column.height}}; width: {{column.width}};" src="{{column.src}}" sizing="contain"></core-icon>
+              <div style="width: calc(100%);">
+                <core-icon style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
+              </div>
             </template>
+          </template>
+
+          <template if="{{i != 0}}">
+            <template if="{{i == 1}}"><span style="width: 100%;">Sponsors</span></template>
+            <template repeat="{{column in row.items}}">
+              <div style="width: 50%;">
+                <core-icon style="width: 100%; height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
+              </div>
+            </template>
+          </template>
+          
+        </template>
+      </div>
+    </template>
+
+    <template if="{{mode == 'default'}}"> 
+      <div vertical layout>
+        <template repeat="{{row, i in sponsorsList}}">
+          <template if="{{i == 0}}">
+            Premium sponsors
+          </template>
+          <template if="{{i == 1}}">
+            Sponsors
+          </template>
+          <div horizontal layout justified >
+            <template repeat="{{column in row.items}}">
+              <div style="width: calc(100% / {{row.items.length}});">
+                <core-icon style="width: calc(100% - 20px); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
+              </div>
+            </template> 
           </div>
         </template>
-
-        <template if="{{!row.between}}">
-          <div horizontal layout justified>
-            <template repeat="{{column in row.items}}">
-              <core-icon style="height: {{column.height}}; width: {{column.width}};" src="{{column.src}}" sizing="contain"></core-icon>
-            </template>
-          </div>
-        </template>
-
-      </template>
-    </div>
+      </div>
+    </template>
 
   </template>
   <script src="/lib/lancie-sponsors/lancie-sponsors.js"></script>

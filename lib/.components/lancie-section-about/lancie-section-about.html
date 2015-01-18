@@ -25,12 +25,12 @@
     }
     </style>
     
-    <template if="{{!isPhone}}">
-      <h1>1<sup>ste</sup> LANcie der W.I.S.V. 'Christiaan Huygens'</h1>
+    <template if="{{isScreen}}">
+      <h1>1<sup>ste</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</h1>
     </template>
 
-    <template if="{{isPhone}}">
-      <h1>Over ons</h1>
+    <template if="{{!isScreen}}">
+      <h1>About us</h1>
     </template>
     
     <div horizontal?="{{isScreen}}" vertical?="{{!isScreen}}" layout>

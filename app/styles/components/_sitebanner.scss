@@ -4,6 +4,7 @@ site-banner {
   background-color: lighten($prime_blue, 0%) !important;
   -webkit-transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
   transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
+  z-index: 1000;
 
   &[unresolved] {
     opacity: 0;
@@ -21,6 +22,14 @@ site-banner {
     }
 
     &::shadow > #search {
+      color: $prime_yellow;
+
+      paper-icon-button::shadow > #icon {
+        fill: $prime_yellow;
+      }
+    }
+
+    #search {
       color: $prime_yellow;
 
       paper-icon-button::shadow > #icon {
@@ -81,12 +90,64 @@ site-banner {
   width: 35px;
 }
 
-dropdown-panel {
-  position: absolute;
-  top: 75px;
-  left: 15px;
-  width: 240px;
-  z-index: 1000;
+core-menu-button {
+  margin-right: 10px;
+
+
+  core-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+}
+
+body /deep/ core-dropdown {
+  top: 59px;
+  max-height: calc(100vh - 58px);
+  background-color: lighten($prime_blue, 3%) !important;
+  width: calc(100vw);
+  max-width: 320px;
+  color: $prime_white;
+
+  core-menu {
+    padding: 12px 0 12px 0;
+    margin: auto 0;
+
+    core-item {
+      border-bottom: 1px solid transparentize($prime_yellow, 0.87);
+      padding-left: 16px;
+      line-height: 32px;
+      height: 32px;
+    }
+  }
+}
+
+core-dropdown {
+  top: 59px;
+  max-height: calc(100vh - 58px);
+  background-color: lighten($prime_blue, 3%) !important;
+  width: calc(100vw);
+  max-width: 320px;
+  color: $prime_white;
+
+  core-menu {
+    padding: 12px 0 12px 0;
+    margin: auto 0;
+
+    core-item {
+      border-bottom: 1px solid transparentize($prime_yellow, 0.87);
+      line-height: 32px;
+      padding-left: 16px;
+      height: 48px;
+    }
+  }
+}
+
+
+core-overlay-layer {
+  z-index: 100;
 }
 
 @media only screen and (min-width: 851px) {

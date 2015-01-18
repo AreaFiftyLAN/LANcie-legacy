@@ -3,15 +3,37 @@
 }
 
 :host .game {
-  width: 222px; height: 222px;
+  width: 222px;
+  height: 222px;
   background-position: center;
-  background-size: auto 100%;
+  background-size: 100% auto;
   color: #fff;
   margin: 10px;
 }
 
+:host .game.medium {
+  height:   calc((100vw - 64px) / 3 - 25px);
+  width:    calc((100vw - 64px) / 3 - 25px);
+  max-width: none;
+  max-height: 230px;
+}
+
+:host .game.small {
+  height:   calc((100vw - 64px) / 2 - 30px);
+  width:    calc(100% / 2 - 30px);
+  max-width: none;
+  max-height: 230px;
+}
+
+:host .game.xsmall {
+  height:   calc(100vw - 32px);
+  width:    calc(100vw - 32px);
+  /*min-width: calc((100vw - 64px) / 2 - 20px);*/
+  max-width: none;
+  max-height: 230px;
+}
+
 :host .game div {
-  /*padding: 10px;*/
   text-align: center;
   background: rgba(26, 42, 67, 0.2);
 }
@@ -53,7 +75,7 @@
 
 :host .game ul li {
   text-align: right;
-  width: 202px;
+  width: 100%;
 }
 
 :host .game ul li span:first-child {
