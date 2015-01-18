@@ -1,23 +1,25 @@
 #ready {
   position: relative;
-  margin-top: 80px;
-  padding: 30px 0 50px;
+  margin-top:50px;
+  padding: 70px 0 50px;
+  min-height: 500px;
 
-  background: url("/images/background/halo_reach.jpg");
-  background-size: 150%;
-  background-position: 50% 0%;
-  
+  background: url("/images/background/halo_reach.jpg") center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
   /deep/ {
 
     .overlay {
       position: absolute;
       top: 0; left: 0;
-      background: rgba(255, 255, 255, 0.3);
+      background: transparentize($third_blue, 0.6);
       display: block;
       height: 100%; width: 100%;
     }
 
     h1 {
+      z-index: 0;
       font-size: 3.5em;
       line-height: 1em;
       padding-bottom: 20px;
@@ -38,12 +40,13 @@
   .overlay {
     position: absolute;
     top: 0; left: 0;
-    background: rgba(255, 255, 255, 0.3);
+    background: transparentize($third_blue, 0.6);
     display: block;
     height: 100%; width: 100%;
   }
 
   h1 {
+    z-index: 0;
     font-size: 3.5em;
     line-height: 1em;
     padding-bottom: 20px;
@@ -58,5 +61,28 @@
     color: $prime_yellow;
     font-size: 24px !important;
   }
+  
+}
+
+@media only screen and (max-width: 581px) {
+
+  #ready {
+    min-height: 0;
+    background-size: auto 100%;
+
+    /deep/ {
+
+      .overlay {
+        background: transparentize($third_blue, 0.6);
+      }
+
+    }
+
+    .overlay {
+      background: transparentize($third_blue, 0.6);
+    }
+
+  }
+
   
 }

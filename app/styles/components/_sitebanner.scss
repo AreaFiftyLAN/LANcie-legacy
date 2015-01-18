@@ -27,6 +27,14 @@ site-banner {
         fill: $prime_yellow;
       }
     }
+
+    #search {
+      color: $prime_yellow;
+
+      paper-icon-button::shadow > #icon {
+        fill: $prime_yellow;
+      }
+    }
   }
 }
 
@@ -81,12 +89,41 @@ site-banner {
   width: 35px;
 }
 
-dropdown-panel {
-  position: absolute;
-  top: 75px;
-  left: 15px;
-  width: 240px;
-  z-index: 1000;
+core-menu-button {
+
+  core-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+}
+
+body {
+  /deep/ {
+    core-dropdown {
+      top: 60px;
+      max-height: calc(100vh - 60px);
+      background-color: lighten($prime_blue, 3%);
+      color: $prime_white;
+    }
+
+    core-overlay-layer {
+      z-index: 0;
+    }
+  }
+
+  core-dropdown {
+    top: 60px;
+    max-height: calc(100vh - 60px);
+    background-color: lighten($prime_blue, 3%);
+    color: $prime_white;
+  }
+
+  core-overlay-layer {
+    z-index: 0;
+  }
 }
 
 @media only screen and (min-width: 851px) {

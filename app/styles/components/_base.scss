@@ -5,6 +5,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.site-padding {
+  padding: 0 32px;
+}
+
 .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
   max-width: 1032px;
   margin: 0 auto;
@@ -63,7 +67,7 @@ body {
       display: none;
     }
 
-    .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
+    .site-padding, .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
       padding: 0 16px;
     }
 
@@ -176,8 +180,7 @@ body {
       .notonmobile {
         display: none;
       }
-
-      .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
+      .site-padding, .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
         padding: 0 16px;
       }
     }

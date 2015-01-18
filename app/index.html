@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <title>Area FiftyLAN - Gaming Event</title>
 
@@ -33,8 +35,7 @@
   <link rel="import" href="lib/lancie-sponsors/lancie-sponsors.html">
   <link rel="import" href="lib/lancie-map/lancie-map.html">
   <link rel="import" href="lib/lancie-tournaments/lancie-tournaments.html">
-  <link rel="import" href="lib/lancie-cprofile/lancie-cprofile.html">
-  <link rel="import" href="lib/lancie-profile/lancie-profile.html">
+  <link rel="import" href="lib/lancie-cprofile/lancie-cprofile.html"> 
 
   <!-- SECTIONS ELEMENTS -->
   <link rel="import" href="lib/lancie-section-about/lancie-section-about.html">
@@ -48,8 +49,33 @@
 </head>
 <body unresolved>
   <scroll-area>
-    <site-banner class="sticky" layout horizontal center start>
-      <a data-scroll href="#" class="logo" layout horizontal>
+    <site-banner class="sticky  site-padding" layout horizontal center start>
+
+      <core-menu-button>
+        <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
+        <core-dropdown class="dropdown  core-transition-left" layered>
+          <paper-shadow z="2"></paper-shadow>
+          <core-menu>
+            <core-item label="SPONSORS" horizontal center layout>
+              <a href="#sponsors" data-scroll></a>
+            </core-item>
+
+            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
+              <a data-scroll href="#event" borderless></a>
+            </core-item>
+
+            <core-item label="TICKET SALES" horizontal center layout>
+              <a data-scroll href="#event" borderless></a>
+            </core-item>
+
+            <core-item label="ABOUT US" horizontal center layout>
+              <a href="#about" data-scroll borderless></a>
+            </core-item>
+          </core-menu>
+        </core-dropdown>
+      </core-menu-button>
+
+      <a data-scroll href="#" class="logo" layout horizontal start flex>
         <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
 
@@ -58,10 +84,7 @@
           <paper-button>SPONSORS</paper-button>
         </a>
         <a data-scroll href="#event">
-          <paper-button>EVENT</paper-button>
-        </a>
-        <a data-scroll href="#tournament">
-          <paper-button>TOURNAMENTS</paper-button>
+          <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
         </a>
         <paper-button>TICKET SALES</paper-button>
         <a href="#about" data-scroll>
@@ -69,29 +92,10 @@
         </a>
       </app-bar>
 
-      <core-icon layout horizontal id="dropdown-toggle" icon="arrow-drop-down" aria-label="arrow-drop-down" ></core-icon>
-
-      <dropdown-panel>
-        <core-item icon="social:school" label="Get Started" horizontal center layout>
-          <a href="#"></a>
-        </core-item>
-
-        <core-item icon="description" label="Guides &amp; Resources" horizontal center layout>
-          <a href="#" class="paper-button" borderless sink></a>
-        </core-item>
-
-        <core-item icon="polymer" label="Elements" horizontal center layout>
-          <a href="#"></a>
-        </core-item>
-
-        <core-item icon="view-headline" label="Blog" horizontal center layout>
-          <a href="#" target="_blank"></a>
-        </core-item>
-      </dropdown-panel>
     </site-banner>
 
     <main>
-      <section id="ready">
+      <section id="ready" horizontal layout center>
         <div class="content-padding">
           <section-ready></section-ready>
         </div>
@@ -105,7 +109,7 @@
       
       <section id="event">
         <div class="content-padding">
-          <h1>Event & Tournament</h1>
+          <h1>Event &amp; Tournament</h1>
 
           <p>Vivamus in nisl felis. Mauris sit amet ex sed purus dignissim maximus. Donec in ante in enim vulputate efficitur. Donec sapien ante, porta a nibh vitae, iaculis porta erat. Curabitur scelerisque, massa facilisis porta ultrices, orci diam vulputate leo, id tempor erat purus vel orci. Etiam vel consectetur augue. Aliquam nibh felis, finibus eget tincidunt a, egestas sit amet odio. Pellentesque id nibh vulputate elit pretium vehicula nec ut quam. Curabitur eu interdum ligula. Etiam luctus venenatis urna nec posuere. Proin porta gravida pretium. Phasellus sed justo ex. Ut orci orci, aliquet non tincidunt sed, feugiat a tortor.</p>
         </div>
@@ -136,7 +140,7 @@
     <footer horizontal center layout>
       <div horizontal justified flex layout class="content-padding">
         <p id="copyright">Copyright &copy; 2015 W.I.S.V. 'Christiaan Huygens'.</p>
-        <p id="designby" class="notonmobile">Gemaakt door de 1<sup>ste</sup> LANcie der W.I.S.V. 'Christiaan Huygens'</p>
+        <p id="designby" class="notonmobile">Created by the 1<sup>ste</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</p>
       </div>
     </footer>
   </scroll-area>
