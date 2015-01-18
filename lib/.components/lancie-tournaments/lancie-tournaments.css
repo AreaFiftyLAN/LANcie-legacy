@@ -19,8 +19,8 @@
 }
 
 :host .game.small {
-  height:   calc((100vw - 32px) / 2 - 30px);
-  width:    calc((100vw - 32px) / 2 - 30px);
+  height:   calc((100vw - 64px) / 2 - 30px);
+  width:    calc(100% / 2 - 30px);
   max-width: none;
   max-height: 230px;
 }
