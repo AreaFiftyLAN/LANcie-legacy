@@ -67,15 +67,23 @@
               <a data-scroll href="#event" borderless></a>
             </core-item>
 
+            <core-item label="MY AREA" horizontal center layout>
+              <a href="#login" data-scroll borderless></a>
+            </core-item>
+
             <core-item label="ABOUT US" horizontal center layout>
               <a href="#about" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="LOGOUT" horizontal center layout>
+              <a href="#logout" data-scroll borderless></a>
             </core-item>
           </core-menu>
         </core-dropdown>
       </core-menu-button>
 
       <a data-scroll href="#" class="logo" layout horizontal start flex>
-        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="center" src="/images/logos/lancie/logo_without_date.png"></core-image>
+        <core-image preload fade sizing="contain" style="height: 40px; width: 280px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
@@ -86,8 +94,8 @@
           <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
         </a>
         <paper-button>TICKET SALES</paper-button>
-        <a href="#about" data-scroll>
-          <paper-button>ABOUT US</paper-button>
+        <a href="#login" data-scroll>
+          <paper-button>MY AREA</paper-button>
         </a>
       </app-bar>
 

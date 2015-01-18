@@ -91,6 +91,8 @@ site-banner {
 }
 
 core-menu-button {
+  margin-right: 10px;
+
 
   core-dropdown {
     position: absolute;
@@ -110,11 +112,12 @@ body /deep/ core-dropdown {
   color: $prime_white;
 
   core-menu {
-    padding: 12px 0 12px 16px;
-    margin-right: 0;
+    padding: 12px 0 12px 0;
+    margin: auto 0;
 
     core-item {
       border-bottom: 1px solid transparentize($prime_yellow, 0.87);
+      padding-left: 16px;
       line-height: 32px;
       height: 32px;
     }
@@ -130,12 +133,13 @@ core-dropdown {
   color: $prime_white;
 
   core-menu {
-    padding: 12px 0 12px 16px;
-    margin-right: 0;
+    padding: 12px 0 12px 0;
+    margin: auto 0;
 
     core-item {
       border-bottom: 1px solid transparentize($prime_yellow, 0.87);
       line-height: 32px;
+      padding-left: 16px;
       height: 48px;
     }
   }
