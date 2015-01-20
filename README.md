@@ -34,3 +34,15 @@ gulp serve
 
 1. Readable-stream error:  
   `npm install --save readable-stream`
+
+2. SyntaxError: missing } after function body on FF [pull requests aangevraagd]
+  ```
+  open core-layout-trbl.html
+  [rgl 157] change <body> to body
+  
+  open core-dropdown.html
+  [rgl 109] change <html> to html
+  [rgl 111] change <body> to body
+  ```
+
+  
