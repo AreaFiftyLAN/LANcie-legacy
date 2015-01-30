@@ -1,0 +1,53 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+
+<polymer-element name="create-account" noscript>
+  <template>
+    <link rel="stylesheet" href="/styles/elements/lancie-create-account.css">
+    
+    <form action="" layout vertical>
+      <!-- USERNAME -->
+      <div layout horizontal center>
+        <label for="username" flex two>Username</label>
+        <div flex four>
+          <paper-input-decorator name="userName" label="Username" value="">
+            <input is="core-input">
+          </paper-input-decorator>
+        </div>
+      </div>
+
+      <!-- PASSWORD -->
+      <div layout horizontal center>
+        <label for="username" flex two>Password</label>
+        <div flex four>
+          <paper-input-decorator name="userPassword" label="Password" value="">
+            <input is="core-input" type="password">
+          </paper-input-decorator>
+        </div>
+      </div>
+
+      <!-- CONFIRM PASSWORD -->
+      <div layout horizontal center>
+        <label for="username" flex two>Confirm password</label>
+        <div flex four>
+          <paper-input-decorator name="userPasswordConfirm" label="Confirm password" value="">
+            <input is="core-input" type="password">
+          </paper-input-decorator>
+        </div>
+      </div>
+
+      <!-- EMAIL -->
+      <div layout horizontal center>
+        <label for="username" flex two>Email</label>
+        <div flex four>
+          <paper-input-decorator name="userEmail" label="Email" value="">
+            <input is="core-input" type="email">
+          </paper-input-decorator>
+        </div>
+      </div>
+
+      <!-- SHINY BUTTON -->
+      <paper-button raised>SHINY BUTTON</paper-button>
+    </form>
+
+  </template>
+</polymer-element>

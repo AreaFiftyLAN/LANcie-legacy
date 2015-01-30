@@ -1,0 +1,15 @@
+@mixin outLiningBoxes($numPerRow, $margin) {
+  max-height: 250px;
+  width: ((100% - ($numPerRow - 1) * $margin) / $numPerRow);
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  &:nth-child(n) { 
+    margin: 0 $margin $margin 0; 
+  }
+  &:nth-child(#{2*$numPerRow}n + 1) { 
+    margin-right: 0; 
+  }
+}

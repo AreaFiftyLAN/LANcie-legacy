@@ -83,7 +83,7 @@ gulp.task('fonts', function () {
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/styles/*.scss',
+    'app/styles/**/*.scss',
     'app/styles/**/*.css'
   ])
     .pipe($.changed('styles', {extension: '.scss'}))
@@ -189,7 +189,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
