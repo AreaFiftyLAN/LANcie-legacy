@@ -135,11 +135,8 @@
         
         core-image {
           max-width: 230px;
-          margin-bottom: 20px;
-
-          &.small {
-            max-width: calc(25vw);
-          }
+          min-height: 142.147817412px;
+          margin-bottom: -7px;
         }
 
         ol {
@@ -166,6 +163,12 @@
         }
       }
     }
+  }
+}
+
+@-moz-document url-prefix() {
+  .game {
+    margin-bottom: 20px !important;
   }
 }
 
