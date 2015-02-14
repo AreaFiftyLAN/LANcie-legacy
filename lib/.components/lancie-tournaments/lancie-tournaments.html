@@ -43,12 +43,12 @@
             </ul>
           </div>
           <template bind="{{tourist.details as d}}">
-            <paper-action-dialog backdrop layered="false" transition="core-transition-center">
+            <paper-action-dialog backdrop layered="false" transition="core-transition-center" class="{{isPhone ? 'small-paper' :  'big-paper'}}">
               <div class="action-dialog-header" style="background-image: url({{tourist.src}});">
                 <div class="overlay"></div>
                 <h2 class="bg  trnsp  {{tourist.type}}">{{d.name}}</h2>
               </div>
-              <div class="action-dialog-content" horizontal layout>
+              <div class="action-dialog-content" horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" layout>
                 <div class="main-content" flex>
                   <p class="description">{{d.info}}</p>
                   <table class="specs">
@@ -68,10 +68,10 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="sponsor-content">
+                <div class="sponsor-content  notonmobile">
                   <core-image preload fade position="left" src="{{d.sponsors.src}}"></core-image>
 
-                  <ol start="0" class="{{tourist.type}}">
+                  <ol class="{{tourist.type}}">
                     <li class="bg  {{tourist.type}}">Prizes</li>
                     <template repeat="{{d.sponsors.prize}}">
                       <li>{{}}</li>

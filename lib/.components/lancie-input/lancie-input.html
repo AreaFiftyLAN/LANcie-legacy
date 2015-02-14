@@ -1,0 +1,20 @@
+<link rel="import" href="/lib/polymer/polymer.html">
+
+<polymer-element name="lancie-input" attributes="label, name" noscript>
+  <template>
+    <style>
+      :host paper-input {
+        width: 100%;
+      }
+    </style>
+
+    <div layout horizontal center>
+      <label for="{{name}}" flex two>{{label}}</label>
+      <div flex four>
+        <paper-input-decorator name="{{name}}" label="{{label}}" value="">
+          <input is="core-input">
+        </paper-input-decorator>
+      </div>
+    </div>
+  </template>
+</polymer-element>

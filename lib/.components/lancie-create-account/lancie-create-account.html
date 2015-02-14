@@ -1,53 +1,43 @@
 <link rel="import" href="/lib/polymer/polymer.html">
+<link rel="import" href="/lib/lancie-input/lancie-input.html">
 
-<polymer-element name="create-account" noscript>
+<polymer-element name="create-account">
   <template>
     <link rel="stylesheet" href="/styles/elements/lancie-create-account.css">
+
+    <core-ajax method="POST" auto url="http://areafiftylan.nl/api/UserController.php" body='{"foo":1, "bar":2}'></core-ajax>
     
-    <form action="" layout vertical>
-      <!-- USERNAME -->
-      <div layout horizontal center>
-        <label for="username" flex two>Username</label>
-        <div flex four>
-          <paper-input-decorator name="userName" label="Username" value="">
-            <input is="core-input">
-          </paper-input-decorator>
-        </div>
-      </div>
+    <form action="https://areafiftylan.nl/api/UserController.php" method="POST" layout vertical>
+      
+      <h3>Account</h3>
+        <lancie-input label="Username" name="uname"></lancie-input>
+        <lancie-input label="Password" name="upass" id="upass"></lancie-input>
+        <lancie-input label="Confirm password" id="ucpass"></lancie-input>
+        <lancie-input label="Email" name="email"></lancie-input>
 
-      <!-- PASSWORD -->
-      <div layout horizontal center>
-        <label for="username" flex two>Password</label>
-        <div flex four>
-          <paper-input-decorator name="userPassword" label="Password" value="">
-            <input is="core-input" type="password">
-          </paper-input-decorator>
+      <h3>Name and adress</h3>
+        <lancie-input label="Firstname" name="name"></lancie-input>
+        <lancie-input label="Initials" name="voorletters"></lancie-input>
+        <lancie-input label="Surname" name="achternaam"></lancie-input>
+        
+        <div layout horizontal center>
+          <label for="" flex two>Gender</label>
+          <core-selector selected="0" flex four>
+            <paper-button>Male</paper-button>
+            <paper-button>Female</paper-button>
+          </core-selector>
         </div>
-      </div>
 
-      <!-- CONFIRM PASSWORD -->
-      <div layout horizontal center>
-        <label for="username" flex two>Confirm password</label>
-        <div flex four>
-          <paper-input-decorator name="userPasswordConfirm" label="Confirm password" value="">
-            <input is="core-input" type="password">
-          </paper-input-decorator>
-        </div>
-      </div>
+        <lancie-input label="Address" name="adres"></lancie-input>
+        <lancie-input label="Zipcode" name="postcode"></lancie-input>
+        <lancie-input label="City" name="stad"></lancie-input>
+        <lancie-input label="Phone number" name="email"></lancie-input>
 
-      <!-- EMAIL -->
-      <div layout horizontal center>
-        <label for="username" flex two>Email</label>
-        <div flex four>
-          <paper-input-decorator name="userEmail" label="Email" value="">
-            <input is="core-input" type="email">
-          </paper-input-decorator>
-        </div>
-      </div>
 
       <!-- SHINY BUTTON -->
-      <paper-button raised>SHINY BUTTON</paper-button>
+      <paper-button raised on-click="{{clicked}}">HAHA KLIK HIER</paper-button>
     </form>
-
   </template>
+
+  <script src="/lib/lancie-create-account/lancie-create-account.js"></script>
 </polymer-element>

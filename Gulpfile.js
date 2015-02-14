@@ -115,6 +115,7 @@ gulp.task('html', function () {
     .pipe($.if('*.css', $.uncss({
       html: [
         'app/index.html',
+        'app/splashpage.html',
         'app/styleguide.html'
       ],
       // CSS Selectors for UnCSS to ignore
@@ -130,8 +131,6 @@ gulp.task('html', function () {
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
-    // Minify Any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
@@ -141,14 +140,17 @@ gulp.task('html', function () {
 gulp.task('lib', function(){
   var src = ['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
     'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'];
-  return gulp.src(src).pipe(gulp.dest('.tmp/lib'));
-
+  return gulp.src(src)
+    .pipe(gulp.dest('.tmp/lib'))
+    .pipe(gulp.dest('dist/lib'));
 });
 
 // Copy json files into .tmp folder
 gulp.task('json', function() {
   var src = ['app/json/**/*.json'];
-  return gulp.src(src).pipe(gulp.dest('.tmp/scripts/json'));
+  return gulp.src(src)
+    .pipe(gulp.dest('.tmp/scripts/json'))
+    .pipe(gulp.dest('dist/json'));
 });
 
 // Clean Output Directory
@@ -189,7 +191,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json'], cb);
 });
 
 // Run PageSpeed Insights
@@ -199,7 +201,7 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   // free (no API key) tier. You can use a Google
   // Developer API key if you have one. See
   // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-  url: 'https://example.com',
+  url: 'https://areafiftylan.nl/',
   strategy: 'mobile'
 }));
 

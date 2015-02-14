@@ -65,7 +65,7 @@
 
         li span {
           display: inline-block;
-          width: calc(50% - 1.5px);
+          width: calc(50% - 2px);
           text-align: right;
 
           &:first-child {
@@ -84,8 +84,14 @@
 
   paper-action-dialog {    
     margin: 0; padding: 0;
-    width: calc(100vw / 2);
+    width: calc(80vw);
+    max-width: 758px;
     background-color: $prime_white;
+
+    &.small-paper { 
+      width: calc(100vw); 
+      height: calc(100vh);
+    }
 
     .action-dialog-header {
       height: 160px;
@@ -130,10 +136,18 @@
         core-image {
           max-width: 230px;
           margin-bottom: 20px;
+
+          &.small {
+            max-width: calc(25vw);
+          }
         }
 
         ol {
           padding: 0; margin: -7px 0 0 0;
+
+          &.small {
+            width: calc(75vw - 20px);
+          }
 
           &.gold { background-color: transparentize($gold, 0.6); }
           &.silver { background-color: transparentize($silver, 0.6); }
