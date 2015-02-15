@@ -44,10 +44,76 @@
 
 </head>
 <body unresolved>
-    
-    <div class="content-padding" layout vertical flex>
+
+  <site-banner class="sticky  site-padding" layout horizontal center start>
+
+      <core-menu-button>
+        <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
+        <core-dropdown class="dropdown  core-transition-left" layered>
+          <paper-shadow z="2"></paper-shadow>
+          <core-menu>
+            <core-item label="SPONSORS" horizontal center layout>
+              <a href="#sponsors" data-scroll></a>
+            </core-item>
+
+            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
+              <a data-scroll href="#event" borderless></a>
+            </core-item>
+
+            <core-item label="TICKET SALES" horizontal center layout>
+              <a data-scroll href="/view/create_account.html" borderless></a>
+            </core-item>
+
+            <core-item label="MY AREA" horizontal center layout>
+              <a href="#login" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="ABOUT US" horizontal center layout>
+              <a href="#about" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="LOGOUT" horizontal center layout>
+              <a href="#logout" data-scroll borderless></a>
+            </core-item>
+          </core-menu>
+        </core-dropdown>
+      </core-menu-button>
+
+      <a data-scroll href="#" class="logo" layout horizontal start>
+        <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
+      </a>
+
+      <app-bar theme="dark" home badge class="bar  fixed">
+        <a href="#sponsors" data-scroll>
+          <paper-button>SPONSORS</paper-button>
+        </a>
+        <a data-scroll href="#event">
+          <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
+        </a>
+        <a href="/view/create_account.html">
+          <paper-button>TICKET SALES</paper-button>
+        </a>
+        <a href="#login" data-scroll>
+          <paper-button>MY AREA</paper-button>
+        </a>
+      </app-bar></site-banner>
+  
+  <main>
+    <section id="slider" horizontal layout center>
+      <div class="overlay"></div>
+    </section>
+
+    <div class="content-padding" layout vertical>
       <create-account></create-account>
-    </div>  
+    </div> 
+  </main>
+
+  <!-- <footer horizontal center layout>
+    <div horizontal justified flex layout class="content-padding">
+      <p id="copyright">Copyright &copy; 2015 W.I.S.V. 'Christiaan Huygens'.</p>
+      <p id="designby" class="notonmobile">Created by the 1<sup>ste</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</p>
+    </div>
+  </footer> -->
   
 </body>
 </html>

@@ -1,20 +1,33 @@
 <link rel="import" href="/lib/polymer/polymer.html">
 
-<polymer-element name="lancie-input" attributes="label, name" noscript>
+<polymer-element name="lancie-input" attributes="label, name, type">
   <template>
     <style>
       :host paper-input {
         width: 100%;
       }
     </style>
-
     <div layout horizontal center>
-      <label for="{{name}}" flex two>{{label}}</label>
+      <label for="{{name}}" flex two>{{label}} *</label>
       <div flex four>
-        <paper-input-decorator name="{{name}}" label="{{label}}" value="">
-          <input is="core-input">
+        <paper-input-decorator name="{{name}}" label="{{label}}" value="{{value}}" error="{{error}}">
+          <input is="core-input" type="{{type}}" value="{{value}}" committedValue="{{committedValue}}" on-change="{{changeAction}}" required>
         </paper-input-decorator>
       </div>
     </div>
   </template>
+
+  <script>
+  Polymer('lancie-input', {
+    publish: {
+      value: '',
+      committedValue: '',
+      error: 'Input is required!'
+    },
+
+    changeAction: function(e) {
+      this.fire('change', null, this);
+    }
+  });
+</script>
 </polymer-element>

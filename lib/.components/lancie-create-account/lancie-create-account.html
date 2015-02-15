@@ -1,41 +1,76 @@
 <link rel="import" href="/lib/polymer/polymer.html">
 <link rel="import" href="/lib/lancie-input/lancie-input.html">
 
+<link rel="import" href="/lib/core-animated-pages/transitions/slide-from-right.html">
+<link rel="import" href="/lib/core-animated-pages/transitions/cross-fade.html">
+
 <polymer-element name="create-account">
   <template>
     <link rel="stylesheet" href="/styles/elements/lancie-create-account.css">
-
-    <core-ajax method="POST" auto url="http://areafiftylan.nl/api/UserController.php" body='{"foo":1, "bar":2}'></core-ajax>
     
-    <form action="https://areafiftylan.nl/api/UserController.php" method="POST" layout vertical>
-      
-      <h3>Account</h3>
-        <lancie-input label="Username" name="uname"></lancie-input>
-        <lancie-input label="Password" name="upass" id="upass"></lancie-input>
-        <lancie-input label="Confirm password" id="ucpass"></lancie-input>
-        <lancie-input label="Email" name="email"></lancie-input>
+    <h1>Ticket sales - 12/13/14 Juni 2015</h1>
+    <div class="specification">
+      Area FiftyLAN is hét nieuwe gaming event van de TU Delft. Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania.
+    </div>
 
-      <h3>Name and adress</h3>
-        <lancie-input label="Firstname" name="name"></lancie-input>
-        <lancie-input label="Initials" name="voorletters"></lancie-input>
-        <lancie-input label="Surname" name="achternaam"></lancie-input>
-        
-        <div layout horizontal center>
-          <label for="" flex two>Gender</label>
-          <core-selector selected="0" flex four>
-            <paper-button>Male</paper-button>
-            <paper-button>Female</paper-button>
-          </core-selector>
-        </div>
+    <div class="progress-bar" vertical layout>
+      <div class="progress-bar-description" horizontal layout around-justified>
+        <div flex>Account</div>
+        <div flex>My data</div>
+        <div flex>Payment</div>
+        <div flex>Confirmation</div>
+      </div>
+      <paper-progress value="25"></paper-progress>
+    </div>
+  
+    <form action="#" method="POST" layout vertical>
+      <core-animated-pages on-click="{{stuff}}" transitions="cross-fade-all">
+        <section id="account">
+          <lancie-input label="Username" name="uname" id="uname" on-blur="{{checkUsername}}"></lancie-input>
+          <lancie-input label="Password" type="password" name="upass" id="upass" on-blur="{{checkPassword}}"></lancie-input>
+          <lancie-input label="Confirm password" type="password" id="ucpass" on-blur="{{checkConfirmPassword}}"></lancie-input>
+          <lancie-input label="Email" type="email" name="email" id="email" on-blur="{{checkEmail}}"></lancie-input>
 
-        <lancie-input label="Address" name="adres"></lancie-input>
-        <lancie-input label="Zipcode" name="postcode"></lancie-input>
-        <lancie-input label="City" name="stad"></lancie-input>
-        <lancie-input label="Phone number" name="email"></lancie-input>
+          <!-- SHINY BUTTON -->
+          <div class="buttons" horizontal end-justified layout center>
+            <core-label class="terms" horizontal layout>
+              <paper-checkbox for id="terms"></paper-checkbox>
+              <div vertical layout>I accept the terms of agreement</div>
+            </core-label>
+            <paper-button raised on-click="{{pageNext}}">NEXT</paper-button>
+          </div>
+        </section>
+        <section id="data">
+          <lancie-input label="Firstname" name="name"></lancie-input>
+          <lancie-input label="Initials" name="voorletters"></lancie-input>
+          <lancie-input label="Surname" name="achternaam"></lancie-input>
+            
+          <div layout horizontal center>
+            <label for="" flex two>Gender</label>
+            <core-selector selected="0" flex four>
+              <paper-button>Male</paper-button>
+              <paper-button>Female</paper-button>
+            </core-selector>
+          </div>
 
+          <lancie-input label="Address" name="adres"></lancie-input>
+          <lancie-input label="Zipcode" name="postcode"></lancie-input>
+          <lancie-input label="City" name="stad"></lancie-input>
+          <lancie-input label="Phone number" name="email"></lancie-input>
 
-      <!-- SHINY BUTTON -->
-      <paper-button raised on-click="{{clicked}}">HAHA KLIK HIER</paper-button>
+          <!-- SHINY BUTTON -->
+          <div class="buttons" horizontal justified layout>
+            <paper-button raised on-click="{{pagePrev}}">PREV</paper-button>
+            <paper-button raised on-click="{{pageNext}}">NEXT</paper-button>
+          </div>
+        </section>
+        <!-- <section>
+          <div>3</div>
+        </section>
+        <section>
+          <div>4</div>
+        </section> -->
+      </core-animated-pages>
     </form>
   </template>
 
