@@ -1,82 +1,186 @@
 [
   {
-    "title"           : "LOL",
-    "subtitle"        : "5 vs 5",
-    "src"             : "/images/background/tournaments/lol5.jpg",
-    "name"            : "League of Legends",
-    "max_players"     : "30 teams",
-    "platform"        : "PC en Mac",
-    "type"            : "gold",
-    "prize"           : "To be announced"
+    "title": "LOL",
+    "subtitle": "5 vs 5",
+    "src": "/images/background/tournaments/lol.jpg",
+    "details": {
+      "name": "League of Legends",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "/images/background/tournaments/lol.jpg",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "gold"
   },
   {
-    "title"           : "CS:GO",
-    "subtitle"        : "5 vs 5",
-    "src"             : "/images/background/tournaments/csgo.jpg",
-    "name"            : "Counter-Strike : Global Offensive",
-    "max_players"     : "30 teams",
-    "platform"        : "PC en Mac",
-    "type"            : "gold",
-    "prize"           : "To be announced"
+    "title": "CS:GO",
+    "subtitle": "5 vs 5",
+    "src": "/images/background/tournaments/csgo.jpg",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "gold"
   },
   {
-    "title"           : "SC 2",
-    "subtitle"        : "1 vs 1",
-    "src"             : "/images/background/tournaments/sc2.jpg",
-    "name"            : "Starcraft 2",
-    "max_players"     : "100 deelnemers",
-    "platform"        : "PC",
-    "type"            : "gold",
-    "prize"           : "To be announced"
+    "title": "COD4",
+    "subtitle": "5 vs 5",
+    "src": "/images/background/tournaments/cod4.jpg",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "gold"
   },
   {
-    "title"           : "LOL",
-    "subtitle"        : "1 vs 1",
-    "src"             : "/images/background/tournaments/lol1.jpg",
-    "name"            : "League of Legends",
-    "max_players"     : "100 deelnemers",
-    "platform"        : "PC en Mac",
-    "type"            : "silver",
-    "prize"           : "To be announced"
+    "title": "LOL",
+    "subtitle": "1 vs 1",
+    "src": "/images/background/tournaments/lol.jpg",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "silver"
   },
   {
-    "title"           : "FIFA",
-    "subtitle"        : "Toernooi",
-    "src"             : "/images/background/tournaments/fifa.jpg",
-    "name"            : "FIFA 14",
-    "max_players"     : "90 deelnemers",
-    "platform"        : "PC",
-    "type"            : "silver",
-    "prize"           : "To be announced"
+    "title": "FIFA",
+    "subtitle": "tournament",
+    "src": "/images/background/tournaments/fifa.jpg",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "silver"
   },
   {
-    "title"           : "COD4",
-    "subtitle"        : "5 vs 5",
-    "src"             : "/images/background/tournaments/cod4.jpg",
-    "name"            : "Call of Duty 4",
-    "max_players"     : "30 teams",
-    "platform"        : "PC en Mac",
-    "type"            : "silver",
-    "prize"           : "To be announced"
+    "title": "TMNF",
+    "subtitle": "free for all",
+    "src": "/images/background/tournaments/tmnf.jpg",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "silver"
   },
   {
-    "title"           : "TMNF",
-    "subtitle"        : "Free for all",
-    "src"             : "/images/background/tournaments/tmnf.jpg",
-    "name"            : "TrackMania United Forever",
-    "max_players"     : "100 deelnemers",
-    "platform"        : "PC en Mac",
-    "type"            : "bronze",
-    "prize"           : "To be announced"
+    "title": "UT2004",
+    "subtitle": "5 vs 5",
+    "src": "/images/background/tournaments/ut4.jpg",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "bronze"
   },
   {
-    "title"           : "Poker",
-    "subtitle"        : "Toernooi",
-    "src"             : "/images/background/tournaments/poker.jpg",
-    "name"            : "Pokertoernooi",
-    "max_players"     : "Geen maximum",
-    "platform"        : "Offline",
-    "type"            : "bronze",
-    "prize"           : "To be announced"
+    "title": "SW",
+    "subtitle": "free for all",
+    "src": "/images/background/tournaments/sw.png",
+    "details": {
+      "name": "Counter-Strike : Global Offensive",
+      "max_players": "30 teams",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "Fridag 18:00",
+      "register" : "To be announced",
+      "sponsors": {
+        "name": "To be announced",
+        "src": "http://placehold.it/230x150&text=Sponsor",
+        "prize": [
+          "Razer Kraken dingen",
+          "Dingen",
+          "Meer dingen"
+        ]
+      }
+    },
+    "type": "bronze"
   }
 ]

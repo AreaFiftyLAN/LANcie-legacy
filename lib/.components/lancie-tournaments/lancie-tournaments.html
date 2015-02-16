@@ -2,11 +2,13 @@
 <link rel="import" href="/lib/core-ajax/core-ajax.html">
 <link rel="import" href="/lib/core-media-query/core-media-query.html">
 <link rel="import" href="/lib/paper-shadow/paper-shadow.html">
+<link rel="import" href="/lib/paper-dialog/paper-dialog.html">
+<link rel="import" href="/lib/paper-dialog/paper-action-dialog.html">
 
 <polymer-element name="tournaments-element" attributes="height">
   
   <template>
-    <link rel="stylesheet" href="/lib/lancie-tournaments/lancie-tournaments.css">
+    <link rel="stylesheet" href="/styles/elements/lancie-tournaments.css">
     
     <core-media-query query="max-width: 479px" queryMatches="{{isPhone}}"></core-media-query>
     <core-media-query query="(min-width : 480px) and (max-width : 780px)" queryMatches="{{isBetween}}"></core-media-query>
@@ -17,21 +19,73 @@
     
     <div horizontal layout wrap start-justified>
       <template repeat="{{tourist in tournamentsList}}">
-          <paper-shadow z="1"></paper-shadow>
-        <div vertical layout class="game  {{isTablet ? 'medium' : ''}}  {{isBetween ? 'small' : ''}}  {{isPhone ? 'xsmall' : ''}}" style="background-image: url({{tourist.src}});">
-          <div flex>
-            <h3>{{tourist.title}}</h3>
-            <span>{{tourist.subtitle}}</span>
+        <paper-shadow z="1"></paper-shadow>
+        <div vertical layout class="game  {{isScreen ? 'large' : ''}}  {{isTablet ? 'medium' : ''}}  {{isBetween ? 'small' : ''}}  {{isPhone ? 'xsmall' : ''}}" style="background-image: url({{tourist.src}});" on-tap="{{onTapTournament}}">
+          <div class="overlay"></div>
+          <div class="content  {{tourist.type}}" flex>
+            <div class="main-info" flex>
+              <h3>{{tourist.title}}</h3>
+              <span>{{tourist.subtitle}}</span>
+            </div>
+
+            <ul class="bg  trnsp  {{tourist.type}}" end>
+              <template bind="{{tourist.details as d}}">
+                <li>
+                  <span>Max participants</span> 
+                  <span>{{d.max_players}}</span></li>
+                <li>
+                  <span>Platform</span>
+                  <span>{{d.platform}}</span></li>
+                <li>
+                  <span>Prizes</span>
+                  <span>{{d.sponsors.name}}</span></li>
+              </template>
+            </ul>
           </div>
-          <ul class="{{tourist.type}}"end>
-            <li><span>Max participants</span> <span>{{tourist.max_players}}</span></li>
-            <li><span>Platform</span> <span>{{tourist.platform}}</span></li>
-            <li><span>Prizes</span> <span>{{tourist.prize}}</span></li>
-          </ul>
+          <template bind="{{tourist.details as d}}">
+            <paper-action-dialog backdrop layered="false" transition="core-transition-center" class="{{isPhone ? 'small-paper' :  'big-paper'}}">
+              <div class="action-dialog-header" style="background-image: url({{tourist.src}});">
+                <div class="overlay"></div>
+                <h2 class="bg  trnsp  {{tourist.type}}">{{d.name}}</h2>
+              </div>
+              <div class="action-dialog-content" horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" layout>
+                <div class="main-content" flex>
+                  <p class="description">{{d.info}}</p>
+                  <table class="specs">
+                    <tbody>
+                      <tr>
+                        <td>Format</td>
+                        <td>{{tourist.subtitle}}</td>
+                      </tr>
+                      <tr>
+                        <td>Starting time</td>
+                        <td>{{d.start_time}}</td>
+                      </tr>
+                      <tr>
+                        <td>Register</td>
+                        <td>{{d.register}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sponsor-content  notonmobile">
+                  <core-image preload fade position="left" src="{{d.sponsors.src}}"></core-image>
+
+                  <ol class="{{tourist.type}}">
+                    <li class="bg  {{tourist.type}}">Prizes</li>
+                    <template repeat="{{d.sponsors.prize}}">
+                      <li>{{}}</li>
+                    </template>
+                  </ol>
+                </div>
+              </div>
+              <paper-button raised affirmative>Close</paper-button>
+            </paper-action-dialog>
+          </template>
         </div>
       </template>
     </div>
-
   </template>
+
   <script src="/lib/lancie-tournaments/lancie-tournaments.js"></script>
 </polymer-element>

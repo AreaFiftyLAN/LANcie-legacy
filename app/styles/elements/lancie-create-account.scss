@@ -1,0 +1,103 @@
+@import "components/variables";
+@import "mixins/all";
+
+:host {
+  padding: 30px 0 50px;
+
+  h1 {
+    color: $third_blue;
+    margin-bottom: 10px;
+  }
+
+  .specification {
+    margin-bottom: 32px;
+  }
+
+  .progress-bar {
+    margin-bottom: 20px;
+
+    .progress-bar-description {
+      background-color: transparentize($third_blue, 0.8);
+      padding: 10px 0 9px;
+
+      div {
+        text-align: center;
+      }
+    }
+
+    paper-progress {
+      width: 100%;
+
+      &::shadow {
+
+        #activeProgress {
+          background-color: $third_blue;
+        }
+
+        #progressContainer {
+          background-color: transparentize($third_blue, 0.6);
+        }
+      } 
+    }
+  }
+
+  .selection {
+    paper-toggle-button::shadow [checked] .toggle {
+      background-color: $third_blue;
+    }
+
+    i {
+      height: 32px; width: 32px;
+      &:nth-child(1) { margin-right: 16px; }
+      &:nth-child(3) { margin-left: 16px; }
+    }
+
+    paper-toggle-button::shadow {
+      .toggle-ink {
+        color: $third_blue;
+      }
+
+      [checked] {
+        .toggle-bar {
+          background-color: rgb(139, 139, 139);
+        }
+
+        .toggle-button {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
+
+  .terms {
+    margin-right: 32px;
+
+    paper-checkbox {
+      margin-top: 2px;
+      margin-right: 8px;
+    }
+  }
+
+  paper-input {
+    width: 100%;
+  }
+
+  core-selector {
+    paper-button {
+
+      &.core-selected {
+        background-color: $third_blue;
+        color: $prime_yellow;
+      }
+    }
+  }
+  
+  .buttons {
+    padding-top: 20px;
+
+    paper-button[raised] {
+      background-color: $prime_blue;
+      color: $prime_yellow;
+    }
+  }
+}

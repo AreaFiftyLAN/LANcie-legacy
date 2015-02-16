@@ -65,25 +65,7 @@
         </div>
         <span horizontal layout center-justified>seconds</span>
       </paper-shadow>
-
     </div>
-
-    <core-animation-group type="seq" id="raw">
-      <core-animation duration="1000">
-        <core-animation-keyframe>
-          <core-animation-prop name="transform" value="scale(1)">
-          </core-animation-prop>
-        </core-animation-keyframe>
-        <core-animation-keyframe>
-          <core-animation-prop name="transform" value="scale(1.02)">
-          </core-animation-prop>
-        </core-animation-keyframe>
-        <core-animation-keyframe>
-          <core-animation-prop name="transform" value="scale(1)">
-          </core-animation-prop>
-        </core-animation-keyframe>
-      </core-animation>
-    </core-animation-group>
   </template>
 
   <script>
@@ -101,11 +83,6 @@
       countHours: "0",
       countMinutes: "0",
       countSeconds: "0",
-
-      dayAnimation: null,
-      hoursAnimation: null,
-      minutesAnimation: null,
-      secondsAnimation: null,
 
       ready: function() {
         if (this.hasAttribute('end')) {
@@ -140,18 +117,6 @@
         this.countMinutes = 59 - this.minutes;
         this.countSeconds = 59 - this.seconds;
 
-        this.secondsAnimation = this.$.raw.cloneNode(true);
-        this.secondsAnimation.target = this.$.seconds;
-
-        this.minutesAnimation = this.$.raw.cloneNode(true);
-        this.minutesAnimation.target = this.$.minutes;
-
-        this.hoursAnimation = this.$.raw.cloneNode(true);
-        this.hoursAnimation.target = this.$.hours;
-
-        this.dayAnimation = this.$.raw.cloneNode(true);
-        this.dayAnimation.target = this.$.days;
-
         this.secondDown();
       },
 
@@ -163,7 +128,6 @@
           this.seconds = 59;
           this.countSeconds = 0;
         }
-        this.secondsAnimation.play();
         this.async(this.secondDown, null, 1000);
       },
 
@@ -177,7 +141,6 @@
           this.minutes = 59;
           this.countMinutes = 0;
         }
-        this.minutesAnimation.play();
       },
 
       hourDown: function() {
@@ -190,14 +153,12 @@
           this.hours = 23;
           this.countHours = 0;
         }
-        this.hoursAnimation.play();
       },
 
       dayDown: function() {
         if (this.days-- <= 10) {
           this.days = "0" + this.days;
         }
-        this.dayAnimation.play();
       },
     });
   </script>
