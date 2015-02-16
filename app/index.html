@@ -54,7 +54,7 @@
 </head>
 <body unresolved>
   <scroll-area>
-    <site-banner class="sticky  site-padding" layout horizontal center start>
+  <site-banner class="sticky  site-padding" layout horizontal center start>
 
       <core-menu-button>
         <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
@@ -91,7 +91,22 @@
       <a data-scroll href="#" class="logo" layout horizontal start>
         <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
+
+      <app-bar theme="dark" home badge class="bar  fixed">
+        <a href="#sponsors" data-scroll>
+          <paper-button>SPONSORS</paper-button>
+        </a>
+        <a data-scroll href="#event">
+          <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
+        </a>
+        <a href="/view/create_account.html">
+          <paper-button>TICKET SALES</paper-button>
+        </a>
+        <a href="#login" data-scroll>
+          <paper-button>MY AREA</paper-button>
+        </a>
       </app-bar></site-banner>
+
     <main>
       <section id="ready" horizontal layout center>
         <div class="content-padding">
@@ -134,13 +149,7 @@
       </section>
 
     </main>
-    
-    <footer horizontal center layout>
-      <div horizontal justified flex layout class="content-padding">
-        <p id="copyright">Copyright &copy; 2015 W.I.S.V. 'Christiaan Huygens'.</p>
-        <p id="designby" class="notonmobile">Created by the 1<sup>ste</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</p>
-      </div>
-    </footer>
+
   </scroll-area>
   
   <script src="lib/smooth-scroll/dist/js/smooth-scroll.js"></script>

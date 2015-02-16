@@ -7,6 +7,7 @@
 <polymer-element name="create-account">
   <template>
     <link rel="stylesheet" href="/styles/elements/lancie-create-account.css">
+    <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css" no-shim>
     
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
@@ -26,10 +27,10 @@
     <form action="#" method="POST" layout vertical>
       <core-animated-pages on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="account">
-          <lancie-input label="Username" name="uname" id="uname" on-blur="{{checkUsername}}"></lancie-input>
-          <lancie-input label="Password" type="password" name="upass" id="upass" on-blur="{{checkPassword}}"></lancie-input>
-          <lancie-input label="Confirm password" type="password" id="ucpass" on-blur="{{checkConfirmPassword}}"></lancie-input>
-          <lancie-input label="Email" type="email" name="email" id="email" on-blur="{{checkEmail}}"></lancie-input>
+          <lancie-input label="Username" name="uname" id="uname" on-blur="{{checkEmptyTarget}}{{checkUsername}}"></lancie-input>
+          <lancie-input label="Password" type="password" name="upass" id="upass" on-blur="{{checkEmptyTarget}}{{checkPassword}}"></lancie-input>
+          <lancie-input label="Confirm password" type="password" id="ucpass" on-blur="{{checkEmptyTarget}}{{checkConfirmPassword}}"></lancie-input>
+          <lancie-input label="Email" type="email" name="email" id="email" on-blur="{{checkEmptyTarget}}{{checkEmail}}"></lancie-input>
 
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal end-justified layout center>
@@ -41,33 +42,43 @@
           </div>
         </section>
         <section id="data">
-          <lancie-input label="Firstname" name="name"></lancie-input>
-          <lancie-input label="Initials" name="voorletters"></lancie-input>
-          <lancie-input label="Surname" name="achternaam"></lancie-input>
+          <lancie-input label="Firstname" name="name" id="name" on-blur="{{checkEmptyTarget}}"></lancie-input>
+          <lancie-input label="Initials" name="voorletters" id="voorletters" on-blur="{{checkEmptyTarget}}"></lancie-input>
+          <lancie-input label="Surname" name="achternaam" id="achternaam" on-blur="{{checkEmptyTarget}}"></lancie-input>
             
-          <div layout horizontal center>
-            <label for="" flex two>Gender</label>
-            <core-selector selected="0" flex four>
-              <paper-button>Male</paper-button>
-              <paper-button>Female</paper-button>
-            </core-selector>
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>Gender *</label>
+            <div flex four horizontal layout center>
+              <i center class="fa fa-male fa-2x"></i>
+                <paper-toggle-button id="gender"></paper-toggle-button>
+              <i class="fa fa-female fa-2x"></i>
+            </div>
           </div>
 
-          <lancie-input label="Address" name="adres"></lancie-input>
-          <lancie-input label="Zipcode" name="postcode"></lancie-input>
-          <lancie-input label="City" name="stad"></lancie-input>
-          <lancie-input label="Phone number" name="email"></lancie-input>
+          <div layout horizontal center style="height: 60px" class="selection">
+            <label for="" flex two>CH member *</label>
+            <div flex four horizontal layout center>
+              <i class="fa fa-remove fa-2x"></i>
+                <paper-toggle-button id="ch-member"></paper-toggle-button>
+              <i class="fa fa-check fa-2x"></i>
+            </div>
+          </div>
+
+          <lancie-input label="Address" name="adres" id="adres" on-blur="{{checkEmptyTarget}}"></lancie-input>
+          <lancie-input label="Zipcode" name="postcode" id="postcode" on-blur="{{checkEmptyTarget}}"></lancie-input>
+          <lancie-input label="City" name="stad" id="stad" on-blur="{{checkEmptyTarget}}"></lancie-input>
+          <lancie-input label="Phone number" name="telnr" id="telnr" on-blur="{{checkEmptyTarget}}{{checkValidPhone}}"></lancie-input>
 
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal justified layout>
-            <paper-button raised on-click="{{pagePrev}}">PREV</paper-button>
+            <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
             <paper-button raised on-click="{{pageNext}}">NEXT</paper-button>
           </div>
         </section>
-        <!-- <section>
+         <section>
           <div>3</div>
         </section>
-        <section>
+        <!-- <section>
           <div>4</div>
         </section> -->
       </core-animated-pages>

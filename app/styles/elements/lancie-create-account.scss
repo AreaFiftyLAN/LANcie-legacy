@@ -41,6 +41,34 @@
     }
   }
 
+  .selection {
+    paper-toggle-button::shadow [checked] .toggle {
+      background-color: $third_blue;
+    }
+
+    i {
+      height: 32px; width: 32px;
+      &:nth-child(1) { margin-right: 16px; }
+      &:nth-child(3) { margin-left: 16px; }
+    }
+
+    paper-toggle-button::shadow {
+      .toggle-ink {
+        color: $third_blue;
+      }
+
+      [checked] {
+        .toggle-bar {
+          background-color: rgb(139, 139, 139);
+        }
+
+        .toggle-button {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
+
   .terms {
     margin-right: 32px;
 
@@ -52,6 +80,16 @@
 
   paper-input {
     width: 100%;
+  }
+
+  core-selector {
+    paper-button {
+
+      &.core-selected {
+        background-color: $third_blue;
+        color: $prime_yellow;
+      }
+    }
   }
   
   .buttons {
