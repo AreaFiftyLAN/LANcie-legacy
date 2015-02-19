@@ -1,44 +1,58 @@
 <link rel="import" href="/lib/polymer/polymer.html">
 <link rel="import" href="/lib/lancie-input/lancie-input.html">
-<polymer-element name="pre-registration-element" noscript>
+<polymer-element name="pre-registration-element">
 
-  <template>
+    <template>
 
-    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
-    <core-media-query query="(min-width : 582px) and (max-width : 851px)" queryMatches="{{isTablet}}"></core-media-query>
+        <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
+        <core-media-query query="(min-width : 582px) and (max-width : 851px)"
+                          queryMatches="{{isTablet}}"></core-media-query>
 
-    <div horizontal?="{{!isTablet}}" vertical?="{{isTablet || isPhone}}" layout jusified>
-      <div horizontal?="{{isTablet}}" vertical?="{{!isTablet && !isPhone}}" layout class="main-sponsors {{isPhone ? 'xsmall' : ''}}" around-jusified>
-        <h1>Partners</h1>
+        <core-ajax id="preregistrationAJAX" method="POST" url="https://areafiftylan.nl/api/preregister.php"
+                   handelAs="json" params='{"name": "{{name}}", "email": "{{email}}"}'></core-ajax>
 
-        <div vertical layout flex>
-          <span>Presented by</span>
-          <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
-            <core-icon preload fade style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0;"  src="/images/logos/lancie/logo_CH.png" sizing="contain"></core-icon>
-          </div>
+        <div horizontal?="{{!isTablet}}" vertical?="{{isTablet || isPhone}}" layout jusified>
+            <div horizontal?="{{isTablet}}" vertical?="{{!isTablet && !isPhone}}" layout
+                 class="main-sponsors {{isPhone ? 'xsmall' : ''}}" around-jusified>
+                <h1>Partners</h1>
+
+                <div vertical layout flex>
+                    <span>Presented by</span>
+
+                    <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+                        <core-icon preload fade
+                                   style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0;"
+                                   src="/images/logos/lancie/logo_CH.png" sizing="contain"></core-icon>
+                    </div>
+                </div>
+                <div vertical layout flex>
+                    <span>In cooperation with</span>
+
+                    <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+                        <core-icon preload fade
+                                   style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0;"
+                                   src="/images/logos/sponsors/sc_logo.png" sizing="cover"></core-icon>
+                    </div>
+                </div>
+            </div>
+            <div vertical layout flex?="{{!isTablet && !isPhone}}" class="pre-registration">
+                <h1>Pre-registration</h1>
+
+                <p>Do you want to be informed when the ticket sales start? Enter your details below and we'll keep you
+                    informed about the sale. We will only use your email to inform you about the ticket sale. </p>
+
+                <form>
+
+                    <lancie-input id="name" label="Naam"></lancie-input>
+                    <lancie-input id="email" label="Email"></lancie-input>
+                    <div class="buttons" horizontal end-justified layout center>
+                        <paper-button raised on-click="{{submit}}">SUBMIT</paper-button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div vertical layout flex>
-          <span>In cooperation with</span>
-          <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
-            <core-icon preload fade style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0;"  src="/images/logos/sponsors/sc_logo.png" sizing="cover"></core-icon>
-          </div>
-        </div>
-      </div>
-      <div vertical layout flex?="{{!isTablet && !isPhone}}" class="pre-registration">
-        <h1>Pre-registration</h1>
 
-        <p>Do you want to be informed when the ticket sales start? Enter your details below and we'll keep you informed about the sale. We will only use your email to inform you about the ticket sale. </p>
-        <form>
-          <lancie-input label="Naam"></lancie-input>
-          <lancie-input label="Email"></lancie-input>
-          <div class="buttons" horizontal end-justified layout center>
-            <paper-button raised on-click="{{Submit}}">SUBMIT</paper-button>
-          </div>
-        </form>
-      </div>
-    </div>
+    </template>
 
-  </template>
-
-  <!--<script src="/lib/lancie-pre-registration/lancie-pre-registration.js"></script>-->
+    <script src="/lib/lancie-pre-registration/lancie-pre-registration.js"></script>
 </polymer-element>
