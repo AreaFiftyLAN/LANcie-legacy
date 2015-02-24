@@ -11,6 +11,10 @@
         <core-ajax id="preregistrationAJAX" method="POST" url="https://areafiftylan.nl/api/preregister.php"
                    handelAs="json" params='{"name": "{{name}}", "email": "{{email}}"}'></core-ajax>
 
+
+        <paper-toast text="You have succesfully pre-registered. Thank you!" id="submitToast"></paper-toast>
+
+
         <div horizontal?="{{!isTablet}}" vertical?="{{isTablet || isPhone}}" layout jusified>
             <div horizontal?="{{isTablet}}" vertical?="{{!isTablet && !isPhone}}" layout
                  class="main-sponsors {{isPhone ? 'xsmall' : ''}}" around-jusified>
