@@ -42,6 +42,7 @@
   }
 
   .selection {
+
     paper-toggle-button::shadow [checked] .toggle {
       background-color: $third_blue;
     }
@@ -78,7 +79,7 @@
     }
   }
 
-  paper-input {
+  paper-input, paper-input-decorator, paper-autogrow-textarea, textarea {
     width: 100%;
   }
 
@@ -93,11 +94,53 @@
   }
   
   .buttons {
-    padding-top: 20px;
+    padding: 20px 0 50px;
 
     paper-button[raised] {
       background-color: $prime_blue;
       color: $prime_yellow;
+    }
+
+    paper-button[disabled] {
+      background-color: transparentize(lighten($prime_blue, 30%), 0.8);
+      color: lighten($prime_yellow, 10%);
+    }
+  }
+
+  .payment-table {
+    
+    .table-head, .table-row, .table-footer {
+      padding: 5px 10px 4px;
+    }
+    
+    .table-head {
+      font-weight: bold;
+      border-bottom: 1px solid #757575;
+    }
+
+    .table-row {
+      padding: 9px 10px 8px;
+      border-bottom: 1px dashed #757575;
+      
+      div {
+        div {
+          font-weight: 350;
+        }
+
+        .desc {
+          font-size: 13px;
+          font-weight: 100;
+        }
+      }
+
+      &:nth-child(3) {
+        border-bottom: 0px;
+      }
+    }
+
+    .table-footer {
+      border-top: 1px solid #757575;
+      font-weight: bold;
     }
   }
 }

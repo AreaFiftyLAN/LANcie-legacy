@@ -1,6 +1,6 @@
 <link rel="import" href="/lib/polymer/polymer.html">
 
-<polymer-element name="lancie-input" attributes="label, name, type">
+<polymer-element name="lancie-input" attributes="label, name, type" on-blur="{{emptyCheck}}">
   <template>
     <style>
       :host paper-input {
@@ -10,8 +10,9 @@
     <div layout horizontal center>
       <label for="{{name}}" flex two>{{label}} *</label>
       <div flex four>
-        <paper-input-decorator name="{{name}}" label="{{label}}" value="{{value}}" error="{{error}}">
-          <input is="core-input" type="{{type}}" value="{{value}}" committedValue="{{committedValue}}" on-change="{{changeAction}}" required>
+        <paper-input-decorator id="decorator" name="{{name}}" label="{{label}}" value="{{value}}" error="{{error}}" 
+          isInvalid="{{isEmpty || isInValid}}">
+          <input is="core-input" type="{{type}}" value="{{value}}" committedValue="{{committedValue}}" required>
         </paper-input-decorator>
       </div>
     </div>
@@ -21,12 +22,36 @@
   Polymer('lancie-input', {
     publish: {
       value: '',
+
       committedValue: '',
-      error: 'Input is required!'
+
+      error: '',
+
+      isEmpty: null,
+
+      isInValid: null,
+
+      isValid: false,
     },
 
-    changeAction: function(e) {
-      this.fire('change', null, this);
+    observe: {
+      isEmpty: 'validChange',
+
+      isInValid: 'validChange'
+    },
+
+    emptyCheck: function() {
+      if (typeof this.value === "undefined" || this.value === "") {
+        this.error = this.label + " cannot be empty!";
+        this.isEmpty = true;
+        return;
+      }
+      this.isEmpty = false;
+      this.validChange();
+    },
+
+    validChange: function() {
+      this.isValid = (this.isEmpty == true || this.isInValid == true || (this.isEmpty == null && this.isInValid == null)) ? false : true;
     }
   });
 </script>

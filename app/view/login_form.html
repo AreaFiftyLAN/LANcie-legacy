@@ -35,16 +35,7 @@
   <link rel="import" href="/lib/lancie-scroll-area/lancie-scroll-area.html">
   <link rel="import" href="/lib/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="/lib/lancie-app-bar/lancie-app-bar.html">
-  <link rel="import" href="/lib/lancie-countdown/lancie-countdown.html">
-  <link rel="import" href="/lib/lancie-sponsors/lancie-sponsors.html">
-  <link rel="import" href="/lib/lancie-map/lancie-map.html">
-  <link rel="import" href="/lib/lancie-tournaments/lancie-tournaments.html">
-  <link rel="import" href="/lib/lancie-cprofile/lancie-cprofile.html"> 
-
-  <!-- SECTIONS ELEMENTS -->
-  <link rel="import" href="/lib/lancie-section-about/lancie-section-about.html">
-  <link rel="import" href="/lib/lancie-section-sponsors/lancie-section-sponsors.html">
-  <link rel="import" href="/lib/lancie-section-ready/lancie-section-ready.html">
+  <link rel="import" href="/lib/lancie-create-account/lancie-create-account.html">
 
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="/styles/lancie.css">
@@ -53,7 +44,7 @@
 
 </head>
 <body unresolved>
-  <scroll-area>
+
   <site-banner class="sticky  site-padding" layout horizontal center start>
 
       <core-menu-button>
@@ -88,78 +79,46 @@
         </core-dropdown>
       </core-menu-button>
 
-      <a data-scroll href="#" class="logo" layout horizontal start>
+      <a data-scroll href="/" class="logo" layout horizontal start>
         <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <a href="#sponsors" data-scroll>
-          <paper-button>SPONSORS</paper-button>
+        <a href="/" data-scroll>
+          <paper-button>HOME</paper-button>
         </a>
-        <a data-scroll href="#event">
-          <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
-        </a>
-        <a href="/view/create_account.html">
+        <a href="#">
           <paper-button>TICKET SALES</paper-button>
         </a>
         <a href="#login" data-scroll>
           <paper-button>MY AREA</paper-button>
         </a>
       </app-bar></site-banner>
-
-    <main>
-      <section id="ready" horizontal layout center>
-        <div class="content-padding">
-          <section-ready></section-ready>
-        </div>
-      </section>
-
-      <section id="sponsors">
-        <div class="content-padding">
-          <section-sponsors></section-sponsors>
-        </div>
-      </section>
-      
-      <section id="event">
-        <div class="content-padding">
-          <h1>Event &amp; Tournament</h1>
-
-          <p>Area FiftyLAN is hét nieuwe gaming event van de TU Delft. Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania. Dit is natuurlijk niet alles, de poker- en tafelvoetbalmasters onder jullie kunnen hier ook hun skills laten zien. Een slaapplek en eten voor het weekend zullen niet onder jullie zorgen vallen. Area FiftyLAN zal een begrip worden in jouw studententijd. Are you ready for the LAuNCH?</p>
-        </div>
-      </section>
-
-      <section id="tournament">
-        <div class="content-padding">
-          <tournaments-element></tournaments-element>
-        </div>
-      </section>
-
-      <section id="about">
-        <div class="content-padding">
-          <section-about></section-about>
-        </div>
-      </section>
-
-      <section id="map">
-        <lancie-map latitude="51.9951895" longitude="4.3765975" zoom="14" zoomable="false" libraries="places,geometry">
-          <google-map-marker latitude="51.9951895" longitude="4.3765975" title="Area FiftyLAN" info="AreaFiftyLAN">
-            Area FiftyLAN 2015
-          </google-map-marker>
-        </lancie-map>
-      </section>
-
-    </main>
-
-  </scroll-area>
   
-  <script src="lib/smooth-scroll/dist/js/smooth-scroll.js"></script>
-  <script>
-    smoothScroll.init({
-      speed: 1000, // Integer. How fast to complete the scroll in milliseconds
-      easing: 'easeInOutCubic', // Easing pattern to use
-      updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
-      offset: 80, // Integer. How far to offset the scrolling anchor location in pixels
-    });
-  </script>
+  <main>
+    <section id="slider" horizontal layout center>
+      <div class="overlay"></div>
+    </section>
+
+    <div class="content-padding  login-form" layout vertical>
+      <h1>My AREA Login</h1>
+      <div class="specification">
+        Mooie tekst
+      </div>
+    
+      <form action="#" method="POST" layout vertical>
+        <section id="account">
+          <lancie-input label="Username" name="uname" id="uname" on-blur="{{checkEmptyTarget}}{{checkUsername}}"></lancie-input>
+          <lancie-input label="Password" type="password" name="upass" id="upass" on-blur="{{checkEmptyTarget}}{{checkPassword}}"></lancie-input>
+
+          <!-- SHINY BUTTON -->
+          <div class="buttons" horizontal end-justified layout center>
+            <paper-button raised on-click="{{pageNext}}">LOGIN</paper-button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </main>
+  
 </body>
 </html>

@@ -21,6 +21,10 @@
 
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
+
+var coffee = require('gulp-coffee');
+var uglify = require('gulp-uglify');
+
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
@@ -153,11 +157,19 @@ gulp.task('json', function() {
     .pipe(gulp.dest('dist/json'));
 });
 
+gulp.task('coffee', function() {
+  return gulp.src('app/scripts/**/*.coffee')
+    .pipe(coffee({bare: true}).on('error', console.error.bind(console)))
+    .pipe(uglify())
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(gulp.dest('dist/scripts'));
+});
+
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'lib', 'json'], function () {
+gulp.task('serve', ['styles', 'lib', 'json', 'coffee'], function () {
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
@@ -171,6 +183,7 @@ gulp.task('serve', ['styles', 'lib', 'json'], function () {
   gulp.watch(['lib/.components/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.coffee'], ['coffee', reload]);
   gulp.watch(['app/images/**/*'], reload);
   gulp.watch(['app/json/**/*.json'], reload);
 
