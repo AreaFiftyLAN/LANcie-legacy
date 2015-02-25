@@ -58,53 +58,36 @@
   <site-banner class="sticky  site-padding" layout horizontal center start>
 
       <core-menu-button>
-        <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
+        <core-icon id="dropdown-toggle" icon="menu"></core-icon>
         <core-dropdown class="dropdown  core-transition-left" layered>
           <paper-shadow z="2"></paper-shadow>
           <core-menu>
-            <core-item label="SPONSORS" horizontal center layout>
-              <a href="#sponsors" data-scroll></a>
-            </core-item>
+            
+            <div id="logo-container" layout horizontal center>
+              <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
+            </div>
 
-            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
+            <core-item label="Pre-registration" horizontal center layout>
+              <a data-scroll href="#pre-registration" borderless></a>
+            </core-item>
+  
+            <core-item label="Event &amp; Tournaments" horizontal center layout>
               <a data-scroll href="#event" borderless></a>
-            </core-item>
-
-            <core-item label="TICKET SALES" horizontal center layout>
-              <a data-scroll href="/view/create_account.html" borderless></a>
-            </core-item>
-
-            <core-item label="MY AREA" horizontal center layout>
-              <a href="#login" data-scroll borderless></a>
-            </core-item>
-
-            <core-item label="ABOUT US" horizontal center layout>
-              <a href="#about" data-scroll borderless></a>
-            </core-item>
-
-            <core-item label="LOGOUT" horizontal center layout>
-              <a href="#logout" data-scroll borderless></a>
             </core-item>
           </core-menu>
         </core-dropdown>
       </core-menu-button>
 
-      <a data-scroll href="#" class="logo" layout horizontal start>
+      <a data-scroll href="#" class="logo" layout horizontal flex start>
         <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <a href="#sponsors" data-scroll>
-          <paper-button>SPONSORS</paper-button>
+        <a href="#pre-registration" data-scroll>
+          <paper-button>PRE-REGISTRATION</paper-button>
         </a>
         <a data-scroll href="#event">
           <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
-        </a>
-        <a href="/view/create_account.html">
-          <paper-button>TICKET SALES</paper-button>
-        </a>
-        <a href="#login" data-scroll>
-          <paper-button>MY AREA</paper-button>
         </a>
       </app-bar></site-banner>
 
@@ -120,16 +103,10 @@
           <pre-registration-element></pre-registration-element>
         </div>
       </section>
-
-      <!--<section id="sponsors">-->
-        <!--<div class="content-padding">-->
-          <!--<section-sponsors></section-sponsors>-->
-        <!--</div>-->
-      <!--</section>-->
       
       <section id="event">
         <div class="content-padding">
-          <h1>Event &amp; Tournament</h1>
+          <h1>Event &amp; Tournaments</h1>
 
           <p>Area FiftyLAN is hét nieuwe gaming event van de TU Delft. Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania. Dit is natuurlijk niet alles, de poker- en tafelvoetbalmasters onder jullie kunnen hier ook hun skills laten zien. Een slaapplek en eten voor het weekend zullen niet onder jullie zorgen vallen. Area FiftyLAN zal een begrip worden in jouw studententijd. Are you ready for the LAuNCH?</p>
         </div>

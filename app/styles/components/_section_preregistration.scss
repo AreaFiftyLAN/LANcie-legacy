@@ -6,6 +6,25 @@
     color: $prime_yellow;
   }
 
+  paper-button[raised], paper-button[raised] {
+    background-color: $prime_blue;
+    color: $prime_yellow;
+  }
+
+  #submitToast {
+    
+  }
+
+  /deep/ paper-toast {
+    bottom: 12px;
+    left: 12px;
+    width: calc(-24px + 100vw);
+
+    background-color: transparentize($prime_yellow, 0.1);
+    color: $prime_blue;
+    font-size: 16px !important;
+  }
+
   /deep/ {
 
     h1 {
@@ -20,11 +39,10 @@
         margin: 0 0 20px 0;
       }
     }
+
     .pre-registration{
-      min-height: 320px;
+      min-height: 346px;
     }
-
-
 
   }
 
@@ -39,6 +57,10 @@
     &.xsmall {
       margin: 0 0 20px 0;
     }
+  }
+
+  .pre-registration{
+    min-height: 346px;
   }
 
 

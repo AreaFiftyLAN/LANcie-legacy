@@ -87,13 +87,12 @@ site-banner {
 
 #dropdown-toggle {
   fill: $prime_yellow;
-  height: 35px;
-  width: 35px;
+  height: 28px; width: 28px;
+  cursor: pointer;
 }
 
 core-menu-button {
   margin-right: 10px;
-
 
   core-dropdown {
     position: absolute;
@@ -105,43 +104,55 @@ core-menu-button {
 }
 
 body /deep/ core-dropdown {
-  top: 59px;
-  max-height: calc(100vh - 58px);
+  max-height: calc(100vh);
   background-color: lighten($prime_blue, 3%) !important;
-  width: calc(100vw);
-  max-width: 320px;
+  width: 265px;
   color: $prime_white;
 
   core-menu {
-    padding: 12px 0 12px 0;
-    margin: auto 0;
+    margin: 0px;
+
+    #logo-container {
+      height: 80px;
+      padding-left: 24px;
+    }
 
     core-item {
       border-bottom: 1px solid transparentize($prime_yellow, 0.87);
       padding-left: 16px;
-      line-height: 32px;
-      height: 32px;
+      padding-left: 24px;
+      height: 48px;
+
+      &:nth-child(2) {
+        border-top: 1px solid transparentize($prime_yellow, 0.87);
+      }
     }
   }
 }
 
 core-dropdown {
-  top: 59px;
-  max-height: calc(100vh - 58px);
+  max-height: calc(100vh);
   background-color: lighten($prime_blue, 3%) !important;
-  width: calc(100vw);
-  max-width: 320px;
+  width: 265px;
   color: $prime_white;
 
   core-menu {
-    padding: 12px 0 12px 0;
-    margin: auto 0;
+    margin: 0px;
+
+    #logo-container {
+      height: 80px;
+      padding-left: 24px;
+    }
 
     core-item {
       border-bottom: 1px solid transparentize($prime_yellow, 0.87);
-      line-height: 32px;
       padding-left: 16px;
+      padding-left: 24px;
       height: 48px;
+
+      &:nth-child(6) {
+        border-top: 1px solid transparentize($prime_yellow, 0.87);
+      }
     }
   }
 }
@@ -178,8 +189,19 @@ core-overlay-layer {
 
 @media only screen and (max-width: 850px) {
   site-banner {
-    height: 60px;
     overflow: hidden;
+
+    a core-image {
+      height: 28px !important;
+    }
+
+    .logo {
+      margin-right: 38px;
+
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
   }
   app-bar, header, dropdown-panel { display: none; }
 }
