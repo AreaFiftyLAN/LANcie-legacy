@@ -50,6 +50,8 @@
           <div class="buttons" horizontal end-justified layout center>
             <paper-button raised on-click="{{submit}}">SUBMIT</paper-button>
           </div>
+
+          <core-a11y-keys keys="enter" on-keys-pressed="{{submit}}"></core-a11y-keys>
         </form>
       </div>
     </div>
