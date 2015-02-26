@@ -1,22 +1,22 @@
 [
   {
     "title": "LOL",
-    "subtitle": "5 vs 5",
+    "subtitle": "5 vs 5 & 1 vs 1",
     "src": "/images/background/tournaments/lol.jpg",
     "details": {
       "name": "League of Legends",
-      "max_players": "30 teams",
+      "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
+      "start_time" : "TBA",
+      "register" : "TBA",
       "sponsors": {
-        "name": "To be announced",
-        "src": "/images/background/tournaments/lol.jpg",
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
         "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
+          "TBA",
+          "TBA",
+          "TBA"
         ]
       }
     },
@@ -28,22 +28,68 @@
     "src": "/images/background/tournaments/csgo.jpg",
     "details": {
       "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
+      "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
+      "start_time" : "TBA",
+      "register" : "TBA",
       "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
         "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
+          "TBA",
+          "TBA",
+          "TBA"
         ]
       }
     },
     "type": "gold"
+  },
+  {
+    "title": "FIFA",
+    "subtitle": "1 vs 1",
+    "src": "/images/background/tournaments/fifa.jpg",
+    "details": {
+      "name": "FIFA 2014",
+      "max_players": "TBA",
+      "platform": "PC",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "TBA",
+      "register" : "TBA",
+      "sponsors": {
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
+        "prize": [
+          "TBA",
+          "TBA",
+          "TBA"
+        ]
+      }
+    },
+    "type": "gold"
+  },
+  {
+    "title": "HS",
+    "subtitle": "1 vs 1",
+    "src": "/images/background/tournaments/hs.jpg",
+    "details": {
+      "name": "Hearthstone",
+      "max_players": "TBA",
+      "platform": "PC en Mac",
+      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
+      "start_time" : "TBA",
+      "register" : "TBA",
+      "sponsors": {
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
+        "prize": [
+          "TBA",
+          "TBA",
+          "TBA"
+        ]
+      }
+    },
+    "type": "silver"
   },
   {
     "title": "COD4",
@@ -51,133 +97,87 @@
     "src": "/images/background/tournaments/cod4.jpg",
     "details": {
       "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
+      "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
+      "start_time" : "TBA",
+      "register" : "TBA",
       "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
         "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
-        ]
-      }
-    },
-    "type": "gold"
-  },
-  {
-    "title": "LOL",
-    "subtitle": "1 vs 1",
-    "src": "/images/background/tournaments/lol.jpg",
-    "details": {
-      "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
-      "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
-      "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
-        "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
+          "TBA",
+          "TBA",
+          "TBA"
         ]
       }
     },
     "type": "silver"
   },
   {
-    "title": "FIFA",
-    "subtitle": "tournament",
-    "src": "/images/background/tournaments/fifa.jpg",
-    "details": {
-      "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
-      "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
-      "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
-        "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
-        ]
-      }
-    },
-    "type": "silver"
-  },
-  {
-    "title": "TMNF",
+    "title": "TM:NF",
     "subtitle": "free for all",
     "src": "/images/background/tournaments/tmnf.jpg",
     "details": {
-      "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
+      "name": "Trackmania Nations Forever",
+      "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
+      "start_time" : "TBA",
+      "register" : "TBA",
       "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
         "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
+          "TBA",
+          "TBA",
+          "TBA"
         ]
       }
     },
     "type": "silver"
   },
   {
-    "title": "UT2004",
+    "title": "DOTA2",
     "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/ut4.jpg",
+    "src": "/images/background/tournaments/dota2.jpg",
     "details": {
-      "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
+      "name": "DOTA2",
+      "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
+      "start_time" : "TBA",
+      "register" : "TBA",
       "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
         "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
+          "TBA",
+          "TBA",
+          "TBA"
         ]
       }
     },
     "type": "bronze"
   },
   {
-    "title": "SW",
-    "subtitle": "free for all",
-    "src": "/images/background/tournaments/sw.png",
+    "title": "UT2004",
+    "subtitle": "3 vs 3",
+    "src": "/images/background/tournaments/ut4.jpg",
     "details": {
-      "name": "Counter-Strike : Global Offensive",
-      "max_players": "30 teams",
+      "name": "Unreal Tournament 2004",
+      "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "Fridag 18:00",
-      "register" : "To be announced",
+      "start_time" : "TBA",
+      "register" : "TBA",
       "sponsors": {
-        "name": "To be announced",
-        "src": "http://placehold.it/230x150&text=Sponsor",
+        "name": "TBA",
+        "src": "http://placehold.it/230x150&text=TBA",
         "prize": [
-          "Razer Kraken dingen",
-          "Dingen",
-          "Meer dingen"
+          "TBA",
+          "TBA",
+          "TBA"
         ]
       }
     },
