@@ -1,69 +1,93 @@
-<link rel="import" href="/lib/polymer/polymer.html">
-<link rel="import" href="/lib/paper-shadow/paper-shadow.html">
-
-<link rel="import" href="/lib/core-media-query/core-media-query.html">
-<link rel="import" href="/lib/core-animation/core-animation.html">
-<link rel="import" href="/lib/core-animation/core-animation-group.html">
-
-
 <polymer-element name="countdown-element" attributes="isphone">
-  <!-- <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query> -->
   <template>
+
+    <core-media-query query="max-width: 851px" queryMatches="{{isTablet}}"></core-media-query>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
     
 
     <style type="text/css">
-    :host div paper-shadow {
+    :host paper-shadow {
       margin: auto 10px;
+    }
+    :host paper-shadow.isPhone {
+      margin: auto 3px;
+    }
+    :host paper-shadow.isTablet {
+      margin: auto 5px;
+    }
+    :host .countdown-item {
       padding: 0 15px 15px;
-      height: 159px;
 
       background-color: rgba(55, 88, 140, 0.7);
-      color: rgba(255, 255, 255, 0.8);
-
+      color: rgba(255, 255, 255, 1);
       font-family: RobotoDraft, Helvetica, Arial, sans-serif !important;
     }
-    :host div paper-shadow div h1 {
-      font-size: 7em !important;
-      /*line-height: 1em !important;*/
+    :host .countdown-item div {
+      text-align: center;
+    }
+    :host .countdown-item div h1 {
+      font-size: 7em !important;  
       padding-bottom: 0 !important;
+      line-height: 1em !important;
       font-weight: bold !important;
       font-family: RobotoDraft, Helvetica, Arial, sans-serif !important;
-
-      color: rgba(255, 255, 255, 0.8) !important;
     }
-    :host div paper-shadow span {
+    :host .countdown-item span {
       color: #ffe574 !important;
+    }
+    :host .countdown-item.isTablet {
+      padding: 0 7px 7px;
+    }
+    :host .countdown-item.isTablet div h1 {
+      margin: 10px 5px 5px 5px !important;
+      font-size: 5em !important;
+      font-weight: 600 !important;
+    }
+    :host .countdown-item.isTablet.isPhone {
+      padding: 0 7px 7px;
+    }
+    :host .countdown-item.isTablet.isPhone div h1 {
+      margin: 10px 5px 5px 5px !important;
+      font-size: 3em !important;
+      font-weight: 600 !important;
     }
     </style>
     
     <div flex horizontal layout center-justified>
-      {{isPhone}}
-      <paper-shadow z="2" vertical layout>
-        <div id="days" flex horizontal layout center>
-          <h1>{{days}}</h1>
+      <paper-shadow class="{{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" z="2">
+        <div class="countdown-item {{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" layout vertical>
+          <div id="days" horizontal layout center-justified center>
+            <h1>{{days}}</h1>
+          </div>
+          <span horizontal layout center-justified center>days</span>
         </div>
-        <span horizontal layout center-justified center>days</span>
+      </paper-shadow>
+      
+       <paper-shadow class="{{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" z="2">
+        <div class="countdown-item {{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" layout vertical>
+          <div id="hours" horizontal layout center-justified center>
+            <h1>{{hours}}</h1>
+          </div>
+          <span horizontal layout center-justified center>hours</span>
+        </div>
       </paper-shadow>
 
-      <paper-shadow z="2" vertical layout>
-        <div id="hours" flex horizontal layout center>
-          <h1>{{hours}}</h1>
+       <paper-shadow class="{{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" z="2">
+        <div class="countdown-item {{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" layout vertical>
+          <div id="minutes" horizontal layout center-justified center>
+            <h1>{{minutes}}</h1>
+          </div>
+          <span horizontal layout center-justified center>minutes</span>
         </div>
-        <span horizontal layout center-justified>hours</span>
       </paper-shadow>
 
-      <paper-shadow z="2" vertical layout>  
-        <div id="minutes" flex horizontal layout center>
-          <h1>{{minutes}}</h1>
+       <paper-shadow class="{{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" z="2">
+        <div class="countdown-item {{isTablet ? 'isTablet' : ''}} {{isPhone ? 'isPhone' : ''}}" layout vertical>
+          <div id="seconds" horizontal layout center-justified center>
+            <h1>{{seconds}}</h1>
+          </div>
+          <span horizontal layout center-justified center>seconds</span>
         </div>
-        <span horizontal layout center-justified>minutes</span>
-      </paper-shadow>
-
-      <paper-shadow z="2" vertical layout>
-        <div id="seconds" flex horizontal layout center>
-          <h1>{{seconds}}</h1>
-        </div>
-        <span horizontal layout center-justified>seconds</span>
       </paper-shadow>
     </div>
   </template>
@@ -71,7 +95,7 @@
   <script>
     Polymer("countdown-element", {
 
-      end: "2015-06-12T17:00:00",
+      end: "2015-06-12T18:00:00",
 
       time: null,
       dateStr: "",

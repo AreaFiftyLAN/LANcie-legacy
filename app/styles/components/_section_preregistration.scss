@@ -11,10 +11,6 @@
     color: $prime_yellow;
   }
 
-  #submitToast {
-    
-  }
-
   /deep/ paper-toast {
     bottom: 12px;
     left: 12px;
@@ -36,7 +32,11 @@
       margin: 0 50px 20px 0;
 
       &.xsmall {
-        margin: 0 0 20px 0;
+        margin: 0 0 0 0;
+
+        .list-sponsors div:nth-child(1) a {
+          margin-right: 16px;
+        }
       }
     }
 
@@ -56,12 +56,23 @@
   }
 
   .main-sponsors {
-    margin: 0 20px 20px 0;
-    min-height: 346px;
+    margin: 0 50px 20px 0;
 
     &.xsmall {
-      margin: 0 0 20px 0;
+      margin: 0 0 0 0;
+
+      .list-sponsors div:nth-child(1) a {
+        margin-right: 16px;
+      }
     }
+  }
+
+  .pre-registration{
+    min-height: 346px;
+  }
+
+  .bottom-main-sponsor div {
+    background-position: 0% 0% !important;
   }
 
 }
