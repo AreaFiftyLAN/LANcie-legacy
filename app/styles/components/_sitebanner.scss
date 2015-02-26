@@ -182,6 +182,7 @@ core-overlay-layer {
       align-items: flex-end;
     }
   }
+
   dropdown-panel, #dropdown-toggle  {
     display: none;
   }
@@ -201,7 +202,10 @@ core-overlay-layer {
       -ms-flex-pack: center;
       -webkit-justify-content: center;
       justify-content: center;
+
+      background-position: 50% 50%;
     }
+
   }
   app-bar, header, dropdown-panel { display: none; }
 }

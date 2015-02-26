@@ -44,6 +44,10 @@
       min-height: 346px;
     }
 
+    .bottom-main-sponsor div {
+      background-position: 0% 0% !important;
+    }
+
   }
 
   h1 {
@@ -53,16 +57,11 @@
 
   .main-sponsors {
     margin: 0 20px 20px 0;
+    min-height: 346px;
 
     &.xsmall {
       margin: 0 0 20px 0;
     }
   }
-
-  .pre-registration{
-    min-height: 346px;
-  }
-
-
 
 }

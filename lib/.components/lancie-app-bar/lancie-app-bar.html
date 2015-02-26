@@ -19,10 +19,6 @@
       <content></content>
     </template>
     <span class="polymer-status-badge" hidden?="{{!badge.length}}">{{badge}}</span>
-    <div id="search" show?="{{showingSearch}}" on-click="{{toggleSearch}}">
-      <paper-icon-button icon="search"></paper-icon-button>
-      <input type="search" id="input" on-keyup="{{onKeyPress}}" autocomplete="off">
-    </div>
   </template>
   <script>
     Polymer('app-bar', {
