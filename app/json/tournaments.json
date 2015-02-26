@@ -6,13 +6,13 @@
     "details": {
       "name": "League of Legends",
       "max_players": "TBA",
-      "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "platform": "PC & Mac",
+      "info": "League of Legends (LoL) is a 2009 multiplayer online battle arena game developed and published by Riot Games. It is a free-to-play game that is inspired by the mod Defense of the Ancients for the video game Warcraft III: The Frozen Throne. In League of Legends, players assume the role of a character, called a champion, with unique abilities, battling with a team against other player-controlled champions. In the most popular game modes, each team's goal is to destroy the opposing team's nexus, a building which lies at the heart of a base protected by defensive structures.",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
-        "src": "http://placehold.it/230x150&text=TBA",
+        "src": "http://placehold.it/230x150&text=LoL",
         "prize": [
           "TBA",
           "TBA",
@@ -30,12 +30,12 @@
       "name": "Counter-Strike : Global Offensive",
       "max_players": "TBA",
       "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "info": "Counter-Strike: Global Offensive (CS:GO) is a tactical first-person shooter developed by Valve Corporation and Hidden Path Entertainment. It is the fourth game in the main Counter-Strike franchise. Like the previous games in the series, Global Offensive is an objective-based multiplayer first-person shooter. Each player joins either the Terrorist or Counter-Terrorist team and attempts to complete objectives or eliminate the enemy team. The game operates in short rounds that end when all players on one side are dead or a team's objective is completed.",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
-        "src": "http://placehold.it/230x150&text=TBA",
+        "src": "http://placehold.it/230x150&text=CS:GO",
         "prize": [
           "TBA",
           "TBA",
@@ -54,8 +54,8 @@
       "max_players": "TBA",
       "platform": "PC",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
         "src": "http://placehold.it/230x150&text=TBA",
@@ -73,15 +73,15 @@
     "subtitle": "1 vs 1",
     "src": "/images/background/tournaments/hs.jpg",
     "details": {
-      "name": "Hearthstone",
+      "name": "Hearthstone: Heroes of Warcraft",
       "max_players": "TBA",
       "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "info": "Hearthstone is a digital collectible card game that revolves around turn-based matches between two opponents. Players start the game with a substantial collection of 'basic' cards, but can gain rarer and more powerful cards through purchasing packs of cards, or as reward for competing in the Arena. Hearthstone is set within the Warcraft universe, with its characters, cards and locations drawing from existing lore.",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
-        "src": "http://placehold.it/230x150&text=TBA",
+        "src": "http://placehold.it/230x150&text=HS",
         "prize": [
           "TBA",
           "TBA",
@@ -93,18 +93,18 @@
   },
   {
     "title": "COD4",
-    "subtitle": "5 vs 5",
+    "subtitle": "5 vs 5: Search and Destroy",
     "src": "/images/background/tournaments/cod4.jpg",
     "details": {
-      "name": "Counter-Strike : Global Offensive",
+      "name": "Call of Duty 4: Modern Warfare",
       "max_players": "TBA",
       "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "info": "Call of Duty 4: Modern Warfare is a 2007 first-person shooter video game, developed by Infinity Ward and published by Activision. It is the fourth installment in the Call of Duty video game series and is the first in the Modern Warfare line of the franchise. The game breaks away from the World War II setting of previous games in the series and is instead set in modern times. ",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
-        "src": "http://placehold.it/230x150&text=TBA",
+        "src": "http://placehold.it/230x150&text=COD4:MW",
         "prize": [
           "TBA",
           "TBA",
@@ -116,18 +116,18 @@
   },
   {
     "title": "TM:NF",
-    "subtitle": "free for all",
+    "subtitle": "Free-For-All",
     "src": "/images/background/tournaments/tmnf.jpg",
     "details": {
       "name": "Trackmania Nations Forever",
       "max_players": "TBA",
       "platform": "PC en Mac",
-      "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "info": "TrackMania is a series of racing games developed by the French team Nadeo for the PC. Instead of following the usual trend of choosing a set car and track to play the game, in TrackMania the players can create their own tracks using building blocks. Unlike most other racing games, the TrackMania series lets the player race a track as many times as they want within a time limit. Players may choose to respawn at any time if they land upside down, leave the track or get off to a poor start. In multiplayer games, however, multiple cars race on the same track and cannot collide or otherwise influence each other.",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
-        "src": "http://placehold.it/230x150&text=TBA",
+        "src": "http://placehold.it/230x150&text=TM:NF",
         "prize": [
           "TBA",
           "TBA",
@@ -146,8 +146,8 @@
       "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
         "src": "http://placehold.it/230x150&text=TBA",
@@ -169,8 +169,8 @@
       "max_players": "TBA",
       "platform": "PC en Mac",
       "info": "Nulla nec scelerisque libero. Aenean ultricies, est vitae sagittis fringilla, justo tortor porttitor felis, in tincidunt erat magna ac ligula. Fusce scelerisque pellentesque nunc, lobortis venenatis lacus luctus non. Fusce laoreet in nisl ut ultrices. Maecenas volutpat eleifend iaculis.",
-      "start_time" : "TBA",
-      "register" : "TBA",
+      "start_time": "TBA",
+      "register": "TBA",
       "sponsors": {
         "name": "TBA",
         "src": "http://placehold.it/230x150&text=TBA",
