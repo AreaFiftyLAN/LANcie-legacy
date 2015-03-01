@@ -1,5 +1,3 @@
-<link rel="import" href="/lib/polymer/polymer.html">
-<link rel="import" href="/lib/lancie-input/lancie-input.html">
 <polymer-element name="pre-registration-element">
 
   <template>
@@ -14,38 +12,41 @@
     <paper-toast text="You have succesfully pre-registered. Thank you!" id="submitToast" duration="6000"></paper-toast>
 
     <div horizontal?="{{!isPhone}}" vertical?="{{isTablet}}" layout jusified>
-      <div vertical layout class="main-sponsors">
+      <div vertical layout class="main-sponsors {{isPhone ? 'xsmall' : ''}}">
         <h1>Partners</h1>
-        
-        <div vertical?="{{!isTablet && !isPhone}}" horizontal?="{{isTablet || isPhone}}" flex?="{{!isTablet && !isPhone}}" layout>
+
+        <div vertical?="{{!isTablet && !isPhone}}" horizontal?="{{isTablet || isPhone}}" class="list-sponsors" flex?="{{!isTablet && !isPhone}}" layout>
           <div vertical layout flex>
             <span>Presented by</span>
-            <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
-              <core-icon preload fade
-                     style="width: calc(100%); height: 0; padding: 120px 0 0 0;"
-                     src="/images/logos/lancie/logo_CH.png" sizing="contain" postition="start"></core-icon>
-            </div>
+            <a href="https://ch.tudelft.nl/" target="_blank">
+              <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+                <core-image preload fade
+                       style="width: 100%; height: 120px;"
+                       src="/images/logos/lancie/logo_CH.png" sizing="contain" postition="start"></core-image>
+              </div>
+            </a>
           </div>
           <div vertical layout flex>
             <span>In cooperation with</span>
-            <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
-              <core-icon preload fade
-                     class="bottom-main-sponsor"
-                     style="width: calc(100%); height: 0; padding: 120px 0 0 0;"
-                     src="/images/logos/sponsors/sc_logo.png" sizing="cover" postition="bottom"></core-icon>
-            </div>
+            <a href="http://sc.tudelft.nl/" target="_blank">
+              <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+                <core-image preload fade
+                       style="width: 100%; height: 120px;"
+                       src="/images/logos/sponsors/logo_SC.png" sizing="contain" postition="end"></core-image>
+              </div>
+            </a>
           </div>
         </div>
       </div>
 
       <div vertical layout flex?="{{!isTablet && !isPhone}}" class="pre-registration">
         <h1>Pre-registration</h1>
-        <p>Do you want to be informed when the ticket sales start? Enter your details below and we'll keep you
-          informed about the sale. We will only use your email to inform you about the ticket sale. </p>
-          
+        <p>Do you want to be informed when the ticket sale starts? Enter your details below and we'll keep you informed.
+            We will only use your email to inform you about the ticket sale.</p>
+
         <form>
-          <lancie-input id="name" label="Naam" value="{{name}}"></lancie-input>
-          <lancie-input id="email" label="Email" value="{{email}}"></lancie-input>
+          <lancie-input id="name" label="Name" value="{{name}}"></lancie-input>
+          <lancie-input id="email" label="Emailaddress" value="{{email}}"></lancie-input>
 
           <div class="buttons" horizontal end-justified layout center>
             <paper-button raised on-click="{{submit}}">SUBMIT</paper-button>
