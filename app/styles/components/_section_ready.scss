@@ -18,14 +18,28 @@
       height: 100%; width: 100%;
     }
 
-    h1 {
+    h1, h2, h3 {
       z-index: 0;
-      font-size: 3.5em;
+      margin-top: 20px;
       line-height: 1em;
-      padding-bottom: 20px;
       text-align: center;
       color: $prime_white;
-      font-family: 'Source Code Pro', ;
+      font-weight: 400;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      font-size: 3em;
+    } 
+
+    h2 {
+      font-size: 3em;
+      padding-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 2em;
+      padding-bottom: 20px;
     }
 
     paper-button {
@@ -45,14 +59,28 @@
     height: 100%; width: 100%;
   }
 
-  h1 {
+  h1, h2, h3 {
     z-index: 0;
-    font-size: 3.5em;
+    margin-top: 20px;
     line-height: 1em;
-    padding-bottom: 20px;
     text-align: center;
     color: $prime_white;
-    font-family: 'Source Code Pro', ;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 3em;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-size: 3em;
+    letter-spacing: 3px;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 2em;
   }
 
   paper-button {
@@ -64,25 +92,17 @@
   
 }
 
+@media only screen and (max-width: 851px) {
+  #ready {
+    min-height: 0;
+  }
+}
+
 @media only screen and (max-width: 581px) {
 
   #ready {
-    min-height: 0;
     background-size: auto 100%;
-
-    /deep/ {
-
-      .overlay {
-        background: transparentize($third_blue, 0.6);
-      }
-
-    }
-
-    .overlay {
-      background: transparentize($third_blue, 0.6);
-    }
-
+    padding: 30px 0 50px;
   }
-
   
 }

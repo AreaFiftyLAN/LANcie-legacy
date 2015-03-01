@@ -2,14 +2,60 @@
 <html>
 <head>
 
+  <meta charset='UTF-8'>
+  <meta name='keywords' content='area, fifty, lan, 51, 5lan, area51, area5lan, area, gaming, event, sport, culture, games, tu, delft, dota, lol, sc, cs:go, cs, go, fifa, ut2004, trackmania, tm, unreal, tournament, area51lan'>
+  <meta name='description' content='Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends.'>
+  <meta name='subject' content='Gamingevent'>
+  <meta name='copyright' content="WISV 'Christiaan Huygens'">
+  <meta name='language' content='EN'>
+  <meta name='robots' content='index,follow'>
+  <meta name='revised' content='Sunday, July 18th, 2010, 5:15 pm'>
+  <meta name='summary' content='Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends. Next to relaxed and casual gaming, there will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. That is not all! Poker and football masters can also show off in this event. A place to sleep and food for the whole weekend will be arranged. Area FiftyLAN will be an unforgettable event you do not want to miss! Are you ready for the launch?'>
+  <meta name='Classification' content='Games'>
+  <meta name='author' content='LANcie, lancie@ch.tudelft.nl'>
+  <meta name='reply-to' content='lancie@ch.tudelft.nl'>
+  <meta name='owner' content="WISV 'Christiaan Huygens'">
+  <meta name='url' content='https://areafiftylan.nl'>
+  <meta name='identifier-URL' content='https://areafiftylan.nl'>
+  <meta name='pagename' content='Area FiftyLAN - Gaming Event'>
+  <meta name='category' content='lanparty'>
+  <meta name='coverage' content='Delft'>
+  <meta name='distribution' content='Global'>
+  <meta name='rating' content='General'>
+  <meta name='revisit-after' content='14 days'>
+  <meta name='target' content='all'>
+  <meta name='HandheldFriendly' content='True'>
+  <meta name='MobileOptimized' content='320'>
+
   <title>Area FiftyLAN - Gaming Event</title>
 
-  <!-- <meta name="apple-mobile-web-app-title" content="Area FiftyLAN">
+  <!-- IPHONE -->
+  <meta name="apple-mobile-web-app-title" content="Area FiftyLAN"> <!-- New in iOS6 -->
   <meta name='apple-mobile-web-app-capable' content='yes'>
-  <meta name='apple-touch-fullscreen' content='yes'>
   <meta name='apple-mobile-web-app-status-bar-style' content='black'>
-  <meta name='format-detection' content='telephone=no'> -->
+  <meta name='format-detection' content='telephone=no'>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  
+  <!-- WINDOWS PHONE-->
+  <meta name="application-name" content="Area FiftyLAN" />
+  <meta name="msapplication-notification" content="frequency=30; polling-uri=notifications/contoso1.xml; polling-uri2=notifications/contoso2.xml; polling-uri3=notifications/contoso3.xml" />
+
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/Icon-60@3x.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/Icon-76@2x.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/Icon-72@2x.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/Icon-60@2x.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/Icon@2x.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/Icon-76.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/Icon-72.png">
+  <link rel="apple-touch-icon" href="/images/favicon/Icon.png">
+  <link rel="shortcut icon" href="/images/favicon/Icon-Small@3x.png">
+
+  <link rel="icon" sizes="192x192" href="/images/favicon/Icon-60@3x.png">
+  <link rel="icon" sizes="128x128" href="/images/favicon/Icon-72@2x.png">
+
+  <meta name="msapplication-TileImage" content="/images/favicon/Icon-72@2x.png">
+  <meta name="msapplication-TileColor" content="#1a2a43">
 
   <script src="/lib/webcomponentsjs/webcomponents.js"></script>
 
@@ -23,33 +69,50 @@
       var Platform = {flags: {shadow: true}};
     }
   </script>
-  
+
   <link rel="import" href="/lib/polymer/polymer.html">
   <link rel="import" href="/lib/font-roboto/roboto.html">
 
-  <!-- CORE ELEMENTS && PAPER ELEMENTS -->
-  <link rel="import" href="/lib/core-elements/core-elements.html">
-  <link rel="import" href="/lib/paper-elements/paper-elements.html">
+  <!-- CORE ELEMENTS -->
+  <link rel="import" href="/lib/core-a11y-keys/core-a11y-keys.html">
+  <link rel="import" href="/lib/core-ajax/core-ajax.html">
+  <link rel="import" href="/lib/core-image/core-image.html">
+  <link rel="import" href="/lib/core-media-query/core-media-query.html">
+  <link rel="import" href="/lib/core-menu/core-menu.html">
+  <link rel="import" href="/lib/core-menu-button/core-menu-button.html">
+  <link rel="import" href="/lib/core-item/core-item.html">
+  <link rel="import" href="/lib/core-dropdown/core-dropdown.html">
+
+  <!-- PAPER ELEMENTS -->
+  <link rel="import" href="/lib/paper-button/paper-button.html">
+  <link rel="import" href="/lib/paper-dialog/paper-dialog.html">
+  <link rel="import" href="/lib/paper-dialog/paper-action-dialog.html">
+  <link rel="import" href="/lib/paper-input/paper-input.html">
+  <link rel="import" href="/lib/paper-shadow/paper-shadow.html">
+  <link rel="import" href="/lib/paper-toast/paper-toast.html">
 
   <!-- OWN ELEMENTS -->
+  <link rel="import" href="/lib/lancie-input/lancie-input.html">
   <link rel="import" href="/lib/lancie-scroll-area/lancie-scroll-area.html">
+
   <link rel="import" href="/lib/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="/lib/lancie-app-bar/lancie-app-bar.html">
+
   <link rel="import" href="/lib/lancie-countdown/lancie-countdown.html">
-  <link rel="import" href="/lib/lancie-sponsors/lancie-sponsors.html">
-  <link rel="import" href="/lib/lancie-map/lancie-map.html">
+  
   <link rel="import" href="/lib/lancie-tournaments/lancie-tournaments.html">
-  <link rel="import" href="/lib/lancie-cprofile/lancie-cprofile.html"> 
+  <link rel="import" href="/lib/lancie-cprofile/lancie-cprofile.html">
+  <link rel="import" href="/lib/lancie-map/lancie-map.html">
 
   <!-- SECTIONS ELEMENTS -->
-  <link rel="import" href="/lib/lancie-section-about/lancie-section-about.html">
-  <link rel="import" href="/lib/lancie-section-sponsors/lancie-section-sponsors.html">
   <link rel="import" href="/lib/lancie-section-ready/lancie-section-ready.html">
+  <link rel="import" href="/lib/lancie-pre-registration/lancie-pre-registration.html">
+  <link rel="import" href="/lib/lancie-section-about/lancie-section-about.html">
 
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="/styles/lancie.css">
   <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css" no-shim>
-  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 </head>
 <body unresolved>
@@ -57,32 +120,21 @@
   <site-banner class="sticky  site-padding" layout horizontal center start>
 
       <core-menu-button>
-        <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
+        <core-icon id="dropdown-toggle" icon="menu"></core-icon>
         <core-dropdown class="dropdown  core-transition-left" layered>
           <paper-shadow z="2"></paper-shadow>
           <core-menu>
-            <core-item label="SPONSORS" horizontal center layout>
-              <a href="#sponsors" data-scroll></a>
+
+            <div id="logo-container" layout horizontal center>
+              <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
+            </div>
+
+            <core-item label="Pre-registration" horizontal center layout>
+              <a data-scroll href="#pre-registration" borderless></a>
             </core-item>
 
-            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
+            <core-item label="Event &amp; Tournaments" horizontal center layout>
               <a data-scroll href="#event" borderless></a>
-            </core-item>
-
-            <core-item label="TICKET SALES" horizontal center layout>
-              <a data-scroll href="/view/create_account.html" borderless></a>
-            </core-item>
-
-            <core-item label="MY AREA" horizontal center layout>
-              <a href="#login" data-scroll borderless></a>
-            </core-item>
-
-            <core-item label="ABOUT US" horizontal center layout>
-              <a href="#about" data-scroll borderless></a>
-            </core-item>
-
-            <core-item label="LOGOUT" horizontal center layout>
-              <a href="#logout" data-scroll borderless></a>
             </core-item>
           </core-menu>
         </core-dropdown>
@@ -93,17 +145,11 @@
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <a href="#sponsors" data-scroll>
-          <paper-button>SPONSORS</paper-button>
+        <a href="#pre-registration" data-scroll>
+          <paper-button>PRE-REGISTRATION</paper-button>
         </a>
         <a data-scroll href="#event">
           <paper-button>EVENT &amp; TOURNAMENTS</paper-button>
-        </a>
-        <a href="/view/create_account.html">
-          <paper-button>TICKET SALES</paper-button>
-        </a>
-        <a href="#login" data-scroll>
-          <paper-button>MY AREA</paper-button>
         </a>
       </app-bar></site-banner>
 
@@ -114,17 +160,18 @@
         </div>
       </section>
 
-      <section id="sponsors">
+      <section id="pre-registration">
         <div class="content-padding">
-          <section-sponsors></section-sponsors>
+          <pre-registration-element></pre-registration-element>
         </div>
       </section>
-      
+
       <section id="event">
         <div class="content-padding">
-          <h1>Event &amp; Tournament</h1>
+          <h1>Event &amp; Tournaments</h1>
 
-          <p>Area FiftyLAN is hét nieuwe gaming event van de TU Delft. Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania. Dit is natuurlijk niet alles, de poker- en tafelvoetbalmasters onder jullie kunnen hier ook hun skills laten zien. Een slaapplek en eten voor het weekend zullen niet onder jullie zorgen vallen. Area FiftyLAN zal een begrip worden in jouw studententijd. Are you ready for the LAuNCH?</p>
+          <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends. Next to relaxed and casual gaming, there will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. That is not all! Poker and football masters can also show off in this event. A place to sleep and food for the whole weekend will be arranged. Area FiftyLAN will be an unforgettable event you do not want to miss! Are you ready for the launch? </p>
+          <p>All official tournaments are listed below. These tournaments will be hosted by AreaFiftyLAN and there are some awesome prizes to win! Is your favorite game not listed? No worries! We will give you the opportunity to organize your own tournament. More information about how this is going to work will be available when the ticket sale starts. </p>
         </div>
       </section>
 
@@ -151,7 +198,7 @@
     </main>
 
   </scroll-area>
-  
+
   <script src="lib/smooth-scroll/dist/js/smooth-scroll.js"></script>
   <script>
     smoothScroll.init({
@@ -160,6 +207,15 @@
       updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
       offset: 80, // Integer. How far to offset the scrolling anchor location in pixels
     });
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60209049-1', 'auto');
+    ga('send', 'pageview');
   </script>
 </body>
 </html>

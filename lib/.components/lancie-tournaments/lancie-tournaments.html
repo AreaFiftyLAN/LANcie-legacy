@@ -55,15 +55,11 @@
                     <tbody>
                       <tr>
                         <td>Format</td>
-                        <td>{{tourist.subtitle}}</td>
+                        <td>{{d.format}}</td>
                       </tr>
                       <tr>
                         <td>Starting time</td>
                         <td>{{d.start_time}}</td>
-                      </tr>
-                      <tr>
-                        <td>Register</td>
-                        <td>{{d.register}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -71,7 +67,7 @@
                 <div class="sponsor-content  notonmobile">
                   <core-image preload fade position="left" src="{{d.sponsors.src}}"></core-image>
 
-                  <ol class="{{tourist.type}}">
+                  <ol class="{{tourist.type}}" start="0">
                     <li class="bg  {{tourist.type}}">Prizes</li>
                     <template repeat="{{d.sponsors.prize}}">
                       <li>{{}}</li>

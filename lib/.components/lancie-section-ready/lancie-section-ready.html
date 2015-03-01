@@ -1,19 +1,28 @@
-<link rel="import" href="/lib/polymer/polymer.html">
-<link rel="import" href="/lib/core-media-query/core-media-query.html">
-
 <polymer-element name="section-ready" noscript>
-
   <template>
-
-    <core-media-query query="max-width: 721px" queryMatches="{{isPhone}}"></core-media-query>
+    <core-media-query query="max-width: 851px" queryMatches="{{isTablet}}"></core-media-query>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
     
     <div class="overlay"></div> 
     <div vertical layout center>
-      <h1>Be ready for the LAuNCH</h1>
+      <template if="{{isTablet}}">
+        <h3>12-13-14 June 2015 &#64; Unit Sport &amp; Culture</h3>
+      </template>
+      <template if="{{!isTablet}}">
+        <h2>12-13-14 June &#64; Unit Sport &amp; Culture</h2>
+      </template>
 
-      <countdown-element end="2015-06-12T23:59:59" style="display: {{isPhone ? 'none' : 'block'}};"></countdown-element>
+      <countdown-element></countdown-element>
 
-      <div horizontal center-justified layout>
+      <template if="{{isTablet}}">
+        <h3>Be ready for the LAuNCH</h3>
+      </template>
+      <template if="{{!isTablet}}">
+        <h1>Be ready for the LAuNCH</h1>
+      </template>
+      
+
+      <!-- <div horizontal center-justified layout>
         
           <paper-button raised on-tap="{{href}}" link="/view/create_account.html">
             <core-icon icon="get-app"></core-icon>&nbsp;
@@ -21,13 +30,9 @@
             <template if="{{!isPhone}}">order your tickets now</template>
           </paper-button>
 
-      </div>
+      </div> -->
+
     </div>
 
   </template>
-
-  <script>
-    
-  </script>
-
 </polymer-element>
