@@ -9,21 +9,10 @@
 @import "components/sitebanner";
 @import "components/login_form";
 
-@import "components/section_ready";
-@import "components/section_sponsors";
-@import "components/section_event";
-@import "components/section_tournament";
-@import "components/section_about";
-@import "components/section_slider";
-@import "components/section_preregistration";
-
-@import "components/footer";
-
 body {
   display: block;
   margin: 0;
   background-color: $prime_white;
-  // @include gradient-radial-farthest($third_blue, $prime_blue);
 }
 
 lancie-map {
@@ -31,7 +20,22 @@ lancie-map {
   height: 300px;
 }
 
-.ranking {
-  fill: $prime_yellow;
+#tournament {
+  padding: 0 0 50px;
+  background: $prime_blue url('/images/svg/ranking.svg') no-repeat -50% calc(100% + 50px);
 }
 
+#event {
+  padding: 30px 0 10px;
+  background: $prime_blue;
+
+  h1 {
+    color: $prime_yellow;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $prime_white;
+    text-align: justify;
+  }
+}

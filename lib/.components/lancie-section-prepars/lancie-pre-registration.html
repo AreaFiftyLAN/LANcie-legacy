@@ -1,0 +1,25 @@
+<polymer-element name="preregistration-element">
+  <template>
+    <link rel="stylesheet" href="/lib/styles/elements/lancie-pre-registration.css">
+    <core-ajax id="preregistrationAJAX" method="POST" url="https://areafiftylan.nl/api/preregister.php"
+           handelAs="json" params='{"name": "{{name}}", "email": "{{email}}"}'></core-ajax>
+
+    <paper-toast text="You have succesfully pre-registered. Thank you!" id="submitToast" duration="6000"></paper-toast>
+
+    <h1>Pre-registration</h1>
+    <p>Do you want to be informed when the ticket sale starts? Enter your details below and we'll keep you informed. We will only use your email to inform you about the ticket sale.</p>
+
+    <form>
+      <lancie-input id="name" label="Name" value="{{name}}"></lancie-input>
+      <lancie-input id="email" label="Emailaddress" value="{{email}}"></lancie-input>
+
+      <div class="buttons" horizontal end-justified layout center>
+        <paper-button raised on-click="{{submit}}">SUBMIT</paper-button>
+      </div>
+
+      <core-a11y-keys keys="enter" on-keys-pressed="{{submit}}"></core-a11y-keys>
+    </form>
+
+  </template>
+  <script src="/lib/scripts/elements/lancie-pre-registration.js"></script>
+</polymer-element>

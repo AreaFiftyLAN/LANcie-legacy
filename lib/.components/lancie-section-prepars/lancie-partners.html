@@ -1,0 +1,32 @@
+<polymer-element name="partners-element" noscript>
+  <template>
+    <core-media-query query="max-width: 851px" queryMatches="{{isTablet}}"></core-media-query>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
+  
+    <h1>Partners</h1>
+
+    <div vertical?="{{!isTablet && !isPhone}}" horizontal?="{{isTablet}}" class="list-sponsors" flex?="{{!isTablet && !isPhone}}" layout>
+      <div vertical layout flex?="{{isTablet}}">
+        <span>Presented by</span>
+        <a href="https://ch.tudelft.nl/" target="_blank">
+          <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+            <core-image preload fade
+                   style="width: 100%; height: 120px;"
+                   src="/images/logos/lancie/logo_CH.png" sizing="contain" postition="start"></core-image>
+          </div>
+        </a>
+      </div>
+      <div vertical layout flex?="{{isTablet}}">
+        <span>In cooperation with</span>
+        <a href="http://sc.tudelft.nl/" target="_blank">
+          <div style="width: {{isTablet || isPhone ? '100%' : '250px'}};">
+            <core-image preload fade
+                   style="width: 100%; height: 120px;"
+                   src="/images/logos/sponsors/logo_SC.png" sizing="contain" postition="end"></core-image>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </template>
+</polymer-element>

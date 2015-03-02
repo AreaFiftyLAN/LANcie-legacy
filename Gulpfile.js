@@ -25,6 +25,9 @@ var gulp = require('gulp');
 var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
 
+var minifyCSS = require('gulp-minify-css');
+var rename = require('gulp-rename');
+
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
@@ -79,8 +82,8 @@ gulp.task('copy', function () {
 // Copy Web Fonts To Dist
 gulp.task('fonts', function () {
   return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size({title: 'fonts'}));
+    .pipe(gulp.dest('dist/lib/fonts'))
+    .pipe($.size({title: 'lib/fonts'}));
 });
 
 // Compile and Automatically Prefix Stylesheets
@@ -97,12 +100,10 @@ gulp.task('styles', function () {
     }))
     .on('error', console.error.bind(console))
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe(gulp.dest('.tmp/styles'))
-    // Concatenate And Minify Styles
-    // This throws some random error, not sure if needed.
-    //.pipe($.if('*.css', $.csso()))
-    .pipe(gulp.dest('dist/styles'))
-    .pipe($.size({title: 'styles'}));
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('.tmp/lib/styles'))
+    .pipe(gulp.dest('dist/lib/styles'))
+    .pipe($.size({title: 'lib/styles'}));
 });
 
 // Scan Your HTML For Assets & Optimize Them
@@ -145,24 +146,23 @@ gulp.task('lib', function(){
   var src = ['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
     'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'];
   return gulp.src(src)
-    .pipe(gulp.dest('.tmp/lib'))
-    .pipe(gulp.dest('dist/lib'));
+    .pipe(gulp.dest('.tmp/lib/components'))
+    .pipe(gulp.dest('dist/lib/components'));
 });
 
 // Copy json files into .tmp folder
 gulp.task('json', function() {
   var src = ['app/json/**/*.json'];
   return gulp.src(src)
-    .pipe(gulp.dest('.tmp/scripts/json'))
-    .pipe(gulp.dest('dist/json'));
+    .pipe(gulp.dest('.tmp/lib/scripts/json'));
 });
 
 gulp.task('coffee', function() {
   return gulp.src('app/scripts/**/*.coffee')
     .pipe(coffee({bare: true}).on('error', console.error.bind(console)))
     .pipe(uglify())
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(gulp.dest('dist/scripts'));
+    .pipe(gulp.dest('.tmp/lib/scripts'))
+    .pipe(gulp.dest('dist/lib/scripts'));
 });
 
 // Clean Output Directory
