@@ -1,0 +1,84 @@
+[
+  {
+    "title": "Arcade",
+    "subtitle": "machines",
+    "src": "/images/background/events/airhockey.jpg",
+    "details": {
+      "name": "Airhockey, Pinball & Table football",
+      "max_players": "2",
+      "info": "Challenge your opponent for a fast-paced game of airhockey, attempt to set the weekend high-score on the pinball machine or challenge your friends to a game of table football",
+      "start_time": "-",
+      "sponsors": {
+        "name": "-",
+        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "prize": [
+        ]
+      }
+    },
+    "type": "gold"
+  },
+  {
+    "title": "Retro",
+    "subtitle": "Consoles",
+    "src": "/images/background/events/mariokart.png",
+    "details": {
+      "name": "Retro gaming consoles",
+      "max_players": "TBA",
+      "platform": "PC & Mac",
+      "info": "Forget about fancy graphics, realistic physics or even 3D. 8-bit is what it's all about! Bring back those nostalgic memories by beating everyone with Mario Kart, collecting every single banana in Donkey Kong and shoot all the ducks with Duck Hunt! There will be several retro consoles available in the Launch Area to relax and bring back the good old days!",
+      "start_time": "-",
+      "format": "",
+      "sponsors": {
+        "name": "TBA",
+        "src": "/images/logos/sponsors/tournaments/CSGO.gif",
+        "prize": [
+
+        ]
+      }
+    },
+    "type": "gold"
+  },
+  {
+    "title": "Poker",
+    "subtitle": "Tournament",
+    "src": "/images/background/events/poker.jpg",
+    "details": {
+      "name": "FIFA 2014",
+      "max_players": "TBA",
+      "platform": "PC",
+      "info": "Face to Face, instead of Screen to Screen. Read your opponents and bluff your way to the finals! Details about the organisation of this tournament will be published when the ticket sale starts. ",
+      "start_time": "TBA",
+      "format": "TBA",
+      "sponsors": {
+        "name": "TBA",
+        "src": "/images/logos/sponsors/tournaments/FIFA.gif",
+        "prize": [
+          "TBA",
+          "TBA",
+          "TBA"
+        ]
+      }
+    },
+    "type": "gold"
+  },
+  {
+    "title": "Sports",
+    "subtitle": "Morning gymnastics",
+    "src": "/images/background/events/sports.jpg",
+    "details": {
+      "name": "Morning Gymnastics",
+      "max_players": "TBA",
+      "platform": "",
+      "info": "After a night of gaming and some well deserved sleep, it's time to charge up for another day of gaming! Join us for a refreshing morning gymnastics session to make the best of your weekend!",
+      "start_time": "TBA",
+      "format": "",
+      "sponsors": {
+        "name": "TBA",
+        "src": "/images/logos/sponsors/tournaments/HS.gif",
+        "prize": [
+        ]
+      }
+    },
+    "type": "gold"
+  }
+]

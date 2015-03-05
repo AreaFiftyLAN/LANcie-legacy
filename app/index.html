@@ -35,7 +35,7 @@
   <meta name='apple-mobile-web-app-status-bar-style' content='black'>
   <meta name='format-detection' content='telephone=no'>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
-  
+
   <!-- WINDOWS PHONE-->
   <meta name="application-name" content="Area FiftyLAN" />
   <meta name="msapplication-notification" content="frequency=30; polling-uri=notifications/contoso1.xml; polling-uri2=notifications/contoso2.xml; polling-uri3=notifications/contoso3.xml" />
@@ -99,8 +99,9 @@
   <link rel="import" href="/lib/lancie-app-bar/lancie-app-bar.html">
 
   <link rel="import" href="/lib/lancie-countdown/lancie-countdown.html">
-  
+
   <link rel="import" href="/lib/lancie-tournaments/lancie-tournaments.html">
+  <link rel="import" href="/lib/lancie-events/lancie-events.html">
   <link rel="import" href="/lib/lancie-cprofile/lancie-cprofile.html">
   <link rel="import" href="/lib/lancie-map/lancie-map.html">
 
@@ -168,16 +169,26 @@
 
       <section id="event">
         <div class="content-padding">
-          <h1>Event &amp; Tournaments</h1>
+          <h1>Area FiftyLAN</h1>
 
-          <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends. Next to relaxed and casual gaming, there will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. That is not all! Poker and football masters can also show off in this event. A place to sleep and food for the whole weekend will be arranged. Area FiftyLAN will be an unforgettable event you do not want to miss! Are you ready for the launch? </p>
-          <p>All official tournaments are listed below. These tournaments will be hosted by AreaFiftyLAN and there are some awesome prizes to win! Is your favorite game not listed? No worries! We will give you the opportunity to organize your own tournament. More information about how this is going to work will be available when the ticket sale starts. </p>
+          <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play any game you want, whether that's The Sims, Age of Empires 2 or Minecraft, you decide!</p>
+
+          <p>A place to sleep and food for the whole weekend will be arranged. Area FiftyLAN will be an unforgettable event you do not want to miss! Are you ready for the launch?</p>
+
+          <p>That is not all! There will be plenty to do offline as well. Poker and foosball masters can also show off in this event. In the Launch Area, you'll find pinball machines, airhockey tables and various retro gaming consoles. An overview of everything to do can be found below.</p>
+            <events-element></events-element>
+
         </div>
+
       </section>
+
+
 
       <section id="tournament">
         <div class="content-padding">
-          <tournaments-element></tournaments-element>
+            <h1>Official Tournaments</h1>
+            <p>All official tournaments are listed below. These tournaments will be hosted by AreaFiftyLAN and there are some awesome prizes to win! Is your favorite game not listed? No worries! If you have a great idea for a tournament, we will give you the opportunity to organize your own. More information about how this is going to work will be available when the ticket sale starts.</p>
+            <tournaments-element></tournaments-element>
         </div>
       </section>
 
