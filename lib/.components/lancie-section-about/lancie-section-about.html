@@ -1,6 +1,4 @@
-<link rel="import" href="/lib/polymer/polymer.html">
-<link rel="import" href="/lib/core-media-query/core-media-query.html">
-
+<link rel="import" href="lancie-commission-members.html">
 <polymer-element name="section-about" noscript>
 
   <template>
@@ -9,36 +7,24 @@
     <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{isTablet}}"></core-media-query>
     <core-media-query query="min-width: 1032px" queryMatches="{{isScreen}}"></core-media-query>
 
-    <style>
-    :host h1 {
-      margin-bottom: 16px;
-    }
-
-    :host .text {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-
-    :host .text[flex] {
-      margin-right: 20px;
-      margin-bottom: 0;
-    }
-    </style>
+    <link rel="stylesheet" href="/lib/styles/elements/lancie-section-about.css">
     
-    <template if="{{isScreen}}">
-      <h1>1<sup>ste</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</h1>
-    </template>
+    <div class="container">
+      <template if="{{isScreen}}">
+        <h1>1<sup>st</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</h1>
+      </template>
 
-    <template if="{{!isScreen}}">
-      <h1>About us</h1>
-    </template>
-    
-    <div horizontal?="{{isScreen}}" vertical?="{{!isScreen}}" layout>
-      <div class="text" flex?="{{isScreen}}">
-        De LANcie is de nieuwste en vetste commisie van W.I.S.V ‘Christiaan Huygens’. Deze club geweldige superhelden zal ervoor zorgen dat jullie dit gaming evenement nooit meer zullen vergeten! De LANcie bijt niet én is niet bang voor vragen of een goed gesprek over gaming, eten, UTP-kabels of netwerken. Van het begin tot het einde van dit avontuur zullen wij jullie bijstaan. Met buitenaardse groet en tot Area FiftyLAN, de LANcie!
-      </div>
-      <div class="members" flex?="{{isScreen}}" two?="{{isScreen}}">
-        <cprofile-element horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" ></cprofile-element>
+      <template if="{{!isScreen}}">
+        <h1>About us</h1>
+      </template>
+      
+      <div horizontal?="{{isScreen}}" vertical?="{{!isScreen}}" layout>
+        <div class="text" flex?="{{isScreen}}">
+          <content></content>
+        </div>
+        <div class="members" flex?="{{isScreen}}" two?="{{isScreen}}">
+          <commission-members horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" ></commission-members>
+        </div>
       </div>
     </div>
 

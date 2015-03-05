@@ -45,6 +45,10 @@ gulp serve
   [rgl 111] change <body> to body
   ```
 
+#### Create new element
+
+1. Create a folder in `/lib/.components/` starting with lancie-
+2. Comming soon...
 
 #### Google Analytics
 ```
@@ -54,9 +58,8 @@ gulp serve
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-59144260-1', 'auto');
+  ga('create', 'UA-60209049-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 ```
   

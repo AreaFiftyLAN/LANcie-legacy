@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>Area FiftyLAN - Gaming Event</title>
+
+  <!-- <meta name="apple-mobile-web-app-title" content="Area FiftyLAN">
+  <meta name='apple-mobile-web-app-capable' content='yes'>
+  <meta name='apple-touch-fullscreen' content='yes'>
+  <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+  <meta name='format-detection' content='telephone=no'> -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+
+  <script src="/lib/webcomponentsjs/webcomponents.js"></script>
+
+  <!--
+  Chrome 35 has old :host behavior before :host-context addition.
+  Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
+  to force the ShadowDOM Polyfill.
+  -->
+  <script>
+    if (!('import' in document.createElement('link'))) {
+      var Platform = {flags: {shadow: true}};
+    }
+  </script>
+  
+  <link rel="import" href="/lib/polymer/polymer.html">
+  <link rel="import" href="/lib/font-roboto/roboto.html">
+
+  <!-- CORE ELEMENTS && PAPER ELEMENTS -->
+  <link rel="import" href="/lib/core-elements/core-elements.html">
+  <link rel="import" href="/lib/paper-elements/paper-elements.html">
+
+  <!-- OWN ELEMENTS -->
+  <link rel="import" href="/lib/lancie-scroll-area/lancie-scroll-area.html">
+  <link rel="import" href="/lib/lancie-site-banner/lancie-site-banner.html">
+  <link rel="import" href="/lib/lancie-app-bar/lancie-app-bar.html">
+  <link rel="import" href="/lib/lancie-create-account/lancie-create-account.html">
+
+  <!-- STYLESHEET -->
+  <link rel="stylesheet" href="/styles/lancie.css">
+  <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css" no-shim>
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+</head>
+<body unresolved>
+
+  <site-banner class="sticky  site-padding" layout horizontal center start>
+
+      <core-menu-button>
+        <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
+        <core-dropdown class="dropdown  core-transition-left" layered>
+          <paper-shadow z="2"></paper-shadow>
+          <core-menu>
+            <core-item label="SPONSORS" horizontal center layout>
+              <a href="#sponsors" data-scroll></a>
+            </core-item>
+
+            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
+              <a data-scroll href="#event" borderless></a>
+            </core-item>
+
+            <core-item label="TICKET SALES" horizontal center layout>
+              <a data-scroll href="/view/create_account.html" borderless></a>
+            </core-item>
+
+            <core-item label="MY AREA" horizontal center layout>
+              <a href="#login" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="ABOUT US" horizontal center layout>
+              <a href="#about" data-scroll borderless></a>
+            </core-item>
+
+            <core-item label="LOGOUT" horizontal center layout>
+              <a href="#logout" data-scroll borderless></a>
+            </core-item>
+          </core-menu>
+        </core-dropdown>
+      </core-menu-button>
+
+      <a data-scroll href="/" class="logo" layout horizontal start>
+        <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
+      </a>
+
+      <app-bar theme="dark" home badge class="bar  fixed">
+        <a href="/" data-scroll>
+          <paper-button>HOME</paper-button>
+        </a>
+        <a href="#">
+          <paper-button>TICKET SALES</paper-button>
+        </a>
+        <a href="#login" data-scroll>
+          <paper-button>MY AREA</paper-button>
+        </a>
+      </app-bar></site-banner>
+  
+  <main>
+    <section id="slider" horizontal layout center>
+      <div class="overlay"></div>
+    </section>
+
+    <div class="content-padding  login-form" layout vertical>
+      <h1>My AREA Login</h1>
+      <div class="specification">
+        Mooie tekst
+      </div>
+    
+      <form action="#" method="POST" layout vertical>
+        <section id="account">
+          <lancie-input label="Username" name="uname" id="uname" on-blur="{{checkEmptyTarget}}{{checkUsername}}"></lancie-input>
+          <lancie-input label="Password" type="password" name="upass" id="upass" on-blur="{{checkEmptyTarget}}{{checkPassword}}"></lancie-input>
+
+          <!-- SHINY BUTTON -->
+          <div class="buttons" horizontal end-justified layout center>
+            <paper-button raised on-click="{{pageNext}}">LOGIN</paper-button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </main>
+  
+</body>
+</html>

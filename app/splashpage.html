@@ -24,15 +24,15 @@
     }
   </script>
   
-  <link rel="import" href="lib/polymer/polymer.html">
+  <link rel="import" href="/lib/polymer/polymer.html">
   <link rel="import" href="/lib/font-roboto/roboto.html">
 
   <!-- CORE ELEMENTS && PAPER ELEMENTS -->
   <link rel="import" href="/lib/core-elements/core-elements.html">
-  <link rel="import" href="/lib/paper-button/paper-button.html">
+  <link rel="import" href="/lib/paper-elements/paper-elements.html">
 
   <!--  -->
-  <link rel="import" href="/lib/lancie-input/lancie-input.html">  
+  <link rel="import" href="/lib/lancie-input/lancie-input.html">
 
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="lib/components-font-awesome/css/font-awesome.min.css" no-shim>
@@ -54,16 +54,12 @@
 </head>
 <body unresolved>
   <core-image style="width: calc(100vw + 10%); position: absolute; top: -25%; left: -10%; opacity: 0.21;" src="/images/top_secret.png"></core-image>
-  <div layout vertical>
-    <div layout horizontal flex three>
-      <core-image preload fade style="width: calc(80vw); height: calc(60vh); background-image: url(https://areafiftylan.nl/common/images/png/slash_stuff.png); background-size: contain; background-position: 50% 50%; background-repeat: no-repeat;" sizing="contain" position="center" src="/images/slash_stuff.png"></core-image>
+  <div vertical layout>
+    <div horizontal center-justified layout flex two>
+      <core-image preload="" fade="" style="width: calc(80vw); height: calc(50vh); background-image: url(https://areafiftylan.nl/common/images/png/slash_stuff.png); background-size: contain; background-position: 50% 50%; background-repeat: no-repeat;" sizing="contain" position="center" src="common/images/png/slash_stuff.png"></core-image>
     </div>
-    <div layout horizontal flex two>
-      <form action="" method="POST" layout vertical>
-        <lancie-input label="Firstname" name="name"></lancie-input>
-        <lancie-input label="Firstname" name="name"></lancie-input>
-        <submit></submit>
-      </form>
+    <div vertical layout style="width: calc(80vw); height: calc(50vh);">
+      
     </div>
   </div>
 </body>

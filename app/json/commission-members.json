@@ -1,0 +1,37 @@
+[
+  {
+    "function"    : "Chairman",
+    "name"        : "Sille Kamoen",
+    "icon"        : "group"
+  },
+  {
+    "function"    : "Secretary",
+    "name"        : "Rebecca Glans",
+    "icon"        : "female"
+  },
+  {
+    "function"    : "Treasurer",
+    "name"        : "Sven Popping",
+    "icon"        : "money"
+  },
+  {
+    "function"    : "Commissioner Promo",
+    "name"        : "Wouter Kooyman",
+    "icon"        : "bullhorn"
+  },
+  {
+    "function"    : "Commissioner of Logistics",
+    "name"        : "Nordin van Nes",
+    "icon"        : "truck"
+  },
+  {
+    "function"    : "Commissioner System",
+    "name"        : "Paul vd Knaap",
+    "icon"        : "cogs"
+  },
+  {
+    "function"    : "Qualitate Qua",
+    "name"        : "Daniël Swaab",
+    "icon"        : "heart"
+  }
+]
