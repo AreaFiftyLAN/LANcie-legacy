@@ -17,4 +17,14 @@
     &.xsmall { @include outLiningBoxes(1, 4%); }
   }
 
+  ::content h1 {
+    color: $prime_yellow;
+    margin-bottom: 10px;
+  }
+
+  ::content p {
+    color: $prime_white;
+    text-align: justify;
+  }
+
 }

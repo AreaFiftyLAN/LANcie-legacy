@@ -11,6 +11,7 @@
 
     <core-ajax id="tournamentsAJAX" auto url="/lib/scripts/json/tournaments.json" handleAs="json"></core-ajax>
     
+    <content></content>
     <div class="container" horizontal layout wrap start-justified>
       <template repeat="{{tourist in tournamentsList}}">
         <tournament-element class="{{isScreen ? 'large' : ''}} {{isTablet ? 'medium' : ''}}  {{isBetween ? 'small' : ''}} {{isPhone ? 'xsmall' : ''}}" style="background-image: url({{tourist.src}});" data="{{tourist}}"></tournament-element>
