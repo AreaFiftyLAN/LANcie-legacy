@@ -5,12 +5,13 @@
 <polymer-element name="section-prepars" attributes="mode" noscript>
   <template>
     <link rel="stylesheet" href="/lib/styles/elements/lancie-section-prepars.css">
+
     <core-media-query query="max-width: 851px" queryMatches="{{isTablet}}"></core-media-query>
     <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
 
     <div class="container" horizontal?="{{!isPhone}}" vertical?="{{isTablet}}" layout jusified>
       <div vertical layout class="main-sponsors {{isPhone ? 'xsmall' : ''}}">
-        <partners-element></partners-element>
+        <partners-element class="{{isTablet ? 'xsmall' : ''}}"></partners-element>
       </div>
 
       <div vertical layout flex?="{{!isTablet && !isPhone}}" class="pre-registration  secondary-sponsors">

@@ -25,7 +25,7 @@
   <meta name='revisit-after' content='14 days'>
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
-  <meta name='MobileOptimized' content='320'>
+  <meta name='MobileOptimized' content='400'>
 
   <title>Area FiftyLAN - Gaming Event</title>
 
@@ -99,13 +99,12 @@
   <link rel="import" href="/lib/components/lancie-scroll-area/lancie-scroll-area.html">
   <link rel="import" href="/lib/components/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="/lib/components/lancie-app-bar/lancie-app-bar.html">
-  <!-- <link rel="import" href="/lib/components/lancie-countdown/lancie-countdown.html"> -->
   
   
   <link rel="import" href="/lib/components/lancie-map/lancie-map.html">
 
   <!-- SECTIONS ELEMENTS -->
-  <!-- <link rel="import" href="/lib/components/lancie-section-ready/lancie-section-ready.html"> -->
+  <link rel="import" href="/lib/components/lancie-section-slider/lancie-section-ready.html">
   <link rel="import" href="/lib/components/lancie-section-prepars/lancie-section-prepars.html">
   <link rel="import" href="/lib/components/lancie-section-about/lancie-section-about.html">
   <link rel="import" href="/lib/components/lancie-section-tournaments/lancie-section-tournaments.html">
@@ -117,24 +116,19 @@
 
 </head>
 <body unresolved>
-  <paper-button>Button</paper-button>
   <scroll-area>
-  <site-banner class="sticky  site-padding" layout horizontal center start>
-
-       <core-menu-button>
+    <site-banner class="sticky  site-padding" layout horizontal center start>
+      <core-menu-button>
         <core-icon id="dropdown-toggle" icon="menu"></core-icon>
         <core-dropdown class="dropdown  core-transition-left" layered>
           <paper-shadow z="2"></paper-shadow>
           <core-menu>
-
             <div id="logo-container" layout horizontal center>
               <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
             </div>
-
             <core-item label="Pre-registration" horizontal center layout>
               <a data-scroll href="#pre-registration" borderless></a>
             </core-item>
-
             <core-item label="Event &amp; Tournaments" horizontal center layout>
               <a data-scroll href="#event" borderless></a>
             </core-item>
@@ -156,15 +150,16 @@
       </app-bar></site-banner> 
 
     <main>
-      <!-- <section id="ready" horizontal layout center>
+      <section id="ready" horizontal layout center>
+        <div class="overlay"></div>
         <div class="content-padding">
           <section-ready></section-ready>
         </div>
-      </section> -->
+      </section>
 
       <section id="prepars">
         <div class="content-padding">
-          <section-prepars mode="sponsors"></section-prepars>
+          <section-prepars mode="preregistration"></section-prepars>
         </div>
       </section>
 
@@ -202,9 +197,7 @@
         </lancie-map>
       </section>
 
-    </main>
-
-  </scroll-area>
+    </main></scroll-area>
 
   <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.js"></script>
   <script>

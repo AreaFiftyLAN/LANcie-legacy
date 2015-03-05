@@ -1,8 +1,10 @@
 <polymer-element name="sponsors-element" attributes="mode">
   
   <template>
+
+    <link rel="stylesheet" href="/lib/styles/elements/lancie-sponsors.css">
     
-    <core-ajax auto url="/lib/scripts/json/sponsors.json" handleAs="json"></core-ajax>
+    <core-ajax id="sponsorsAJAX" auto url="/lib/scripts/json/sponsors.json" handleAs="json"></core-ajax>
     
     <h1>Sponsors</h1>
     <template if="{{mode == 'phone'}}"> 
@@ -51,5 +53,5 @@
     </template>
 
   </template>
-  <script src="lancie-sponsors.js"></script>
+  <script src="/lib/scripts/elements/lancie-sponsors.js"></script>
 </polymer-element>

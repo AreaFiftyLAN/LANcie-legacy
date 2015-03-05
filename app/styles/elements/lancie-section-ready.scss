@@ -1,0 +1,37 @@
+@import "components/variables";
+@import "mixins/all";
+
+:host {
+  
+  .container {
+    
+    h1, h2 {
+      z-index: 0;
+      margin-top: 20px;
+      line-height: 1em;
+      text-align: center;
+      color: $prime_white;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: 3em;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      font-size: 3em;
+      letter-spacing: 3px;
+      padding-bottom: 20px;
+    }
+
+    paper-button {
+      background: $prime_blue;
+      margin: 33px 10px;
+      color: $prime_yellow;
+      font-size: 24px !important;
+    }
+
+  }
+
+}

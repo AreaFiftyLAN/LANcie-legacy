@@ -1,10 +1,12 @@
+<link rel="import" href="lancie-countdown.html">
 <polymer-element name="section-ready" noscript>
   <template>
+    <link rel="stylesheet" href="/lib/styles/elements/lancie-section-ready.css">
+
     <core-media-query query="max-width: 851px" queryMatches="{{isTablet}}"></core-media-query>
     <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
-    
-    <div class="overlay"></div> 
-    <div vertical layout center>
+
+    <div class="container" vertical layout center>
       <template if="{{isTablet}}">
         <h3>12-13-14 June 2015 &#64; Unit Sport &amp; Culture</h3>
       </template>
