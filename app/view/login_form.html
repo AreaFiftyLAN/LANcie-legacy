@@ -100,9 +100,24 @@
       <div class="overlay"></div>
     </section>
 
-    <div class="content-padding" layout vertical>
-      <create-account></create-account>
-    </div> 
+    <div class="content-padding  login-form" layout vertical>
+      <h1>My AREA Login</h1>
+      <div class="specification">
+        Mooie tekst
+      </div>
+    
+      <form action="#" method="POST" layout vertical>
+        <section id="account">
+          <lancie-input label="Username" name="uname" id="uname" on-blur="{{checkEmptyTarget}}{{checkUsername}}"></lancie-input>
+          <lancie-input label="Password" type="password" name="upass" id="upass" on-blur="{{checkEmptyTarget}}{{checkPassword}}"></lancie-input>
+
+          <!-- SHINY BUTTON -->
+          <div class="buttons" horizontal end-justified layout center>
+            <paper-button raised on-click="{{pageNext}}">LOGIN</paper-button>
+          </div>
+        </section>
+      </form>
+    </div>
   </main>
   
 </body>

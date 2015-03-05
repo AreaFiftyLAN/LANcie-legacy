@@ -1,0 +1,22 @@
+.login-form {
+  padding: 30px 0 50px;
+
+  h1 {
+    color: $third_blue;
+    margin-bottom: 10px;
+  }
+
+  .specification {
+    margin-bottom: 32px;
+  }
+
+  .buttons {
+    padding-top: 20px;
+
+    paper-button[raised] {
+      background-color: $prime_blue;
+      color: $prime_yellow;
+    }
+  }
+  
+}

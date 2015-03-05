@@ -13,7 +13,7 @@
     margin: 0 $margin 24px 0;
   }
 
-  &:nth-child(#{2*$numPerRow}n + 1) { 
+  &:nth-child(#{$numPerRow}n + 1) { 
     margin-right: 0; 
   }
 }

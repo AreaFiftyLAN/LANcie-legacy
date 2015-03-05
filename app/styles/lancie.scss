@@ -7,22 +7,12 @@
 
 // Other components
 @import "components/sitebanner";
-
-@import "components/section_ready";
-@import "components/section_sponsors";
-@import "components/section_event";
-@import "components/section_tournament";
-@import "components/section_about";
-@import "components/section_slider";
-@import "components/section_preregistration";
-
-@import "components/footer";
+@import "components/login_form";
 
 body {
   display: block;
   margin: 0;
   background-color: $prime_white;
-  // @include gradient-radial-farthest($third_blue, $prime_blue);
 }
 
 lancie-map {
@@ -30,7 +20,42 @@ lancie-map {
   height: 300px;
 }
 
-.ranking {
-  fill: $prime_yellow;
+#tournament {
+  padding: 30px 0 50px;
+  background: $prime_blue url('/images/svg/ranking.svg') no-repeat -50% calc(100% + 50px);
+}
+
+#event {
+  padding: 30px 0 10px;
+  background: $prime_blue;
+
+  h1 {
+    color: $prime_yellow;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $prime_white;
+    text-align: justify;
+  }
+}
+
+#ready {
+  position: relative;
+  margin-top: 30px;
+  padding: 70px 0 50px;
+  min-height: 500px;
+
+  background: url("/images/background/halo_reach.jpg") center top;
+  background-size: 125% auto;
+  background-repeat: no-repeat;
+
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    background: transparentize($prime_blue, 0.6);
+    display: block;
+    height: 100%; width: 100%;
+  }
 }
 

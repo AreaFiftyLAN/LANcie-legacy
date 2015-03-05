@@ -1,0 +1,40 @@
+<link rel="import" href="lancie-countdown.html">
+<polymer-element name="section-ready" noscript>
+  <template>
+    <link rel="stylesheet" href="/lib/styles/elements/lancie-section-ready.css">
+
+    <core-media-query query="max-width: 851px" queryMatches="{{isTablet}}"></core-media-query>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
+
+    <div class="container" vertical layout center>
+      <template if="{{isTablet}}">
+        <h3>12-13-14 June 2015 &#64; Unit Sport &amp; Culture</h3>
+      </template>
+      <template if="{{!isTablet}}">
+        <h2>12-13-14 June &#64; Unit Sport &amp; Culture</h2>
+      </template>
+
+      <countdown-element></countdown-element>
+
+      <template if="{{isTablet}}">
+        <h3>Be ready for the LAuNCH</h3>
+      </template>
+      <template if="{{!isTablet}}">
+        <h1>Be ready for the LAuNCH</h1>
+      </template>
+      
+
+      <!-- <div horizontal center-justified layout>
+        
+          <paper-button raised on-tap="{{href}}" link="/view/create_account.html">
+            <core-icon icon="get-app"></core-icon>&nbsp;
+            <template if="{{isPhone}}">order now</template>
+            <template if="{{!isPhone}}">order your tickets now</template>
+          </paper-button>
+
+      </div> -->
+
+    </div>
+
+  </template>
+</polymer-element>
