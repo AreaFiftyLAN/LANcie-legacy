@@ -1,21 +1,32 @@
 #about {
   padding: 30px 0 50px;
-  
+  background: $prime_blue;
+
   /deep/ {
-  
+
     h1 {
-      color: $prime_blue;
+      color: $prime_yellow;
       margin-bottom: 16px !important;
     }
 
     .text {
       text-align: justify;
+      color: $prime_white;
+
+    }
+
+    h2 {
+      color: $prime_yellow;
+
+    }
+    h3 {
+      color: $prime_white;
     }
 
   }
 
   h1 {
-    color: $prime_blue;
+    color: $prime_yellow;
     margin-bottom: 16px !important;
   }
 

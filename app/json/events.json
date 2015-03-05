@@ -5,11 +5,11 @@
     "src": "/images/background/events/airhockey.jpg",
     "details": {
       "name": "Airhockey, Pinball & Table football",
-      "max_players": "2",
+      "max_players": "",
       "info": "Challenge your opponent for a fast-paced game of airhockey, attempt to set the weekend high-score on the pinball machine or challenge your friends to a game of table football",
-      "start_time": "-",
+      "start_time": "",
       "sponsors": {
-        "name": "-",
+        "name": "",
         "src": "/images/logos/sponsors/tournaments/LoL.gif",
         "prize": [
         ]
@@ -39,23 +39,20 @@
     "type": "gold"
   },
   {
-    "title": "Poker",
-    "subtitle": "Tournament",
+    "title": "Offline",
+    "subtitle": "Boardgames & Poker",
     "src": "/images/background/events/poker.jpg",
     "details": {
-      "name": "FIFA 2014",
-      "max_players": "TBA",
-      "platform": "PC",
-      "info": "Face to Face, instead of Screen to Screen. Read your opponents and bluff your way to the finals! Details about the organisation of this tournament will be published when the ticket sale starts. ",
-      "start_time": "TBA",
-      "format": "TBA",
+      "name": "Poker tournament & classic boardgames",
+      "max_players": "",
+      "platform": "",
+      "info": "Don't want to spend the entire weekend in front of a screen? Join us for an evening full of plain of offline, analog board games. Choose your favorite amongst titles such as Settles of Catan, Monopoly, Stratego and many more. Don't forget about our Poker tournament! Read your opponent and bluff your way into the finals. Details about this tournament will be published when the ticket sale starts",
+      "start_time": "",
+      "format": "",
       "sponsors": {
-        "name": "TBA",
+        "name": "",
         "src": "/images/logos/sponsors/tournaments/FIFA.gif",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
         ]
       }
     },

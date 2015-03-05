@@ -27,16 +27,6 @@
               <h3>{{tourist.title}}</h3>
               <span>{{tourist.subtitle}}</span>
             </div>
-
-            <ul class="bg  trnsp  {{tourist.type}}" end>
-              <template bind="{{tourist.details as d}}">
-                <li>
-                  <span>Max participants</span> 
-                  <span>{{d.max_players}}</span></li>
-                  <span></span>
-                  <span>{{d.sponsors.name}}</span></li>
-              </template>
-            </ul>
           </div>
           <template bind="{{tourist.details as d}}">
             <paper-action-dialog backdrop layered="false" transition="core-transition-center" class="{{isPhone ? 'small-paper' :  'big-paper'}}">
@@ -47,18 +37,18 @@
               <div class="action-dialog-content" horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" layout>
                 <div class="main-content" flex>
                   <p class="description">{{d.info}}</p>
-                  <table class="specs">
-                    <tbody>
-                      <tr>
-                        <td></td>
-                        <td>{{d.format}}</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>{{d.start_time}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <!--<table class="specs">-->
+                    <!--<tbody>-->
+                      <!--<tr>-->
+                        <!--<td></td>-->
+                        <!--<td>{{d.format}}</td>-->
+                      <!--</tr>-->
+                      <!--<tr>-->
+                        <!--<td></td>-->
+                        <!--<td>{{d.start_time}}</td>-->
+                      <!--</tr>-->
+                    <!--</tbody>-->
+                  <!--</table>-->
                 </div>
                 <div class="sponsor-content  notonmobile">
                   <core-image preload fade position="left" src="{{d.sponsors.src}}"></core-image>
