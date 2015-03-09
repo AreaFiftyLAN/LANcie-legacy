@@ -103,7 +103,7 @@ gulp.task('styles', function () {
     .pipe(minifyCSS())
     .pipe(gulp.dest('.tmp/lib/styles'))
     .pipe(gulp.dest('dist/lib/styles'))
-    .pipe($.size({title: 'lib/styles'}));
+    .pipe($.size({title: 'styles'}));
 });
 
 // Scan Your HTML For Assets & Optimize Them

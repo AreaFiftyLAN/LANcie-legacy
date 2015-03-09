@@ -20,6 +20,7 @@
       &.gold { background-color: transparentize($gold, 0.6); }
       &.silver { background-color: transparentize($silver, 0.6); }
       &.bronze { background-color: transparentize($bronze, 0.6); }
+      &.pink { background-color: transparentize($pink, 0.6); }
 
       .main-info {
         background-color: none;
@@ -134,6 +135,7 @@
           &.gold { background-color: transparentize($gold, 0.6); }
           &.silver { background-color: transparentize($silver, 0.6); }
           &.bronze { background-color: transparentize($bronze, 0.6); }
+          &.pink { background-color: transparentize($pink, 0.6); }
 
           li {
             margin-left: 30px;
@@ -164,11 +166,16 @@
         background-color: transparentize($silver, 0.1);
       }
     }
-
     &.bronze {
       background-color: $bronze;
       &.trnsp {
         background-color: transparentize($bronze, 0.1);
+      }
+    }
+    &.pink {
+      background-color: $pink;
+      &.trnsp {
+        background-color: transparentize($pink, 0.1);
       }
     }
   }
