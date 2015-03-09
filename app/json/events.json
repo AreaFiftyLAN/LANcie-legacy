@@ -10,7 +10,7 @@
       "start_time": "",
       "sponsors": {
         "name": "",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "src": "/images/background/events/airhockey.jpg",
         "prize": [
         ]
       }
@@ -30,7 +30,7 @@
       "format": "",
       "sponsors": {
         "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/CSGO.gif",
+        "src": "/images/background/events/mariokart.png",
         "prize": [
 
         ]
@@ -51,7 +51,7 @@
       "format": "",
       "sponsors": {
         "name": "",
-        "src": "/images/logos/sponsors/tournaments/FIFA.gif",
+        "src": "/images/background/events/poker.jpg",
         "prize": [
         ]
       }
@@ -71,7 +71,7 @@
       "format": "",
       "sponsors": {
         "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/HS.gif",
+        "src": "/images/background/events/sports.jpg",
         "prize": [
         ]
       }

@@ -1,0 +1,178 @@
+@import "components/variables";
+@import "mixins/all";
+
+:host {
+
+  .content {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    
+
+    -webkit-transition: all 0.3s linear; /* For Safari 3.1 to 6.0 */
+    transition: all 0.3s linear;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #f00;
+      z-index: 2;
+
+      &.gold { background-color: transparentize($gold, 0.6); }
+      &.silver { background-color: transparentize($silver, 0.6); }
+      &.bronze { background-color: transparentize($bronze, 0.6); }
+
+      .main-info {
+        background-color: none;
+      }
+    }
+
+    .main-info {
+      background-color: transparentize($prime_blue, 0.7);
+      text-align: center;
+      height: 100%;
+
+      h3 {
+        margin: 0; padding-top: 33%;
+        font-size: 300%;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      span { font-size: 20px; }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0; padding: 7px 10px 6px;
+      font-size: 11px;
+      line-height: 16.5px;
+      color: $prime_white;
+
+      li span {
+        display: inline-block;
+        width: calc(50% - 2px);
+        text-align: right;
+
+        &:first-child {
+          text-align: left;
+          font-weight: bold;
+          color: $prime_yellow;
+        }
+      }
+    }
+  }
+
+  paper-action-dialog::shadow #scroller {
+    padding: 0; //disable padding for whole element
+  }
+
+  paper-action-dialog {    
+    margin: 0; padding: 0;
+    width: calc(80vw);
+    max-width: 758px;
+    background-color: $prime_white;
+
+    &.small-paper { 
+      width: calc(100vw); 
+      height: calc(100vh);
+    }
+
+    .action-dialog-header {
+      height: 160px;
+      background-position: 50% 25%;
+      background-size: 100% auto;
+
+      .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        background: transparentize($prime_blue, 0.7);
+        display: block;
+        height: 160px; width: 100%;
+      }
+
+      h2 {
+        position: relative;
+        z-index: 10;
+        padding: 6px 24px 5px;
+        color: $prime_white;
+      }
+    }
+
+    .action-dialog-content {
+      padding: 24px 16px 0;
+      
+      .main-content {
+        margin-right: 20px;
+        text-align: justify;
+
+        .description {
+          margin: 0; padding: 0 0 20px 0;
+        }
+
+        .specs {
+          border-collapse: collapse;
+          width: 100%;
+        }
+      }
+
+      .sponsor-content {
+        
+        core-image {
+          max-width: 230px;
+          min-height: 142.147817412px;
+          margin-bottom: -7px;
+        }
+
+        ol {
+          padding: 0; margin: -7px 0 0 0;
+
+          &.small {
+            width: calc(75vw - 20px);
+          }
+
+          &.gold { background-color: transparentize($gold, 0.6); }
+          &.silver { background-color: transparentize($silver, 0.6); }
+          &.bronze { background-color: transparentize($bronze, 0.6); }
+
+          li {
+            margin-left: 30px;
+            padding: 4px 10px 3px;
+
+            &:first-child {
+              margin: 0 0 4px 0;
+              color: $prime_white;
+              list-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .bg {
+    &.gold {
+      background-color: $gold;
+      &.trnsp {
+        background-color: transparentize($gold, 0.1);
+      }
+    }
+    &.silver {
+      background-color: $silver;
+      &.trnsp {
+        background-color: transparentize($silver, 0.1);
+      }
+    }
+
+    &.bronze {
+      background-color: $bronze;
+      &.trnsp {
+        background-color: transparentize($bronze, 0.1);
+      }
+    }
+  }
+  
+}
+
+  
