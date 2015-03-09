@@ -1,0 +1,30 @@
+@import "components/variables";
+@import "mixins/all";
+
+:host {
+
+  event-element {
+    position: relative;
+    height: 100%; width: 100%;
+
+    background-position: center;
+    background-size: 105% auto;
+    color: $prime_white;
+
+    &.large  { @include outLiningBoxes(4, 2%); }
+    &.medium { @include outLiningBoxes(3, 2%); }
+    &.small  { @include outLiningBoxes(2, 3%); }
+    &.xsmall { @include outLiningBoxes(1, 4%); }
+  }
+
+  ::content h1 {
+    color: $prime_yellow;
+    margin-bottom: 10px;
+  }
+
+  ::content p {
+    color: $prime_white;
+    text-align: justify;
+  }
+
+}
