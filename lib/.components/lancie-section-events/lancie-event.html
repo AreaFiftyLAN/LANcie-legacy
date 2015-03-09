@@ -2,11 +2,12 @@
   
   <template>
     <link rel="stylesheet" href="/lib/styles/elements/lancie-events.css">
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
 
     <paper-shadow z="1"></paper-shadow>
     <div vertical layout>
       <div class="overlay"></div>
-      <div class="content {{data.type}}" flex>
+      <div class="content" flex>
         <div class="main-info" flex>
           <h3>{{data.title}}</h3>
           <span>{{data.subtitle}}</span>
@@ -17,21 +18,11 @@
       <paper-action-dialog id="paperAction" backdrop layered="false" transition="core-transition-center" class="{{isPhone ? 'small-paper' :  'big-paper'}}">
         <div class="action-dialog-header" style="background-image: url({{data.src}});">
           <div class="overlay"></div>
-          <h2 class="bg  trnsp  {{data.type}}">{{d.name}}</h2>
+          <h2 class="bg  trnsp  yellow">{{d.name}}</h2>
         </div>
         <div class="action-dialog-content" horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" layout>
           <div class="main-content" flex>
             <p class="description">{{d.info}}</p>
-          </div>
-          <div class="sponsor-content  notonmobile">
-            <core-image preload fade position="left" src="{{d.sponsors.src}}"></core-image>
-
-            <ol class="{{data.type}}" start="0">
-              <li class="bg  {{data.type}}"></li>
-              <template repeat="{{d.sponsors.prize}}">
-                <li>{{}}</li>
-              </template>
-            </ol>
           </div>
         </div>
         <paper-button raised affirmative>Close</paper-button>
