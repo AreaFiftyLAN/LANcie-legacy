@@ -3,6 +3,8 @@
 <link rel="import" href="/lib/components/core-animation/core-animation-group.html">
 <polymer-element name="contact-form" attributes="">
   <template>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}">
+    </core-media-query>
     <core-ajax
       id="mailAJAX"
       method="POST"
@@ -16,7 +18,8 @@
       handleAs="json"
       on-core-response="{{handleResponse}}"></core-ajax>
 
-    <paper-dialog backdrop id="contactUs" transition="core-transition-top" style="width: 600px;">
+    <paper-dialog backdrop id="contactUs" transition="core-transition-top" 
+      style="width: {{isPhone ? 'calc(100vw)' : '600px'}};">
 
       <h1>Contact us</h1>
 

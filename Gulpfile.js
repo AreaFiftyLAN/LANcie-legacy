@@ -63,8 +63,7 @@ gulp.task('images', function () {
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe($.size({title: 'images'}));
+    .pipe(gulp.dest('dist/images'));
 });
 
 // Copy All Files At The Root Level (app)
@@ -75,15 +74,13 @@ gulp.task('copy', function () {
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'copy'}));
+  }).pipe(gulp.dest('dist'));
 });
 
 // Copy Web Fonts To Dist
 gulp.task('fonts', function () {
   return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/lib/fonts'))
-    .pipe($.size({title: 'lib/fonts'}));
+    .pipe(gulp.dest('dist/lib/fonts'));
 });
 
 // Compile and Automatically Prefix Stylesheets
@@ -103,7 +100,6 @@ gulp.task('styles', function () {
     .pipe(minifyCSS())
     .pipe(gulp.dest('.tmp/lib/styles'))
     .pipe(gulp.dest('dist/lib/styles'))
-    .pipe($.size({title: 'styles'}));
 });
 
 // Scan Your HTML For Assets & Optimize Them
@@ -154,7 +150,8 @@ gulp.task('lib', function(){
 gulp.task('json', function() {
   var src = ['app/json/**/*.json'];
   return gulp.src(src)
-    .pipe(gulp.dest('.tmp/lib/scripts/json'));
+    .pipe(gulp.dest('.tmp/lib/scripts/json'))
+    .pipe(gulp.dest('dist/lib/scripts/json'));
 });
 
 gulp.task('coffee', function() {
@@ -205,7 +202,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json'], cb);
+  runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json', 'coffee'], cb);
 });
 
 // Run PageSpeed Insights

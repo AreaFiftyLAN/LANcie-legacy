@@ -129,5 +129,15 @@ html core-overlay-layer overlay-host::shadow {
   }
 }
 
+@media only screen and (max-width: 581px) {
+  #contactUs #scroller {
+    max-width: 100% !important;
+  }
+
+  html core-overlay-layer overlay-host::shadow #contactUs::shadow #scroller {
+    max-width: 100% !important;
+  }
+}
+
 
 
