@@ -5,14 +5,11 @@
     "src": "/images/background/events/airhockey.jpg",
     "details": {
       "name": "Airhockey, Pinball & Table football",
-      "max_players": "",
+      "max_players": "TBA",
       "info": "Challenge your opponent for a fast-paced game of airhockey, attempt to set the weekend high-score on the pinball machine and challenge your friends to a game of table football!",
       "start_time": "",
       "sponsors": {
-        "name": "",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
-        "prize": [
-        ]
+        "src": "/images/background/events/airhockey.jpg"
       }
     },
     "type": "gold"
@@ -20,20 +17,15 @@
   {
     "title": "Retro",
     "subtitle": "Consoles",
-    "src": "/images/background/events/mariokart.png",
+    "src": "/images/background/events/mariokart.gif",
     "details": {
       "name": "Retro gaming consoles",
       "max_players": "TBA",
       "platform": "PC & Mac",
       "info": "Forget about fancy graphics, realistic physics or even 3D. 8-bit is what it's all about! Bring back those nostalgic memories by beating everyone with Mario Kart, collecting every single banana in Donkey Kong and shoot all the ducks with Duck Hunt! There will be several retro consoles available in the Launch Area to relax and bring back the good old days.",
-      "start_time": "-",
-      "format": "",
+      "start_time": "",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/CSGO.gif",
-        "prize": [
-
-        ]
+        "src": "/images/background/events/mariokart.png"
       }
     },
     "type": "gold"
@@ -48,12 +40,8 @@
       "platform": "",
       "info": "Don't want to spend the entire weekend in front of a screen? Join us for an evening full of plain offline, analog board games. Choose your favorite amongst titles such as Settlers of Catan, Monopoly, Stratego and many more. Don't forget about our Poker tournament! Read your opponent and bluff your way into the finals. Details about this tournament will be published when the ticket sale starts",
       "start_time": "",
-      "format": "",
       "sponsors": {
-        "name": "",
-        "src": "/images/logos/sponsors/tournaments/FIFA.gif",
-        "prize": [
-        ]
+        "src": "/images/background/events/poker.jpg"
       }
     },
     "type": "gold"
@@ -68,12 +56,8 @@
       "platform": "",
       "info": "After a night of gaming and some well deserved sleep, it's time to charge up for another day of gaming! Join us for a refreshing morning gymnastics session to make the best of your weekend!",
       "start_time": "TBA",
-      "format": "",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/HS.gif",
-        "prize": [
-        ]
+        "src": "/images/background/events/sports.jpg"
       }
     },
     "type": "gold"

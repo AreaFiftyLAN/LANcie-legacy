@@ -7,7 +7,6 @@
     position: absolute;
     top: 0; left: 0;
     height: 100%; width: 100%;
-    
 
     -webkit-transition: all 0.3s linear; /* For Safari 3.1 to 6.0 */
     transition: all 0.3s linear;
@@ -16,11 +15,7 @@
       cursor: pointer;
       background-color: #f00;
       z-index: 2;
-
-      &.gold { background-color: transparentize($gold, 0.6); }
-      &.silver { background-color: transparentize($silver, 0.6); }
-      &.bronze { background-color: transparentize($bronze, 0.6); }
-      &.pink { background-color: transparentize($pink, 0.6); }
+      background-color: transparentize($third_blue, 0.3);
 
       .main-info {
         background-color: none;
@@ -28,12 +23,12 @@
     }
 
     .main-info {
-      background-color: transparentize($prime_blue, 0.7);
+      background-color: transparentize($third_blue, 0.7);
       text-align: center;
-      height: calc(100% - 60px);
+      height: 100%;
 
       h3 {
-        margin: 0; padding-top: 23%;
+        margin: 0; padding-top: 65px;
         font-size: 300%;
         line-height: 50px;
         text-transform: uppercase;
@@ -41,26 +36,6 @@
       }
 
       span { font-size: 20px; }
-    }
-
-    ul {
-      list-style: none;
-      margin: 0; padding: 7px 10px 6px;
-      font-size: 11px;
-      line-height: 16.5px;
-      color: $prime_white;
-
-      li span {
-        display: inline-block;
-        width: calc(50% - 2px);
-        text-align: right;
-
-        &:first-child {
-          text-align: left;
-          font-weight: bold;
-          color: $prime_yellow;
-        }
-      }
     }
   }
 
@@ -109,44 +84,7 @@
 
         .description {
           margin: 0; padding: 0 0 20px 0;
-        }
-
-        .specs {
-          border-collapse: collapse;
-          width: 100%;
-        }
-      }
-
-      .sponsor-content {
-        
-        core-image {
-          max-width: 230px;
-          min-height: 142.147817412px;
-          margin-bottom: -7px;
-        }
-
-        ol {
-          padding: 0; margin: -7px 0 0 0;
-
-          &.small {
-            width: calc(75vw - 20px);
-          }
-
-          &.gold { background-color: transparentize($gold, 0.6); }
-          &.silver { background-color: transparentize($silver, 0.6); }
-          &.bronze { background-color: transparentize($bronze, 0.6); }
-          &.pink { background-color: transparentize($pink, 0.6); }
-
-          li {
-            margin-left: 30px;
-            padding: 4px 10px 3px;
-
-            &:first-child {
-              margin: 0 0 4px 0;
-              color: $prime_white;
-              list-style: none;
-            }
-          }
+          color: $default_color;
         }
       }
     }
@@ -166,16 +104,18 @@
         background-color: transparentize($silver, 0.1);
       }
     }
+
     &.bronze {
       background-color: $bronze;
       &.trnsp {
         background-color: transparentize($bronze, 0.1);
       }
     }
-    &.pink {
-      background-color: $pink;
+
+    &.yellow {
+      background-color: $third_blue;
       &.trnsp {
-        background-color: transparentize($pink, 0.1);
+        background-color: transparentize($third_blue, 0.1);
       }
     }
   }

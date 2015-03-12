@@ -3,7 +3,7 @@
 <head>
 
   <meta charset='UTF-8'>
-  <meta name='keywords' content='area, fifty, lan, 51, 5lan, area51, area5lan, area, gaming, event, sport, culture, games, tu, delft, dota, lol, sc, cs:go, cs, go, fifa, ut2004, trackmania, tm, unreal, tournament, area51lan'>
+  <meta name='keywords' content='area, fifty, lan, 51, 5lan, area51, area5lan, area, gaming, event, sport, culture, games, tu, delft, dota, lol, sc, cs:go, cs, go, fifa, ut2004, trackmania, tm, unreal, tournament, area51lan, lan, party, lanparty'>
   <meta name='description' content='Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends.'>
   <meta name='subject' content='Gamingevent'>
   <meta name='copyright' content="WISV 'Christiaan Huygens'">
@@ -73,8 +73,8 @@
   <link rel="import" href="/lib/components/polymer/polymer.html">
   <link rel="import" href="/lib/components/font-roboto/roboto.html">
 
-  <!-- <link rel="import" href="/lib/components/core-elements/core-elements.html"> -->
-  <!-- <link rel="import" href="/lib/components/paper-elements/paper-elements.html"> -->
+  <link rel="import" href="/lib/components/core-elements/core-elements.html">
+  <link rel="import" href="/lib/components/paper-elements/paper-elements.html">
 
   <!-- CORE ELEMENTS -->
   <link rel="import" href="/lib/components/core-a11y-keys/core-a11y-keys.html">
@@ -100,6 +100,7 @@
   <link rel="import" href="/lib/components/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="/lib/components/lancie-app-bar/lancie-app-bar.html">
   <link rel="import" href="/lib/components/lancie-map/lancie-map.html">
+  <link rel="import" href="/lib/components/lancie-contact-form/lancie-contact-form.html">
 
   <!-- SECTIONS ELEMENTS -->
   <link rel="import" href="/lib/components/lancie-section-slider/lancie-section-ready.html">
@@ -126,7 +127,7 @@
               <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
             </div>
             <core-item label="Pre-registration" horizontal center layout>
-              <a data-scroll href="#pre-registration" borderless></a>
+              <a data-scroll href="#prepars" borderless></a>
             </core-item>s
             <core-item label="Event" horizontal center layout>
               <a data-scroll href="#event" borderless></a>
@@ -144,7 +145,7 @@
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <a href="#pre-registration" data-scroll>
+        <a href="#prepars" data-scroll>
           <paper-button>PRE-REGISTRATION</paper-button>
         </a>
         <a data-scroll href="#event">
@@ -175,11 +176,12 @@
           <section-event>
             <h1>Area FiftyLAN</h1>
 
-            <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
+            <p>Area FiftyLAN is the hottest new gaming event of the TU Delft orgin. This spectacular all-weekend event, from 12 till 14 June 2015, is orginized in cooperation with Unit Sports &amp; Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
+
+            <p>That is not all! There will be plenty to do offline as well. Poker and foosball masters can also show off in this event. In the Launch Area, you'll find pinball machines, airhockey tables, table football tables and various retro gaming consoles. An overview of things you can do besides gaming can be found below.</p>
 
             <p>A place to sleep and food for the whole weekend will be arranged. Area FiftyLAN will be an unforgettable event you do not want to miss! Are you ready for the launch?</p>
 
-            <p>That is not all! There will be plenty to do offline as well. Poker and foosball masters can also show off in this event. In the Launch Area, you'll find pinball machines, airhockey tables, table football tables and various retro gaming consoles. An overview of things you can do besides gaming can be found below.</p>
           </section-event>
         </div>
       </section>
@@ -198,7 +200,7 @@
           <section-about>
             The LANcie is the newest and coolest committee of W.I.S.V ‘Christiaan Huygens’. This club of superheroes will ensure that you will never forget this gaming event. The LANcie does not bite and is not afraid of questions or a good conversation about gaming, food, UTP cables or networks. From the start to finish of this adventure we will assist you. With classified regards, the LANcie!
         
-            <p>If you have any questions, please do not hesitate to contact us at <a href="mailto:lancie@ch.tudelft.nl">lancie@ch.tudelft.nl</a></p>
+            <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p>
           </section-about>
         </div>
       </section>
@@ -212,6 +214,8 @@
       </section>
 
     </main></scroll-area>
+
+    <contact-form id="contact-form"></contact-form>
 
   <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.js"></script>
   <script>

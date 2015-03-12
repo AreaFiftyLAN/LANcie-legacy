@@ -48,8 +48,11 @@
     }
     :host .countdown-item.isTablet.isPhone div h1 {
       margin: 10px 5px 5px 5px !important;
-      font-size: 3em !important;
+      font-size: 2.5em !important;
       font-weight: 600 !important;
+    }
+    :host .countdown-item.isTablet.isPhone span {
+      font-size: 11px;
     }
     </style>
     
@@ -95,7 +98,7 @@
   <script>
     Polymer("countdown-element", {
 
-      end: "2015-06-12T18:00:00",
+      end: "2015-03-30T22:59:59",
 
       time: null,
       dateStr: "",

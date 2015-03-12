@@ -103,7 +103,7 @@ gulp.task('styles', function () {
     .pipe(minifyCSS())
     .pipe(gulp.dest('.tmp/lib/styles'))
     .pipe(gulp.dest('dist/lib/styles'))
-    .pipe($.size({title: 'lib/styles'}));
+    .pipe($.size({title: 'styles'}));
 });
 
 // Scan Your HTML For Assets & Optimize Them
@@ -185,7 +185,7 @@ gulp.task('serve', ['styles', 'lib', 'json', 'coffee'], function () {
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/scripts/**/*.coffee'], ['coffee', reload]);
   gulp.watch(['app/images/**/*'], reload);
-  gulp.watch(['app/json/**/*.json'], reload);
+  gulp.watch(['app/json/**/*.json'],['json', reload]);
 
   gulp.watch(['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
     'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'], ['lib', reload]);

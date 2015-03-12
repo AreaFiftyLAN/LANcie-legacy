@@ -1,5 +1,5 @@
 @mixin outLiningBoxes($numPerRow, $margin) {
-  min-height: 220px;
+  min-height: 200px;
   max-height: 250px;
   width: ((100% - ($numPerRow - 1) * $margin) / $numPerRow);
 
