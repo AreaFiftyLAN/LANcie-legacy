@@ -3,7 +3,7 @@
 <head>
 
   <meta charset='UTF-8'>
-  <meta name='keywords' content='area, fifty, lan, 51, 5lan, area51, area5lan, area, gaming, event, sport, culture, games, tu, delft, dota, lol, sc, cs:go, cs, go, fifa, ut2004, trackmania, tm, unreal, tournament, area51lan'>
+  <meta name='keywords' content='area, fifty, lan, 51, 5lan, area51, area5lan, area, gaming, event, sport, culture, games, tu, delft, dota, lol, sc, cs:go, cs, go, fifa, ut2004, trackmania, tm, unreal, tournament, area51lan, lan, party, lanparty'>
   <meta name='description' content='Area FiftyLAN is the hottest new gaming event of the TU Delft. On this spectacular all-weekend event, all students are welcome to play their favorite games with their fellow students and friends.'>
   <meta name='subject' content='Gamingevent'>
   <meta name='copyright' content="WISV 'Christiaan Huygens'">
@@ -73,8 +73,8 @@
   <link rel="import" href="/lib/components/polymer/polymer.html">
   <link rel="import" href="/lib/components/font-roboto/roboto.html">
 
-  <!-- <link rel="import" href="/lib/components/core-elements/core-elements.html"> -->
-  <!-- <link rel="import" href="/lib/components/paper-elements/paper-elements.html"> -->
+  <link rel="import" href="/lib/components/core-elements/core-elements.html">
+  <link rel="import" href="/lib/components/paper-elements/paper-elements.html">
 
   <!-- CORE ELEMENTS -->
   <link rel="import" href="/lib/components/core-a11y-keys/core-a11y-keys.html">
@@ -100,6 +100,7 @@
   <link rel="import" href="/lib/components/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="/lib/components/lancie-app-bar/lancie-app-bar.html">
   <link rel="import" href="/lib/components/lancie-map/lancie-map.html">
+  <link rel="import" href="/lib/components/lancie-contact-form/lancie-contact-form.html">
 
   <!-- SECTIONS ELEMENTS -->
   <link rel="import" href="/lib/components/lancie-section-slider/lancie-section-ready.html">
@@ -199,7 +200,7 @@
           <section-about>
             The LANcie is the newest and coolest committee of W.I.S.V ‘Christiaan Huygens’. This club of superheroes will ensure that you will never forget this gaming event. The LANcie does not bite and is not afraid of questions or a good conversation about gaming, food, UTP cables or networks. From the start to finish of this adventure we will assist you. With classified regards, the LANcie!
         
-            <p>If you have any questions, please do not hesitate to contact us at <a href="mailto:lancie@ch.tudelft.nl">lancie@ch.tudelft.nl</a></p>
+            <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p>
           </section-about>
         </div>
       </section>
@@ -213,6 +214,8 @@
       </section>
 
     </main></scroll-area>
+
+    <contact-form id="contact-form"></contact-form>
 
   <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.js"></script>
   <script>

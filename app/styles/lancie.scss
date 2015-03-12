@@ -49,6 +49,38 @@ lancie-map {
   }
 }
 
+html core-overlay-layer overlay-host::shadow {
+  
+  paper-dialog {
+
+    &::shadow #scroller {
+      padding: 0;
+    }
+
+    h1 {
+      padding: 12px 24px;
+      background: $prime_blue;
+      color: $prime_white;
+    }
+
+    h3 {
+      padding: 12px 24px;
+      font-size: 18px;
+      line-height: 1em;
+      background-color: $prime_yellow;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+
+  paper-button[raised] {
+    background-color: $prime_blue;
+    color: $prime_yellow;
+  }
+}
+
 @media only screen and (max-width: 851px) {
   #ready {
     min-height: 0;
