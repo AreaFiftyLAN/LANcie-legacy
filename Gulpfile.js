@@ -189,7 +189,7 @@ gulp.task('serve', ['styles', 'lib', 'json', 'coffee'], function () {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve:dist', function () {
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
