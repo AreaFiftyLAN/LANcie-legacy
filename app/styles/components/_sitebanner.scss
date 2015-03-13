@@ -130,14 +130,43 @@ body /deep/ core-dropdown {
   }
 }
 
+core-overlay-layer overlay-host {
+  core-dropdown {
+    max-height: calc(100vh) !important;
+    background-color: lighten($prime_blue, 3%) !important;
+    width: 265px !important;
+    color: $prime_white !important;
+
+    core-menu {
+      margin: 0px !important;
+
+      #logo-container {
+        height: 80px !important;
+        padding-left: 24px !important;
+      }
+
+      core-item {
+        border-bottom: 1px solid transparentize($prime_yellow, 0.87) !important;
+        padding-left: 16px !important;
+        padding-left: 24px !important;
+        height: 48px !important;
+
+        &:nth-child(6) {
+          border-top: 1px solid transparentize($prime_yellow, 0.87) !important;
+        }
+      }
+    }
+  }
+}
+
 core-dropdown {
   max-height: calc(100vh);
-  background-color: lighten($prime_blue, 3%) !important;
+  background-color: lighten($prime_blue, 3%);
   width: 265px;
   color: $prime_white;
 
   core-menu {
-    margin: 0px;
+    margin: 0p;
 
     #logo-container {
       height: 80px;
