@@ -1,37 +1,64 @@
 Polymer 'create-account',
+
+  ###
+    Set all variables to null, so the api always get all the data it needs
+  ###
   userhash: null
   userId: null
-  username: "svenpopping-asdigkasdfkasjdf"
-  email: "svenpopping@gmail.com"
-  password: "drie"
-  cpassword: "drie"
-  name: "Sven"
-  initials: "S"
-  surname: "Popping"
+  username: null
+  email: null
+  password: null
+  cpassword: null
+  name: null
+  initials: null
+  surname: null
   gender: false
-  chmember: true
-  address: "Bosboom Toussaintplein 273"
-  zipcode: "2624DR"
-  city: "Delft"
-  country: "Nederland"
-  tel: "0612239080"
-  notes: "Dingen"
+  chmember: false
+  address: null
+  number: null
+  zipcode: null
+  city: null
+  country: null
+  tel: null
+  notes: null
 
+  ###
+    Initial of elements
+  ###
   ready: ->
     @$.animatedpages.selected = 1
 
+  ###
+    Brings you to the next page and changes the progressbar
+  ###
   pageNext: ->
     if @$.animatedpages.selected < 3
-      return (@$.animatedpages.selected += 1) and (@$.progress.value += 25)
+      return (@$.animatedpages.selected += 1) and (@$.progress.value += 20)
 
+  ###
+    Brings you to the prev page and changes the progressbar
+  ###
   pagePrev: ->
     if @$.animatedpages.selected > 0
-      return (@$.animatedpages.selected -= 1) and (@$.progress.value -= 25)
+      return (@$.animatedpages.selected -= 1) and (@$.progress.value -= 20)
 
+  ###
+    Checks iff an username isn't already in the database 
+      else it will activate the inValid flag of the inputbox
+  ###
   checkUsername: (e) ->
     if !e.currentTarget.isEmpty
-      target = e.currentTarget
+      target = @$.username
+      if @$.checkUsernameAJAX.response is true
+        target.error = 'This username is already taken, please choose another!'
+        return target.isInValid = true
+      else
+        return target.isInValid = false
 
+  ###
+    Checks iff the password isnt the same as the username
+      else it will activate the inValid flag of the inputbox
+  ###
   checkPassword: (e) ->
     if !e.currentTarget.isEmpty
       target = e.currentTarget
@@ -41,6 +68,10 @@ Polymer 'create-account',
       else
         return target.isInValid = false
 
+  ### 
+    Checks iff password and confirm password are the same
+      else it will activate the inValid flag of the inputbox
+  ###
   checkConfirmPassword: (e) ->
     if !e.currentTarget.isEmpty and @$.password.isValid
       target = e.currentTarget
@@ -50,6 +81,11 @@ Polymer 'create-account',
       else
         return target.isInValid = false
 
+  ###
+    Check iff an email address if valid
+      it uses the regex designed by google
+      else it will activate the inValid flag  of the inputbox
+  ###
   checkEmail: (e) ->
     re = undefined
     target = undefined
@@ -62,47 +98,64 @@ Polymer 'create-account',
       else
         return target.isInValid = false
 
-  setUserAJAXparams: ->
-    @$.createUserAJAX.params =
-      username: @username
-      password: @password
-      email: @email
+  ###
 
-  setProfileAJAXparams: ->
-    gender = if @gender then "f" else "m"
-    @$.createProfileAJAX.params =
-      name: @name
-      initials: @initials
-      surname: @username
-      gender: gender
-      address: @address
-      zipcode: @zipcode
-      city: @city
-      country: @country
-      tel: @tel
-      notes: @notes
+  ###
+  emptyCheck: (e) ->
+    if !e.currentTarget.isEmpty
+      target = e.currentTarget
+      if target.value is ""
+        target.parentNode.error =  target.parentNode.label + ' cannot be empty!'
+        target.parentNode.isInvalid = true
+      else
+        target.parentNode.isInvalid = false
 
-  ajaxRequest: ->
-    @setUserAJAXparams()
-    @setProfileAJAXparams()
-
-    @$.createUserAJAX.addEventListener 'core-response', (callback) =>
-      res = JSON.parse callback.detail.response
-      if res.status.code is 201
-        @userhash = res.response.hash
-        @userId = res.response.id
-
-        console.log @$.createProfileAJAX.params
-        # @$.createProfileAJAX.go()
+  ###
+    autoCompleteAddress
+  ###
+  getAddress: (e) ->
+    if e.currentTarget is @$.zipcode 
+      if not @zipcode?
+        @$.zipcodeDecorator.error = 'Zipcode cannot be empty!'
+        @$.zipcodeDecorator.isInvalid = true
       else 
-        console.log "ERROR"
-        @$.animatedpages.selected = 1
+        @$.zipcodeDecorator.isInvalid = false
 
-    @$.createProfileAJAX.addEventListener 'core-response', (callback) =>
-      res = JSON.parse callback.detail.response
-      switch res.status.code
-        when 201 then console.log "201: SUCCESS"
-        when 409 then console.log "409: ERROR"
-        when 412 then console.log "412: ERROR"
+    if e.currentTarget is @$.number 
+      if not @number?
+        @$.numberDecorator.error = 'House number cannot be empty!'
+        @$.numberDecorator.isInvalid = true
+      else 
+        @$.numberDecorator.isInvalid = false
 
-    @$.createUserAJAX.go()
+    if @zipcode? and @number?
+      @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = false
+      @$.autoCompleteAddress.go()
+      
+
+  autoCompleteAddress: ->
+    callback = @$.autoCompleteAddress.response
+    if callback.status is "ok"
+      result = callback.details[0]
+      @address = result.street
+      @city = result.city
+    else 
+      @address = @city = null
+      if callback.errormessage.indexOf('postcode') isnt -1
+        @$.zipcodeDecorator.error = 'Please fill in a valid zipcode (1000AA)!'
+        return @$.zipcodeDecorator.isInvalid = true
+      else
+        @$.zipcodeDecorator.isInvalid = false
+
+      if callback.errormessage.indexOf('number') isnt -1
+        @$.numberDecorator.error = 'Please fill in a valid house number!'
+        return @$.numberDecorator.isInvalid = true
+      else 
+        @$.numberDecorator.isInvalid = false
+
+      if callback.errormessage.indexOf('results') isnt -1
+        @$.zipcodeDecorator.error = @$.numberDecorator.error = 'Please fill in a valid address!'
+        return @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = true
+
+
+
