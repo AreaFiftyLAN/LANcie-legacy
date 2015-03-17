@@ -26,7 +26,7 @@ Polymer 'create-account',
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 1
+    @$.animatedpages.selected = 0
 
   ###
     Brings you to the next page and changes the progressbar
@@ -92,8 +92,12 @@ Polymer 'create-account',
     if !e.currentTarget.isEmpty
       re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       target = e.currentTarget
-      if !re.test(target.value)
+      console.log @$.checkEmailAJAX.response
+      if !re.test(target.value) 
         target.error = 'Please fill in a valid email address!'
+        return target.isInValid = true
+      else if @$.checkEmailAJAX.response is true
+        target.error = 'This email is already taken, please choose another!'
         return target.isInValid = true
       else
         return target.isInValid = false
