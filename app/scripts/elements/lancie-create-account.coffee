@@ -5,28 +5,28 @@ Polymer 'create-account',
   ###
   userhash: null
   userId: null
-  username: null
-  email: null
-  password: null
-  cpassword: null
-  name: null
-  initials: null
-  surname: null
+  username: "svenpopping"
+  email: "svenpopping@gmail.com"
+  password: "hoi"
+  cpassword: "hoi"
+  name: "Sven"
+  initials: "S"
+  surname: "Popping"
   gender: false
-  chmember: false
-  address: null
-  number: null
-  zipcode: null
-  city: null
-  country: null
-  tel: null
-  notes: null
+  chmember: true
+  transport: true
+  address: "Bosboom Toussaintplein"
+  number: "273"
+  zipcode: "2624DR"
+  city: "Delft"
+  tel: "0612239080"
+  notes: "Haha dikke mensen"
 
   ###
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 0
+    @$.animatedpages.selected = 3
 
   ###
     Brings you to the next page and changes the progressbar
@@ -92,7 +92,6 @@ Polymer 'create-account',
     if !e.currentTarget.isEmpty
       re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       target = e.currentTarget
-      console.log @$.checkEmailAJAX.response
       if !re.test(target.value) 
         target.error = 'Please fill in a valid email address!'
         return target.isInValid = true
@@ -136,7 +135,9 @@ Polymer 'create-account',
       @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = false
       @$.autoCompleteAddress.go()
       
+  ###
 
+  ###
   autoCompleteAddress: ->
     callback = @$.autoCompleteAddress.response
     if callback.status is "ok"
@@ -161,5 +162,32 @@ Polymer 'create-account',
         @$.zipcodeDecorator.error = @$.numberDecorator.error = 'Please fill in a valid address!'
         return @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = true
 
+  ###
+    AJAX Request to insert an user into the database
+  ###
+  insertUser: ->
+    genderChar = if @gender then "f" else "m"
+    @$.insertUser.params = {
+      username: @username
+      email: @email
+      password: @password
+      name: @name 
+      initials: @initials
+      surname: @surname
+      gender: genderChar
+      chmember: @chmember
+      transport: @transport
+      address: @address + " " + @number
+      zipcode: @zipcode
+      city: @city
+      tel: @tel
+      notes: @notes
+    }
+    @$.insertUser.go()
 
+  ###
+
+  ###
+  callbackUserInsert: ->
+    console.log @$.insertUser.response
 

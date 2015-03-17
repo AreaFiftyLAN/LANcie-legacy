@@ -49,6 +49,17 @@
 
     i {
       height: 32px; width: 32px;
+
+      &[selected] {
+        &:nth-child(1) { color: lighten($third_blue, 20%); }
+        &:nth-child(3) { color: $pink; }
+      }
+
+      &[confirm] {
+        &:nth-child(1) { color: $red; }
+        &:nth-child(3) { color: $green; }
+      }
+
       &:nth-child(1) { margin-right: 16px; }
       &:nth-child(3) { margin-left: 16px; }
     }
@@ -133,7 +144,7 @@
         }
       }
 
-      &:nth-child(3) {
+      &:last-child {
         border-bottom: 0px;
       }
     }

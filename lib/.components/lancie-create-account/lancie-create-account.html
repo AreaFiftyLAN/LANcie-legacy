@@ -1,21 +1,23 @@
 <link href="/lib/components/paper-input/paper-autogrow-textarea.html" rel="import">
 <link href="/lib/components/paper-input/paper-input-decorator.html" rel="import">
 <link href="/lib/components/paper-input/paper-char-counter.html" rel="import">
+<link href="/lib/components/core-animated-pages/transitions/cross-fade.html" rel="import">
+<link href="/lib/components/core-animated-pages/transitions/slide-from-right.html" rel="import">
 
 <polymer-element name="create-account">
   <template>
     <link rel="stylesheet" href="/lib/styles/elements/lancie-create-account.css">
     <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>   
 
-    <!-- 
-      API call to check if username alreay exists.
-      Response:
-        true - Username already exists
-        false - Username is new
-     -->
     <core-ajax auto id="checkUsernameAJAX" url="https://areafiftylan.nl/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
-
     <core-ajax auto id="checkEmailAJAX" url="https://areafiftylan.nl/api/user/checkemail/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
+
+    <core-ajax
+      id="insertUser"
+      url="https://areafiftylan.nl/api/account/create/"
+      method="POST"
+      handleAs="json"
+      on-core-response="{{callbackUserInsert}}"></core-ajax>
 
     <core-ajax
       id="autoCompleteAddress"
@@ -33,7 +35,7 @@
       <div class="progress-bar-description" horizontal layout around-justified>
         <div flex>Account</div>
         <div flex>Profile</div>
-        <div flex>Pick-Up</div>
+        <div flex>Transport</div>
         <div flex>Payment</div>
         <div flex>Confirmation</div>
       </div>
@@ -54,11 +56,11 @@
               <paper-checkbox for id="terms"></paper-checkbox>
               <div vertical layout>I accept the terms of agreement</div>
             </core-label>
-            <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}}">go to profile</paper-button>
+            <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}}">next</paper-button>
           </div>
         </section>
   
-        <section id="data">
+        <section id="data" style="position: absolute; top: 0; left: 0;">
           <div layout horizontal center>
             <label for="{{name}}" flex two>Firstname *</label>
             <div flex four horizontal layout>
@@ -76,9 +78,9 @@
           <div layout horizontal center style="height: 60px;" class="selection">
             <label for="" flex two>Gender *</label>
             <div flex four horizontal layout center>
-              <i center class="fa fa-male fa-2x"></i>
+              <i center class="fa fa-male fa-2x" selected?="{{!gender}}"></i>
                 <paper-toggle-button id="gender" checked="{{gender}}"></paper-toggle-button>
-              <i class="fa fa-female fa-2x"></i>
+              <i class="fa fa-female fa-2x" selected?="{{gender}}"></i>
             </div>
           </div>
 
@@ -106,9 +108,9 @@
           <div layout horizontal center style="height: 60px;" class="selection">
             <label for="" flex two>CH Member *</label>
             <div flex four horizontal layout center>
-              <i center class="fa fa-close fa-2x"></i>
+              <i center class="fa fa-close fa-2x" confirm?="{{!chmember}}"></i>
                 <paper-toggle-button id="gender" checked="{{chmember}}"></paper-toggle-button>
-              <i class="fa fa-check fa-2x"></i>
+              <i class="fa fa-check fa-2x" confirm?="{{chmember}}"></i>
             </div>
           </div>
 
@@ -128,12 +130,26 @@
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
-            <paper-button raised disabled?="{{!(name && initials && surname && zipcode && number && address && city && tel)}}" on-click="{{pageNext}} {{ajaxRequest}}">go to payment</paper-button>
+            <paper-button raised disabled?="{{!(name && initials && surname && zipcode && number && address && city && tel)}}" on-click="{{pageNext}}">next</paper-button>
           </div>
         </section>
 
-        <section>
-          dingen
+        <section id="transport">
+          <p>Aenean sed placerat massa. Integer ac tellus eu nisi pellentesque lobortis. Nam quis nisi odio. Aliquam erat volutpat. Pellentesque ac purus feugiat, iaculis neque sit amet, placerat lectus. Suspendisse at eros ac dui blandit hendrerit ac id sapien. Sed sit amet placerat lectus, ut porta eros. Maecenas ac aliquet nisi.</p>
+
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>Transport service *</label>
+            <div flex four horizontal layout center>
+              <i center class="fa fa-close fa-2x" confirm?="{{!transport}}"></i>
+                <paper-toggle-button id="transport" checked="{{transport}}"></paper-toggle-button>
+              <i class="fa fa-check fa-2x" confirm?="{{transport}}"></i>
+            </div>
+          </div>
+
+          <div class="buttons" horizontal justified layout>
+            <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
+            <paper-button raised on-click="{{pageNext}}">go to payment</paper-button>
+          </div>
         </section>
 
         <section>
@@ -150,23 +166,26 @@
               </div>
               <span>€ {{chmember ? "30,00" : "35,00"}}</span>
             </div>
-            <div class="table-row" horizontal layout>
+            <div class="table-row" horizontal layout hidden?="{{!transport}}">
               <div flex four>
-                <div>Transaction cost</div>
-                <span class="desc">iDeal</span>
+                <div>Transport cost</div>
+                <span class="desc">
+                  {{address}} {{number}} - {{zipcode}} - {{city}}
+                </span>
               </div>
-              <span>€ 1,00</span>
+              <span>€ 2,50</span>
             </div>
 
             <div class="table-footer" horizontal layout>
               <div flex four>Total</div>
-              <span>€ {{chmember ? "28,50" : "31,00"}}</span>
+              <span>€ {{chmember ? transport ? "32,50" : "30,00" : transport ? "37,50" : "35,00"}}</span>
             </div>
           </div>
 
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
+            <paper-button raised on-click="{{insertUser}}">pay now</paper-button>
           </div>
         </section>
         <!-- <section>
