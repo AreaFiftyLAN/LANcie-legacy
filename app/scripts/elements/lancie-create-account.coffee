@@ -5,28 +5,39 @@ Polymer 'create-account',
   ###
   userhash: null
   userId: null
-  username: "svenpopping"
-  email: "svenpopping@gmail.com"
-  password: "hoi"
-  cpassword: "hoi"
-  name: "Sven"
-  initials: "S"
-  surname: "Popping"
-  gender: false
-  chmember: true
-  transport: true
-  address: "Bosboom Toussaintplein"
-  number: "273"
-  zipcode: "2624DR"
-  city: "Delft"
-  tel: "0612239080"
-  notes: "Haha dikke mensen"
+  username: null
+  email: null
+  password: null
+  cpassword: null
+  name: null
+  initials: null
+  surname: null
+  gender: null
+  chmember: null
+  transport: null
+  address: null
+  number: null
+  zipcode: null
+  city: null
+  tel: null
+  notes: null
 
   ###
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 3
+    qs = document.location.search.split('+').join(' ')
+    params = {}
+    tokens = undefined
+    re = /[?&]?([^=]+)/g
+    while tokens = re.exec(qs)
+      params[decodeURIComponent(tokens[1])] = true
+    if params.payment
+      @$.animatedpages.selected = 3
+      @$.progress.value = 80
+    if params.confirm
+      @$.animatedpages.selected = 4
+      @$.progress.value = 100
 
   ###
     Brings you to the next page and changes the progressbar
@@ -190,4 +201,12 @@ Polymer 'create-account',
   ###
   callbackUserInsert: ->
     console.log @$.insertUser.response
+    window.location = @$.insertUser.response
+
+    if not @$.insertUser.response[1]?
+      console.log @$.insertUser.response
+      window.location = @$.insertUser.response
+    else 
+      if @$.insertUser.response[1] is 1062
+        console.log @$.insertUser.response[2]
 
