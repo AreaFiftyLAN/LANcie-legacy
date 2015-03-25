@@ -24,6 +24,8 @@
       url="http://api.postcodedata.nl/v1/postcode/?postcode={{zipcode}}&streetnumber={{number}}&ref=areafiftylan.nl&type=json"
       handleAs="json"
       on-core-response="{{autoCompleteAddress}}"></core-ajax>
+
+    <core-localstorage name="lancie-create-account-save" value="{{person}}"></core-localstorage>
     
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
@@ -41,11 +43,13 @@
       </div>
       <paper-progress value="1" id="progress"></paper-progress>
     </div>
-  
+
+    {{person.username}}
+
     <form action="#" method="POST" layout vertical>
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="account">
-          <lancie-input label="Username" value="{{username}}" id="username"></lancie-input>
+          <lancie-input label="Username" value="{{person.username}}" id="username"></lancie-input>
           <lancie-input label="Password" value="{{password}}" type="password" id="password" on-blur="{{checkPassword}}"></lancie-input>
           <lancie-input label="Confirm password" value="{{cpassword}}" type="password" id="cpassword" on-blur="{{checkConfirmPassword}}"></lancie-input>
           <lancie-input label="Email" value="{{email}}" id="email" on-blur="{{checkEmail}}"></lancie-input>

@@ -5,28 +5,31 @@ Polymer 'create-account',
   ###
   userhash: null
   userId: null
-  username: "svenpopping"
-  email: "svenpopping@gmail.com"
-  password: "hoi"
-  cpassword: "hoi"
-  name: "Sven"
-  initials: "S"
-  surname: "Popping"
-  gender: false
-  chmember: true
-  transport: true
-  address: "Bosboom Toussaintplein"
-  number: "273"
-  zipcode: "2624DR"
-  city: "Delft"
-  tel: "0612239080"
-  notes: "Haha dikke mensen"
+  person: {
+    username: null
+  }
+  # username: "svenpopping"
+  # email: "svenpopping@gmail.com"
+  # password: "hoi"
+  # cpassword: "hoi"
+  # name: "Sven"
+  # initials: "S"
+  # surname: "Popping"
+  # gender: false
+  # chmember: true
+  # transport: true
+  # address: "Bosboom Toussaintplein"
+  # number: "273"
+  # zipcode: "2624DR"
+  # city: "Delft"
+  # tel: "0612239080"
+  # notes: "Haha dikke mensen"
 
   ###
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 3
+    @$.animatedpages.selected = 0
 
   ###
     Brings you to the next page and changes the progressbar
