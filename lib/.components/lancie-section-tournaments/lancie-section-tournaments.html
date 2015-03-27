@@ -14,7 +14,7 @@
     <content></content>
     <div class="container" horizontal layout wrap start-justified>
       <template repeat="{{tourist in tournamentsList}}">
-        <tournament-element class="{{isScreen ? 'large' : ''}} {{isTablet ? 'medium' : ''}}  {{isBetween ? 'small' : ''}} {{isPhone ? 'xsmall' : ''}}" style="background-image: url({{tourist.src}});" data="{{tourist}}"></tournament-element>
+        <tournament-element class="{{isScreen ? 'large' : ''}} {{isTablet ? 'medium' : ''}}  {{isBetween ? 'small' : ''}} {{isPhone ? 'xsmall' : ''}}" style="background-image: url({{tourist.src}}); display: inline-block;" data="{{tourist}}"></tournament-element>
       </template>
     </div>
   </template>

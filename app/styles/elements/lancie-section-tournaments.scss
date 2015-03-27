@@ -5,10 +5,11 @@
 
   .container {
     position: relative;
+    display: inline-block;
 
     tournament-element {
       position: relative;
-      height: 100%; width: 100%;
+      height: 220px;
 
       background-position: center;
       background-size: 105% auto;
