@@ -7,12 +7,12 @@
     <paper-shadow z="1"></paper-shadow>
     <div vertical layout style="display: inline-block;">
       <div class="overlay"></div>
-      <div class="content {{data.type}}" flex style="height: 100%;">
+      <div class="content {{data.type}}" flex>
         <div class="main-info" flex>
           <h3>{{data.title}}</h3>
           <span>{{data.subtitle}}</span>
         </div>
-        <ul class="bg  trnsp  {{data.type}}" end style="position: absolute; bottom: 0; top: auto; right: 0; left: 0;">
+        <ul class="bg  trnsp  {{data.type}}" end style="">
           <template bind="{{data.details as d}}">
             <li>
               <span>Max participants</span> 

@@ -71,15 +71,20 @@
   </script>
   
   <!-- 
-  Redirect all IE version expect 11.0:
-  for some reason is the appName of IE 11 NetScape 
-  and not Microsoft Internet Explorer
+  Redirect all IE version expect 11.0 and 10.0:
   -->
-  <!-- <script>
+  <script>
     if (navigator.appName == 'Microsoft Internet Explorer') {
-      window.location.href = "/happybrowser/";
+      if(isIE() < 10) {
+        window.location.href = "/happybrowser/";
+      }
+      
     }
-  </script> -->
+    function isIE() {
+      var myNav = navigator.userAgent.toLowerCase();
+      return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+    }
+  </script>
 
   <link rel="import" href="/lib/components/polymer/polymer.html">
   <link rel="import" href="/lib/components/font-roboto/roboto.html">
