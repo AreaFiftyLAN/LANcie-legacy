@@ -1,18 +1,18 @@
-<polymer-element name="tournament-element" attributes="data" on-tap="{{onTapTournament}}" >
+<polymer-element name="tournament-element" attributes="data" on-tap="{{onTapTournament}}">
   
   <template>
     <link rel="stylesheet" href="/lib/styles/elements/lancie-tournament.css">
     <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
 
     <paper-shadow z="1"></paper-shadow>
-    <div vertical layout>
+    <div vertical layout style="display: inline-block;">
       <div class="overlay"></div>
       <div class="content {{data.type}}" flex>
         <div class="main-info" flex>
           <h3>{{data.title}}</h3>
           <span>{{data.subtitle}}</span>
         </div>
-        <ul class="bg  trnsp  {{data.type}}" end>
+        <ul class="bg  trnsp  {{data.type}}" end style="">
           <template bind="{{data.details as d}}">
             <li>
               <span>Max participants</span> 

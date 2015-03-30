@@ -2,7 +2,8 @@
   {
     "function"    : "Chairman",
     "name"        : "Sille Kamoen",
-    "icon"        : "group"
+    "icon"        : "group",
+    "info"        : "Proin pulvinar arcu magna, pharetra venenatis purus faucibus nec. Integer in varius eros. Curabitur mollis iaculis libero. Nunc eget nunc facilisis diam auctor varius. Aliquam eget neque malesuada, gravida nibh non, auctor libero. Ut in lorem a massa iaculis facilisis. Aliquam erat volutpat."
   },
   {
     "function"    : "Secretary",
