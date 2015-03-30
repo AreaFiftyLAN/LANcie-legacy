@@ -10,38 +10,44 @@
     position: relative;
     box-sizing: border-box;
 
-    &.vertical { 
-      width: calc(33% - 20px);
+    core-tooltip {
+      width: 100%;
     }
 
-    &.phone {
-      width: calc(100%);
-      margin: 0 0 20px 0;
-    }
-
-    .number {
-      background-color: $prime_blue;
-      text-align: center;
-      font-size: 30px;
-      line-height: 50px;
-      font-weight: 500;
-      color: $prime_yellow;
-    }
-
-    div {
-      padding: 5px 10px 4px;
-      
-      h2 {
-        padding: 3px 0 0 0; margin: 0;
-        font-size: 19px !important;
-        line-height: 25px;
+    core-tooltip .rich {
+      &.vertical { 
+        width: calc(33% - 20px);
       }
-      
-      h3 {
-        font-size: 14px;
-        margin: 0; padding: 0;
-        line-height: 14px;
-        font-weight: 100;
+
+      &.phone {
+        width: calc(100%);
+        margin: 0 0 20px 0;
+      }
+
+      .number {
+        background-color: $prime_blue;
+        text-align: center;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 500;
+        color: $prime_yellow;
+      }
+
+      div {
+        padding: 5px 10px 4px;
+        
+        h2 {
+          padding: 3px 0 0 0; margin: 0;
+          font-size: 19px !important;
+          line-height: 25px;
+        }
+        
+        h3 {
+          font-size: 14px;
+          margin: 0; padding: 0;
+          line-height: 14px;
+          font-weight: 100;
+        }
       }
     }
   }

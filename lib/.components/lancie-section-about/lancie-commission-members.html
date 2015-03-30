@@ -10,15 +10,29 @@
     <core-ajax auto id="membersJSON" url="/lib/scripts/json/commission-members.json" handleAs="json"></core-ajax>
 
     <template repeat="{{member,i in memberList}}">
-      <div id="info" class="{{isScreen ? 'horizontal' : ''}}{{isTablet ? 'vertical' : ''}}{{isPhone ? 'phone' : ''}}" horizontal layout>
-        <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
-        <div flex self-center class="number">
-          <i class="fa fa-{{member.icon}}"></i>
-        </div>
-        <div class="member-desc" flex five>
-          <h2>{{member.name}}</h2>
-          <h3>{{member.function}}</h3>
-        </div>
+      <div id="info" class="{{isScreen ? 'horizontal' : ''}}{{isTablet ? 'vertical' : ''}}{{isPhone ? 'phone' : ''}}">
+        <core-tooltip class="fancy" show>  
+          <div class="rich" horizontal layout >
+            <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+            <div flex self-center class="number">
+              <i class="fa fa-{{member.icon}}"></i>
+            </div>
+            <div class="member-desc" flex five>
+              <h2>{{member.name}}</h2>
+              <h3>{{member.function}}</h3>
+            </div>
+          </div>
+          <!-- <div tip>
+            <p style="width: 250px; margin-right: 8px;">
+              Proin pulvinar arcu magna, pharetra venenatis purus <br>
+               faucibus nec. Integer in varius eros. Curabitur mollis <br>
+               iaculis libero. Nunc eget nunc facilisis diam auctor <br>
+               varius. Aliquam eget neque malesuada, gravida nibh non, <br>
+               auctor libero. Ut in lorem a massa iaculis facilisis. <br>
+               Aliquam erat volutpat. 
+            </p>
+          </div> -->
+        </core-tooltip>
       </div>
     </template>
   </template>

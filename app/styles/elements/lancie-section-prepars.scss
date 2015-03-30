@@ -21,15 +21,19 @@
         margin-bottom: 0;
       }
     }
+    
+    .main-sponsors {
+      min-width: 250px;
 
-    partners-element {
-      margin: 0 50px 20px 0;
+      partners-element {
+        margin: 0 50px 20px 0;
 
-      &.xsmall {
-        margin: 0 0 0 0;
+        &.xsmall {
+          margin: 0 0 0 0;
 
-        .list-sponsors div:nth-child(1) a {
-          margin-right: 16px;
+          .list-sponsors div:nth-child(1) a {
+            margin-right: 16px;
+          }
         }
       }
     }
