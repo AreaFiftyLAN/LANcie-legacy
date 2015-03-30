@@ -6,7 +6,7 @@ Polymer 'create-account',
   userhash: null
   userId: null
   person: {
-    username: null
+    username: "svenpopping"
   }
 
   ###
