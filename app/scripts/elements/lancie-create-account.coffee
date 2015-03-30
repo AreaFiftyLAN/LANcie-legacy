@@ -7,6 +7,8 @@ Polymer 'create-account',
   userId: null
   person: {
     username: "svenpopping"
+    email: "svenp@ch.tudelft.nl"
+    password: "dingen"
   }
 
   ###
