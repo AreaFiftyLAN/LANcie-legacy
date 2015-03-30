@@ -1,10 +1,29 @@
+<link href="/lib/components/paper-input/paper-autogrow-textarea.html" rel="import">
+<link href="/lib/components/paper-input/paper-input-decorator.html" rel="import">
+<link href="/lib/components/paper-input/paper-char-counter.html" rel="import">
+<link href="/lib/components/core-animated-pages/transitions/cross-fade.html" rel="import">
+<link href="/lib/components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+
 <polymer-element name="create-account">
   <template>
-    <link rel="stylesheet" href="/styles/elements/lancie-create-account.css">
-    <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css" no-shim>
+    <link rel="stylesheet" href="/lib/styles/elements/lancie-create-account.css">
+    <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>   
 
-    <core-ajax id="createUserAJAX" method="POST" url="https://areafiftylan.nl/api/user/" handelAs="json"></core-ajax>
-    <core-ajax id="createProfileAJAX" method="POST" url="https://areafiftylan.nl/api/profile/{{userId}}" handelAs="json"></core-ajax>
+    <core-ajax auto id="checkUsernameAJAX" url="https://areafiftylan.nl/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
+    <core-ajax auto id="checkEmailAJAX" url="https://areafiftylan.nl/api/user/checkemail/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
+
+    <core-ajax
+      id="insertUser"
+      url="https://areafiftylan.nl/api/account/create/"
+      method="POST"
+      handleAs="json"
+      on-core-response="{{callbackUserInsert}}"></core-ajax>
+
+    <core-ajax
+      id="autoCompleteAddress"
+      url="http://api.postcodedata.nl/v1/postcode/?postcode={{zipcode}}&streetnumber={{number}}&ref=areafiftylan.nl&type=json"
+      handleAs="json"
+      on-core-response="{{autoCompleteAddress}}"></core-ajax>
     
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
@@ -16,16 +35,17 @@
       <div class="progress-bar-description" horizontal layout around-justified>
         <div flex>Account</div>
         <div flex>Profile</div>
+        <div flex>Transport</div>
         <div flex>Payment</div>
         <div flex>Confirmation</div>
       </div>
-      <paper-progress value="25" id="progress"></paper-progress>
+      <paper-progress value="20" id="progress"></paper-progress>
     </div>
   
     <form action="#" method="POST" layout vertical>
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="account">
-          <lancie-input label="Username" value="{{username}}" id="username" on-blur="{{checkUsername}}"></lancie-input>
+          <lancie-input label="Username" value="{{username}}" id="username"></lancie-input>
           <lancie-input label="Password" value="{{password}}" type="password" id="password" on-blur="{{checkPassword}}"></lancie-input>
           <lancie-input label="Confirm password" value="{{cpassword}}" type="password" id="cpassword" on-blur="{{checkConfirmPassword}}"></lancie-input>
           <lancie-input label="Email" value="{{email}}" id="email" on-blur="{{checkEmail}}"></lancie-input>
@@ -36,65 +56,73 @@
               <paper-checkbox for id="terms"></paper-checkbox>
               <div vertical layout>I accept the terms of agreement</div>
             </core-label>
-            <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}}">go to profile</paper-button>
+            <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}}">next</paper-button>
           </div>
         </section>
-        <section id="data">
-          <lancie-input label="Firstname" id="name" value="{{name}}"></lancie-input>
-          <lancie-input label="Initials" id="initials" value="{{initials}}"></lancie-input>
+  
+        <section id="data" style="position: absolute; top: 0; left: 0;">
+          <div layout horizontal center>
+            <label for="{{name}}" flex two>Firstname *</label>
+            <div flex four horizontal layout>
+              <paper-input-decorator flex four style="margin-right: 16px;" label="Firstname" value="{{name}}">
+                <input is="core-input" value="{{name}}" on-blur="{{emptyCheck}}" required>
+              </paper-input-decorator>
+              
+              <paper-input-decorator flex two label="Initials" value="{{initials}}">
+                <input is="core-input" value="{{initials}}" on-blur="{{emptyCheck}}" required>
+              </paper-input-decorator>
+            </div>
+          </div>
           <lancie-input label="Surname" id="surname" value="{{surname}}"></lancie-input>
           
           <div layout horizontal center style="height: 60px;" class="selection">
             <label for="" flex two>Gender *</label>
             <div flex four horizontal layout center>
-              <i center class="fa fa-male fa-2x"></i>
+              <i center class="fa fa-male fa-2x" selected?="{{!gender}}"></i>
                 <paper-toggle-button id="gender" checked="{{gender}}"></paper-toggle-button>
-              <i class="fa fa-female fa-2x"></i>
+              <i class="fa fa-female fa-2x" selected?="{{gender}}"></i>
             </div>
           </div>
 
           <div layout horizontal center>
             <label for="{{name}}" flex two>Address *</label>
-            <div flex four>
-              <paper-input-decorator id="decorator" name="{{name}}" label="{{label}}" value="{{value}}" error="{{error}}" 
-                isInvalid="{{isEmpty || isInValid}}">
-                <input is="core-input" type="{{type}}" value="{{value}}" committedValue="{{committedValue}}" required>
+            <div flex four horizontal layout>
+              <paper-input-decorator label="Zipcode" style="margin-right: 16px;" id="zipcodeDecorator">
+                <input is="core-input" id="zipcode" value="{{zipcode}}" on-blur="{{getAddress}}" required>
               </paper-input-decorator>
               
-              <paper-input-decorator id="decorator" name="{{name}}" label="{{label}}" value="{{value}}" error="{{error}}" 
-                isInvalid="{{isEmpty || isInValid}}">
-                <input is="core-input" type="{{type}}" value="{{value}}" committedValue="{{committedValue}}" required>
+              <paper-input-decorator label="Number" id="numberDecorator">
+                <input is="core-input" id="number" value="{{number}}" on-blur="{{getAddress}}" required>
               </paper-input-decorator>
             </div>
           </div>
 
-          <!-- <lancie-input label="Address" id="address" value="{{address}}"></lancie-input> -->
+          <div layout horizontal center>
+            <label flex two></label>
+            <div flex four horizontal layout>
+              <paper-input flex four style="margin-right: 16px;" disabled label="Street" value="{{address}}"></paper-input>
+              <paper-input flex two disabled label="City" value="{{city}}"></paper-input>
+            </div>
+          </div>
 
-          <div layout horizontal center style="height: 60px" class="selection">
-            <label for="" flex two>Notes</label>
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>CH Member *</label>
             <div flex four horizontal layout center>
-              <paper-input-decorator label="Notes">
-                <paper-autogrow-textarea>
-                  <textarea id="notes" cols="3" value="{{notes}}" maxlength="140"></textarea>
-                </paper-autogrow-textarea>
-                <paper-char-counter class="counter" target="t1"></paper-char-counter>
-              </paper-input-decorator>
+              <i center class="fa fa-close fa-2x" confirm?="{{!chmember}}"></i>
+                <paper-toggle-button id="gender" checked="{{chmember}}"></paper-toggle-button>
+              <i class="fa fa-check fa-2x" confirm?="{{chmember}}"></i>
             </div>
           </div>
 
-          <!-- <lancie-input label="Zipcode" id="zipcode" value="{{zipcode}}"></lancie-input>
-          <lancie-input label="City" id="city" value="{{city}}"></lancie-input>
-          <lancie-input label="Country" id="country" value="{{country}}"></lancie-input> -->
           <lancie-input label="Phone number" id="tel" value="{{tel}}"></lancie-input>
-          
-          <div layout horizontal center style="height: 60px" class="selection">
+
+          <div layout horizontal center class="selection">
             <label for="" flex two>Notes</label>
             <div flex four horizontal layout center>
-              <paper-input-decorator label="Notes">
+              <paper-input-decorator label="Remarks, Allergies, etc.">
                 <paper-autogrow-textarea>
-                  <textarea id="notes" cols="3" value="{{notes}}" maxlength="140"></textarea>
+                  <textarea id="notes" maxlength="100" value="{{notes}}"></textarea>
                 </paper-autogrow-textarea>
-                <paper-char-counter class="counter" target="t1"></paper-char-counter>
               </paper-input-decorator>
             </div>
           </div>
@@ -102,9 +130,28 @@
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
-            <paper-button raised disabled?="{{!($.name.isValid && $.initials.isValid && $.surname.isValid && $.address.isValid && $.zipcode.isValid&& $.city.isValid&& $.tel.isValid)}}" on-click="{{pageNext}} {{ajaxRequest}}">go to payment</paper-button>
+            <paper-button raised disabled?="{{!(name && initials && surname && zipcode && number && address && city && tel)}}" on-click="{{pageNext}}">next</paper-button>
           </div>
         </section>
+
+        <section id="transport">
+          <p>Aenean sed placerat massa. Integer ac tellus eu nisi pellentesque lobortis. Nam quis nisi odio. Aliquam erat volutpat. Pellentesque ac purus feugiat, iaculis neque sit amet, placerat lectus. Suspendisse at eros ac dui blandit hendrerit ac id sapien. Sed sit amet placerat lectus, ut porta eros. Maecenas ac aliquet nisi.</p>
+
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>Transport service *</label>
+            <div flex four horizontal layout center>
+              <i center class="fa fa-close fa-2x" confirm?="{{!transport}}"></i>
+                <paper-toggle-button id="transport" checked="{{transport}}"></paper-toggle-button>
+              <i class="fa fa-check fa-2x" confirm?="{{transport}}"></i>
+            </div>
+          </div>
+
+          <div class="buttons" horizontal justified layout>
+            <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
+            <paper-button raised on-click="{{pageNext}}">go to payment</paper-button>
+          </div>
+        </section>
+
         <section>
           <div class="payment-table">
             <div class="table-head" horizontal layout>
@@ -117,25 +164,28 @@
                 <div>Ticket Area FiftyLAN - 12/13/14 Juni 2015 - {{chmember ? "CH Discount" : "Normal"}}</div>
                 <span class="desc">{{name}} {{surname}} - {{username}} - {{email}}</span>
               </div>
-              <span>€ {{chmember ? "27,50" : "30,00"}}</span>
+              <span>€ {{chmember ? "30,00" : "35,00"}}</span>
             </div>
-            <div class="table-row" horizontal layout>
+            <div class="table-row" horizontal layout hidden?="{{!transport}}">
               <div flex four>
-                <div>Transaction cost</div>
-                <span class="desc">iDeal</span>
+                <div>Transport cost</div>
+                <span class="desc">
+                  {{address}} {{number}} - {{zipcode}} - {{city}}
+                </span>
               </div>
-              <span>€ 1,00</span>
+              <span>€ 2,50</span>
             </div>
 
             <div class="table-footer" horizontal layout>
               <div flex four>Total</div>
-              <span>€ {{chmember ? "28,50" : "31,00"}}</span>
+              <span>€ {{chmember ? transport ? "32,50" : "30,00" : transport ? "37,50" : "35,00"}}</span>
             </div>
           </div>
 
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
+            <paper-button raised on-click="{{insertUser}}">pay now</paper-button>
           </div>
         </section>
         <!-- <section>
@@ -145,5 +195,5 @@
     </form>
   </template>
 
-  <script src="/scripts/elements/lancie-create-account.js"></script>
+  <script src="/lib/scripts/elements/lancie-create-account.js"></script>
 </polymer-element>
