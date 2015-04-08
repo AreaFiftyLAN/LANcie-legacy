@@ -157,7 +157,6 @@ gulp.task('json', function() {
 gulp.task('coffee', function() {
   return gulp.src('app/scripts/**/*.coffee')
     .pipe(coffee({bare: true}).on('error', console.error.bind(console)))
-    .pipe(uglify())
     .pipe(gulp.dest('.tmp/lib/scripts'))
     .pipe(gulp.dest('dist/lib/scripts'));
 });

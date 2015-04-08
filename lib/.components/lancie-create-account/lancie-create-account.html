@@ -11,6 +11,8 @@
 
     <core-ajax auto id="checkUsernameAJAX" url="https://areafiftylan.nl/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
     <core-ajax auto id="checkEmailAJAX" url="https://areafiftylan.nl/api/user/checkemail/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
+    <core-ajax id="verfyEmail" url="https://areafiftylan.nl/api/user/verify/{{email}}/{{emailcode}}" handleAs="json"></core-ajax>
+    <core-ajax id="getPaymentUrl" url="https://areafiftylan.nl/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
 
     <core-ajax
       id="insertUser"
@@ -25,7 +27,7 @@
       handleAs="json"
       on-core-response="{{autoCompleteAddress}}"></core-ajax>
 
-    <core-localstorage name="lancie-create-account-save" value="{{person}}"></core-localstorage>
+    <core-localstorage id="lancieCreateAccountSave" name="lancie-create-account-save" value="{{person}}" autoSaveDisabled></core-localstorage>
     
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
@@ -44,8 +46,6 @@
       <paper-progress value="20" id="progress"></paper-progress>
     </div>
 
-    {{person.username}}
-
     <form action="#" method="POST" layout vertical>
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="account">
@@ -58,9 +58,15 @@
           <div class="buttons" horizontal end-justified layout center>
             <core-label class="terms" horizontal layout>
               <paper-checkbox for id="terms"></paper-checkbox>
-              <div vertical layout>I accept the terms of agreement</div>
+              <div vertical layout>I accept the 
+                <span on-click="{{onTapTerms}}">terms of agreement</span>
+              </div>
+
+              <paper-dialog id="agreement" heading="Terms of Agreement">
+                <p>Some content</p>
+              </paper-dialog>
             </core-label>
-            <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}}">next</paper-button>
+            <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}} {{saveData}}">next</paper-button>
           </div>
         </section>
   
@@ -134,7 +140,7 @@
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
-            <paper-button raised disabled?="{{!(name && initials && surname && zipcode && number && address && city && tel)}}" on-click="{{pageNext}}">next</paper-button>
+            <paper-button raised disabled?="{{!(name && initials && surname && zipcode && number && address && city && tel)}}" on-click="{{pageNext}} {{saveData}}">next</paper-button>
           </div>
         </section>
 
@@ -152,11 +158,17 @@
 
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
-            <paper-button raised on-click="{{pageNext}}">go to payment</paper-button>
+            <paper-button raised on-click="{{pageNext}} {{saveData}} {{insertUser}}">email verify</paper-button>
           </div>
         </section>
 
         <section>
+
+          <h2>Email verification code</h2>
+          <p>Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania.</p>
+          <lancie-input label="Code" value="{{verification}}" id="verification" on-blur="{{verifyEmail}}"></lancie-input>
+
+          <h2>Payment overview</h2>
           <div class="payment-table">
             <div class="table-head" horizontal layout>
               <div flex four>Description</div>
@@ -187,9 +199,8 @@
           </div>
 
           <!-- SHINY BUTTON -->
-          <div class="buttons" horizontal justified layout>
-            <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
-            <paper-button raised on-click="{{insertUser}}">pay now</paper-button>
+          <div class="buttons" horizontal end-justified layout>
+            <paper-button raised on-click="{{payNow}}" disabled?="{{emailcode != verification}}" >pay now</paper-button>
           </div>
         </section>
         <!-- <section>

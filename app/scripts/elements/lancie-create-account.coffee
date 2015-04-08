@@ -5,28 +5,46 @@ Polymer 'create-account',
   ###
   userhash: null
   userId: null
-  person: {
-    username: "svenpopping"
-    email: "svenp@ch.tudelft.nl"
-    password: "dingen"
-  }
+  emailcode: null
+  person: {}
 
   ###
     Initial of elements
   ###
   ready: ->
-    qs = document.location.search.split('+').join(' ')
-    params = {}
-    tokens = undefined
-    re = /[?&]?([^=]+)/g
-    while tokens = re.exec(qs)
-      params[decodeURIComponent(tokens[1])] = true
-    if params.payment
-      @$.animatedpages.selected = 3
-      @$.progress.value = 80
-    if params.confirm
-      @$.animatedpages.selected = 4
-      @$.progress.value = 100
+    @$.animatedpages.selected = 0
+    @person = JSON.parse localStorage.getItem("lancie-create-account-save")
+    @loadLocalstorage()
+
+  ###
+
+  ###
+  loadLocalstorage: ->
+    try
+      @username = @person.account.username
+      @password = @cpassword = @person.account.password
+      @email = @person.account.email
+
+      @name = @person.profile.name
+      @initials = @person.profile.initials
+      @surname = @person.profile.surname
+      @gender = @person.profile.gender == "m" ? false : true
+      @chmember = @person.profile.chmember
+      @zipcode = @person.profile.zipcode
+      @number = @person.profile.number
+      @tel = @person.profile.tel
+      @notes = @person.profile.notes
+      @$.autoCompleteAddress.go()
+
+      @transport = @person.profile.transport
+    catch error
+      @person = {}
+
+  ###
+
+  ###
+  onTapTerms: ->
+    @$.agreement.toggle()
 
   ###
     Brings you to the next page and changes the progressbar
@@ -101,6 +119,9 @@ Polymer 'create-account',
       else
         return target.isInValid = false
 
+  verifyEmail: ->
+    @$.verfyEmail.go()
+
   ###
 
   ###
@@ -163,14 +184,16 @@ Polymer 'create-account',
         return @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = true
 
   ###
-    AJAX Request to insert an user into the database
+
   ###
-  insertUser: ->
+  saveData: (e) ->
     genderChar = if @gender then "f" else "m"
-    @$.insertUser.params = {
+    @person.account = {
       username: @username
       email: @email
       password: @password
+    }
+    @person.profile = {
       name: @name 
       initials: @initials
       surname: @surname
@@ -178,24 +201,61 @@ Polymer 'create-account',
       chmember: @chmember
       transport: @transport
       address: @address + " " + @number
+      number: @number
       zipcode: @zipcode
       city: @city
       tel: @tel
       notes: @notes
     }
+    @$.lancieCreateAccountSave.save()
+
+  ###
+    AJAX Request to insert an user into the database
+  ###
+  insertUser: ->
+    @$.insertUser.params = @mergeInto(@person.account, @person.profile)
     @$.insertUser.go()
 
   ###
 
   ###
   callbackUserInsert: ->
-    console.log @$.insertUser.response
-    window.location = @$.insertUser.response
+    callback = JSON.parse @$.insertUser.response
+    @emailcode = callback.code
+    @userId = callback.userId
 
-    if not @$.insertUser.response[1]?
-      console.log @$.insertUser.response
-      window.location = @$.insertUser.response
-    else 
-      if @$.insertUser.response[1] is 1062
-        console.log @$.insertUser.response[2]
+  ###
+
+  ###
+  payNow: ->
+    @$.getPaymentUrl.go()
+
+  redirUser: ->
+    window.location = @$.getPaymentUrl.response
+
+  ###
+
+  ###
+  mergeInto: (o1, o2) ->
+    if o1 == null or o2 == null
+      return o1
+    for key of o2
+      if o2.hasOwnProperty(key)
+        o1[key] = o2[key]
+    o1
+
+
+    #   @$.animatedpages.selected = 0
+    # qs = document.location.search.split('+').join(' ')
+    # params = {}
+    # tokens = undefined
+    # re = /[?&]?([^=]+)/g
+    # while tokens = re.exec(qs)
+    #   params[decodeURIComponent(tokens[1])] = true
+    # if params.payment
+    #   @$.animatedpages.selected = 3
+    #   @$.progress.value = 80
+    # if params.confirm
+    #   @$.animatedpages.selected = 4
+    #   @$.progress.value = 100
 
