@@ -13,25 +13,18 @@
     <core-ajax auto id="checkEmailAJAX" url="https://areafiftylan.nl/api/user/checkemail/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
     <core-ajax id="verfyEmail" url="https://areafiftylan.nl/api/user/verify/{{email}}/{{emailcode}}" handleAs="json"></core-ajax>
     <core-ajax id="getPaymentUrl" url="https://areafiftylan.nl/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
+    <core-ajax id="insertUser" url="https://areafiftylan.nl/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
+    <core-ajax id="autoCompleteAddress" url="http://api.postcodedata.nl/v1/postcode/?postcode={{zipcode}}&streetnumber={{number}}&ref=areafiftylan.nl&type=json" handleAs="json" on-core-response="{{autoCompleteAddress}}"></core-ajax>
+    <core-ajax id="userPayed" url="https://areafiftylan.nl/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPayedLoaded}}"></core-ajax>
 
-    <core-ajax
-      id="insertUser"
-      url="https://areafiftylan.nl/api/account/create/"
-      method="POST"
-      handleAs="json"
-      on-core-response="{{callbackUserInsert}}"></core-ajax>
-
-    <core-ajax
-      id="autoCompleteAddress"
-      url="http://api.postcodedata.nl/v1/postcode/?postcode={{zipcode}}&streetnumber={{number}}&ref=areafiftylan.nl&type=json"
-      handleAs="json"
-      on-core-response="{{autoCompleteAddress}}"></core-ajax>
+    <core-ajax id="getUserByHash" url="https://areafiftylan.nl/api/user/hash/{{userhash}}" handleAs="json" on-core-response="{{getUserByHashLoaded}}"></core-ajax>
+    <core-ajax id="getUserById" url="https://areafiftylan.nl/api/user/get/{{userId}}" handleAs="json" on-core-response="{{getUserByIdLoaded}}"></core-ajax>
+    <core-ajax id="getProfileById" url="https://areafiftylan.nl/api/profile/get/{{userId}}" handleAs="json" on-core-response="{{getProfileByIdLoaded}}"></core-ajax>
 
     <core-localstorage id="lancieCreateAccountSave" name="lancie-create-account-save" value="{{person}}" autoSaveDisabled></core-localstorage>
     
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
-      <p>{{userhash}}</p><p>{{userId}}</p>
       Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends.
     </div>
 
@@ -159,12 +152,14 @@
         </section>
 
         <section>
-
-          <h2>Email verification code</h2>
-          <p>Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania.</p>
-          <lancie-input label="Code" value="{{verification}}" id="verification" on-blur="{{verifyEmail}}"></lancie-input>
+          <template if="{{!userhash}}">
+            <h2>Email verification code</h2>
+            <p>Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania.</p>
+            <lancie-input label="Code" value="{{verification}}" id="verification" on-blur="{{verifyEmail}}"></lancie-input>
+          </template>
 
           <h2>Payment overview</h2>
+          <p>Kijk of de gevens kloppen!</p>
           <div class="payment-table">
             <div class="table-head" horizontal layout>
               <div flex four>Description</div>
@@ -196,11 +191,40 @@
 
           <!-- SHINY BUTTON -->
           <div class="buttons" horizontal end-justified layout>
-            <paper-button raised on-click="{{payNow}}" disabled?="{{emailcode != verification}}" >pay now</paper-button>
+            <paper-button raised on-click="{{payNow}}" disabled?="{{!userhash && emailcode != verification}}" >pay now</paper-button>
           </div>
         </section>
         <section>
-          <h2>Ha sukkel je bent opgelicht</h2>
+          <h2>{{userPayed ? 'Hoi je hebt betaald' : 'Doei'}}</h2>
+
+          <div class="payment-table">
+            <div class="table-head" horizontal layout>
+              <div flex four>Description</div>
+              <div>Amount</div>
+            </div>
+
+            <div class="table-row" horizontal layout>
+              <div flex four>
+                <div>Ticket Area FiftyLAN - 12/13/14 Juni 2015 - {{chmember ? "CH Discount" : "Normal"}}</div>
+                <span class="desc">{{name}} {{surname}} - {{username}} - {{email}}</span>
+              </div>
+              <span>€ {{chmember ? "30,00" : "35,00"}}</span>
+            </div>
+            <div class="table-row" horizontal layout hidden?="{{!transport}}">
+              <div flex four>
+                <div>Transport cost</div>
+                <span class="desc">
+                  {{address}} {{number}} - {{zipcode}} - {{city}}
+                </span>
+              </div>
+              <span>€ 2,50</span>
+            </div>
+
+            <div class="table-footer" horizontal layout>
+              <div flex four>Total</div>
+              <span>€ {{chmember ? transport ? "32,50" : "30,00" : transport ? "37,50" : "35,00"}}</span>
+            </div>
+          </div>
         </section>
       </core-animated-pages>
     </form>

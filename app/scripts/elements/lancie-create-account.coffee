@@ -6,13 +6,13 @@ Polymer 'create-account',
   userhash: null
   userId: null
   emailcode: null
+  userPayed: false
   person: {}
 
   ###
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 2
     @person = JSON.parse localStorage.getItem("lancie-create-account-save")
     @loadLocalstorage()
 
@@ -20,17 +20,52 @@ Polymer 'create-account',
     params = @getUrlParams()
     if params.confirm && @person? 
       @$.animatedpages.selected = 4
-      @person = null
-      @$.lancieCreateAccountSave.save()
+      @$.progress.value = 100
+      @$.userPayed.go()
+    else if params.payment
+      @$.animatedpages.selected = 3
+      @$.progress.value = 80
+      @userhash = params.hash
+      @$.getUserByHash.go()
 
+  userPayedLoaded: ->
+    if @$.userPayed.response is true
+      @userPayed = true
+    else 
+      @userPayed = false
+    @person = null
+    @$.lancieCreateAccountSave.save()
+
+  getUserByHashLoaded: ->
+    @userId = @$.getUserByHash.response
+    @$.getUserById.go()
+    @$.getProfileById.go()
+
+  getUserByIdLoaded: ->
+    callback = @$.getUserById.response
+    @username = callback.username
+    @email = callback.email
+    @chmember = callback.chmember
+    @transport = callback.transport
+
+  getProfileByIdLoaded: ->
+    callback = @$.getProfileById.response
+    @name = callback.name
+    @surname = callback.surname
+    
+    @zipcode = callback.zipcode
+    @address = callback.address
+    @city = callback.city
+    @tel = callback.tel
+    @notes = callback.notes
 
   getUrlParams: ->
     qs = document.location.search.split('+').join(' ')
     params = {}
     tokens = undefined
-    re = /[?&]?([^=]+)/g
+    re = /[?&]?([^=]+)=([^&]*)/g
     while tokens = re.exec(qs)
-      params[decodeURIComponent(tokens[1])] = true
+      params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
     return params
 
   ###
@@ -41,19 +76,20 @@ Polymer 'create-account',
       @username = @person.account.username
       @password = @cpassword = @person.account.password
       @email = @person.account.email
+      @userId = @person.account.userId
+      @chmember = @person.account.chmember
 
       @name = @person.profile.name
       @initials = @person.profile.initials
       @surname = @person.profile.surname
       @gender = @person.profile.gender == "f" ? true : false
-      @chmember = @person.profile.chmember
       @zipcode = @person.profile.zipcode
       @number = @person.profile.number
       @tel = @person.profile.tel
       @notes = @person.profile.notes
       @$.autoCompleteAddress.go()
 
-      @transport = @person.profile.transport
+      @transport = @person.account.transport
     catch error
       @person = null
 
@@ -205,6 +241,7 @@ Polymer 'create-account',
   ###
   saveData: (e) ->
     genderChar = if @gender then "f" else "m"
+    @person = if @person is null then {} else @person
     @person.account = {
       username: @username
       email: @email
@@ -240,6 +277,8 @@ Polymer 'create-account',
     callback = JSON.parse @$.insertUser.response
     @emailcode = callback.code
     @userId = callback.userId
+    @person.account.userId = @userId
+    @$.lancieCreateAccountSave.save()
 
   ###
 
