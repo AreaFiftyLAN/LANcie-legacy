@@ -58,6 +58,8 @@ Polymer 'create-account',
     @city = callback.city
     @tel = callback.tel
     @notes = callback.notes
+    @saveData()
+
 
   getUrlParams: ->
     qs = document.location.search.split('+').join(' ')
@@ -173,6 +175,7 @@ Polymer 'create-account',
         return target.isInValid = false
 
   verifyEmail: ->
+    @emailEncoded = encodeURIComponent(@email)
     @$.verfyEmail.go()
 
   ###
