@@ -32,7 +32,7 @@
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
       <p>{{userhash}}</p><p>{{userId}}</p>
-      Area FiftyLAN is hét nieuwe gaming event van de TU Delft. Op dit spectaculaire weekend evenement zijn alle studenten van harte welkom om hun favoriete games te komen spelen met medestudenten en vrienden. Naast het vriendschappelijk spelen van games zullen er heldhaftige toernooien plaatsvinden, waaronder in Fifa, League Of Legends en TrackMania.
+      Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends.
     </div>
 
     <div class="progress-bar" vertical layout>
@@ -58,13 +58,9 @@
           <div class="buttons" horizontal end-justified layout center>
             <core-label class="terms" horizontal layout>
               <paper-checkbox for id="terms"></paper-checkbox>
-              <div vertical layout>I accept the 
-                <span on-click="{{onTapTerms}}">terms of agreement</span>
+              <div horizontal layout>I accept the&nbsp;
+                <terms-agreement>General Terms and Conditions</terms-agreement>
               </div>
-
-              <paper-dialog id="agreement" heading="Terms of Agreement">
-                <p>Some content</p>
-              </paper-dialog>
             </core-label>
             <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}} {{saveData}}">next</paper-button>
           </div>
@@ -145,7 +141,7 @@
         </section>
 
         <section id="transport">
-          <p>Aenean sed placerat massa. Integer ac tellus eu nisi pellentesque lobortis. Nam quis nisi odio. Aliquam erat volutpat. Pellentesque ac purus feugiat, iaculis neque sit amet, placerat lectus. Suspendisse at eros ac dui blandit hendrerit ac id sapien. Sed sit amet placerat lectus, ut porta eros. Maecenas ac aliquet nisi.</p>
+          <p>The participant can sign up for the non-free pickup service upon registration. This service is only available for participants living in a radius of 7.5 (seven and a half) kilometers around the event location.</p>
 
           <div layout horizontal center style="height: 60px;" class="selection">
             <label for="" flex two>Transport service *</label>
@@ -203,9 +199,9 @@
             <paper-button raised on-click="{{payNow}}" disabled?="{{emailcode != verification}}" >pay now</paper-button>
           </div>
         </section>
-        <!-- <section>
-          <div>4</div>
-        </section> -->
+        <section>
+          <h2>Ha sukkel je bent opgelicht</h2>
+        </section>
       </core-animated-pages>
     </form>
   </template>

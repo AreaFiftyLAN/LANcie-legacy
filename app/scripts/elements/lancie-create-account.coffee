@@ -12,9 +12,26 @@ Polymer 'create-account',
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 0
+    @$.animatedpages.selected = 2
     @person = JSON.parse localStorage.getItem("lancie-create-account-save")
     @loadLocalstorage()
+
+    # Load confirm page
+    params = @getUrlParams()
+    if params.confirm && @person? 
+      @$.animatedpages.selected = 4
+      @person = null
+      @$.lancieCreateAccountSave.save()
+
+
+  getUrlParams: ->
+    qs = document.location.search.split('+').join(' ')
+    params = {}
+    tokens = undefined
+    re = /[?&]?([^=]+)/g
+    while tokens = re.exec(qs)
+      params[decodeURIComponent(tokens[1])] = true
+    return params
 
   ###
 
@@ -28,7 +45,7 @@ Polymer 'create-account',
       @name = @person.profile.name
       @initials = @person.profile.initials
       @surname = @person.profile.surname
-      @gender = @person.profile.gender == "m" ? false : true
+      @gender = @person.profile.gender == "f" ? true : false
       @chmember = @person.profile.chmember
       @zipcode = @person.profile.zipcode
       @number = @person.profile.number
@@ -38,7 +55,7 @@ Polymer 'create-account',
 
       @transport = @person.profile.transport
     catch error
-      @person = {}
+      @person = null
 
   ###
 
@@ -243,19 +260,4 @@ Polymer 'create-account',
       if o2.hasOwnProperty(key)
         o1[key] = o2[key]
     o1
-
-
-    #   @$.animatedpages.selected = 0
-    # qs = document.location.search.split('+').join(' ')
-    # params = {}
-    # tokens = undefined
-    # re = /[?&]?([^=]+)/g
-    # while tokens = re.exec(qs)
-    #   params[decodeURIComponent(tokens[1])] = true
-    # if params.payment
-    #   @$.animatedpages.selected = 3
-    #   @$.progress.value = 80
-    # if params.confirm
-    #   @$.animatedpages.selected = 4
-    #   @$.progress.value = 100
 

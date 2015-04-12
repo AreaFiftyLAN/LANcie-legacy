@@ -1,0 +1,75 @@
+###################################################
+# Turn the RewriteEngine on.                      #
+###################################################
+
+RewriteEngine on
+
+###################################################
+# Use rewritebase when on localwebserver and      #
+# your basepath isn't set properly                #
+###################################################
+
+RewriteBase /api/
+#RewriteBase /websites/CH/LANcie_api/api/
+
+###################################################
+# If mod_spelling is installed set api            #
+# case-insensitive                                #
+###################################################
+<IfModule mod_spelling.c>
+CheckCaseOnly On
+</IfModule>
+
+###################################################
+# Add a leading www to domain if one is missing.  #
+###################################################
+# If this rule is used, the rewriting stops here  #
+# and then restarts from the beginning with the   #
+# new URL                                         #
+###################################################
+
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+###################################################
+# Do not process images or CSS files further      #
+###################################################
+# No more processing occurs if this rule is       #
+# successful                                      #
+###################################################
+
+RewriteRule \.(css|jpe?g|gif|png)$ - [L]
+
+###################################################
+# Only continue if the path doesn't match an      #
+# existing path or file                           #
+###################################################
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+###################################################
+# Add a trailing slash if needed                  #
+###################################################
+# If this rule is used, the rewriting stops here  #
+# and then restarts from the beginning with the   #
+# new URL                                         #
+###################################################
+
+#RewriteCond %{REQUEST_URI} ^/[^\.]+[^/]$
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1/ [R=301,L]
+
+###################################################
+# Rewrite web pages to one master page            #
+###################################################
+# /api/somepage/        => index.php              #
+#                            ?somepage/           #
+# /somesection/somepage => index.php              #
+#                            ?somesection/        #
+#                            somepage/            #
+###################################################
+# No more processing occurs if any of these rules #
+# are successful                                  #
+###################################################
+
+RewriteRule /view/create_account.html /registration/user/
