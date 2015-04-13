@@ -26,6 +26,8 @@ Polymer 'create-account',
       @$.animatedpages.selected = 3
       @$.progress.value = 80
       @userhash = params.hash
+      if params.code?
+        @$.verification.value = params.code
       @$.getUserByHash.go()
 
   userPayedLoaded: ->
