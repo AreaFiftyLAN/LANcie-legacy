@@ -22,12 +22,14 @@ Polymer 'create-account',
       @$.animatedpages.selected = 4
       @$.progress.value = 100
       @$.userPayed.go()
+    else if params.payment && @person? && params.code?
+      @$.animatedpages.selected = 3
+      @$.verification.value = params.code
+      @$.getUserById.go()
     else if params.payment
       @$.animatedpages.selected = 3
       @$.progress.value = 80
       @userhash = params.hash
-      if params.code?
-        @$.verification.value = params.code
       @$.getUserByHash.go()
 
   userPayedLoaded: ->
@@ -49,6 +51,7 @@ Polymer 'create-account',
     @email = callback.email
     @chmember = callback.chmember
     @transport = callback.transport
+    @emailcode = callback.hash.substr(callback.hash.length - 8, 8)
 
   getProfileByIdLoaded: ->
     callback = @$.getProfileById.response
