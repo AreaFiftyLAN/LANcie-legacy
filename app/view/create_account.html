@@ -2,14 +2,35 @@
 <html>
 <head>
 
-  <title>Area FiftyLAN - Gaming Event</title>
+  <title>Area FiftyLAN - Gaming Event - Registration</title>
 
-  <!-- <meta name="apple-mobile-web-app-title" content="Area FiftyLAN">
+  <!-- IPHONE -->
+  <meta name="apple-mobile-web-app-title" content="Area FiftyLAN"> <!-- New in iOS6 -->
   <meta name='apple-mobile-web-app-capable' content='yes'>
-  <meta name='apple-touch-fullscreen' content='yes'>
   <meta name='apple-mobile-web-app-status-bar-style' content='black'>
-  <meta name='format-detection' content='telephone=no'> -->
+  <meta name='format-detection' content='telephone=no'>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+
+  <!-- WINDOWS PHONE-->
+  <meta name="application-name" content="Area FiftyLAN" />
+  <meta name="msapplication-notification" content="frequency=30; polling-uri=notifications/contoso1.xml; polling-uri2=notifications/contoso2.xml; polling-uri3=notifications/contoso3.xml" />
+
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/Icon-60@3x.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/Icon-76@2x.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/Icon-72@2x.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/Icon-60@2x.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/Icon@2x.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/Icon-76.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/Icon-72.png">
+  <link rel="apple-touch-icon" href="/images/favicon/Icon.png">
+  <link rel="shortcut icon" href="/images/favicon/Icon-Small@3x.png">
+
+  <link rel="icon" sizes="192x192" href="/images/favicon/Icon-60@3x.png">
+  <link rel="icon" sizes="128x128" href="/images/favicon/Icon-72@2x.png">
+
+  <meta name="msapplication-TileImage" content="/images/favicon/Icon-72@2x.png">
+  <meta name="msapplication-TileColor" content="#1a2a43">
 
   <script src="/lib/components/webcomponentsjs/webcomponents.js"></script>
 
@@ -44,7 +65,7 @@
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="/lib/styles/lancie.css">
   <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>
-  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 </head>
 <body unresolved>
@@ -91,11 +112,11 @@
         <a href="/" data-scroll>
           <paper-button>HOME</paper-button>
         </a>
-        <a href="#">
-          <paper-button>TICKET SALES</paper-button>
+        <a data-scroll href="/#event">
+          <paper-button>EVENT</paper-button>
         </a>
-        <a href="#login" data-scroll>
-          <paper-button>MY AREA</paper-button>
+          <a data-scroll href="/#tournament">
+          <paper-button>TOURNAMENTS</paper-button>
         </a>
       </app-bar></site-banner>
   

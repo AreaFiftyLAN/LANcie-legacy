@@ -2,68 +2,36 @@
   {
     "items": [
       {
-        "name": "OGD",
-        "src": "http://placehold.it/230x150&text=900+eu"
+        "name": "Sogeti",
+        "src": "/images/logos/sponsors/logo_sogeti.png"
       },
       {
-        "name": "MSI",
-        "src": "http://placehold.it/230x150&text=900+eu"
+        "name": "Ordina",
+        "src": "/images/logos/sponsors/logo_ordina.png"
       },
-      {
-        "name": "Kingston",
-        "src": "http://placehold.it/230x150&text=900+eu"
-      },
-      {
-        "name": "Kingston",
-        "src": "http://placehold.it/230x150&text=900+eu"
-      }
-    ]
-  },
-  {
-    "items": [
       {
         "name": "",
-        "src": "http://placehold.it/230x150&text=250+eu"
-      },
-      {
-        "name": "Chio",
-        "src": "http://placehold.it/230x150&text=250+eu"
-      },
-      {
-        "name": "Asus",
-        "src": "http://placehold.it/230x150&text=250+eu"
-      },
-      {
-        "name": "Bol.com",
-        "src": "http://placehold.it/230x150&text=250+eu"
-      },
-      {
-        "name": "Bol.com",
-        "src": "http://placehold.it/230x150&text=250+eu"
+        "src": ""
       }
     ]
   },
   {
     "items": [
       {
-        "name": "LG",
-        "src": "http://placehold.it/230x150&text=250+eu"
+        "name": "Optiver",
+        "src": "/images/logos/sponsors/logo_optiver.png"
       },
       {
-        "name": "KLM",
-        "src": "http://placehold.it/230x150&text=250+eu"
+        "name": "",
+        "src": ""
       },
       {
-        "name": "slot3",
-        "src": "http://placehold.it/230x150&text=250+eu"
+        "name": "",
+        "src": ""
       },
       {
-        "name": "slot3",
-        "src": "http://placehold.it/230x150&text=250+eu"
-      },
-      {
-        "name": "Bol.com",
-        "src": "http://placehold.it/230x150&text=250+eu"
+        "name": "",
+        "src": ""
       }
     ]
   }

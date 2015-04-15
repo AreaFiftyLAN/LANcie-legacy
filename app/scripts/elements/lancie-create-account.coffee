@@ -13,25 +13,24 @@ Polymer 'create-account',
     Initial of elements
   ###
   ready: ->
-    @$.animatedpages.selected = 2;
     @person = JSON.parse localStorage.getItem("lancie-create-account-save")
     @loadLocalstorage()
 
     # Load confirm page
     params = @getUrlParams()
-    if params.confirm && @person? 
+    @userhash = params.hash
+
+    if params.confirm
       @$.animatedpages.selected = 4
       @$.progress.value = 100
-      @$.userPayed.go()
-    else if params.payment && @person? && params.code?
-      @$.animatedpages.selected = 3
-      @$.verification.value = params.code
-      @$.getUserById.go()
-    else if params.payment
+      @$.getUserByHash.go(true)
+    else if params.payment 
       @$.animatedpages.selected = 3
       @$.progress.value = 80
-      @userhash = params.hash
+      @$.verification.value = @userhash.substring(@userhash.length - 8, @userhash.length)
       @$.getUserByHash.go()
+      @$.verfyEmail.go()
+
 
   userPayedLoaded: ->
     if @$.userPayed.response is true
@@ -41,8 +40,9 @@ Polymer 'create-account',
     @person = null
     @$.lancieCreateAccountSave.save()
 
-  getUserByHashLoaded: ->
+  getUserByHashLoaded: (flag = false) ->
     @userId = @$.getUserByHash.response
+    if flag then @$.userPayed.go()
     @$.getUserById.go()
     @$.getProfileById.go()
 
@@ -183,6 +183,19 @@ Polymer 'create-account',
       else
         return target.isInValid = false
 
+  ###
+
+  ###
+  checkPhone: (e) ->
+    if !e.currentTarget.isInvalid
+      target = e.currentTarget
+      value = target.value.replace(/[^0-9]/g, '');
+      if value.length != 0
+        target.error = 'Your phone number is invalid, please check if it is 10 digit long!'
+        return target.isInvalid = true
+      else 
+        return target.isInvalid = false
+
   verifyEmail: ->
     @emailEncoded = encodeURIComponent(@email)
     @$.verfyEmail.go()
@@ -226,27 +239,14 @@ Polymer 'create-account',
   ###
   autoCompleteAddress: ->
     callback = @$.autoCompleteAddress.response
-    if callback.status is "ok"
-      result = callback.details[0]
+    if callback.success is true
+      result = callback.resource
       @address = result.street
-      @city = result.city
-    else 
-      @address = @city = null
-      if callback.errormessage.indexOf('postcode') isnt -1
-        @$.zipcodeDecorator.error = 'Please fill in a valid zipcode (1000AA)!'
-        return @$.zipcodeDecorator.isInvalid = true
-      else
-        @$.zipcodeDecorator.isInvalid = false
-
-      if callback.errormessage.indexOf('number') isnt -1
-        @$.numberDecorator.error = 'Please fill in a valid house number!'
-        return @$.numberDecorator.isInvalid = true
-      else 
-        @$.numberDecorator.isInvalid = false
-
-      if callback.errormessage.indexOf('results') isnt -1
-        @$.zipcodeDecorator.error = @$.numberDecorator.error = 'Please fill in a valid address!'
-        return @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = true
+      @city = result.town
+    else
+      @$.zipcodeDecorator.error = 'Please fill in a valid zipcode (1000AA)!'
+      @$.numberDecorator.error = 'Please fill in a valid house number!'
+      return @$.numberDecorator.isInvalid = @$.zipcodeDecorator.isInvalid = true
 
   ###
 

@@ -2,7 +2,7 @@
 <link href="/lib/components/paper-input/paper-input-decorator.html" rel="import">
 <link href="/lib/components/paper-input/paper-char-counter.html" rel="import">
 <link href="/lib/components/core-animated-pages/transitions/cross-fade.html" rel="import">
-<link href="/lib/components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+<link href="/lib/components/core-media-query/core-media-query.html" rel="import">
 
 <polymer-element name="create-account">
   <template>
@@ -14,27 +14,29 @@
     <core-ajax id="verfyEmail" url="https://areafiftylan.nl/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
     <core-ajax id="getPaymentUrl" url="https://areafiftylan.nl/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
     <core-ajax id="insertUser" url="https://areafiftylan.nl/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
-    <core-ajax id="autoCompleteAddress" url="http://api.postcodedata.nl/v1/postcode/?postcode={{zipcode}}&streetnumber={{number}}&ref=areafiftylan.nl&type=json" handleAs="json" on-core-response="{{autoCompleteAddress}}"></core-ajax>
+    <core-ajax id="autoCompleteAddress" url="https://api.postcodeapi.nu/{{zipcode}}/{{number}}" handleAs="json" headers='{"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Accept-Language": "en", "Api-Key": "17f4cdafa5035a4af6f8b2baa14eaed282c8f735"}' on-core-response="{{autoCompleteAddress}}"></core-ajax>
     <core-ajax id="userPayed" url="https://areafiftylan.nl/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPayedLoaded}}"></core-ajax>
 
     <core-ajax id="getUserByHash" url="https://areafiftylan.nl/api/user/hash/{{userhash}}" handleAs="json" on-core-response="{{getUserByHashLoaded}}"></core-ajax>
     <core-ajax id="getUserById" url="https://areafiftylan.nl/api/user/get/{{userId}}" handleAs="json" on-core-response="{{getUserByIdLoaded}}"></core-ajax>
     <core-ajax id="getProfileById" url="https://areafiftylan.nl/api/profile/get/{{userId}}" handleAs="json" on-core-response="{{getProfileByIdLoaded}}"></core-ajax>
 
+    <core-media-query query="max-width: 640px" queryMatches="{{phoneScreen}}"></core-media-query>
+
     <core-localstorage id="lancieCreateAccountSave" name="lancie-create-account-save" value="{{person}}" autoSaveDisabled></core-localstorage>
 
     <h1>Ticket sales - 12/13/14 Juni 2015</h1>
     <div class="specification">
-      Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends.
+      Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!
     </div>
 
     <div class="progress-bar" vertical layout>
       <div class="progress-bar-description" horizontal layout around-justified>
-        <div flex>Account</div>
-        <div flex>Profile</div>
-        <div flex>Transport</div>
-        <div flex>Payment</div>
-        <div flex>Confirmation</div>
+        <div flex>{{phoneScreen ? "A" : "Account"}}</div>
+        <div flex>{{phoneScreen ? "P" : "Profile"}}</div>
+        <div flex>{{phoneScreen ? "T" : "Transport"}}</div>
+        <div flex>{{phoneScreen ? "P" : "Payment"}}</div>
+        <div flex>{{phoneScreen ? "C" : "Confirmation"}}</div>
       </div>
       <paper-progress value="20" id="progress"></paper-progress>
     </div>
@@ -114,7 +116,7 @@
             </div>
           </div>
 
-          <lancie-input label="Phone number" id="tel" value="{{tel}}"></lancie-input>
+          <lancie-input label="Phone number" id="tel" value="{{tel}}"  on-blur="{{}}"></lancie-input>
 
           <div layout horizontal center class="selection">
             <label for="" flex two>Notes</label>
@@ -161,14 +163,12 @@
         </section>
 
         <section>
-          <template if="{{!userhash}}">
-            <h2>Email verification code</h2>
-            <p>We sent you an email with a verification code. Please check your inbox and click the link, or fill in the code below.</p>
-            <lancie-input label="Code" value="{{verification}}" id="verification" on-blur="{{verifyEmail}}"></lancie-input>
-          </template>
+          <h2>Email verification code</h2>
+          <p>We sent you an email with a verification code. Please check your inbox and click the link, or fill in the code below.</p>
+          <lancie-input label="Code" value="{{verification}}" id="verification" on-blur="{{verifyEmail}}"></lancie-input>
 
           <h2>Payment overview</h2>
-          <p>Kijk of de gevens kloppen!</p>
+          <p>Below, you can find an overview of your order. Make sure everything is correct before payment!</p>
           <div class="payment-table">
             <div class="table-head" horizontal layout>
               <div flex four>Description</div>
@@ -204,8 +204,18 @@
           </div>
         </section>
         <section>
-          <h2>{{userPayed ? 'We succesfully received your payment! You will receive a payment confirmation by mail.' : 'We did not receive your payment, please try again using the link you received in your inbox'}}</h2>
+          <h2>{{userPayed ? 'We succesfully received your payment! You will receive a payment confirmation by mail.' : 'We did not receive your payment!'}}</h2>
+          
+          <template if="{{userPayed}}">
+            Your registration is hereby final and are now a official participant of Area FiftyLAN! Being able to view and edit your personal details will be coming soon on our website. You will also be able to reserve a seat and find team members to participate in the tournaments! We will let you know when these features become available. If you have any questions, please don't hesitate to contact us through the form on the website. <br>
+            Thank you for your participation and until the 12th of June! <br><br>
+          </template>
 
+          <template if="{{!userPayed}}">
+            Your payment has expired, this means we did not receive your payment. With the following link you can start your payment again! <a href='http://www.areafiftylan.nl/tickets/?payment=true&hash={{userhash}}'>Click Here</a> <br>
+            If you have any questions regarding your payment, please don't hesitate to contact us through the form on the website. <br><br>
+          </template>
+          
           <div class="payment-table">
             <div class="table-head" horizontal layout>
               <div flex four>Description</div>
