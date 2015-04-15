@@ -13,6 +13,7 @@ Polymer 'create-account',
     Initial of elements
   ###
   ready: ->
+    @$.animatedpages.selected = 2;
     @person = JSON.parse localStorage.getItem("lancie-create-account-save")
     @loadLocalstorage()
 
@@ -105,6 +106,9 @@ Polymer 'create-account',
   ###
   onTapTerms: ->
     @$.agreement.toggle()
+
+  emailcheckToggle: ->
+    @$.emailcheck.toggle()
 
   ###
     Brings you to the next page and changes the progressbar

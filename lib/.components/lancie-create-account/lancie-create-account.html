@@ -148,8 +148,16 @@
 
           <div class="buttons" horizontal justified layout>
             <paper-button raised on-click="{{pagePrev}}">BACK</paper-button>
-            <paper-button raised on-click="{{pageNext}} {{saveData}} {{insertUser}}">email verify</paper-button>
+            <paper-button raised on-click="{{saveData}} {{emailcheckToggle}}">email verify</paper-button>
           </div>
+
+          <paper-action-dialog heading="Check your email!" id="emailcheck" style="width: 500px">
+            <p>Beyond this point no changes can be made to your details. <br>
+              Please make sure <strong>{{email}}</strong> is correct, as we will send a mail containing a verification code.</p>
+            
+            <paper-button affirmative>Decline</paper-button>
+            <paper-button affirmative autofocus on-click="{{insertUser}} {{pageNext}}">Yes, this is my email</paper-button>
+          </paper-action-dialog>
         </section>
 
         <section>
