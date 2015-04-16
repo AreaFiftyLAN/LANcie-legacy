@@ -75,30 +75,18 @@
       <core-menu-button>
         <core-icon id="dropdown-toggle" icon="menu" borderless></core-icon>
         <core-dropdown class="dropdown  core-transition-left" layered>
-          <paper-shadow z="2"></paper-shadow>
           <core-menu>
-            <core-item label="SPONSORS" horizontal center layout>
-              <a href="#sponsors" data-scroll></a>
+            <div id="logo-container" layout horizontal center>
+              <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
+            </div>
+            <core-item label="Home" horizontal center layout>
+              <a data-scroll href="/" borderless></a>
             </core-item>
-
-            <core-item label="EVENT &amp; TOURNAMENTS" horizontal center layout>
-              <a data-scroll href="#event" borderless></a>
+            <core-item label="Event" horizontal center layout>
+              <a data-scroll href="/#event" borderless></a>
             </core-item>
-
-            <core-item label="TICKET SALES" horizontal center layout>
-              <a data-scroll href="/view/create_account.html" borderless></a>
-            </core-item>
-
-            <core-item label="MY AREA" horizontal center layout>
-              <a href="#login" data-scroll borderless></a>
-            </core-item>
-
-            <core-item label="ABOUT US" horizontal center layout>
-              <a href="#about" data-scroll borderless></a>
-            </core-item>
-
-            <core-item label="LOGOUT" horizontal center layout>
-              <a href="#logout" data-scroll borderless></a>
+            <core-item label="Tournaments" horizontal center layout>
+              <a data-scroll href="/#tournament" borderless></a>
             </core-item>
           </core-menu>
         </core-dropdown>
