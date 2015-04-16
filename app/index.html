@@ -68,8 +68,8 @@
       var Platform = {flags: {shadow: true}};
     }
   </script>
-  
-  <!-- 
+
+  <!--
   Redirect all IE version expect 11.0 and 10.0:
   -->
   <script>
@@ -77,7 +77,7 @@
       if(isIE() < 10) {
         window.location.href = "/happybrowser/";
       }
-      
+
     }
     function isIE() {
       var myNav = navigator.userAgent.toLowerCase();
@@ -190,7 +190,7 @@
           <a data-scroll href="#tournament">
           <paper-button>TOURNAMENTS</paper-button>
         </a>
-      </app-bar></site-banner> 
+      </app-bar></site-banner>
 
     <main>
       <section id="ready" horizontal layout center>
@@ -232,11 +232,38 @@
         </div>
       </section>
 
+        <section id="filler"></section>
+
+        <section id="info">
+            <div class="content-padding">
+                <h1>Tickets & Other Info</h1>
+                <p>A base ticket will be &euro;35<sup>*</sup>. This includes admission to the entire event, breakfast and lunch on saturday and sunday, and a BBQ on saturday. You will have your own desk of 1,10m x 0,5m for the weekend, and a comfy chair to sit on. For an additional &euro;2,50, we will pick up your PC thursday evening and deliver it to the event. We will return it to you sunday evening.</p>
+                <sub>*CH members will get a small discount</sub>
+                <h2>Organize your own tournament!</h2>
+                <p>Is your favorite game not listed as a tournament? No problem! We offer you the possibility to become a game master! For this, we would like to receive a proposal for your tournament before May 15th. Your proposal should contain the following information</p>
+                <ol>
+                    <li>Which game you want to host</li>
+                    <li>Game format (Free-for-all, 5vs5, 1vs1, etc)</li>
+                    <li>Tournament structure (Qualifiers, rounds and a final, or a single round)</li>
+                    <li>Winner criteria (How is the winner chosen?)</li>
+                    <li>Expected duration (4 hours for the entire tournament, or does it span multiple days?)</li>
+                    <li>Required resources (Do you need our server, or host your own?)</li>
+                    <li>Contact information</li>
+                </ol>
+                <p>
+                    Official tournaments have priority, which means your tournament should be flexible enough be held at any point during the weekend. We prefer short compact tournaments, but don't let that stop you from proposing an amazing multi-day event. There is no limit to the duration of the tournament, but the format should be taken into account. A truly competitive tournament should not take more than a morning or afternoon, while a casual long term tournaments can span multiple days.
+                </p>
+                <p>
+                    We will review your proposal, and when accepted, we’ll appoint you as responsible person to run this tournament. This means the entire organisation of the tournament will be up to you. Your tournament will be placed on the website. but we can not offer any extra support for your tournament during the event.
+                </p>
+            </div>
+        </section>
+
       <section id="about">
         <div class="content-padding">
           <section-about>
             The LANcie is the newest and coolest committee of W.I.S.V ‘Christiaan Huygens’. This club of superheroes will ensure that you will never forget this gaming event. The LANcie does not bite and is not afraid of questions or a good conversation about gaming, food, UTP cables or networks. From the start to finish of this adventure we will assist you. With classified regards, the LANcie!
-        
+
             <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p>
           </section-about>
         </div>
