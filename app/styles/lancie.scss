@@ -21,13 +21,26 @@ lancie-map {
 }
 
 #tournament {
-  padding: 30px 0 50px;
+  padding: 30px 0 10px;
   background: $prime_blue url('/images/svg/ranking.svg') no-repeat -50% calc(100% + 50px);
 }
 
-#event {
+#event, #info {
   padding: 30px 0 10px;
   background: $prime_blue;
+}
+
+#info {
+  padding-bottom: 50px;
+  h1, h2 {
+    color: $prime_yellow;
+    margin-bottom: 10px;
+  }
+
+  p, sub, ol {
+    color: $prime_white;
+    text-align: justify;
+  }
 }
 
 #ready {
@@ -46,6 +59,26 @@ lancie-map {
     background: transparentize($prime_blue, 0.6);
     display: block;
     height: 100%; width: 100%;
+  }
+}
+
+footer {
+  background: $prime_blue;
+  margin: 0; padding: 20px 0 20px;
+  color: $prime_white;
+
+  p {
+    text-align: justify;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li span {
+      display: inline-block;
+      width: 200px;
+    }
   }
 }
 
@@ -94,7 +127,7 @@ html core-overlay-layer overlay-host::shadow {
   }
 }
 
-//Style for browser which aren't Google Chrome
+//Style for browsers which aren't Google Chrome
 #contactUs {
 
   #scroller {
@@ -138,6 +171,4 @@ html core-overlay-layer overlay-host::shadow {
     max-width: 100% !important;
   }
 }
-
-
 
