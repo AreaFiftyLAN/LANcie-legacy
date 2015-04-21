@@ -11,23 +11,26 @@
       <div horizontal wrap layout>
         <template repeat="{{row, i in sponsorsList}}">
           <template if="{{i == 0}}">
-            Premium sponsors
+            <span style="width: 100%;">Premium sponsors</span>
             <template repeat="{{column in row.items}}">
-              <div style="width: calc(100%);">
-                <core-icon style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
-              </div>
+              <template if="{{column.name != ''}}">
+                <div style="width: calc(50% - 5px);">
+                  <core-icon style="width: calc(100%); height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
+                </div>
+              </template>
             </template>
           </template>
 
           <template if="{{i != 0}}">
             <template if="{{i == 1}}"><span style="width: 100%;">Sponsors</span></template>
             <template repeat="{{column in row.items}}">
-              <div style="width: 50%;">
-                <core-icon style="width: 100%; height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
-              </div>
+              <template if="{{column.name != ''}}">
+                <div style="width: 25%;">
+                  <core-icon style="width: 100%; height: 0; padding: calc((100% - 20px) / 1.618) 0 0 0; margin-bottom: 20px;" src="{{column.src}}" sizing="contain"></core-icon>
+                </div>
+              </template>
             </template>
           </template>
-          
         </template>
       </div>
     </template>
