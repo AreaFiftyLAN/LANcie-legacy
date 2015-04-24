@@ -182,5 +182,28 @@
       }
     },
     "type": "bronze"
+  },
+  {
+    "title": "TF2",
+    "subtitle": "Girls only",
+    "src": "/images/background/tournaments/tf2.jpg",
+    "details": {
+      "name": "Team Fortress 2",
+      "max_players": "TBA",
+      "platform": "PC & Mac",
+      "info": "Team Fortress 2 is a team-based first-person shooter multiplayer video game. It is the sequel to the 1996 mod Team Fortress for Quake and its 1999 remake. In TF2, players join one of two teams comprising nine character classes, battling in a variety of game modes including capture the flag (CTF) and king of the hill (KOTH).",
+      "start_time": "TBA",
+      "format": "Free-For-All",
+      "sponsors": {
+        "name": "TBA",
+        "src": "/images/logos/sponsors/tournaments/TF2.gif",
+        "prize": [
+          "TBA",
+          "TBA",
+          "TBA"
+        ]
+      }
+    },
+    "type": "pink"
   }
 ]

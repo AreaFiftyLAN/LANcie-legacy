@@ -1,3 +1,4 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
 <polymer-element name="commission-members"  attributes="horizontal, vertical" layout wrap start-justified>
   <template>
     <link rel="stylesheet" href="/lib/styles/elements/lancie-commission-members.css">
@@ -11,8 +12,8 @@
 
     <template repeat="{{member,i in memberList}}">
       <div id="info" class="{{isScreen ? 'horizontal' : ''}}{{isTablet ? 'vertical' : ''}}{{isPhone ? 'phone' : ''}}">
-        <core-tooltip class="fancy" show>  
-          <div class="rich" horizontal layout >
+        <core-tooltip class="fancy" show>
+          <div class="rich" horizontal layout>
             <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
             <div flex self-center class="number">
               <i class="fa fa-{{member.icon}}"></i>
