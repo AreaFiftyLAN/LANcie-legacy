@@ -7,24 +7,48 @@
 
   .countdown-element {
     position: relative;
-    height: calc(23vw); width: calc(23vw);
-    margin: calc(1vw);
-
+    width: 23%; padding-bottom: 23%;
+    height: 0;
+    margin: 1%;
     background-color: transparentize($countdown_background, 1 - $countdown_background_opacity);
-    
-    .countdown-number {
-      position: relative;
-      height: 70%; width: 100%;
-      font-size: 7vw;
-      color: $countdown_number_color;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      overflow: hidden;
     }
 
-    .countdown-unit {
-      position: relative;
-      height: 30%; width: 100%;
-      font-size: 3.5vw;
-      font-weight: 200;
-      color: $countdown_unit_color;
+    .content {
+      position: absolute;
+      height: 100%; width: 100%;
+
+      .countdown-number {
+        position: relative;
+        height: 70%; width: 100%;
+        font-size: 6vw;
+        color: $countdown_number_color;
+      }
+
+      .countdown-unit {
+        position: relative;
+        height: 30%; width: 100%;
+        font-size: 3.5vw;
+        font-weight: 200;
+        color: $countdown_unit_color;
+      }
     }
+  }
+}
+
+@media only screen and (min-width: 1032px) {
+
+  .countdown-number {
+    font-size: 5em;
+  }
+
+  .countdown-unit {
+    font-size: 2.5em;
   }
 }
