@@ -10,7 +10,7 @@
   }
 
   &:nth-child(n) { 
-    margin: 0 $margin 24px 0;
+    margin: 0 $margin 32px 0;
   }
 
   &:nth-child(#{$numPerRow}n + 1) { 
