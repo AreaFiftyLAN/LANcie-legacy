@@ -1,0 +1,44 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="lancie-countdown" attributes="endtime">
+  <template>
+    <link rel="stylesheet" href="lancie-countdown.css">
+
+    <div flex horizontal layout center-justified>
+      <div class="countdown-element" layout vertical>
+        <paper-shadow z="2" animated fit></paper-shadow>
+        <div class="countdown-number" horizontal layout center-justified center>
+          <h1>{{days}}</h1>
+        </div>
+        <span class="countdown-unit" horizontal layout center-justified center>days</span>
+      </div>
+
+      <div class="countdown-element" layout vertical>
+        <paper-shadow z="2" animated fit></paper-shadow>
+        <div class="countdown-number" horizontal layout center-justified center>
+          <h1>{{hours}}</h1>
+        </div>
+        <span class="countdown-unit" horizontal layout center-justified center>hours</span>
+      </div>
+
+      <div class="countdown-element" layout vertical>
+        <paper-shadow z="2" animated fit></paper-shadow>
+        <div class="countdown-number" horizontal layout center-justified center>
+          <h1>{{minutes}}</h1>
+        </div>
+        <span class="countdown-unit" horizontal layout center-justified center>minutes</span>
+      </div>
+
+      <div class="countdown-element" layout vertical>
+        <paper-shadow z="2" animated fit></paper-shadow>
+        <div class="countdown-number" horizontal layout center-justified center>
+          <h1>{{seconds}}</h1>
+        </div>
+        <span class="countdown-unit" horizontal layout center-justified center>seconds</span>
+      </div>
+    </div>
+  </template>
+
+  <script src="lancie-countdown.js"></script>
+</polymer-element>
