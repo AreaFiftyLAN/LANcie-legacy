@@ -1,3 +1,4 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
 <link href="/lib/components/paper-input/paper-autogrow-textarea.html" rel="import">
 <link href="/lib/components/paper-input/paper-input-decorator.html" rel="import">
 <link href="/lib/components/paper-input/paper-char-counter.html" rel="import">
@@ -29,7 +30,7 @@
     <div class="specification">
         <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
         <p>A base ticket will be &euro;35<sup>*</sup>. This includes admission to the entire event, breakfast and lunch on saturday and sunday, and a BBQ on saturday. You will have your own desk of 1,10m x 0,5m for the weekend, and a comfy chair to sit on. For an additional &euro;2,50, we will pick up your PC thursday evening and deliver it to the event. We will return it to you sunday evening.</p>
-        <sub>*CH members will get a small discount</sub>
+        <sub>*CH members/alumni will get a small discount</sub>
     </div>
     <div class="progress-bar" vertical layout>
       <div class="progress-bar-description" horizontal layout around-justified>
@@ -112,7 +113,7 @@
           </div>
 
           <div layout horizontal center style="height: 60px;" class="selection">
-            <label for="" flex two>CH Member *</label>
+            <label for="" flex two>CH Member/Alumni *</label>
             <div flex four horizontal layout center>
               <i center class="fa fa-close fa-2x" confirm?="{{!chmember}}"></i>
                 <paper-toggle-button id="gender" checked="{{chmember}}"></paper-toggle-button>
@@ -141,7 +142,7 @@
         </section>
 
         <section id="transport">
-          <p>It’s possible to reserve a spot on our LANvan for your PC. For an additional €2,50 we will come and pick up your PC thursday evening, before the event. Terms and conditions concerning this service and other matters can be found on the website.</p>
+          <p>It’s possible to reserve a spot on our LANvan for your PC. For an additional €2,50 we will come and pick up your PC thursday evening, before the event. Please note that we can only pick up PC's within a radius of 7,5 km around Unit Sports &amp; Culture Terms and conditions concerning this service and other matters can be found on the website.</p>
 
           <div layout horizontal center style="height: 60px;" class="selection">
             <label for="" flex two>Transport service *</label>
@@ -157,7 +158,7 @@
             <paper-button raised on-click="{{saveData}} {{emailcheckToggle}}">email verify</paper-button>
           </div>
 
-          <paper-action-dialog heading="Check your email!" id="emailcheck" style="width: 500px">
+          <paper-action-dialog heading="Check your email!" id="emailcheck" style="width: {{phoneScreen ? 'calc(100vw) : '500px'}}">
             <p>Beyond this point no changes can be made to your details. <br>
               Please make sure <strong>{{email}}</strong> is correct, as we will send a mail containing a verification code.</p>
             

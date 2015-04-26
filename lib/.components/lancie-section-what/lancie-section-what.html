@@ -1,0 +1,141 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<polymer-element name="section-what" noscript horizontal layout wrap start-justified>
+  
+  <template>
+    <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css">
+
+     <style>
+      .rich {
+        width: calc(33% - 20px);
+        margin: 10px 10px;
+        position: relative; box-sizing: border-box;
+        padding: 0;
+      }
+      .rich.small {
+        width: calc(100% - 20px);
+      }
+      .rich.medium {
+        width: calc(50% - 20px);
+      }
+      .rich .number {
+        background-color: #1a2b43;
+        font-size: 30px;
+        color: #ffe574;
+        text-align: center;
+        line-height: 57px;
+        font-weight: 500;
+        width: 57px;
+      }
+      .rich .member-desc {
+        padding: 5px 10px 4px;
+        font-weight: 100;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    </style>
+
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}"></core-media-query>
+    <core-media-query query="(min-width : 582px) and (max-width : 768px)" queryMatches="{{isTablet}}"></core-media-query>
+    
+    <content></content>
+    <div class="rich {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-bed"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        A place to sleep for the whole weekend.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-desktop"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        A place for your own gear.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-cutlery"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        Breakfasts and lunches on saterday and sunday.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-trophy"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        8 tournaments with real prices.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-glass"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        Bar will be opened 24/7 to provide you drinks.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-fire"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        An awesome BBQ on saturday night.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-users"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        Many more games to play with friends.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-female"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        Girls only tournament.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-child"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        And ofcourse: Morning Gymnastics.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-futbol-o"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        Many activities like airhockey, poker, table soccer, etc.
+      </div>
+    </div>
+    <div class="rich  {{isPhone ? 'small' : ''}} {{isTablet ? 'medium' : ''}}" horizontal layout>
+      <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+      <div self-center class="number">
+        <i class="fa fa-truck"></i>
+      </div>
+      <div class="member-desc" flex self-center>
+        <i>(optional)</i> Transport service for your gear (&euro; 2,50 extra) (limited places)
+      </div>
+    </div>
+  </template>
+</polymer-element>

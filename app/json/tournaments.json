@@ -1,7 +1,7 @@
 [
   {
     "title": "LOL",
-    "subtitle": "5 vs 5 & 1 vs 1",
+    "subtitle": "5 vs 5",
     "src": "/images/background/tournaments/lol.jpg",
     "details": {
       "name": "League of Legends",
@@ -69,6 +69,29 @@
     "type": "gold"
   },
   {
+    "title": "LOL",
+    "subtitle": "1 vs 1",
+    "src": "/images/background/tournaments/lol.jpg",
+    "details": {
+      "name": "League of Legends",
+      "max_players": "TBA",
+      "platform": "PC & Mac",
+      "info": "League of Legends (LoL) is a 2009 multiplayer online battle arena game developed and published by Riot Games. It is a free-to-play game that is inspired by the mod Defense of the Ancients for the video game Warcraft III: The Frozen Throne. In League of Legends, players assume the role of a character, called a champion, with unique abilities, battling with a team against other player-controlled champions. In the most popular game modes, each team's goal is to destroy the opposing team's nexus, a building which lies at the heart of a base protected by defensive structures.",
+      "start_time": "TBA",
+      "format": "1 vs 1",
+      "sponsors": {
+        "name": "TBA",
+        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "prize": [
+          "TBA",
+          "TBA",
+          "TBA"
+        ]
+      }
+    },
+    "type": "gold"
+  },
+  {
     "title": "HS",
     "subtitle": "1 vs 1",
     "src": "/images/background/tournaments/hs.jpg",
@@ -89,7 +112,7 @@
         ]
       }
     },
-    "type": "silver"
+    "type": "gold"
   },
   {
     "title": "COD4",
@@ -112,7 +135,7 @@
         ]
       }
     },
-    "type": "silver"
+    "type": "gold"
   },
   {
     "title": "TM:NF",
@@ -135,7 +158,7 @@
         ]
       }
     },
-    "type": "silver"
+    "type": "gold"
   },
   {
     "title": "DOTA2",
@@ -158,7 +181,7 @@
         ]
       }
     },
-    "type": "bronze"
+    "type": "gold"
   },
   {
     "title": "UT2004",
@@ -181,6 +204,29 @@
         ]
       }
     },
-    "type": "bronze"
+    "type": "gold"
+  },
+  {
+    "title": "TF2",
+    "subtitle": "Girls only",
+    "src": "/images/background/tournaments/tf2.jpg",
+    "details": {
+      "name": "Team Fortress 2",
+      "max_players": "TBA",
+      "platform": "PC & Mac",
+      "info": "Team Fortress 2 is a team-based first-person shooter multiplayer video game. It is the sequel to the 1996 mod Team Fortress for Quake and its 1999 remake. In TF2, players join one of two teams comprising nine character classes, battling in a variety of game modes including capture the flag (CTF) and king of the hill (KOTH).",
+      "start_time": "TBA",
+      "format": "Free-For-All",
+      "sponsors": {
+        "name": "TBA",
+        "src": "/images/logos/sponsors/tournaments/TF2.gif",
+        "prize": [
+          "TBA",
+          "TBA",
+          "TBA"
+        ]
+      }
+    },
+    "type": "pink"
   }
 ]
