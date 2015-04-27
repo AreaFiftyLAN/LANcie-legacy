@@ -8,17 +8,19 @@
 
   .content-padding {
     max-width: 1032px;
-    margin: 0 auto;
+    margin: 30px auto 20px;
     
     &.col-xs, &.col-sm {
       padding: 0 16px;
     }
 
     &.col-md, &.col-lg {
+      width: 100%;
       padding: 0 32px;
     }
 
     ::content {
+      width: 100%;
       
       h1, h2, h3, h4, h5 {
         font-weight: 300;

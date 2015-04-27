@@ -1,0 +1,75 @@
+@import "components/variables";
+@import "mixins/all";
+
+:host {
+  position: relative;
+  height: 100%; width: 100%;
+
+  .content {
+    position: relative;
+    height: 100%; width: 100%;
+
+    .main {
+      position: relative;
+      height: calc(75% - 5px); width: 100%;
+      background-position: center;
+      background-size: 100% auto;
+
+      .overlay {
+        content: ' ';
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        z-index: 0;
+        background-color: transparentize($third_blue, 0.5);
+      }
+
+      .content {
+        h1 {
+          margin: 0;
+          color: $prime_white;
+          font-size: 3.9em;
+          font-weight: bold;
+          line-height: 1.2em;
+        }
+
+        h2 {
+          margin: 0;
+          color: $prime_white;
+          font-weight: 300;
+          font-size: 150%;
+        }
+      }
+    }
+
+    .second {
+      height: 48px;
+      background: $gold;
+      margin: 0; padding: 5px 10px 5px;
+
+      list-style-type: none;
+      overflow: hidden;
+      
+      font-size: 0.75em;
+      line-height: 1.4em;
+
+      li {
+        display: inline-block;
+        width: 100%;
+
+        span {
+          display: inline-block;
+          width: calc(50% - 2px);
+          font-weight: bold;
+          color: $prime_yellow;
+
+          &.info {
+            text-align: right;
+            font-weight: 300;
+            color: $prime_white;
+          }
+        }
+      }
+    }
+  }
+}
