@@ -13,7 +13,7 @@
       cursor: pointer;
       
       .main .overlay {
-        background: transparentize($third_blue, 0.2);
+        background-color: transparentize($third_blue, 0.1);
       }
     }
 
@@ -29,7 +29,7 @@
         left: 0; right: 0;
         top: 0; bottom: 0;
         z-index: 0;
-        background: transparentize($prime_blue, 0.7);
+        background-color: transparentize($third_blue, 0.5);
         transition: all 1s;
       }
 
@@ -88,11 +88,6 @@
     max-width: 758px;
     background-color: $prime_white;
 
-    &.small {
-      width: calc(100vw);
-      height: calc(100vh);
-    }
-
     &::shadow #scroller {
       overflow: auto;
       box-sizing: border-box;
@@ -139,16 +134,15 @@
       }
 
       .sponsor-content {
-        position: relative;
-        min-width: 250px;
-        min-height: 143px;
-
+        
         core-image {
-          min-height: 143px;
+          max-width: 230px;
+          min-height: 142.147817412px;
+          margin-bottom: -7px;
         }
 
         ol {
-          padding: 0; margin: 0 0 0 0;
+          padding: 0; margin: -7px 0 0 0;
           background-color: transparentize($default_color, 0.8);
 
           &.small {
@@ -157,7 +151,7 @@
 
           li {
             margin-left: 30px;
-            padding: 3px 10px 2px;
+            padding: 4px 10px 3px;
 
             &:first-child {
               margin: 0 0 4px 0;

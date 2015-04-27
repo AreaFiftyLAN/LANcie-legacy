@@ -1,16 +1,11 @@
 <link rel="import" href="/lib/components/polymer/polymer.html">
 <link rel="import" href="/lib/components/core-ajax/core-ajax.html">
-<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
 <link rel="import" href="/lib/components/paper-shadow/paper-shadow.html">
-<link rel="import" href="/lib/components/paper-dialog/paper-action-dialog.html">
+<!-- <link rel="import" href="/lib/components/paper-action-dialog/paper-action-dialog.html"> -->
 
 <polymer-element name="lancie-tournament-element" attributes="data" on-tap="{{openActionDialog}}">
   <template>
     <link rel="stylesheet" href="lancie-tournament-element.css">
-
-    <core-media-query query="max-width: 581px" queryMatches="{{xs}}"></core-media-query>
-    <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
-    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
 
     <paper-shadow z="1" animated fit></paper-shadow>
     <div class="content" vertical layout>
@@ -36,13 +31,13 @@
       </ul>
     </div>
     <template bind="{{data.details as d}}">
-      <paper-action-dialog id="paperAction" backdrop layered="false" transition="core-transition-top" class="{{xs ? 'small' : ''}}">
+      <paper-action-dialog id="paperAction" backdrop layered="false" transition="core-transition-center" class="{{isPhone ? 'small-paper' :  'big-paper'}}">
         <div class="action-dialog-header" style="background-image: url({{data.src}});">
           <div class="overlay"></div>
           <h2 style="background-color: {{data.color}};">{{d.name}}</h2>
         </div>
-        <div class="action-dialog-content" horizontal?="{{!xs && !s}}" vertical?="{{s}}" layout>
-          <div class="main-content" flex?="{{!xs && !s}}">
+        <div class="action-dialog-content" horizontal?="{{!isPhone}}" vertical?="{{isPhone}}" layout>
+          <div class="main-content" flex>
             <p class="description">{{d.info}}</p>
             <table class="specs">
               <tbody>
@@ -57,9 +52,9 @@
               </tbody>
             </table>
           </div>
-          <div class="sponsor-content" horizontal?="{{xs || s}}" vertical?="{{m}}" layout>
-            <core-image preload fade sizing="cover" src="{{d.sponsors.src}}" flex></core-image>
-            <ol class="{{data.type}}" start="0" flex>
+          <div class="sponsor-content  notonmobile">
+            <core-image preload fade position="left" src="{{d.sponsors.src}}"></core-image>
+            <ol class="{{data.type}}" start="0">
               <li style="background-color: {{data.color}};">Prizes</li>
               <template repeat="{{d.sponsors.prize}}">
                 <li>{{}}</li>
