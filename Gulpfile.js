@@ -84,11 +84,11 @@ gulp.task('fonts', function () {
 });
 
 // Compile and Automatically Prefix Stylesheets
-gulp.task('styles', function () {
+gulp.task('styles:serve', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/styles/**/*.scss',
-    'app/styles/**/*.css'
+    'app/**/*.{scss, css}',
+    'lib/**/*.{scss, css}'
   ])
     .pipe($.changed('styles', {extension: '.scss'}))
     .pipe($.rubySass({
@@ -98,8 +98,7 @@ gulp.task('styles', function () {
     .on('error', console.error.bind(console))
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('.tmp/lib/styles'))
-    .pipe(gulp.dest('dist/lib/styles'))
+    .pipe(gulp.dest('.tmp/lib/'))
 });
 
 // Scan Your HTML For Assets & Optimize Them
@@ -139,7 +138,7 @@ gulp.task('html', function () {
 
 // Copy lib folders to the .tmp folder
 gulp.task('lib', function(){
-  var src = ['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+  var src = ['lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
     'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'];
   return gulp.src(src)
     .pipe(gulp.dest('.tmp/lib/components'))
@@ -154,18 +153,20 @@ gulp.task('json', function() {
     .pipe(gulp.dest('dist/lib/scripts/json'));
 });
 
-gulp.task('coffee', function() {
-  return gulp.src('app/scripts/**/*.coffee')
+gulp.task('coffee:serve', function() {
+  return gulp.src([
+      'app/**/*.coffee',
+      'lib/**/*.coffee'
+    ])
     .pipe(coffee({bare: true}).on('error', console.error.bind(console)))
-    .pipe(gulp.dest('.tmp/lib/scripts'))
-    .pipe(gulp.dest('dist/lib/scripts'));
+    .pipe(gulp.dest('.tmp/lib/'));
 });
 
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'lib', 'json', 'coffee'], function () {
+gulp.task('serve', ['styles:serve', 'lib', 'json', 'coffee:serve'], function () {
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
@@ -176,14 +177,24 @@ gulp.task('serve', ['styles', 'lib', 'json', 'coffee'], function () {
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['lib/.components/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['lib/components/**/*.html'], reload);
+
+  gulp.watch([
+    'app/**/*.{scss,css}', 
+    'lib/**/*.{scss,css}'
+  ], ['styles:serve', reload]);
+
+
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/scripts/**/*.coffee'], ['coffee', reload]);
+  gulp.watch([
+    'app/**/*.coffee',
+    'lib/**/*.coffee',
+  ], ['coffee:serve', reload]);
+
   gulp.watch(['app/images/**/*'], reload);
   gulp.watch(['app/json/**/*.json'],['json', reload]);
 
-  gulp.watch(['lib/.components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+  gulp.watch(['lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
     'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'], ['lib', reload]);
 });
 
