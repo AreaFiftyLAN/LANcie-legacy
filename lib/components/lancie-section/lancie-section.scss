@@ -1,0 +1,31 @@
+@import "components/variables";
+@import "mixins/all";
+
+:host {
+  display: block;
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+  position: relative;
+
+  .content-padding {
+    max-width: 1032px;
+    margin: 0 auto;
+    
+    &.col-xs, &.col-sm {
+      padding: 0 16px;
+    }
+
+    &.col-md, &.col-lg {
+      padding: 0 32px;
+    }
+
+    ::content {
+      
+      h1, h2, h3, h4, h5 {
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        line-height: 48px;
+        margin: 0;
+      }
+    }
+  }
+}
