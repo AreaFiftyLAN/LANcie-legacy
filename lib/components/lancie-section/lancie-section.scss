@@ -5,11 +5,10 @@
   display: block;
   font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
   position: relative;
-  padding: 30px 0 20px;
 
   .content-padding {
     max-width: 1032px;
-    margin: 0 auto;
+    margin: 30px auto 20px;
     
     &.col-xs, &.col-sm {
       padding: 0 16px;

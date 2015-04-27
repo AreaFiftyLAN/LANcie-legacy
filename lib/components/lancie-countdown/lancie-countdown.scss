@@ -28,10 +28,11 @@
       .countdown-number {
         position: relative;
         height: 70%; width: 100%;
-        color: $countdown_number_color;
 
         h1 {
-          font-size: 10vw;
+          color: $countdown_number_color;
+          font-size: 9vw;
+          font-weight: bolder;
         }
       }
 
@@ -45,10 +46,10 @@
 
       @media only screen and (min-width: 1032px) {
         .countdown-number h1 {
-          font-size: 8em;
+          font-size: 7.8em;
         }
         .countdown-unit {
-          font-size: 2.5em;
+          font-size: 2em;
         }
       }
       

@@ -18,9 +18,24 @@ $red              : rgb(204, 42, 65);
 
 $default_color:   rgba(0, 0, 0, 0.87);
 
+// Button colors
+$button_background:             $prime_blue;
+$button_color:                  $prime_yellow;
+
+//Section colors
+$default_background:            $prime_white;
+$default_title_color:           $third_blue;
+$default_text_color:            $default_color;
+$secondary_background:          $prime_blue;
+$secondary_title_color:         $prime_yellow;
+$secondary_text_color:          $prime_white;
 
 // Countdown colors
 $countdown_background:          $third_blue;
 $countdown_background_opacity:  0.7;
 $countdown_number_color:        $prime_white;
 $countdown_unit_color:          $prime_yellow;
+
+// Footer
+$footer_background_color:       $prime_blue;
+$footer_color:                  $prime_white;
