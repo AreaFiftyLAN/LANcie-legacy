@@ -88,6 +88,9 @@
   <link rel="import" href="/lib/components/polymer/polymer.html">
   <link rel="import" href="/lib/components/font-roboto/roboto.html">
 
+  <link rel="import" href="/lib/components/paper-elements/paper-elements.html">
+  <link rel="import" href="/lib/components/core-elements/core-elements.html">
+
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="/lib/styles/lancie.css">
   <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css">
@@ -173,8 +176,17 @@
       </app-bar></site-banner>
 
     <main> -->
-      <lancie-section>
-        <lancie-countdown endtime="2015-04-27T21:59:59"></lancie-countdown>
+      <lancie-section layout vertical center-center flex>
+        <h3>12-13-14 June 2015 &#64; Unit Sports &amp; Culture</h3>
+          <lancie-countdown endtime="2015-04-27T21:59:59"></lancie-countdown>
+        <h3>Be ready for the LAuNCH</h3>
+
+        <a href="/tickets/">
+          <paper-button raised>
+            <core-icon icon="file-download"></core-icon>
+            GET YOUR TICKETS HERE!
+          </paper-button>
+        </a>
       </lancie-section>
 
       <!-- <section id="prepars">
