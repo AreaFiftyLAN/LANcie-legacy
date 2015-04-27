@@ -1,9 +1,0 @@
-@import "components/variables";
-@import "mixins/all";
-
-:host {
-  h1 {
-    color: $third_blue;
-    margin-bottom: 10px;
-  }
-}
