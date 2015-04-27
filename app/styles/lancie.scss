@@ -177,3 +177,12 @@ html core-overlay-layer overlay-host::shadow {
   }
 }
 
+html /deep/ lancie-section[secondary] {
+  background-color: $prime_blue;
+  color: $prime_white;
+
+  /deep/ h1 {
+    color: $prime_yellow;
+  }
+}
+
