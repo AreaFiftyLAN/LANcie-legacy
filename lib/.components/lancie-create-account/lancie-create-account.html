@@ -1,7 +1,6 @@
 <link rel="import" href="/lib/components/polymer/polymer.html">
 <link href="/lib/components/paper-input/paper-autogrow-textarea.html" rel="import">
 <link href="/lib/components/paper-input/paper-input-decorator.html" rel="import">
-<link href="/lib/components/paper-input/paper-char-counter.html" rel="import">
 <link href="/lib/components/core-animated-pages/transitions/cross-fade.html" rel="import">
 <link href="/lib/components/core-media-query/core-media-query.html" rel="import">
 
@@ -128,7 +127,7 @@
             <div flex four horizontal layout center>
               <paper-input-decorator label="Remarks, Allergies, etc.">
                 <paper-autogrow-textarea>
-                  <textarea id="notes" maxlength="100" value="{{notes}}"></textarea>
+                  <textarea id="notes" maxLength="100" value="{{notes}}"></textarea>
                 </paper-autogrow-textarea>
               </paper-input-decorator>
             </div>
@@ -158,7 +157,7 @@
             <paper-button raised on-click="{{saveData}} {{emailcheckToggle}}">email verify</paper-button>
           </div>
 
-          <paper-action-dialog heading="Check your email!" id="emailcheck" style="width: {{phoneScreen ? 'calc(100vw) : '500px'}}">
+          <paper-action-dialog heading="Check your email!" id="emailcheck" style="width: {{phoneScreen ? 'calc(100vw)' : '500px'}}">
             <p>Beyond this point no changes can be made to your details. <br>
               Please make sure <strong>{{email}}</strong> is correct, as we will send a mail containing a verification code.</p>
             
