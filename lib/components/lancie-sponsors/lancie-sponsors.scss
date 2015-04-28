@@ -1,4 +1,4 @@
-@import "components/variables";
+@import "../../../app/styles/components/variables";
 
 :host {
   position: relative;
@@ -7,7 +7,6 @@
   span {
     width: 100%;
   }
-  
 
   .sponsor-element {
     position: relative;
@@ -15,23 +14,23 @@
     margin: $sponsors_margin;
 
     &.el-lg, &.el-md {
-      width: calc((100% / #{$sponsors_secondary_l_and_m}) - #{2 * $sponsors_margin}); 
-      padding-bottom: calc(((100% / #{$sponsors_secondary_l_and_m}) - #{2 * $sponsors_margin}) / 1.618);
+      width: #{(100% / $sponsors_secondary_l_and_m - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_secondary_l_and_m - 2 * $sponsors_margin) / 1.618};
     }
 
     &.elp-lg, &.elp-md {
-      width: calc((100% / #{$sponsors_primary_l_and_m}) - #{2 * $sponsors_margin}); 
-      padding-bottom: calc(((100% / #{$sponsors_primary_l_and_m}) - #{2 * $sponsors_margin}) / 2.39);
+      width: #{(100% / $sponsors_primary_l_and_m - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_primary_l_and_m - 2 * $sponsors_margin) / 2.39};
     }
 
     &.el-sm, &.el-xs {
-      width: calc((100% / #{$sponsors_secondary_s_and_xs}) - #{2 * $sponsors_margin}); 
-      padding-bottom: calc(((100% / #{$sponsors_secondary_s_and_xs}) - #{2 * $sponsors_margin}) / 1.618);
+      width: #{(100% / $sponsors_secondary_s_and_xs - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_secondary_s_and_xs - 2 * $sponsors_margin) / 1.618};
     }
 
     &.elp-sm, &.elp-xs {
-      width: calc((100% / #{$sponsors_primary_s_and_xs}) - #{2 * $sponsors_margin}); 
-      padding-bottom: calc(((100% / #{$sponsors_primary_s_and_xs}) - #{2 * $sponsors_margin}) / 2.39);
+      width: #{(100% / $sponsors_primary_s_and_xs - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_primary_s_and_xs - 2 * $sponsors_margin) / 2.39};
     }
 
     &.start {

@@ -1,6 +1,4 @@
-@import "components/variables";
-@import "mixins/all";
-
+@import "../../../app/styles/components/variables";
 :host {
   position: relative;
   height: 100%; width: 100%;

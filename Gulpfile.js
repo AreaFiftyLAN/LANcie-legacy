@@ -25,9 +25,6 @@ var gulp = require('gulp');
 var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
 
-var minifyCSS = require('gulp-minify-css');
-var rename = require('gulp-rename');
-
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
@@ -48,17 +45,104 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 // Lint JavaScript
-gulp.task('jshint', function () {
+gulp.task('js:serve', function () {
   return gulp.src('app/scripts/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe(gulp.dest('.tmp/lib/scripts/'));
 });
 
+// Coffee:serve
+gulp.task('coffee:serve', function() {
+  return gulp.src([
+      "app/**/*.coffee", 
+      "lib/**/*.coffee"
+    ])
+    .pipe(coffee({bare: true})
+    .on('error', console.error.bind(console)))
+    .pipe(gulp.dest('.tmp/lib/'));
+});
+
+gulp.task('sass:app:serve', function() {
+  return $.rubySass("app/styles/", { style: 'expanded', container: 'gulp-ruby-sass-app' })
+      .on('error', console.error.bind(console))
+      .pipe(gulp.dest('.tmp/lib/styles/'));
+});
+
+gulp.task('sass:lib:serve', function() {
+  return $.rubySass("lib/components/", { style: 'expanded', container: 'gulp-ruby-sass-lib' })
+      .on('error', console.error.bind(console))
+      .pipe(gulp.dest('.tmp/lib/components'));
+});
+
+// Copy lib folders to the .tmp folder
+gulp.task('lib:serve', function(){
+  return gulp.src([
+      'lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+      'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+    ])
+    .pipe(gulp.dest('.tmp/lib/components'));
+});
+
+// Copy json files into .tmp folder
+gulp.task('json:serve', function() {
+  return gulp.src([
+      'app/json/**/*.json'
+    ])
+    .pipe(gulp.dest('.tmp/lib/scripts/json'));
+});
+
+// Watch Files For Changes & Reload
+gulp.task('serve', ['sass:app:serve', 'sass:lib:serve', 'lib:serve', 'json:serve', 'coffee:serve', 'js:serve'], function () {
+  browserSync({
+    notify: false,
+    server: ['.tmp', 'app']
+  });
+
+  gulp.watch([
+    'app/**/*.html',
+    'lib/components/**/*.html'
+  ], reload);
+
+  gulp.watch([
+    'app/**/*.{scss,css}', 
+    'lib/**/*.{scss,css}'
+  ], ['sass:app:serve', 'sass:lib:serve', reload]);
+
+  gulp.watch([
+    'app/**/*.coffee',
+    'lib/**/*.coffee',
+  ], ['coffee:serve', reload]);
+
+  gulp.watch(['app/json/**/*.json'],['json:serve', reload]);
+
+  gulp.watch([
+    'lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+    'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'
+  ], ['lib:serve', reload]);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Optimize Images
-gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
+gulp.task('images:dist', function () {
+  return gulp.src([
+      'app/images/**/*'
+    ])
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
@@ -81,24 +165,6 @@ gulp.task('copy', function () {
 gulp.task('fonts', function () {
   return gulp.src(['app/fonts/**'])
     .pipe(gulp.dest('dist/lib/fonts'));
-});
-
-// Compile and Automatically Prefix Stylesheets
-gulp.task('styles:serve', function () {
-  // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src([
-    'app/**/*.{scss, css}',
-    'lib/**/*.{scss, css}'
-  ])
-    .pipe($.changed('styles', {extension: '.scss'}))
-    .pipe($.rubySass({
-      style: 'expanded',
-      precision: 10
-    }))
-    .on('error', console.error.bind(console))
-    .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest('.tmp/lib/'))
 });
 
 // Scan Your HTML For Assets & Optimize Them
@@ -136,67 +202,10 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
-// Copy lib folders to the .tmp folder
-gulp.task('lib', function(){
-  var src = ['lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
-    'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'];
-  return gulp.src(src)
-    .pipe(gulp.dest('.tmp/lib/components'))
-    .pipe(gulp.dest('dist/lib/components'));
-});
 
-// Copy json files into .tmp folder
-gulp.task('json', function() {
-  var src = ['app/json/**/*.json'];
-  return gulp.src(src)
-    .pipe(gulp.dest('.tmp/lib/scripts/json'))
-    .pipe(gulp.dest('dist/lib/scripts/json'));
-});
-
-gulp.task('coffee:serve', function() {
-  return gulp.src([
-      'app/**/*.coffee',
-      'lib/**/*.coffee'
-    ])
-    .pipe(coffee({bare: true}).on('error', console.error.bind(console)))
-    .pipe(gulp.dest('.tmp/lib/'));
-});
 
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
-
-// Watch Files For Changes & Reload
-gulp.task('serve', ['styles:serve', 'lib', 'json', 'coffee:serve'], function () {
-  browserSync({
-    notify: false,
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: ['.tmp', 'app']
-  });
-
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['lib/components/**/*.html'], reload);
-
-  gulp.watch([
-    'app/**/*.{scss,css}', 
-    'lib/**/*.{scss,css}'
-  ], ['styles:serve', reload]);
-
-
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch([
-    'app/**/*.coffee',
-    'lib/**/*.coffee',
-  ], ['coffee:serve', reload]);
-
-  gulp.watch(['app/images/**/*'], reload);
-  gulp.watch(['app/json/**/*.json'],['json', reload]);
-
-  gulp.watch(['lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
-    'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'], ['lib', reload]);
-});
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', function () {

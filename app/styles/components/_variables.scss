@@ -41,7 +41,14 @@ $sponsors_primary_l_and_m:                3;
 $sponsors_primary_s_and_xs:               2;
 $sponsors_secondary_l_and_m:              5;
 $sponsors_secondary_s_and_xs:             3;
-$sponsors_margin:                         1%;
+$sponsors_margin:                         1;
+
+// Events
+$events_per_row_large:                    4;
+$events_per_row_medium:                   3;
+$events_per_row_small:                    2;
+$events_per_row_xsmall:                   1;
+$events_margin:                           1%;
 
 // Tournaments
 $tournaments_per_row_large:               4;
