@@ -1,5 +1,5 @@
-Polymer 'lancie-tournaments',
-  tournaments: null
+Polymer 'lancie-events',
+  events: null
 
   ###
     Start on DOM loaded
@@ -8,7 +8,7 @@ Polymer 'lancie-tournaments',
 
 
   ###
-    Insert ajax response into variable tournaments
+    Insert ajax response into variable events
   ###
   loadedJSON: (event) ->
-    @tournaments = event.currentTarget.response
+    @events = event.currentTarget.response

@@ -19,7 +19,7 @@
 
     .main {
       position: relative;
-      height: calc(75% - 5px); width: 100%;
+      height: 100%; width: 100%;
       background-position: center;
       background-size: 100% auto;
 
@@ -50,43 +50,18 @@
         }
       }
     }
-
-    .second {
-      height: 48px;
-      background: $gold;
-      margin: 0; padding: 5px 10px 5px;
-
-      list-style-type: none;
-      overflow: hidden;
-      
-      font-size: 0.75em;
-      line-height: 1.4em;
-
-      li {
-        display: inline-block;
-        width: 100%;
-
-        span {
-          display: inline-block;
-          width: calc(50% - 2px);
-          font-weight: bold;
-          color: $prime_yellow;
-
-          &.info {
-            text-align: right;
-            font-weight: 300;
-            color: $prime_white;
-          }
-        }
-      }
-    }
   }
 
   #paperAction {
     margin: 0; padding: 0;
     width: calc(80vw);
-    max-width: 758px;
+    max-width: 512px;
     background-color: $prime_white;
+
+    &.small {
+      width: calc(100vw);
+      height: calc(100vh);
+    }
 
     &::shadow #scroller {
       overflow: auto;

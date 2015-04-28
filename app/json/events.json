@@ -12,7 +12,7 @@
         "src": "/images/background/events/airhockey.jpg"
       }
     },
-    "type": "gold"
+    "color": "gold"
   },
   {
     "title": "Retro",
@@ -28,7 +28,7 @@
         "src": "/images/background/events/mariokart.png"
       }
     },
-    "type": "gold"
+    "color": "gold"
   },
   {
     "title": "Offline",
@@ -44,7 +44,7 @@
         "src": "/images/background/events/poker.jpg"
       }
     },
-    "type": "gold"
+    "color": "gold"
   },
   {
     "title": "Sports",
@@ -60,6 +60,6 @@
         "src": "/images/background/events/sports.jpg"
       }
     },
-    "type": "gold"
+    "color": "gold"
   }
 ]
