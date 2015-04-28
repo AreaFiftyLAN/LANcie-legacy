@@ -5,26 +5,26 @@
   .event-element {
     position: relative;
     height: 0;
-    margin: $events_margin;
+    margin: #{1% * $events_margin};
 
     &.el-lg {
-      width: calc((100% / #{$events_per_row_large}) - #{2 * $events_margin}); 
-      padding-bottom: calc((100% / #{$events_per_row_large}) - #{2 * $events_margin});
+      width: #{(100% / $events_per_row_large - 2 * $events_margin)}; 
+      padding-bottom: #{(100% / $events_per_row_large - 2 * $events_margin)};
     }
 
     &.el-md {
-      width: calc((100% / #{$events_per_row_medium}) - #{2 * $events_margin}); 
-      padding-bottom: calc((100% / #{$events_per_row_medium}) - #{2 * $events_margin});
+      width: #{(100% / $events_per_row_medium - 2 * $events_margin)}; 
+      padding-bottom: #{(100% / $events_per_row_medium - 2 * $events_margin)};
     }
 
     &.el-sm {
-      width: calc((100% / #{$events_per_row_small}) - #{2 * $events_margin}); 
-      padding-bottom: calc((100% / #{$events_per_row_small}) - #{2 * $events_margin});
+      width: #{(100% / $events_per_row_small - 2 * $events_margin)}; 
+      padding-bottom: #{(100% / $events_per_row_small - 2 * $events_margin)};
     }
 
     &.el-xs {
-      width: calc((100% / #{$events_per_row_xsmall}) - #{2 * $events_margin}); 
-      padding-bottom: calc((100% / #{$events_per_row_xsmall}) - #{2 * $events_margin});
+      width: #{(100% / $events_per_row_xsmall - 2 * $events_margin)}; 
+      padding-bottom: #{(100% / $events_per_row_xsmall - 2 * $events_margin)};
     }
 
     lancie-event-element {

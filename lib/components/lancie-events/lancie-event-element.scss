@@ -11,7 +11,7 @@
       cursor: pointer;
       
       .main .overlay {
-        background-color: transparentize($third_blue, 0.1);
+        background-color: transparentize($event_bg_overlay_hover, $event_bg_overlay_hover_opacity);
       }
     }
 
@@ -27,14 +27,14 @@
         left: 0; right: 0;
         top: 0; bottom: 0;
         z-index: 0;
-        background-color: transparentize($third_blue, 0.5);
+        background-color: transparentize($event_bg_overlay, $event_bg_overlay_opacity);
         transition: all 1s;
       }
 
       .content {
         h1 {
           margin: 0;
-          color: $prime_white;
+          color: $event_content_afk_color;
           font-size: 3.9em;
           font-weight: bold;
           line-height: 1.2em;
@@ -42,7 +42,7 @@
 
         h2 {
           margin: 0;
-          color: $prime_white;
+          color: $event_content_type_color;
           font-weight: 300;
           font-size: 150%;
         }
@@ -54,7 +54,7 @@
     margin: 0; padding: 0;
     width: calc(80vw);
     max-width: 512px;
-    background-color: $prime_white;
+    background-color: $event_default_paper_dialog;
 
     &.small {
       width: calc(100vw);
@@ -75,7 +75,7 @@
       .overlay {
         position: absolute;
         top: 0; left: 0;
-        background: transparentize($prime_blue, 0.7);
+        background: transparentize($event_bg_overlay, $event_bg_overlay_opacity);
         display: block;
         height: 160px; width: 100%;
       }
@@ -84,8 +84,8 @@
         position: relative;
         z-index: 10;
         padding: 6px 24px 5px;
-        color: $prime_white;
-        background-color: $gold;
+        color: $event_paperdialog_header_color;
+        background-color: $event_default_color;
       }
     }
 

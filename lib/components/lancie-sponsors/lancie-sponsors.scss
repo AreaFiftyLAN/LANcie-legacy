@@ -11,7 +11,7 @@
   .sponsor-element {
     position: relative;
     height: 0;
-    margin: $sponsors_margin;
+    margin: #{1% * $sponsors_margin};
 
     &.el-lg, &.el-md {
       width: #{(100% / $sponsors_secondary_l_and_m - 2 * $sponsors_margin)}; 

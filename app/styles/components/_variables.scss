@@ -48,14 +48,28 @@ $events_per_row_large:                    4;
 $events_per_row_medium:                   3;
 $events_per_row_small:                    2;
 $events_per_row_xsmall:                   1;
-$events_margin:                           1%;
+$events_margin:                           1;
+
+// Event-element
+$event_content_afk_color:                 $prime_white;  
+$event_content_type_color:                $prime_white;
+
+$event_bg_overlay:                        $prime_blue;
+$event_bg_overlay_opacity:                0.6;
+$event_bg_overlay_hover:                  $third_blue;
+$event_bg_overlay_hover_opacity:          0.1;
 
 // Tournaments
+$event_default_color:                     $third_blue;
+$event_default_paper_dialog:              $prime_white;
+
 $tournaments_per_row_large:               4;
 $tournaments_per_row_medium:              3;
 $tournaments_per_row_small:               2;
 $tournaments_per_row_xsmall:              1;
 $tournaments_margin:                      1%;
+
+$event_paperdialog_header_color:          $prime_white;
 
 // Tournament-element
 $tournament_default_color:                $gold;
