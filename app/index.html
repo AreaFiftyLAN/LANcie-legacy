@@ -97,6 +97,7 @@
 
   <!-- OWN ELEMENTS -->
   <link rel="import" href="/lib/components/lancie-app-bar/lancie-app-bar.html">
+  <link rel="import" href="/lib/components/lancie-commission/lancie-commission.html">
   <link rel="import" href="/lib/components/lancie-countdown/lancie-countdown.html">
   <link rel="import" href="/lib/components/lancie-events/lancie-events.html">
   <link rel="import" href="/lib/components/lancie-footer/lancie-footer.html">
@@ -277,9 +278,18 @@
       <lancie-section id="about">
         <h1>1<sup>st</sup> LANcie of W.I.S.V. 'Christiaan Huygens'</h1>
 
-        <p>The LANcie is the newest and coolest committee of W.I.S.V ‘Christiaan Huygens’. This club of superheroes will ensure that you will never forget this gaming event. The LANcie does not bite and is not afraid of questions or a good conversation about gaming, food, UTP cables or networks. From the start to finish of this adventure we will assist you. With classified regards, the LANcie!</p>
+        <template is="auto-binding">
+          <core-media-query query="max-width: 851px" queryMatches="{{md}}"></core-media-query>
 
-        <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p>
+          <div class="about-container" layout vertical?="{{md}}" horizontal?="{{!md}}">
+            <div class="context" vertical layout flex?="{{!md}}">
+              <p>The LANcie is the newest and coolest committee of W.I.S.V ‘Christiaan Huygens’. This club of superheroes will ensure that you will never forget this gaming event. The LANcie does not bite and is not afraid of questions or a good conversation about gaming, food, UTP cables or networks. From the start to finish of this adventure we will assist you. With classified regards, the LANcie!</p>
+
+              <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p>
+            </div>
+            <lancie-commission flex two json="/lib/scripts/json/commission-members.json"></lancie-commission>
+          </div>
+        </template>
       </lancie-section>
     </main>
 

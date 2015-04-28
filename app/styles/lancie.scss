@@ -52,6 +52,28 @@ paper-button[raised] {
   color: $button_color;
 }
 
+#about /deep/ .about-container {
+
+  .context {
+    margin-right: 2%;
+  }
+
+  lancie-commission {
+    margin-top: 16px;
+  }
+}
+
+#about .about-container {
+  
+  .context {
+    margin-right: 2%;
+  }
+
+  lancie-commission {
+    margin-top: 16px;
+  }
+} 
+
 // #ready {
 //   position: relative;
 //   margin-top: 30px;

@@ -1,0 +1,55 @@
+@import "../../../app/styles/components/variables";
+
+:host {
+  position: relative;
+  height: 100%; width: 100%;
+  
+  .commission-member {
+    margin: #{1% * $commission_margin};
+    position: relative; box-sizing: border-box;
+
+    &.el-lg {
+      width: #{(100% / $commission_per_row_large - 2 * $commission_margin)};
+    }
+
+    &.el-md {
+      width: #{(100% / $commission_per_row_medium - 2 * $commission_margin)};
+    }
+
+    &.el-sm {
+      width: #{(100% / $commission_per_row_small - 2 * $commission_margin)};
+    }
+
+    &.el-xs {
+      width: #{(100% / $commission_per_row_xsmall - 2 * $commission_margin)};
+    }
+
+    .number {
+      background-color: $commission_icon_bg;
+      font-size: 30px;
+      color: $commission_icon_color;
+      text-align: center;
+      line-height: 57px;
+      font-weight: 500;
+      width: 57px;
+    }
+
+    .member-desc {
+      padding: 5px 10px 4px;
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 18px;
+        
+      h2 {
+        font-size: 19px;
+        line-height: 1.3em;
+      }
+      
+      h3 {
+        font-size: 14px;
+        line-height: 1em;
+        font-weight: 100;
+      }
+    }
+  }
+}
