@@ -40,7 +40,7 @@ $countdown_unit_color:                    $prime_yellow;
 $sponsors_primary_l_and_m:                3;
 $sponsors_primary_s_and_xs:               2;
 $sponsors_secondary_l_and_m:              5;
-$sponsors_secondary_s_and_xs:             3;
+$sponsors_secondary_s_and_xs:             4;
 $sponsors_margin:                         1;
 
 // Events
@@ -51,6 +51,9 @@ $events_per_row_xsmall:                   1;
 $events_margin:                           1;
 
 // Event-element
+$event_default_color:                     $third_blue;
+$event_default_paper_dialog:              $prime_white;
+
 $event_content_afk_color:                 $prime_white;  
 $event_content_type_color:                $prime_white;
 
@@ -59,17 +62,34 @@ $event_bg_overlay_opacity:                0.6;
 $event_bg_overlay_hover:                  $third_blue;
 $event_bg_overlay_hover_opacity:          0.1;
 
-// Tournaments
-$event_default_color:                     $third_blue;
-$event_default_paper_dialog:              $prime_white;
+$event_paperdialog_header_color:          $prime_white;
 
+// Schema
+$schema_per_row_large:                    3;
+$schema_per_row_medium:                   3;
+$schema_per_row_small:                    2;
+$schema_per_row_xsmall:                   1;
+$schema_margin:                           1;
+
+// Timetable
+$timetable_default_color:                 $prime_white;
+$timetable_header_color:                  $third_blue;
+$timetable_header_bg:                     darken($prime_white, 3%);
+$timetable_default_bg:                    darken($third_blue, 10%);
+$timetable_alternate_bg:                  $third_blue;
+
+$timetable_per_row_large:                 3;
+$timetable_per_row_medium:                3;
+$timetable_per_row_small:                 2;
+$timetable_per_row_xsmall:                1;
+$timetable_margin:                        1;
+
+// Tournaments
 $tournaments_per_row_large:               4;
 $tournaments_per_row_medium:              3;
 $tournaments_per_row_small:               2;
 $tournaments_per_row_xsmall:              1;
-$tournaments_margin:                      1%;
-
-$event_paperdialog_header_color:          $prime_white;
+$tournaments_margin:                      1;
 
 // Tournament-element
 $tournament_default_color:                $gold;

@@ -5,26 +5,26 @@
   .tournament-element {
     position: relative;
     height: 0;
-    margin: $tournaments_margin;
+    margin: #{1% * $tournaments_margin};
 
     &.el-lg {
-      width: calc((100% / #{$tournaments_per_row_large}) - #{2 * $tournaments_margin}); 
-      padding-bottom: calc((100% / #{$tournaments_per_row_large}) - #{2 * $tournaments_margin});
+      width: #{(100% / $tournaments_per_row_large - 2 * $tournaments_margin)}; 
+      padding-bottom: #{(100% / $tournaments_per_row_large - 2 * $tournaments_margin)};
     }
 
     &.el-md {
-      width: calc((100% / #{$tournaments_per_row_medium}) - #{2 * $tournaments_margin}); 
-      padding-bottom: calc((100% / #{$tournaments_per_row_medium}) - #{2 * $tournaments_margin});
+      width: #{(100% / $tournaments_per_row_medium - 2 * $tournaments_margin)}; 
+      padding-bottom: #{(100% / $tournaments_per_row_medium - 2 * $tournaments_margin)};
     }
 
     &.el-sm {
-      width: calc((100% / #{$tournaments_per_row_small}) - #{2 * $tournaments_margin}); 
-      padding-bottom: calc((100% / #{$tournaments_per_row_small}) - #{2 * $tournaments_margin});
+      width: #{(100% / $tournaments_per_row_small - 2 * $tournaments_margin)}; 
+      padding-bottom: #{(100% / $tournaments_per_row_small - 2 * $tournaments_margin)};
     }
 
     &.el-xs {
-      width: calc((100% / #{$tournaments_per_row_xsmall}) - #{2 * $tournaments_margin}); 
-      padding-bottom: calc((100% / #{$tournaments_per_row_xsmall}) - #{2 * $tournaments_margin});
+      width: #{(100% / $tournaments_per_row_xsmall - 2 * $tournaments_margin)}; 
+      padding-bottom: #{(100% / $tournaments_per_row_xsmall - 2 * $tournaments_margin) / 1.2};
     }
 
     lancie-tournament-element {

@@ -15,7 +15,11 @@ body {
   background-color: $default_background;
   color: $default_text_color;
 
-  /deep/ h1 {
+  /deep/ h1, h1 {
+    color: $default_title_color;
+  }
+
+  h1 {
     color: $default_title_color;
   }
 }
@@ -25,6 +29,15 @@ html /deep/ lancie-section[secondary] {
   color: $secondary_text_color;
 
   /deep/ h1 {
+    color: $secondary_title_color;
+  }
+}
+
+html lancie-section[secondary] {
+  background-color: $secondary_background;
+  color: $secondary_text_color;
+
+  h1 {
     color: $secondary_title_color;
   }
 }

@@ -6,6 +6,8 @@ Polymer 'lancie-sponsors',
   ###
   ready: ->
 
+  ###
+    Insert ajax response into variable tournaments
+  ###
   loadedJSON: (event) ->
-    console.log "Loaded - JSON"
     @sponsors = event.currentTarget.response

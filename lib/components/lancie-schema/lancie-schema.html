@@ -1,0 +1,32 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-ajax/core-ajax.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+<link rel="import" href="/lib/components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="lancie-schema" attributes="json">
+  <template>
+    <link rel="stylesheet" href="lancie-schema.css">
+    <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css">
+    <core-ajax auto url="{{json}}" handleAs="json" on-core-response="{{loadedJSON}}"></core-ajax>
+
+    <core-media-query query="max-width: 581px" queryMatches="{{xs}}"></core-media-query>
+    <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
+    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
+
+    <div layout horizontal layout wrap start-justified>
+      <template repeat="{{data in schema}}">
+        <div class="rich {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}}" horizontal layout>
+          <paper-shadow id="shadow" z="1" fit animated></paper-shadow>
+          <div self-center class="number">
+            <i class="fa fa-{{data.icon}}"></i>
+          </div>
+          <div class="member-desc" flex self-center>
+            <template if="{{data.optional}}"><i>(optional)</i></template>
+            {{data.description}}
+          </div>
+        </div>
+      </template>
+    </div>
+  </template>
+  <script src="lancie-schema.js"></script>
+</polymer-element>

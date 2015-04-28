@@ -24,7 +24,7 @@
 
     &.el-xs {
       width: #{(100% / $events_per_row_xsmall - 2 * $events_margin)}; 
-      padding-bottom: #{(100% / $events_per_row_xsmall - 2 * $events_margin)};
+      padding-bottom: #{(100% / $events_per_row_xsmall - 2 * $events_margin) / 1.5};
     }
 
     lancie-event-element {

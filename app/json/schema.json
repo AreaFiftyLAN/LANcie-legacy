@@ -1,0 +1,47 @@
+[
+  {
+    "icon" : "bed",
+    "description" : "A place to sleep for the whole weekend."
+  },
+  {
+    "icon" : "desktop",
+    "description" : "A place for your own gear."
+  },
+  {
+    "icon" : "cutlery",
+    "description" : "Breakfasts and lunches on saterday and sunday."
+  },
+  {
+    "icon" : "trophy",
+    "description" : "10 tournaments with real prices."
+  },
+  {
+    "icon" : "female",
+    "description" : "Girls only tournament."
+  },
+  {
+    "icon" : "glass",
+    "description" : "Bar will be opened 24/7 to provide you drinks."
+  },
+  {
+    "icon" : "fire",
+    "description" : "An awesome BBQ on saturday night."
+  },
+  {
+    "icon" : "users",
+    "description" : "Many more games to play with friends."
+  },
+  {
+    "icon" : "child",
+    "description" : "And ofcourse: Morning Gymnastics."
+  },
+  {
+    "icon" : "futbol-o",
+    "description" : "Many activities like airhockey, poker, table soccer, etc."
+  },
+  {
+    "icon" : "truck",
+    "description" : "Transport service for your gear (limited places)",
+    "optional" : true
+  }
+]
