@@ -6,25 +6,26 @@
   .tournament-element {
     position: relative;
     height: 0;
-    
+    margin: $tournaments_margin;
+
     &.el-lg {
-      width: 23%; padding-bottom: 23%;
-      margin: 1%;
+      width: calc((100% / #{$tournaments_per_row_large}) - #{2 * $tournaments_margin}); 
+      padding-bottom: calc((100% / #{$tournaments_per_row_large}) - #{2 * $tournaments_margin});
     }
 
     &.el-md {
-      width: 29%; padding-bottom: 29%;
-      margin: 2%;
+      width: calc((100% / #{$tournaments_per_row_medium}) - #{2 * $tournaments_margin}); 
+      padding-bottom: calc((100% / #{$tournaments_per_row_medium}) - #{2 * $tournaments_margin});
     }
 
     &.el-sm {
-      width: 46%; padding-bottom: 46%;
-      margin: 2%;
+      width: calc((100% / #{$tournaments_per_row_small}) - #{2 * $tournaments_margin}); 
+      padding-bottom: calc((100% / #{$tournaments_per_row_small}) - #{2 * $tournaments_margin});
     }
 
     &.el-xs {
-      width: 96%; padding-bottom: 96%;
-      margin: 2%
+      width: calc((100% / #{$tournaments_per_row_xsmall}) - #{2 * $tournaments_margin}); 
+      padding-bottom: calc((100% / #{$tournaments_per_row_xsmall}) - #{2 * $tournaments_margin});
     }
 
     lancie-tournament-element {
