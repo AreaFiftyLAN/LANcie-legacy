@@ -7,63 +7,70 @@ $prime_white:                             #eeecec;
 
 
 // Ranking colors
-$gold:                                          rgb(212, 175, 55);
-$silver:                                        rgb(192, 192, 192);
-$bronze:                                        rgb(205, 127, 50);
-$pink:                                          rgb(245, 105, 145);
+$gold:                                    rgb(212, 175, 55);
+$silver:                                  rgb(192, 192, 192);
+$bronze:                                  rgb(205, 127, 50);
+$pink:                                    rgb(245, 105, 145);
 
-$green:                                         rgb(136, 196, 37);
-$red:                                           rgb(204, 42, 65);
+$green:                                   rgb(136, 196, 37);
+$red:                                     rgb(204, 42, 65);
 
 
-$default_color:                                 rgba(0, 0, 0, 0.87);
+$default_color:                           rgba(0, 0, 0, 0.87);
 
 // Button colors
-$button_background:                             $prime_blue;
-$button_color:                                  $prime_yellow;
+$button_background:                       $prime_blue;
+$button_color:                            $prime_yellow;
 
 //Section colors
-$default_background:                            $prime_white;
-$default_title_color:                           $third_blue;
-$default_text_color:                            $default_color;
-$secondary_background:                          $prime_blue;
-$secondary_title_color:                         $prime_yellow;
-$secondary_text_color:                          $prime_white;
+$default_background:                      $prime_white;
+$default_title_color:                     $third_blue;
+$default_text_color:                      $default_color;
+$secondary_background:                    $prime_blue;
+$secondary_title_color:                   $prime_yellow;
+$secondary_text_color:                    $prime_white;
 
 // Countdown colors
-$countdown_background:                          $third_blue;
-$countdown_background_opacity:                  0.7;
-$countdown_number_color:                        $prime_white;
-$countdown_unit_color:                          $prime_yellow;
+$countdown_background:                    $third_blue;
+$countdown_background_opacity:            0.7;
+$countdown_number_color:                  $prime_white;
+$countdown_unit_color:                    $prime_yellow;
+
+// Sponsors
+$sponsors_primary_l_and_m:                3;
+$sponsors_primary_s_and_xs:               2;
+$sponsors_secondary_l_and_m:              5;
+$sponsors_secondary_s_and_xs:             3;
+$sponsors_margin:                         1%;
 
 // Tournaments
-$tournaments_per_row_large:                     4; // elements per row
-$tournaments_per_row_medium:                    3; // elements per row
-$tournaments_per_row_small:                     2; // elements per row
-$tournaments_per_row_xsmall:                    1; // elements per row
-$tournaments_margin:                            1%; // Percentage
+$tournaments_per_row_large:               4;
+$tournaments_per_row_medium:              3;
+$tournaments_per_row_small:               2;
+$tournaments_per_row_xsmall:              1;
+$tournaments_margin:                      1%;
 
 // Tournament-element
-$tournament_default_color:              $gold;
-$tournament_default_paper_dialog:       $prime_white;
+$tournament_default_color:                $gold;
+$tournament_default_paper_dialog:         $prime_white;
 
-$tournament_bg_overlay:                 $prime_blue;
-$tournament_bg_overlay_opacity:         0.7;
-$tournament_bg_overlay_hover:           $third_blue;
-$tournament_bg_overlay_hover_opacity:   0.1;
+$tournament_bg_overlay:                   $prime_blue;
+$tournament_bg_overlay_opacity:           0.6;
+$tournament_bg_overlay_hover:             $third_blue;
+$tournament_bg_overlay_hover_opacity:     0.1;
 
-$tournament_content_game_afk_color:             $prime_white;  
-$tournament_content_game_type_color:            $prime_white;
-$tournament_second_type_color:                  $prime_yellow;
-$tournament_second_info_color:                  $prime_white;
+$tournament_content_game_afk_color:       $prime_white;  
+$tournament_content_game_type_color:      $prime_white;
+$tournament_second_type_color:            $prime_yellow;
+$tournament_second_info_color:            $prime_white;
 
-$tournament_paperdialog_header_color:           $prime_white;
-$tournament_paperdialog_prices_color:           $prime_white;
-$tournament_paperdialog_prices_bg:              #cdcdcd;
+$tournament_paperdialog_header_color:     $prime_white;
+$tournament_paperdialog_prices_color:     $prime_white;
+$tournament_paperdialog_prices_bg:        #cdcdcd;
 
 // Footer
-$footer_background_color:                       $prime_blue;
-$footer_color:                                  $prime_white;
+$footer_background_color:                 $prime_blue;
+$footer_color:                            $prime_white;
 
 
 
