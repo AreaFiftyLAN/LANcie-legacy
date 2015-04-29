@@ -42,6 +42,10 @@ html lancie-section[secondary] {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 lancie-map {
   display: block;
   height: 300px;
@@ -50,6 +54,70 @@ lancie-map {
 paper-button[raised] {
   background-color: $button_background;
   color: $button_color;
+}
+
+#header {
+  background: $header_background_image center top;
+  background-size: 125% auto;
+
+  .overlay {
+    position: absolute;
+    z-index: 0;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-color: $header_background_overlay;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 3em;
+    margin: 20px auto;
+    
+    line-height: 1em;
+    text-align: center;
+    color: $header_text_color;
+    font-weight: 400;
+    letter-spacing: 3px;
+  }
+
+  a paper-button[raised] {
+    font-size: 32px;
+    line-height: 0.8em;
+    margin: 24px auto;
+  }
+}
+
+@media only screen and (max-width: 581px) {
+  body {
+    margin-top: 50px;
+  }
+
+  #header {
+    h1 {
+      margin: 8px auto;
+      font-size: 1.3em;
+    }
+
+    a paper-button[raised] {
+      font-size: 16px;
+      margin: 12px auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 582px) and (max-width: 761px) {
+  #header {
+    h1 {
+      margin: 8px auto;
+      font-size: 2em;
+    }
+
+    a paper-button[raised] {
+      font-size: 24px;
+      margin: 12px auto;
+    }
+  }
 }
 
 #about /deep/ .about-container {
