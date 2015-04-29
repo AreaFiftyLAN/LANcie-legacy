@@ -13,9 +13,6 @@ Polymer 'create-account',
     Initial of elements
   ###
   ready: ->
-    @person = JSON.parse localStorage.getItem("lancie-create-account-save")
-    @loadLocalstorage()
-
     # Load confirm page
     params = @getUrlParams()
     @userhash = params.hash
@@ -27,9 +24,8 @@ Polymer 'create-account',
     else if params.payment 
       @$.animatedpages.selected = 3
       @$.progress.value = 80
-      @$.verification.value = @userhash.substring(@userhash.length - 8, @userhash.length)
+      @$.emailcode = @$.verification.value = @userhash.substring(@userhash.length - 8, @userhash.length)
       @$.getUserByHash.go()
-      @$.verfyEmail.go()
 
 
   userPayedLoaded: ->
@@ -53,6 +49,8 @@ Polymer 'create-account',
     @chmember = callback.chmember
     @transport = callback.transport
     @emailcode = callback.hash.substr(callback.hash.length - 8, 8)
+    console.log "lancieCreateAccountSave.verifyEmail"
+    @verifyEmail()
 
   getProfileByIdLoaded: ->
     callback = @$.getProfileById.response
