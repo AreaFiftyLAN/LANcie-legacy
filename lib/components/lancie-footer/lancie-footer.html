@@ -1,16 +1,9 @@
 <link rel="import" href="/lib/components/polymer/polymer.html">
-<link rel="import" href="/lib/components/core-ajax/core-ajax.html">
-<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
 
 <polymer-element name="lancie-footer" noscript>
   <template>
     <link rel="stylesheet" href="lancie-footer.css">
-    <core-ajax auto url="{{json}}" handleAs="json" on-core-response="{{loadedJSON}}"></core-ajax>
-
-    <core-media-query query="max-width: 581px" queryMatches="{{xs}}"></core-media-query>
-    <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
-    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
-    
+  
     <div class="content-padding">
       <p>W.I.S.V. ‘Christiaan Huygens’ (CH) is the study association for students of Applied Mathematics and Computer
         Science at the Delft University of Technology.
