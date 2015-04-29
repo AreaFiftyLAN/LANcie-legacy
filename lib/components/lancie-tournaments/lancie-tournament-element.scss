@@ -12,7 +12,7 @@
       cursor: pointer;
       
       .main .overlay {
-        background: transparentize($tournament_bg_overlay_hover, $tournament_bg_overlay_hover_opacity);
+        background: $tournament_bg_overlay_hover;
       }
     }
 
@@ -28,7 +28,7 @@
         left: 0; right: 0;
         top: 0; bottom: 0;
         z-index: 0;
-        background: transparentize($tournament_bg_overlay, $tournament_bg_overlay_opacity);
+        background: $tournament_bg_overlay;
         transition: all 1s;
       }
 
@@ -106,7 +106,7 @@
       .overlay {
         position: absolute;
         top: 0; left: 0;
-        background: transparentize($tournament_bg_overlay, $tournament_bg_overlay_opacity);
+        background: $tournament_bg_overlay;
         display: block;
         height: 160px; width: 100%;
       }

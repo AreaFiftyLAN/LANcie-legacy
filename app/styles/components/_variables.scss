@@ -62,10 +62,8 @@ $event_default_paper_dialog:              $prime_white;
 $event_content_afk_color:                 $prime_white;  
 $event_content_type_color:                $prime_white;
 
-$event_bg_overlay:                        $prime_blue;
-$event_bg_overlay_opacity:                0.6;
-$event_bg_overlay_hover:                  $third_blue;
-$event_bg_overlay_hover_opacity:          0.1;
+$event_bg_overlay:                        transparentize($prime_blue, 0.6);
+$event_bg_overlay_hover:                  transparentize($third_blue, 0.1);
 
 $event_paperdialog_header_color:          $prime_white;
 
@@ -100,10 +98,8 @@ $tournaments_margin:                      1;
 $tournament_default_color:                $gold;
 $tournament_default_paper_dialog:         $prime_white;
 
-$tournament_bg_overlay:                   $prime_blue;
-$tournament_bg_overlay_opacity:           0.6;
-$tournament_bg_overlay_hover:             $third_blue;
-$tournament_bg_overlay_hover_opacity:     0.1;
+$tournament_bg_overlay:                   transparentize($prime_blue, 0.6);
+$tournament_bg_overlay_hover:             transparentize($third_blue, 0.1);
 
 $tournament_content_game_afk_color:       $prime_white;  
 $tournament_content_game_type_color:      $prime_white;
