@@ -27,7 +27,7 @@ var uglify = require('gulp-uglify');
 
 var $ = require('gulp-load-plugins')();
 var del = require('del');
-var runSequence = require('run-sequence');
+var runSequence = require('run-sequence').use(gulp);
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
@@ -123,54 +123,58 @@ gulp.task('serve', ['sass:app:serve', 'sass:lib:serve', 'lib:serve', 'json:serve
   ], ['lib:serve', reload]);
 });
 
+/********************************
+ *       BUILD                  *
+ ********************************/
 
 
+// Build Production Files, the Default Task
+gulp.task('build', ['clean'], function (cb) {
+  // runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json', 'coffee'], cb);
+  runSequence(
+    // 'clean',
+    'coffee:build', 
+    // 'coffee:min', 
+    ['sass:app:build', 'sass:lib:build'], 
+    'html',
+    'lib:build',
+    // 'images:build',
+    'json:min',
+    cb);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Optimize Images
-gulp.task('images:dist', function () {
+// Coffee:serve
+gulp.task('coffee:build', function() {
   return gulp.src([
-      'app/images/**/*'
+      "app/**/*.coffee", 
+      "lib/**/*.coffee"
     ])
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(coffee({bare: true})
+    .on('error', console.error.bind(console)))
+    .pipe(gulp.dest('dist/lib/'));
 });
 
-// Copy All Files At The Root Level (app)
-gulp.task('copy', function () {
+gulp.task('coffee:min', function() {
   return gulp.src([
-    'app/*',
-    '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
+      "dist/lib/**/*.js"
+    ])
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/lib/'));
 });
 
-// Copy Web Fonts To Dist
-gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/lib/fonts'));
+gulp.task('sass:app:build', function() {
+  return $.rubySass("app/styles/", { style: 'expanded', container: 'gulp-ruby-sass-app' })
+      .on('error', console.error.bind(console))
+      .pipe(gulp.dest('dist/lib/styles/'));
 });
 
-// Scan Your HTML For Assets & Optimize Them
+gulp.task('sass:lib:build', function() {
+  return $.rubySass("lib/components/", { style: 'expanded', container: 'gulp-ruby-sass-lib' })
+      .on('error', console.error.bind(console))
+      .pipe($.minifyCss())
+      .pipe(gulp.dest('dist/lib/components/'));
+});
+
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
@@ -183,9 +187,7 @@ gulp.task('html', function () {
     // the next line to only include styles your project uses.
     .pipe($.if('*.css', $.uncss({
       html: [
-        'app/index.html',
-        'app/splashpage.html',
-        'app/styleguide.html'
+        'app/index.html'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: [
@@ -205,10 +207,65 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+gulp.task('lib:build', function(){
+  return gulp.src([
+      'lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+      'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
+    ])
+    .pipe(gulp.dest('dist/lib/components'));
+});
 
+// Optimize Images
+gulp.task('images:build', function () {
+  return gulp.src([
+      'app/images/**/*'
+    ])
+    .pipe($.cache($.imagemin({
+      progressive: true,
+      interlaced: true
+    })))
+    .pipe(gulp.dest('dist/images'));
+});
+
+// 
+gulp.task('json:min', function () {
+  return gulp.src(['app/json/**/*.json'])
+    .pipe($.jsonminify())
+    .pipe(gulp.dest('dist/lib/scripts/json'));
+});
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', function() {
+  del.bind(null, ['.tmp', 'dist']);
+  $.cache.clearAll();
+});
+
+
+
+
+
+
+
+
+
+
+
+// Copy All Files At The Root Level (app)
+gulp.task('copy', function () {
+  return gulp.src([
+    'app/*',
+    '!app/*.html',
+    'node_modules/apache-server-configs/dist/.htaccess'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist'));
+});
+
+// Copy Web Fonts To Dist
+gulp.task('fonts', function () {
+  return gulp.src(['app/fonts/**'])
+    .pipe(gulp.dest('dist/lib/fonts'));
+});
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', function () {
@@ -220,11 +277,6 @@ gulp.task('serve:dist', function () {
     // https: true,
     server: 'dist'
   });
-});
-
-// Build Production Files, the Default Task
-gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json', 'coffee'], cb);
 });
 
 // Run PageSpeed Insights

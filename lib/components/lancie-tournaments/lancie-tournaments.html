@@ -12,7 +12,7 @@
     <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
     <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
 
-    <div flex horizontal layout wrap start-justified>
+    <div flex horizontal layout wrap start-justified style="display: block;">
       <template repeat="{{element in tournaments}}">
         <div class="tournament-element {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}}">
           <lancie-tournament-element data="{{element}}"></lancie-tournament-element>

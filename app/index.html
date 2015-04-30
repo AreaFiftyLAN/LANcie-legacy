@@ -55,19 +55,9 @@
 
   <meta name="msapplication-TileImage" content="/images/favicon/Icon-72@2x.png">
   <meta name="msapplication-TileColor" content="#1a2a43">
-
-  <script src="/lib/components/webcomponentsjs/webcomponents.js"></script>
-
-  <!--
-  Chrome 35 has old :host behavior before :host-context addition.
-  Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
-  to force the ShadowDOM Polyfill.
-  -->
-  <script>
-    if (!('import' in document.createElement('link'))) {
-      var Platform = {flags: {shadow: true}};
-    }
-  </script>
+  
+  <script>Polymer = {dom: 'shadow'};</script>
+  <script src="/lib/components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
   <!--
   Redirect all IE version expect 11.0 and 10.0:
@@ -85,7 +75,6 @@
     }
   </script>
 
-  <link rel="import" href="/lib/components/polymer/polymer.html">
   <link rel="import" href="/lib/components/font-roboto/roboto.html">
 
   <!-- <link rel="import" href="/lib/components/paper-elements/paper-elements.html"> -->
@@ -150,14 +139,14 @@
             <div id="logo-container" layout horizontal center>
               <core-image preload fade sizing="contain" style="height: 33px; width: 203px;" position="left" src="/images/logos/lancie/logo_without_date.png"></core-image>
             </div>
-            <core-item label="What do you get?" horizontal center layout>
-              <a data-scroll href="#what" borderless></a>
-            </core-item>
             <core-item label="Tickets" horizontal center layout>
               <a data-scroll href="/tickets/" borderless></a>
             </core-item>s
             <core-item label="Event" horizontal center layout>
               <a data-scroll href="#event" borderless></a>
+            </core-item>
+            <core-item label="What do you get?" horizontal center layout>
+              <a data-scroll href="#what" borderless></a>
             </core-item>
             <core-item label="Tournaments" horizontal center layout>
               <a data-scroll href="#tournament" borderless></a>
@@ -174,14 +163,14 @@
       </a>
 
       <app-bar theme="dark" home badge class="bar  fixed">
-        <a data-scroll href="#what">
-          <paper-button>what do you get?</paper-button>
-        </a>
         <a href="/tickets/">
           <paper-button>TICKETS</paper-button>
         </a>
         <a data-scroll href="#event">
           <paper-button>EVENT</paper-button>
+        </a>
+        <a data-scroll href="#what">
+          <paper-button>what do you get?</paper-button>
         </a>
         <a data-scroll href="#tournament">
           <paper-button>TOURNAMENTS</paper-button>
@@ -195,11 +184,11 @@
       <lancie-section id="header" center-center>
         <div class="overlay"></div>
         
-        <h1 horizontal layout center-center>12-13-14 June &#64; Unit Sports &amp; Culture</h1>
-        <lancie-countdown endtime="2015-04-31T21:59:59"></lancie-countdown>
-        <h1 horizontal layout center-center>Be ready for the LAuNCH</h1>
+        <h2 horizontal layout center-center>12-13-14 June &#64; Unit Sports &amp; Culture</h2>
+        <lancie-countdown endtime="June 12, 2015 19:00:00"></lancie-countdown>
+        <h2 horizontal layout center-center>Be ready for the LAuNCH</h2>
 
-        <a href="/tickets/" horizontal layout center-center>
+        <a href="/tickets/" horizontal layout center-justify>
           <paper-button raised>
             <core-icon icon="file-download"></core-icon>
             GET YOUR TICKETS HERE!
@@ -216,7 +205,7 @@
             <div flex two>
               <lancie-partners></lancie-partners>
             </div>
-            <div flex five>
+            <div flex four>
               <lancie-sponsors json="/lib/scripts/json/sponsors.json"></lancie-sponsors>
             </div>
           </div>
@@ -230,7 +219,7 @@
         <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports &amp; Culture. All students are welcome bring their PC's or laptops to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
 
         <p>That is not all! There will be plenty to do offline as well. Poker and foosball masters can also show off in this event. In the Launch Area, you'll find pinball machines, airhockey tables, table football tables and various retro gaming consoles. An overview of things you can do besides gaming can be found below.</p>
-
+        
         <lancie-events json="/lib/scripts/json/events.json"></lancie-events>
       </lancie-section>
 
@@ -241,7 +230,7 @@
 
         <lancie-schema json="/lib/scripts/json/schema.json"></lancie-schema>
 
-        <p>Below you can find a global overview of the activities during the weekend. Please note this is subject to change and of course this is not all! A final schedule will be provided during the event.</p>
+        <p>Besides that you can play any game you like, there are organized activities during the weekend. Below you can find a global overview. Please note this is subject to change and of course this is not all! A final schedule will be provided during the event.</p>
         <lancie-timetable json="/lib/scripts/json/timetable.json"></lancie-timetable>
       </lancie-section>
 
@@ -303,7 +292,7 @@
   <lancie-contact id="contact-form"></lancie-contact>
   
   <!-- SMOOTHSCROLL -->
-  <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.js"></script>
+  <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
   <script>
     smoothScroll.init({
       speed: 1000, // Integer. How fast to complete the scroll in milliseconds

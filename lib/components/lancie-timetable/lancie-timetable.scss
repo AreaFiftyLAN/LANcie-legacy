@@ -6,7 +6,7 @@
   .timetable-day {
     position: relative; 
     box-sizing: border-box;
-    margin: #{1% * $timetable_margin};
+    margin: #{5px * $timetable_margin};
     width: 100%;
     background-color: #ddd;
 

@@ -108,6 +108,12 @@ Polymer 'create-account',
   emailcheckToggle: ->
     @$.emailcheck.toggle()
 
+  runEmailCheck: ->
+    @$.checkEmailAJAX.go()
+
+  runUsernameCheck: ->
+    @$.checkUsernameAJAX.go()
+
   ###
     Brings you to the next page and changes the progressbar
   ###

@@ -126,16 +126,14 @@
       "start_time": "TBA",
       "format": "5 vs 5: Search and Destroy",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/COD4.gif",
+        "name": "Tam Tam",
+        "src": "/images/logos/sponsors/tournaments/TamTam-Los-Rood.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "5x quadcopter"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(190, 0, 39)"
   },
   {
     "title": "TM:NF",
@@ -227,6 +225,6 @@
         ]
       }
     },
-    "color": "rgb(245, 105, 145)"
+    "color": "#F56991"
   }
 ]

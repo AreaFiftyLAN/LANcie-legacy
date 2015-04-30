@@ -1,31 +1,30 @@
 @import "../../../app/styles/components/variables";
 
 :host {
-
   .rich {
-    margin: #{1% * $schema_margin};
+    margin: $schema_margin;
     position: relative; box-sizing: border-box;
 
     &.el-lg {
-      width: #{(100% / $schema_per_row_large - 2 * $schema_margin)};
+      width: calc(#{100% / $schema_per_row_large} - #{2 * $schema_margin + 3}); 
     }
 
     &.el-md {
-      width: #{(100% / $schema_per_row_medium - 2 * $schema_margin)};
+      width: calc(#{100% / $schema_per_row_medium} - #{2 * $schema_margin + 3}); 
     }
 
     &.el-sm {
-      width: #{(100% / $schema_per_row_small - 2 * $schema_margin)};
+      width: calc(#{100% / $schema_per_row_small} - #{2 * $schema_margin + 3}); 
     }
 
     &.el-xs {
-      width: #{(100% / $schema_per_row_xsmall - 2 * $schema_margin)};
+      width: calc(#{100% / $schema_per_row_xsmall} - #{2 * $schema_margin + 3}); 
     }
 
     .number {
-      background-color: #1a2b43;
+      background-color: $schema_icon_bg;
       font-size: 30px;
-      color: #ffe574;
+      color: $schema_icon_color;
       text-align: center;
       line-height: 57px;
       font-weight: 500;

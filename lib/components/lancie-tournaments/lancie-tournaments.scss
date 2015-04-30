@@ -3,28 +3,29 @@
 :host {
   
   .tournament-element {
+    display: inline-block;
     position: relative;
     height: 0;
-    margin: #{1% * $tournaments_margin};
+    margin: $tournaments_margin;
 
     &.el-lg {
-      width: #{(100% / $tournaments_per_row_large - 2 * $tournaments_margin)}; 
-      padding-bottom: #{(100% / $tournaments_per_row_large - 2 * $tournaments_margin)};
+      width: calc(#{100% / $tournaments_per_row_large} - #{2 * $tournaments_margin + 3}); 
+      padding-bottom: calc(#{100% / $tournaments_per_row_large} - #{2 * $tournaments_margin + 3});
     }
 
     &.el-md {
-      width: #{(100% / $tournaments_per_row_medium - 2 * $tournaments_margin)}; 
-      padding-bottom: #{(100% / $tournaments_per_row_medium - 2 * $tournaments_margin)};
+      width: calc(#{100% / $tournaments_per_row_medium} - #{2 * $tournaments_margin + 3}); 
+      padding-bottom: calc(#{100% / $tournaments_per_row_medium} - #{2 * $tournaments_margin + 3});
     }
 
     &.el-sm {
-      width: #{(100% / $tournaments_per_row_small - 2 * $tournaments_margin)}; 
-      padding-bottom: #{(100% / $tournaments_per_row_small - 2 * $tournaments_margin)};
+      width: calc(#{100% / $tournaments_per_row_small} - #{2 * $tournaments_margin + 3}); 
+      padding-bottom: calc(#{100% / $tournaments_per_row_small} - #{2 * $tournaments_margin + 3});
     }
 
     &.el-xs {
-      width: #{(100% / $tournaments_per_row_xsmall - 2 * $tournaments_margin)}; 
-      padding-bottom: #{(100% / $tournaments_per_row_xsmall - 2 * $tournaments_margin) / 1.2};
+      width: calc(#{100% / $tournaments_per_row_xsmall} - #{2 * $tournaments_margin + 3}); 
+      padding-bottom: calc(#{100% / $tournaments_per_row_xsmall * (4 / 5)} - #{2 * $tournaments_margin + 3});
     }
 
     lancie-tournament-element {

@@ -26,14 +26,14 @@
             <template if="{{i == 0}}">
               <div class="sponsor-element {{xs ? 'elp-xs' : s ? 'elp-sm' : m ? 'elp-md' : 'elp-lg'}} {{j == 0 ? 'start' : ''}}  {{j == row.items.length - 1 ? 'end' : ''}}">
                 <a href="{{column.site}}" target="_blank">
-                  <core-image src="{{column.src}}" sizing="contain"></core-image>
+                  <image src="{{column.src}}" sizing="contain"></image>
                 </a>
               </div>
             </template>
             <template if="{{i != 0}}">
               <div class="sponsor-element {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}} {{j == 0 ? 'start' : ''}}  {{j == row.items.length - 1 ? 'end' : ''}}">
                 <a href="{{column.site}}" target="_blank">
-                  <core-image src="{{column.src}}" sizing="contain"></core-image>
+                  <image src="{{column.src}}" sizing="contain"></image>
                 </a>
               </div>
             </template>
