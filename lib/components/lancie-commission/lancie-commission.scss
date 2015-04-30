@@ -5,23 +5,23 @@
   height: 100%; width: 100%;
   
   .commission-member {
-    margin: #{5px * $commission_margin};
+    margin: $commission_margin;
     position: relative; box-sizing: border-box;
 
     &.el-lg {
-      width: #{(100% / $commission_per_row_large - 2 * $commission_margin)};
+      width: calc(#{100% / $commission_per_row_large} - #{2 * $commission_margin + 3}); 
     }
 
     &.el-md {
-      width: #{(100% / $commission_per_row_medium - 2 * $commission_margin)};
+      width: calc(#{100% / $commission_per_row_medium} - #{2 * $commission_margin + 3}); 
     }
 
     &.el-sm {
-      width: #{(100% / $commission_per_row_small - 2 * $commission_margin)};
+      width: calc(#{100% / $commission_per_row_small} - #{2 * $commission_margin + 3}); 
     }
 
     &.el-xs {
-      width: #{(100% / $commission_per_row_xsmall - 2 * $commission_margin)};
+      width: calc(#{100% / $commission_per_row_xsmall} - #{2 * $commission_margin + 3}); 
     }
 
     .number {
