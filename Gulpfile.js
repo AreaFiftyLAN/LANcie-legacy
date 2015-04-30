@@ -132,13 +132,13 @@ gulp.task('serve', ['sass:app:serve', 'sass:lib:serve', 'lib:serve', 'json:serve
 gulp.task('build', ['clean'], function (cb) {
   // runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json', 'coffee'], cb);
   runSequence(
-    'clean',
+    // 'clean',
     'coffee:build', 
-    'coffee:min', 
+    // 'coffee:min', 
     ['sass:app:build', 'sass:lib:build'], 
     'html',
     'lib:build',
-    'images:build',
+    // 'images:build',
     'json:min',
     cb);
 });
