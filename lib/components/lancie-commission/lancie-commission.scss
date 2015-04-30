@@ -5,7 +5,7 @@
   height: 100%; width: 100%;
   
   .commission-member {
-    margin: #{1% * $commission_margin};
+    margin: #{5px * $commission_margin};
     position: relative; box-sizing: border-box;
 
     &.el-lg {
