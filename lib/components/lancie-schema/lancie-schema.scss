@@ -1,7 +1,7 @@
 @import "../../../app/styles/components/variables";
 
 :host {
-
+  margin-bottom: 10px;
   .rich {
     margin: #{1% * $schema_margin};
     position: relative; box-sizing: border-box;

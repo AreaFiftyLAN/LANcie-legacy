@@ -3,9 +3,10 @@
 :host {
   
   .event-element {
+    display: inline-block;
     position: relative;
     height: 0;
-    margin: #{1% * $events_margin};
+    margin: #{0.5% * $events_margin};
 
     &.el-lg {
       width: #{(100% / $events_per_row_large - 2 * $events_margin)}; 
