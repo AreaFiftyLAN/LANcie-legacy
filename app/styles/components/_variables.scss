@@ -78,8 +78,8 @@ $schema_margin:                           1;
 $timetable_default_color:                 $prime_white;
 $timetable_header_color:                  $third_blue;
 $timetable_header_bg:                     darken($prime_white, 3%);
-$timetable_default_bg:                    darken($third_blue, 10%);
-$timetable_alternate_bg:                  $third_blue;
+$timetable_default_bg:                    $third_blue;
+$timetable_alternate_bg:                  darken($third_blue, 10%);
 
 $timetable_per_row_large:                 3;
 $timetable_per_row_medium:                3;

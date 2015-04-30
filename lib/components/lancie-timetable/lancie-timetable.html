@@ -12,23 +12,114 @@
     <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
     <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
     
-    <div layout horizontal layout wrap start-justified>
-      <template repeat="{{days in timetable}}">
-        <div class="timetable-day {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}}" vertical layout>
+    <template if="{{!m && !s && !xs}}">
+      <div layout vertical layout>
+        <div class="timetable-day" horizontal layout>
           <div class="timetable-header">
             <paper-shadow z="1" fit animated></paper-shadow>
-            <h3>{{days.name}}</h3>
+            <h3>Friday</h3>
           </div>
-          <template repeat="{{data in days.activities}}">
-            <div class="timetable-block" horizontal layout>
-              <paper-shadow z="1" fit animated></paper-shadow>
-              <span class="time">{{data.time}}</span>
-              <div class="event">{{data.description}}</div>
+          <div vertical flex layout style="position: relative;">
+            <div horizontal layout style="width: 100%;">
+              <div class="timetable-block" style="left: calc((100%/36) * 26);" vertical layout>
+                <span class="time">19:00 - 19:30</span>
+                <div class="event">Opening</div>
+              </div>
+              <div class="timetable-block" style="left: calc(((100%/36) * 31) - 115px);" vertical layout>
+                <span class="time">21:30 - 01:00</span>
+                <div class="event">Tournaments</div>
+              </div>
             </div>
-          </template>
+          </div>
         </div>
-      </template>
-    </div>
+
+        <div class="timetable-day" horizontal layout>
+          <div class="timetable-header">
+            <paper-shadow z="1" fit animated></paper-shadow>
+            <h3>Saturday</h3>
+          </div>
+          <div vertical flex layout style="position: relative;">
+            <div horizontal layout style="width: 100%; margin-bottom: 5px;">
+              <div class="timetable-block" style="left: calc((100%/36) * 5);" vertical layout>
+                <span class="time">08:30 - 11:00</span>
+                <div class="event">Breakfast</div>
+              </div>
+
+              <div class="timetable-block" style="left: calc(((100%/36) * 13) - 120px);" vertical layout>
+                <span class="time">12:30 - 14:00</span>
+                <div class="event">Lunch</div>
+              </div>
+
+              <div class="timetable-block" style="left: calc(((100%/36) * 25) - 240px); width: calc((100%/36) * 7);" vertical layout>
+                <span class="time">18:30 - 22:00</span>
+                <div class="event">BBQ</div>
+              </div>
+            </div>
+
+            <div horizontal layout style="width: 100%;">
+              <div class="timetable-block" style="left: calc((100%/36) * 7); width: calc((100%/36) * 22);" vertical layout>
+                <span class="time">10:30 - 21:00</span>
+                <div class="event">Game tournaments</div>
+              </div>
+              <div class="timetable-block" style="left: calc((100%/36) * 7 + 10px);" vertical layout>
+                <span class="time">22:00 - 01:30</span>
+                <div class="event">Poker tournament</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timetable-day" horizontal layout>
+          <div class="timetable-header">
+            <paper-shadow z="1" fit animated></paper-shadow>
+            <h3>Sunday</h3>
+          </div>
+          <div vertical flex layout style="position: relative;">
+            <div horizontal layout style="width: 100%;">
+              <div class="timetable-block" style="left: calc((100%/36) * 5);" vertical layout>
+                <span class="time">08:30 - 11:00</span>
+                <div class="event">Breakfast</div>
+              </div>
+
+              <div class="timetable-block" style="left: calc(((100%/36) * 13) - 120px);" vertical layout>
+                <span class="time">12:30 - 14:00</span>
+                <div class="event">Lunch</div>
+              </div>
+
+              <div class="timetable-block" style="left: calc(((100%/36) * 16) - 120px);" vertical layout>
+                <span class="time">15:30 - 17:00</span>
+                <div class="event">Awards cermony</div>
+              </div>
+
+              <div class="timetable-block" style="left: calc(((100%/36) * 16) - 110px);" vertical layout>
+                <span class="time">17:00 - 17:01</span>
+                <div class="event">Closing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template if="{{m || s || xs}}">
+      <div layout horizontal layout wrap start-justified>
+        <template repeat="{{days in timetable}}">
+          <div class="timetable-day-small {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}}" vertical layout>
+            <div class="timetable-header">
+              <paper-shadow z="1" fit animated></paper-shadow>
+              <h3>{{days.name}}</h3>
+            </div>
+            <template repeat="{{data in days.activities}}">
+              <div class="timetable-block" horizontal layout>
+                <paper-shadow z="1" fit animated></paper-shadow>
+                <span class="time">{{data.time}}</span>
+                <div class="event">{{data.description}}</div>
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+    </template>
   </template>
   <script src="lancie-timetable.js"></script>
 </polymer-element>

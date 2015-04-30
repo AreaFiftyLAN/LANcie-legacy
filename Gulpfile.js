@@ -103,9 +103,12 @@ gulp.task('serve', ['sass:app:serve', 'sass:lib:serve', 'lib:serve', 'json:serve
   ], reload);
 
   gulp.watch([
-    'app/**/*.{scss,css}', 
     'lib/**/*.{scss,css}'
-  ], ['sass:app:serve', 'sass:lib:serve', reload]);
+  ], ['sass:lib:serve', reload]);
+
+  gulp.watch([
+    'app/**/*.{scss,css}'
+  ], ['sass:app:serve', reload]);
 
   gulp.watch([
     'app/**/*.coffee',
