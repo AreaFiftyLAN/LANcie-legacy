@@ -53,7 +53,7 @@ $events_per_row_large:                    4;
 $events_per_row_medium:                   3;
 $events_per_row_small:                    2;
 $events_per_row_xsmall:                   1;
-$events_margin:                           1;
+$events_margin:                           5px;
 
 // Event-element
 $event_default_color:                     $third_blue;
@@ -92,7 +92,7 @@ $tournaments_per_row_large:               4;
 $tournaments_per_row_medium:              3;
 $tournaments_per_row_small:               2;
 $tournaments_per_row_xsmall:              1;
-$tournaments_margin:                      1;
+$tournaments_margin:                      5px;
 
 // Tournament-element
 $tournament_default_color:                $third_blue;
@@ -118,8 +118,7 @@ $commission_per_row_large:                2;
 $commission_per_row_medium:               2;
 $commission_per_row_small:                2;
 $commission_per_row_xsmall:               1;
-$commission_margin:                       1;
-
+$commission_margin:                       5px;
 
 // Footer
 $footer_background_color:                 $prime_blue;

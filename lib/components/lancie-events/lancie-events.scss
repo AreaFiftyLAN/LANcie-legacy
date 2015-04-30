@@ -6,26 +6,26 @@
     display: inline-block;
     position: relative;
     height: 0;
-    margin: #{0.5% * $events_margin};
+    margin: $events_margin;
 
     &.el-lg {
-      width: #{(100% / $events_per_row_large - 2 * $events_margin)}; 
-      padding-bottom: #{(100% / $events_per_row_large - 2 * $events_margin)};
+      width: calc(#{100% / $events_per_row_large} - #{2 * $events_margin + 3}); 
+      padding-bottom: calc(#{100% / $events_per_row_large} - #{2 * $events_margin + 3});
     }
 
     &.el-md {
-      width: #{(100% / $events_per_row_medium - 2 * $events_margin)}; 
-      padding-bottom: #{(100% / $events_per_row_medium - 2 * $events_margin)};
+      width: calc(#{100% / $events_per_row_medium} - #{2 * $events_margin + 3}); 
+      padding-bottom: calc(#{100% / $events_per_row_medium} - #{2 * $events_margin + 3});
     }
 
     &.el-sm {
-      width: #{(100% / $events_per_row_small - 2 * $events_margin)}; 
-      padding-bottom: #{(100% / $events_per_row_small - 2 * $events_margin)};
+      width: calc(#{100% / $events_per_row_small} - #{2 * $events_margin + 3}); 
+      padding-bottom: calc(#{100% / $events_per_row_small} - #{2 * $events_margin + 3});
     }
 
     &.el-xs {
-      width: #{(100% / $events_per_row_xsmall - 2 * $events_margin)}; 
-      padding-bottom: #{(100% / $events_per_row_xsmall - 2 * $events_margin) / 1.5};
+      width: calc(#{100% / $events_per_row_xsmall} - #{2 * $events_margin + 3}); 
+      padding-bottom: calc(#{100% / (4/5) * $events_per_row_xsmall} - #{2 * $events_margin + 3});
     }
 
     lancie-event-element {
