@@ -32,7 +32,7 @@
             <span>Platform</span>
             <span class="info">{{d.platform}}</span></li>
           <li>
-            <span>Prizes</span>
+            <span>Sponsors</span>
             <span class="info">{{d.sponsors.name}}</span></li>
         </template>
       </ul>
@@ -60,7 +60,7 @@
             </table>
           </div>
           <div class="sponsor-content" horizontal?="{{xs || s}}" vertical?="{{m}}" layout>
-            <core-image preload fade sizing="cover" src="{{d.sponsors.src}}" flex></core-image>
+            <core-image preload fade sizing="contain" src="{{d.sponsors.src}}" flex></core-image>
             <ol class="{{data.type}}" start="0" flex>
               <li style="background-color: {{data.color}};">Prizes</li>
               <template repeat="{{d.sponsors.prize}}">

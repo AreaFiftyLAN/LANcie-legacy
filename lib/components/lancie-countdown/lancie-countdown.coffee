@@ -21,12 +21,12 @@ Polymer 'lancie-countdown',
     Setup for the countdown
   ###
   setup: ->
-    @tillEndTime = new Date(@endtime) - new Date()
+    @tillEndTime = Date.parse(@endtime) - new Date().getTime()
 
-    @days     = @addZero Math.floor(@tillEndTime / @oneDay);
-    @hours    = @addZero Math.floor((@tillEndTime % @oneDay) / @oneHour);
-    @minutes  = @addZero Math.floor((@tillEndTime % @oneHour) / @oneMinute);
-    @seconds  = @addZero Math.floor((@tillEndTime % @oneMinute) / @oneSecond);
+    @days     = @addZero Math.floor(@tillEndTime / @oneDay)
+    @hours    = @addZero Math.floor((@tillEndTime % @oneDay) / @oneHour)
+    @minutes  = @addZero Math.floor((@tillEndTime % @oneHour) / @oneMinute)
+    @seconds  = @addZero Math.floor((@tillEndTime % @oneMinute) / @oneSecond)
     
     @timer()
 

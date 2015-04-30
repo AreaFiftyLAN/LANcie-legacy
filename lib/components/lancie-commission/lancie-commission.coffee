@@ -10,6 +10,5 @@ Polymer 'lancie-commission',
     Insert ajax response into variable commission
   ###
   loadedJSON: (event) ->
-    console.log "lancie-commission.loadedJSON"
     @commission = event.currentTarget.response
   

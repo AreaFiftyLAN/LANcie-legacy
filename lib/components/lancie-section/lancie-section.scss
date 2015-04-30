@@ -11,10 +11,12 @@
     
     &.col-xs, &.col-sm {
       padding: 0 16px;
+      height: 100%;
     }
 
     &.col-md, &.col-lg {
       width: calc(100% - 64px);
+      height: 100%;
       padding: 0 32px;
     }
 
