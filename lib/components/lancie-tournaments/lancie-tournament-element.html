@@ -1,0 +1,77 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-image/core-image.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+<link rel="import" href="/lib/components/paper-button/paper-button.html">
+<link rel="import" href="/lib/components/paper-shadow/paper-shadow.html">
+<link rel="import" href="/lib/components/paper-dialog/paper-dialog.html">
+<link rel="import" href="/lib/components/paper-dialog/paper-action-dialog.html">
+
+<polymer-element name="lancie-tournament-element" attributes="data" on-tap="{{openActionDialog}}">
+  <template>
+    <link rel="stylesheet" href="lancie-tournament-element.css">
+
+    <core-media-query query="max-width: 581px" queryMatches="{{xs}}"></core-media-query>
+    <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
+    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
+
+    <paper-shadow z="1" animated fit></paper-shadow>
+    <div class="content" vertical layout>
+      <div class="main" style="background-image: url({{data.src}});" horizontal layout flex>
+        <div class="overlay"></div>
+        <div class="content" vertical layout center-center flex>
+          <h1>{{data.title}}</h1>
+          <h2>{{data.subtitle}}</h2>
+        </div>
+      </div>
+      <ul class="second bg trnsp" style="background-color: {{data.color}};" vertical layout center-center>
+        <template bind="{{data.details as d}}">
+          <li>
+            <span>Max participants</span> 
+            <span class="info">{{d.max_players}}</span></li>
+          <li>
+            <span>Platform</span>
+            <span class="info">{{d.platform}}</span></li>
+          <li>
+            <span>Prizes</span>
+            <span class="info">{{d.sponsors.name}}</span></li>
+        </template>
+      </ul>
+    </div>
+    <template bind="{{data.details as d}}">
+      <paper-action-dialog id="paperAction" backdrop layered="false" transition="core-transition-center" class="{{xs ? 'small' : ''}}">
+        <div class="action-dialog-header" style="background-image: url({{data.src}});">
+          <div class="overlay"></div>
+          <h2 style="background-color: {{data.color}};">{{d.name}}</h2>
+        </div>
+        <div class="action-dialog-content" horizontal?="{{!xs && !s}}" vertical?="{{s}}" layout>
+          <div class="main-content" flex?="{{!xs && !s}}">
+            <p class="description">{{d.info}}</p>
+            <table class="specs">
+              <tbody>
+                <tr>
+                  <td>Format</td>
+                  <td>{{d.format}}</td>
+                </tr>
+                <tr>
+                  <td>Starting time</td>
+                  <td>{{d.start_time}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sponsor-content" horizontal?="{{xs || s}}" vertical?="{{m}}" layout>
+            <core-image preload fade sizing="cover" src="{{d.sponsors.src}}" flex></core-image>
+            <ol class="{{data.type}}" start="0" flex>
+              <li style="background-color: {{data.color}};">Prizes</li>
+              <template repeat="{{d.sponsors.prize}}">
+                <li>{{}}</li>
+              </template>
+            </ol>
+          </div>
+        </div>
+        <paper-button raised affirmative>Close</paper-button>
+      </paper-action-dialog>
+    </template>
+  </template>
+  <script src="lancie-tournament-element.js"></script>
+</polymer-element>

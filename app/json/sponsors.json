@@ -3,15 +3,13 @@
     "items": [
       {
         "name": "Sogeti",
-        "src": "/images/logos/sponsors/logo_sogeti.png"
+        "src": "/images/logos/sponsors/logo_sogeti.png",
+        "site" : "https://www.sogeti.nl/"
       },
       {
         "name": "Ordina",
-        "src": "/images/logos/sponsors/logo_ordina.png"
-      },
-      {
-        "name": "",
-        "src": ""
+        "src": "/images/logos/sponsors/logo_ordina.png",
+        "site" : "http://www.ordina.nl/"
       }
     ]
   },
@@ -19,19 +17,8 @@
     "items": [
       {
         "name": "Optiver",
-        "src": "/images/logos/sponsors/logo_optiver.png"
-      },
-      {
-        "name": "",
-        "src": ""
-      },
-      {
-        "name": "",
-        "src": ""
-      },
-      {
-        "name": "",
-        "src": ""
+        "src": "/images/logos/sponsors/logo_optiver.png",
+        "site" : "http://www.optiver.com/"
       }
     ]
   }

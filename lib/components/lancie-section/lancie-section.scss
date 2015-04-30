@@ -1,0 +1,37 @@
+@import "../../../app/styles/components/variables";
+
+:host {
+  display: block;
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+  position: relative;
+
+  .content-padding {
+    max-width: 1032px;
+    margin: 30px auto 20px;
+    
+    &.col-xs, &.col-sm {
+      padding: 0 16px;
+    }
+
+    &.col-md, &.col-lg {
+      width: calc(100% - 64px);
+      padding: 0 32px;
+    }
+
+    ::content {
+      width: 100%;
+      
+      h1, h2, h3, h4, h5 {
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        line-height: 48px;
+        margin: 0;
+        text-align: left;
+      }
+
+      p {
+        text-align: justify;
+      }
+    }
+  }
+}

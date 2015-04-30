@@ -1,0 +1,67 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/ajax-form/ajax-form.html">
+<link rel="import" href="/lib/components/core-ajax/core-ajax.html">
+<link rel="import" href="/lib/components/core-animation/core-animation.html">
+<link rel="import" href="/lib/components/core-animation/core-animation-group.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+<link rel="import" href="/lib/components/core-transition/core-transition.html">
+
+<link rel="import" href="/lib/components/paper-button/paper-button.html">
+<link rel="import" href="/lib/components/paper-dialog/paper-dialog.html">
+<link rel="import" href="/lib/components/paper-input/paper-input-decorator.html">
+<link rel="import" href="/lib/components/paper-input/paper-autogrow-textarea.html">
+
+<link rel="import" href="/lib/components/lancie-input/lancie-input.html">
+
+<polymer-element name="lancie-contact" attributes="">
+  <template>
+    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}">
+    </core-media-query>
+    <core-ajax
+      id="mailAJAX"
+      method="POST"
+      params='{
+          "name": "{{name}}",
+          "email": "{{email}}",
+          "subject": "{{subject}}",
+          "message": "{{message}}"
+      }'
+      url="https://areafiftylan.nl/api/mail/send/711b5be7894423bda24a282cf2ec361c"
+      handleAs="json"
+      on-core-response="{{handleResponse}}"></core-ajax>
+
+    <paper-dialog backdrop id="contactUs" transition="core-transition-top" 
+      style="width: {{isPhone ? 'calc(100vw)' : '600px'}};">
+
+      <h1>Contact us</h1>
+
+      <h3 id="sendingMail" hidden>Sending email....</h3>
+      <h3 id="receivedMail" hidden>Email received</h3>
+      <h3 id="tryAgain" hidden>Something went wrong, please try again</h3>
+
+      <form action="" style="padding: 0 24px; margin-bottom: 20px;">
+        <lancie-input id="name" label="Name" value="{{name}}"></lancie-input>
+        <lancie-input id="email" label="Email" value="{{email}}" on-blur="{{checkEmail}}"></lancie-input>
+        <lancie-input id="subject" label="Subject" value="{{subject}}"></lancie-input>
+
+        <div layout horizontal center style="height: 193px;" class="selection">
+          <label for="" flex two>Message</label>
+          <div flex four horizontal layout center>
+            <paper-input-decorator flex>
+              <paper-autogrow-textarea flex layout horizontal>
+                <textarea style="height: 150px;" id="message" cols="10" value="{{message}}"></textarea>
+              </paper-autogrow-textarea>
+            </paper-input-decorator>
+          </div>
+        </div>
+
+        <div class="buttons" horizontal end-justified layout center>
+          <paper-button raised disabled?="{{!($.name.isValid && $.email.isValid && $.subject.isValid)}}" on-click="{{submit}}">SUBMIT</paper-button>
+        </div>
+      </form>
+
+    </paper-dialog>
+  </template>
+
+  <script src="lancie-contact-form.js"></script>
+</polymer-element>

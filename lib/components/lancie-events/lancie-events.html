@@ -1,0 +1,25 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-ajax/core-ajax.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+<link rel="import" href="lancie-event-element.html">
+
+<polymer-element name="lancie-events" attributes="json">
+  <template>
+    <link rel="stylesheet" href="lancie-events.css">
+    <core-ajax auto url="{{json}}" handleAs="json" on-core-response="{{loadedJSON}}"></core-ajax>
+
+    <core-media-query query="max-width: 581px" queryMatches="{{xs}}"></core-media-query>
+    <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
+    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
+
+    <div flex horizontal layout wrap start-justified>
+      <template repeat="{{element in events}}">
+        <div class="event-element {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}}">
+          <lancie-event-element data="{{element}}"></lancie-event-element>
+        </div>
+      </template>
+    </div>
+  </template>
+
+  <script src="lancie-events.js"></script>
+</polymer-element>

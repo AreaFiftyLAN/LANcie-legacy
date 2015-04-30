@@ -1,0 +1,140 @@
+@import "../../../app/styles/components/variables";
+:host {
+  position: relative;
+  height: 100%; width: 100%;
+
+  .content {
+    position: relative;
+    height: 100%; width: 100%;
+
+    &:hover {
+      cursor: pointer;
+      
+      .main .overlay {
+        background-color: $event_bg_overlay_hover;
+      }
+    }
+
+    .main {
+      position: relative;
+      height: 100%; width: 100%;
+      background-position: center;
+      background-size: 100% auto;
+
+      .overlay {
+        content: ' ';
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        z-index: 0;
+        background-color: $event_bg_overlay;
+        transition: all 1s;
+      }
+
+      .content {
+        h1 {
+          margin: 0;
+          color: $event_content_afk_color;
+          font-size: 3.9em;
+          font-weight: bold;
+          line-height: 1.2em;
+        }
+
+        h2 {
+          margin: 0;
+          color: $event_content_type_color;
+          font-weight: 300;
+          font-size: 150%;
+        }
+      }
+    }
+  }
+
+  #paperAction {
+    margin: 0; padding: 0;
+    width: calc(80vw);
+    max-width: 512px;
+    background-color: $event_default_paper_dialog;
+
+    &.small {
+      width: calc(100vw);
+      height: calc(100vh);
+    }
+
+    &::shadow #scroller {
+      overflow: auto;
+      box-sizing: border-box;
+      padding: 0 0 0 0;
+    }
+
+    .action-dialog-header {
+      height: 160px;
+      background-position: 50% 25%;
+      background-size: 100% auto;
+
+      .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        background: $event_bg_overlay;
+        display: block;
+        height: 160px; width: 100%;
+      }
+
+      h2 {
+        position: relative;
+        z-index: 10;
+        padding: 6px 24px 5px;
+        color: $event_paperdialog_header_color;
+        background-color: $event_default_color;
+      }
+    }
+
+    .action-dialog-content {
+      padding: 24px 16px 0;
+      
+      .main-content {
+        margin-right: 20px;
+        text-align: justify;
+
+        .description {
+          margin: 0; padding: 0 0 20px 0;
+        }
+
+        .specs {
+          border-collapse: collapse;
+          width: 100%;
+        }
+      }
+
+      .sponsor-content {
+        
+        core-image {
+          max-width: 230px;
+          min-height: 142.147817412px;
+          margin-bottom: -7px;
+        }
+
+        ol {
+          padding: 0; margin: -7px 0 0 0;
+          background-color: transparentize($default_color, 0.8);
+
+          &.small {
+            width: calc(75vw - 20px);
+          }
+
+          li {
+            margin-left: 30px;
+            padding: 4px 10px 3px;
+
+            &:first-child {
+              margin: 0 0 4px 0;
+              color: $prime_white;
+              list-style: none;
+              background-color: $gold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

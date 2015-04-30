@@ -1,0 +1,34 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/paper-dialog/paper-dialog.html">
+
+<polymer-element name="terms-agreement" attributes="">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      :host span {
+        text-decoration: underline !important;
+      }
+      :host span:hover {
+        cursor: pointer;
+      }
+    </style>
+    <span on-click="{{onTapTerms}}">
+      <content></content>
+    </span>
+
+    <paper-dialog id="agreement" backdrop style="height: calc(80vh); width: calc(60vw);">
+      <object style="height: calc(80vh); width: 100%" type="text/html" data="/lib/components/lancie-terms-agreement/terms.html" ></object>
+    </paper-dialog>
+  </template>
+  <script>
+    Polymer({
+      
+      onTapTerms: function() {
+        this.$.agreement.toggle();
+      },
+
+    });
+  </script>
+</polymer-element>

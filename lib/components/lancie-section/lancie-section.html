@@ -1,0 +1,24 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+
+<polymer-element name="lancie-section" attributes="secondary, nomargin" layout vertical>
+  <template>
+    <link rel="stylesheet" href="lancie-section.css">
+
+    <core-media-query query="max-width: 581px" queryMatches="{{xs}}"></core-media-query>
+    <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
+    <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
+    
+    <template if="{{!nomargin}}">
+      <div class="content-padding {{xs ? 'col-xs' : s ? 'col-sm' : m ? 'col-md' : 'col-lg'}}">
+        <content></content>
+      </div>
+    </template>
+
+    <template if="{{nomargin}}">
+      <content></content>
+    </template>
+  </template>
+
+  <script src="lancie-section.js"></script>
+</polymer-element>

@@ -1,0 +1,174 @@
+@import "../../../app/styles/components/variables";
+
+:host {
+  position: relative;
+  height: 100%; width: 100%;
+
+  .content {
+    position: relative;
+    height: 100%; width: 100%;
+
+    &:hover {
+      cursor: pointer;
+      
+      .main .overlay {
+        background: $tournament_bg_overlay_hover;
+      }
+    }
+
+    .main {
+      position: relative;
+      height: calc(75% - 5px); width: 100%;
+      background-position: center;
+      background-size: 100% auto;
+
+      .overlay {
+        content: ' ';
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        z-index: 0;
+        background: $tournament_bg_overlay;
+        transition: all 1s;
+      }
+
+      .content {
+        h1 {
+          margin: 0;
+          color: $tournament_content_game_afk_color;
+          font-size: 3.9em;
+          font-weight: bold;
+          line-height: 1.2em;
+        }
+
+        h2 {
+          margin: 0;
+          color: $tournament_content_game_type_color;
+          font-weight: 300;
+          font-size: 150%;
+        }
+      }
+    }
+
+    .second {
+      height: 48px;
+      background: $tournament_default_color;
+      margin: 0; padding: 5px 10px 5px;
+
+      list-style-type: none;
+      overflow: hidden;
+      
+      font-size: 0.75em;
+      line-height: 1.4em;
+
+      li {
+        display: inline-block;
+        width: 100%;
+
+        span {
+          display: inline-block;
+          width: calc(50% - 2px);
+          font-weight: bold;
+          color: $tournament_second_type_color;
+
+          &.info {
+            text-align: right;
+            font-weight: 300;
+            color: $tournament_second_info_color;
+          }
+        }
+      }
+    }
+  }
+
+  #paperAction {
+    margin: 0; padding: 0;
+    width: calc(80vw);
+    max-width: 758px;
+    background-color: $tournament_default_paper_dialog;
+
+    &.small {
+      width: calc(100vw);
+      height: calc(100vh);
+    }
+
+    &::shadow #scroller {
+      overflow: auto;
+      box-sizing: border-box;
+      padding: 0 0 0 0;
+    }
+
+    .action-dialog-header {
+      height: 160px;
+      background-position: 50% 25%;
+      background-size: 100% auto;
+
+      .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        background: $tournament_bg_overlay;
+        display: block;
+        height: 160px; width: 100%;
+      }
+
+      h2 {
+        position: relative;
+        z-index: 10;
+        padding: 6px 24px 5px;
+        color: $tournament_paperdialog_header_color;
+        background-color: $tournament_default_color;
+      }
+    }
+
+    .action-dialog-content {
+      padding: 24px 16px 0;
+      
+      .main-content {
+        margin-right: 20px; 
+        margin-bottom: 30px;
+        text-align: justify;
+
+        .description {
+          margin: 0; padding: 0 0 20px 0;
+        }
+
+        .specs {
+          border-collapse: collapse;
+          width: 100%;
+        }
+      }
+
+      .sponsor-content {
+        position: relative;
+        min-width: 250px;
+        min-height: 143px;
+
+        core-image {
+          min-height: 143px;
+          width: 100%;
+        }
+
+        ol {
+          padding: 0; margin: 0 0 0 0;
+          background-color: $tournament_paperdialog_prices_bg;
+
+          &.small {
+            width: calc(75vw - 20px);
+          }
+
+          li {
+            margin-left: 30px;
+            padding: 3px 10px 2px;
+
+            &:first-child {
+              margin: 0 0 4px 0;
+              color: $tournament_paperdialog_prices_color;
+              list-style: none;
+              background-color: $tournament_default_color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

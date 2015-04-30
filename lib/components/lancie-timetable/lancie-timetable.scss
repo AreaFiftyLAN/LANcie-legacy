@@ -1,0 +1,106 @@
+@import "../../../app/styles/components/variables";
+
+:host {
+  position: relative;
+
+  .timetable-day {
+    position: relative; 
+    box-sizing: border-box;
+    margin: #{1% * $timetable_margin};
+    width: 100%;
+    background-color: #ddd;
+
+    &.el-lg {
+      width: #{(100% / $timetable_per_row_large - 2 * $timetable_margin)};
+    }
+
+    &.el-md {
+      width: #{(100% / $timetable_per_row_medium - 2 * $timetable_margin)};
+    }
+
+    &.el-sm {
+      width: #{(100% / $timetable_per_row_small - 2 * $timetable_margin)};
+    }
+
+    &.el-xs {
+      width: #{(100% / $timetable_per_row_xsmall - 2 * $timetable_margin)};
+    }
+
+    .timetable-header, .timetable-block {
+      position: relative;
+    }
+
+    .timetable-header {
+      background-color: $timetable_header_bg;
+      width: 100px;
+      padding: 0 10px;
+
+      h3 {
+        line-height: 2em;
+        color: $timetable_header_color;
+      }
+    }
+
+    .timetable-block {
+      color: $timetable_default_color;
+      background-color: $timetable_default_bg;
+      padding: 7px 10px 6px;
+
+      .time {
+        width: 100px;
+      }
+    }
+  }
+
+  .timetable-day-small {
+    position: relative; 
+    box-sizing: border-box;
+    margin: #{1% * $timetable_margin};
+
+    &.el-lg {
+      width: #{(100% / $timetable_per_row_large - 2 * $timetable_margin)};
+    }
+
+    &.el-md {
+      width: #{(100% / $timetable_per_row_medium - 2 * $timetable_margin)};
+    }
+
+    &.el-sm {
+      width: #{(100% / $timetable_per_row_small - 2 * $timetable_margin)};
+    }
+
+    &.el-xs {
+      width: #{(100% / $timetable_per_row_xsmall - 2 * $timetable_margin)};
+    }
+
+    .timetable-header, .timetable-block {
+      position: relative;
+    }
+
+    .timetable-header {
+      background-color: $timetable_header_bg;
+      margin: 0 0 8px 0;
+      padding: 0 10px;
+
+      h3 {
+        line-height: 2em;
+        color: $timetable_header_color;
+      }
+    }
+
+    .timetable-block {
+      padding: 7px 10px 6px;
+      margin: 0 0 3px 0;
+      color: $timetable_default_color;
+      background-color: $timetable_default_bg;
+
+      &:nth-child(2n) {
+        background-color: $timetable_alternate_bg;
+      }
+
+      .time {
+        width: 100px;
+      }
+    }
+  }
+}

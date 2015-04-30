@@ -1,0 +1,56 @@
+@import "../../../app/styles/components/variables";
+
+:host {
+  position: relative;
+  height: 100%; width: 100%;
+
+  span {
+    width: 100%;
+  }
+
+  .sponsor-element {
+    position: relative;
+    height: 0;
+    margin: #{1% * $sponsors_margin};
+
+    &.el-lg, &.el-md {
+      width: #{(100% / $sponsors_secondary_l_and_m - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_secondary_l_and_m - 2 * $sponsors_margin) / 1.618};
+    }
+
+    &.elp-lg, &.elp-md {
+      width: #{(100% / $sponsors_primary_l_and_m - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_primary_l_and_m - 2 * $sponsors_margin) / 2.39};
+    }
+
+    &.el-sm, &.el-xs {
+      width: #{(100% / $sponsors_secondary_s_and_xs - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_secondary_s_and_xs - 2 * $sponsors_margin) / 1.618};
+    }
+
+    &.elp-sm, &.elp-xs {
+      width: #{(100% / $sponsors_primary_s_and_xs - 2 * $sponsors_margin)}; 
+      padding-bottom: #{(100% / $sponsors_primary_s_and_xs - 2 * $sponsors_margin) / 2.39};
+    }
+
+    &.start {
+      margin-left: 0;
+    }
+
+    &.end {
+      margin-right: 0;
+    }
+
+    &:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    core-image {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+    }
+  }
+}

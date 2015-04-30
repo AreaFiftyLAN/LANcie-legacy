@@ -1,0 +1,65 @@
+[
+  {
+    "name" : "Friday",
+    "activities" : [
+      {
+        "time": "19:30 - 20:00",
+        "description" : "Opening"
+      },
+      {
+        "time": "22:30 - 01:30",
+        "description" : "Start tournaments"
+      }
+    ]
+  },
+  {
+    "name" : "Saturday",
+    "activities" : [
+      {
+        "time": "08:30 - 11:00",
+        "description" : "Breakfast"
+      },
+      {
+        "time": "10:30 - 21:30",
+        "description" : "Tournaments & activities"
+      },
+      {
+        "time": "12:30 - 14:00",
+        "description" : "Lunch"
+      },
+      {
+        "time": "18:00 - 20:00",
+        "description" : "BBQ"
+      },
+      {
+        "time": "22:00 - 01:00",
+        "description" : "Poker tournament"
+      }
+    ]
+  },
+  {
+    "name" : "Sunday",
+    "activities" : [
+      {
+        "time": "08:30 - 11:00",
+        "description" : "Breakfast"
+      },
+      {
+        "time": "10:00 - 11:00",
+        "description" : "Finals"
+      },
+      {
+        "time": "12:30 - 14:00",
+        "description" : "Lunch"
+      },
+      {
+        "time": "15:00 - 17:00",
+        "description" : "Awards Ceremony"
+      },
+      {
+        "time": "17:00",
+        "description" : "Closing"
+      }
+    ]
+  }
+]

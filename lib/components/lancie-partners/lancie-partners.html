@@ -1,0 +1,32 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-image/core-image.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+
+<polymer-element name="lancie-partners" layout flex noscript>
+  
+  <template>
+    <link rel="stylesheet" href="lancie-partners.css">
+    <core-media-query query="max-width: 851px" queryMatches="{{md}}"></core-media-query>
+    
+    <div horizontal?="{{md}}" flex?="{{md}}" layout>
+      <div class="inline-element" flex>
+        <span>Presented by</span>
+        <a href="https://ch.tudelft.nl/" target="_blank">
+          <div class="partner-element {{md ? 'el-md' : 'el-lg'}} start">
+            <core-image preload fade src="/images/logos/lancie/logo_CH.png" sizing="contain" position="start"></core-image>
+          </div>
+        </a>
+      </div>
+      <div class="inline-element" flex>
+        <span>In cooperation with</span>
+        <a href="http://sc.tudelft.nl/" target="_blank">
+          <div class="partner-element {{md ? 'el-md' : 'el-lg'}} end">
+            <core-image preload fade src="/images/logos/sponsors/logo_SC.png" sizing="contain" position="start"></core-image>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
+  </template>
+</polymer-element>
