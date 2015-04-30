@@ -216,7 +216,7 @@
             <div flex two>
               <lancie-partners></lancie-partners>
             </div>
-            <div flex five>
+            <div flex four>
               <lancie-sponsors json="/lib/scripts/json/sponsors.json"></lancie-sponsors>
             </div>
           </div>
@@ -303,7 +303,7 @@
   <lancie-contact id="contact-form"></lancie-contact>
   
   <!-- SMOOTHSCROLL -->
-  <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.js"></script>
+  <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
   <script>
     smoothScroll.init({
       speed: 1000, // Integer. How fast to complete the scroll in milliseconds
