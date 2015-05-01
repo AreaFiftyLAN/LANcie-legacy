@@ -134,11 +134,11 @@ gulp.task('build', ['clean'], function (cb) {
   runSequence(
     'clean',
     'coffee:build', 
-    'coffee:min', 
+    // 'coffee:min', 
     ['sass:app:build', 'sass:lib:build'], 
     'html',
     'lib:build',
-    'images:build',
+    // 'images:build',
     'json:min',
     cb);
 });
