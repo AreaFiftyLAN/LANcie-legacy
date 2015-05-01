@@ -12,7 +12,7 @@
     margin: $sponsors_margin;
 
     &.el-lg, &.el-md {
-      width: calc( #{100% / $sponsors_secondary_l_and_m} - #{2 * $sponsors_margin + 3}); 
+      width: calc( #{100% / $sponsors_secondary_l_and_m} - #{2 * $sponsors_margin + 3});
     }
 
     &.elp-lg, &.elp-md {

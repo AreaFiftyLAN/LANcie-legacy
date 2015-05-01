@@ -202,10 +202,10 @@
           <core-media-query query="max-width: 851px" queryMatches="{{md}}"></core-media-query>
 
           <div layout vertical?="{{md}}" horizontal?="{{!md}}">
-            <div flex two>
+            <div flex one>
               <lancie-partners></lancie-partners>
             </div>
-            <div flex four>
+            <div flex two>
               <lancie-sponsors json="/lib/scripts/json/sponsors.json"></lancie-sponsors>
             </div>
           </div>
@@ -292,7 +292,7 @@
   <lancie-contact id="contact-form"></lancie-contact>
   
   <!-- SMOOTHSCROLL -->
-  <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+  <script src="/lib/components/smooth-scroll/dist/js/smooth-scroll.js"></script>
   <script>
     smoothScroll.init({
       speed: 1000, // Integer. How fast to complete the scroll in milliseconds
