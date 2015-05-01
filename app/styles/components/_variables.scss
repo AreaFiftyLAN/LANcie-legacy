@@ -44,9 +44,9 @@ $countdown_unit_color:                    $prime_yellow;
 // Sponsors
 $sponsors_primary_l_and_m:                2;
 $sponsors_primary_s_and_xs:               2;
-$sponsors_secondary_l_and_m:              5;
-$sponsors_secondary_s_and_xs:             4;
-$sponsors_margin:                         5;
+$sponsors_secondary_l_and_m:              4;
+$sponsors_secondary_s_and_xs:             3;
+$sponsors_margin:                         5px;
 
 // Events
 $events_per_row_large:                    4;
@@ -68,8 +68,8 @@ $event_bg_overlay_hover:                  transparentize($third_blue, 0.1);
 $event_paperdialog_header_color:          $prime_white;
 
 // Schema
-$schema_icon_color:                   $prime_yellow;
-$schema_icon_bg:                      $prime_blue;
+$schema_icon_color:                       $prime_yellow;
+$schema_icon_bg:                          $prime_blue;
 
 $schema_per_row_large:                    3;
 $schema_per_row_medium:                   3;

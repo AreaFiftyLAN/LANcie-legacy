@@ -13,7 +13,7 @@
     <core-media-query query="(min-width : 582px) and (max-width : 767px)" queryMatches="{{s}}"></core-media-query>
     <core-media-query query="(min-width : 768px) and (max-width : 1031px)" queryMatches="{{m}}"></core-media-query>
 
-    <div flex horizontal layout wrap start-justified style="height: 340px;">
+    <div flex horizontal layout wrap start-justified>
       <template repeat="{{row, i in sponsors}}">
         <template if="{{i == 0}}">
           <span>Premium sponsors</span>
@@ -26,14 +26,14 @@
             <template if="{{i == 0}}">
               <div class="sponsor-element {{xs ? 'elp-xs' : s ? 'elp-sm' : m ? 'elp-md' : 'elp-lg'}} {{j == 0 ? 'start' : ''}}  {{j == row.items.length - 1 ? 'end' : ''}}">
                 <a href="{{column.site}}" target="_blank">
-                  <core-image src="{{column.src}}" sizing="contain"></core-image>
+                  <image src="{{column.src}}" sizing="contain"></image>
                 </a>
               </div>
             </template>
             <template if="{{i != 0}}">
               <div class="sponsor-element {{xs ? 'el-xs' : s ? 'el-sm' : m ? 'el-md' : 'el-lg'}} {{j == 0 ? 'start' : ''}}  {{j == row.items.length - 1 ? 'end' : ''}}">
                 <a href="{{column.site}}" target="_blank">
-                  <core-image src="{{column.src}}" sizing="contain"></core-image>
+                  <image src="{{column.src}}" sizing="contain"></image>
                 </a>
               </div>
             </template>

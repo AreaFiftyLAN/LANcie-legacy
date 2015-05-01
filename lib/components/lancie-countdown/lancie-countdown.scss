@@ -10,7 +10,7 @@
     position: relative;
     width: 23%; padding-bottom: 19%;
     max-width: 180px; 
-    margin: 1%;
+    margin: 0.5%;
     background-color: transparentize($countdown_background, 1 - $countdown_background_opacity);
 
     &:after {
