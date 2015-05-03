@@ -1,0 +1,40 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-ajax/core-ajax.html">
+<link rel="import" href="/lib/components/core-tooltip/core-tooltip.html">
+<link rel="import" href="/lib/components/paper-ripple/paper-ripple.html">
+
+<link href="lancie-seatmap-seat.html" rel="import">
+<link href="lancie-seatmap-map.html" rel="import">
+
+<polymer-element name="lancie-seatmap" attributes="mode, data">
+  <template>
+    <link rel="stylesheet" href="lancie-seatmap.css">
+    
+    <core-ajax
+      auto
+      id="getAllSeatsAJAX"
+      url="https://areafiftylan.nl/api/seatmap/get/seat/"
+      handleAs="json"
+      on-core-response="{{loadedJSON}}"></core-ajax>
+    
+    
+    <lancie-seatmap-map horizontal layout justified>
+      <template repeat="{{row, i in $.getAllSeatsAJAX.response}}">
+        <div vertical layout class="seatmap-content">
+          <div class="seatmap-row-header">
+            <paper-shadow z="1" fit animated></paper-shadow>
+            <h2>{{numberToChar(i)}}</h2>
+          </div>
+          <div vertical layout wrap class="seatmap-row-seats">
+            <template repeat="{{column in row}}">
+              <lancie-seatmap-seat data="{{column}}"></lancie-seatmap-seat>
+            </template>
+          </div>
+        </div>
+      </template>
+    </lancie-seatmap-map>
+
+  </template>
+
+  <script src="lancie-seatmap.js"></script>
+</polymer-element>

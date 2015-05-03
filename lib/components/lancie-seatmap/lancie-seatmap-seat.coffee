@@ -2,50 +2,97 @@ Polymer 'lancie-seatmap-seat',
   modeoptions: [
     {
       name: "open"
-      icon: {
-        type: "square-o"
-        color: "green"
-      }
+      colors: 
+        default:
+          background: "#eeecec"
+          border: "rgba(90, 90, 90, 0.6)"
+        checked:
+          background: "#3a5278"
+          border: "rgba(90, 90, 90, 0.33)"
       tooltip: false
-    },
-    {
-      name: "selected"
-      icon: {
-        type: "square"
-        color: "green"
-      }
-      tooltip: false
+      disabled: false
     },
     {
       name: "occupied"
-      icon: {
-        type: "square"
-        color: "red"
-      }
+      colors: 
+        default:
+          background: "red"
+          border: "rgba(90, 90, 90, 0.33)"
       tooltip: true
+      disabled: false
+    },
+    {
+      name: "self"
+      colors: 
+        default:
+          background: "red"
+          border: "rgba(90, 90, 90, 0.1)"
+      tooltip: true
+      disabled: false
+    },
+    {
+      name: "disabled"
+      colors: 
+        default:
+          background: "#eeecec"
+          border: "rgba(90, 90, 90, 0.1)"
+      tooltip: false
+      disabled: true
     }
   ]
 
-  defaultmode: {
-    name: "disabled"
-    icon: {
-      type: "minus-square-o"
-      color: "orange"
-    }
-    tooltip: false
-  }
-
-  data: {
-    seat: {
+  data:
+    seat:
       row: "A",
       column: 11
-    },
-    user: {
+    user:
       name: "Sven Popping"
-    }
-  }
+
+  publish:
+    checked:
+      value: false
+      reflect: true
+
+    label: ''
+
+    toggles: true
+
+    disabled:
+      value: false
+      reflect: true
+
+  eventDelegates: tap: 'tap'
 
   ready: ->
+    if parseInt( @data.seat.userid ) isnt 0 
+      @mode = "occupied"
+      @$.getUsernameAJAX.go()
+    else 
+      @mode = "open"
+
+    modeoption = @getDataFromMode @mode
+    if modeoption.disabled is true
+      @setAttribute 'disabled', true
+
+  tap: ->
+    if @disabled then return
+    old = @checked
+    @toggle()
+
+    if @mode is "open" then @openTooltip()
+
+    if @checked != old
+      @fire 'lancie-seatmap-seat-tap'
+
+  openTooltip: ->
+    @$.coreTooltip.setAttribute 'focussed', true
+
+  toggle: ->
+    @checked = !@toggles or !@checked
+
+  checkedChanged: ->
+    @setAttribute 'aria-checked', if @checked then 'true' else 'false'
+    @fire 'core-change'
 
   ###
     

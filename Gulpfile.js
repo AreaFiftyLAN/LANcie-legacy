@@ -131,13 +131,13 @@ gulp.task('serve', ['sass:app:serve', 'sass:lib:serve', 'lib:serve', 'json:serve
 gulp.task('build', ['clean'], function (cb) {
   // runSequence('styles', ['jshint', 'html', 'lib', 'images', 'fonts', 'copy', 'json', 'coffee'], cb);
   runSequence(
-    // 'clean',
+    'clean',
     'coffee:build', 
-    // 'coffee:min', 
+    'coffee:min', 
     ['sass:app:build', 'sass:lib:build'], 
     'html',
     'lib:build',
-    // 'images:build',
+    'images:build',
     'json:min',
     cb);
 });
@@ -170,7 +170,7 @@ gulp.task('sass:app:build', function() {
 gulp.task('sass:lib:build', function() {
   return $.rubySass("lib/components/", { style: 'expanded', container: 'gulp-ruby-sass-lib' })
       .on('error', console.error.bind(console))
-      .pipe($.minifyCss())
+      // .pipe($.minifyCss())
       .pipe(gulp.dest('dist/lib/components/'));
 });
 

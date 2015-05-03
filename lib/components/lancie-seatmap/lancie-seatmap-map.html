@@ -1,0 +1,29 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="/lib/components/core-selector/core-selector.html">
+
+<polymer-element name="lancie-seatmap-map" extends="core-selector" role="radiogroup">
+  <template>
+    <core-a11y-keys target="{{}}" keys="down" on-keys-pressed="{{selectDown}}"></core-a11y-keys>
+    <core-a11y-keys target="{{}}" keys="up" on-keys-pressed="{{selectUp}}"></core-a11y-keys>
+    <core-a11y-keys target="{{}}" keys="left" on-keys-pressed="{{selectLeft}}"></core-a11y-keys>
+    <core-a11y-keys target="{{}}" keys="right" on-keys-pressed="{{selectRight}}"></core-a11y-keys>
+    <!-- <core-a11y-keys target="{{}}" keys="down right" on-keys-pressed="{{selectNext}}"></core-a11y-keys> -->
+
+    <style>
+      :host {
+        display: inline-block;
+      }
+  
+      polyfill-next-selector { content: ':host > *'; }
+
+      ::content > * {
+        padding: 12px;
+      }
+    </style>
+  
+    <shadow></shadow>
+  </template>
+
+  <script src="lancie-seatmap-map.js"></script>
+</polymer-element>
