@@ -6,10 +6,6 @@
 <polymer-element name="lancie-seatmap-seat" attributes="mode, data">
   <template>
     <link rel="stylesheet" href="lancie-seatmap-seat.css">
-    <core-ajax
-      id="getUsernameAJAX"
-      url="https://areafiftylan.nl/api/user/get/{{data.seat.userid}}"
-      handleAs="json"></core-ajax>
 
     <template bind="{{getDataFromMode(mode) as status}}">
       <div class="seatmap-seat-container">
@@ -41,10 +37,10 @@
                       <b>{{data.seat.label}}</b></div>
                   <div horizontal layout>
                       <span>Username:</span> 
-                      <b>{{$.getUsernameAJAX.response.username}}</b></div>
+                      <b>{{data.seat.username}}</b></div>
                 </template>
                 <template if="{{checked && !status.tooltip}}"> 
-                  <paper-button raised>reserve seat {{data.seat.label}}</paper-button>
+                  <paper-button raised on-click="{{reserveSeatEvent}}">reserve seat {{data.seat.label}}</paper-button>
                 </template>
               </div>
             </div>

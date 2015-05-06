@@ -6,9 +6,6 @@ Polymer 'lancie-seatmap-map',
     
   ###
   ready: ->
-    @.addEventListener 'lancie-seatmap-seat-tap', (event) =>
-      @currentNode.toggle() unless @currentNode is null or event.path[0].mode is "occupied"
-      @currentNode = event.path[0] unless event.path[0].mode is "occupied"
   
   ###
 

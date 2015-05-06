@@ -66,7 +66,6 @@ Polymer 'lancie-seatmap-seat',
   ready: ->
     if parseInt( @data.seat.userid ) isnt 0 
       @mode = "occupied"
-      @$.getUsernameAJAX.go()
     else 
       @mode = "open"
 
@@ -89,6 +88,9 @@ Polymer 'lancie-seatmap-seat',
 
   toggle: ->
     @checked = !@toggles or !@checked
+
+  reserveSeatEvent: ->
+    @fire 'lancie-seatmap-reserve', @
 
   checkedChanged: ->
     @setAttribute 'aria-checked', if @checked then 'true' else 'false'
