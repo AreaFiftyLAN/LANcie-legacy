@@ -1,6 +1,8 @@
 @import "../../../app/styles/components/variables";
 
 :host {
+  display: block;
+  
   .rich {
     margin: $schema_margin;
     position: relative; box-sizing: border-box;

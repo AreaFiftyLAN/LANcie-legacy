@@ -28,8 +28,6 @@
     <h1>Ticket sales - Area FiftyLAN - 12/13/14 June 2015</h1>
     <div class="specification">
         <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
-        <p>A base ticket will be &euro;35<sup>*</sup>. This includes admission to the entire event, breakfast and lunch on saturday and sunday, and a BBQ on saturday. You will have your own desk of 1,10m x 0,5m for the weekend, and a comfy chair to sit on. For an additional &euro;2,50, we will pick up your PC thursday evening and deliver it to the event. We will return it to you sunday evening.</p>
-        <sub>*CH members/alumni will get a small discount</sub>
     </div>
     <div class="progress-bar" vertical layout>
       <div class="progress-bar-description" horizontal layout around-justified>
@@ -39,11 +37,36 @@
         <div flex>{{phoneScreen ? "P" : "Payment"}}</div>
         <div flex>{{phoneScreen ? "C" : "Confirmation"}}</div>
       </div>
-      <paper-progress value="20" id="progress"></paper-progress>
+      <paper-progress value="0" id="progress"></paper-progress>
     </div>
 
     <form action="#" method="POST" layout vertical>
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
+        <section id="type">
+          <div horizontal layout>
+            <div vertical data-ticket="0" layout flex style="position: relative; margin: 5px;" on-click="{{changeTicketType}}">
+              <paper-shadow fit animated></paper-shadow>
+              <div vertical="" layout="">
+                <h1 style="background-color: #3a5278; color: #eeecec; text-align: center; padding: 7px 10px 6px; font-size: 2em;">Alien Friday</h1>
+                <div vertical layout style="padding: 5px 20px;">
+                  <span>Access to the Gaming Event from 19:00 on 12 June till 19:00 on 13 June. Including breakfast, lunch and BBQ on saturday.</span>
+                  <div horizontal layout center>Price: <h3>€ 20,-</h3></div>
+                  <sub>* Proper tournament participation not guaranteed.</sub>
+                </div>
+              </div>
+            </div>
+            <div vertical layout flex style="position: relative; margin: 5px;" on-click="{{pageNext}}">
+              <paper-shadow fit animated></paper-shadow>
+              <h1>Classified Saturday</h1>
+              <span></span>
+            </div>
+            <div vertical layout flex style="position: relative; margin: 5px;" on-click="{{pageNext}}">
+              <paper-shadow fit animated></paper-shadow>
+              <h1>Top Secret Weekend</h1>
+              <span></span>
+            </div>
+          </div>
+        </section>
         <section id="account">
           <h2>Please make sure you are ready to pay before starting the registration process!</h2>
           <p>First, create an account below. You will use this account to log in on this site later on. This account will also be used to register for tournaments and various other things during the event</p>

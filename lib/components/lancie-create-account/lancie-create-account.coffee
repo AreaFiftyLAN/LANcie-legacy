@@ -17,6 +17,9 @@ Polymer 'create-account',
     params = @getUrlParams()
     @userhash = params.hash
 
+    @person = null
+    @$.lancieCreateAccountSave.save()
+
     if params.confirm
       @$.animatedpages.selected = 4
       @$.progress.value = 100
@@ -262,6 +265,7 @@ Polymer 'create-account',
       username: @username
       email: @email
       password: @password
+      tickettype: @tickettype
     }
     @person.profile = {
       name: @name 
@@ -278,6 +282,14 @@ Polymer 'create-account',
       notes: @notes
     }
     @$.lancieCreateAccountSave.save()
+
+  ###
+
+  ###
+  changeTicketType: (e) ->
+    console.log e.currentTarget.dataset
+    @tickettype = e.currentTarget.dataset.ticket
+    @saveData()
 
   ###
     AJAX Request to insert an user into the database
@@ -302,6 +314,9 @@ Polymer 'create-account',
   payNow: ->
     @$.getPaymentUrl.go()
 
+  ###
+
+  ###
   redirUser: ->
     window.location = @$.getPaymentUrl.response
 
