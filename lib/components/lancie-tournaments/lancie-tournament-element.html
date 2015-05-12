@@ -61,7 +61,7 @@
           </div>
           <div class="sponsor-content" horizontal?="{{xs || s}}" vertical?="{{m}}" layout>
             <core-image preload fade sizing="contain" src="{{d.sponsors.src}}" flex></core-image>
-            <ol class="{{data.type}}" start="0" flex>
+            <ol class="{{data.type}}" start="0" flex id="prizeList">
               <li style="background-color: {{data.color}};">Prizes</li>
               <template repeat="{{d.sponsors.prize}}">
                 <li>{{}}</li>
