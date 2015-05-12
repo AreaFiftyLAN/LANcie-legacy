@@ -153,4 +153,15 @@
       font-weight: bold;
     }
   }
+
+  #lottery{
+    color:$prime-yellow;
+    background:$prime-blue;
+    font-size:14pt;
+    margin: 10px auto 10px;
+    padding: 5px 10px 5px 10px;
+    p {
+      text-align:center;
+    }
+  }
 }
