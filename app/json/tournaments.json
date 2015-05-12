@@ -87,6 +87,27 @@
     "color": "rgb(245,130,32)"
   },
   {
+    "title": "DOTA2",
+    "subtitle": "5 vs 5",
+    "src": "/images/background/tournaments/dota2.jpg",
+    "details": {
+      "name": "DOTA2",
+      "max_players": "TBA",
+      "platform": "PC & Mac",
+      "info": "Dota 2 is a 2013 multiplayer online battle arena game and the stand-alone sequel to the Defense of the Ancients (DotA) Warcraft III: Reign of Chaos and Warcraft III: The Frozen Throne mod. Dota 2 is played in discrete matches involving two teams of five players, each of which occupies a stronghold at a corner of the map. Each stronghold contains a building called the Ancient, which the opposite team must destroy to win the match. Each player controls a Hero character and focuses on leveling up, collecting gold, acquiring items and fighting against the other team to achieve victory.",
+      "start_time": "TBA",
+      "format": "5 vs 5",
+      "sponsors": {
+        "name": "Optiver",
+        "src": "/images/logos/sponsors/logo_optiver.png",
+        "prize": [
+          "5x Bayan Soundbook"
+        ]
+      }
+    },
+    "color": "rgb(237,75,28)"
+  },  
+  {
     "title": "HS",
     "subtitle": "1 vs 1",
     "src": "/images/background/tournaments/hs.jpg",
@@ -152,27 +173,6 @@
       }
     },
     "color": "rgb(5,27,100)"
-  },
-  {
-    "title": "DOTA2",
-    "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/dota2.jpg",
-    "details": {
-      "name": "DOTA2",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Dota 2 is a 2013 multiplayer online battle arena game and the stand-alone sequel to the Defense of the Ancients (DotA) Warcraft III: Reign of Chaos and Warcraft III: The Frozen Throne mod. Dota 2 is played in discrete matches involving two teams of five players, each of which occupies a stronghold at a corner of the map. Each stronghold contains a building called the Ancient, which the opposite team must destroy to win the match. Each player controls a Hero character and focuses on leveling up, collecting gold, acquiring items and fighting against the other team to achieve victory.",
-      "start_time": "TBA",
-      "format": "5 vs 5",
-      "sponsors": {
-        "name": "Optiver",
-        "src": "/images/logos/sponsors/logo_optiver.png",
-        "prize": [
-          "5x Bayan Soundbook"
-        ]
-      }
-    },
-    "color": "rgb(237,75,28)"
   },
   {
     "title": "UT2004",
