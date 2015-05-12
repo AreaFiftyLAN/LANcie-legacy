@@ -42,23 +42,47 @@
   }
 
   .ticket-type-selector {
-
-    .ticket-type-block {
-      position: relative; 
+    
+    paper-shadow {
       margin: 5px;
       padding: 0;
 
-      h1 {
-        background-color: #3a5278; 
-        color: #eeecec; 
-        text-align: center; 
-        padding: 7px 10px 6px; 
-        font-size: 2em;
+      .ticket-type-block {
+        position: relative; 
+        display: block;
+        height: 290px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in 0.5s; /* Safari */
+        transition: all 0.5s ease-in 0.5s;
+
+        &:hover {
+          cursor: pointer;
+
+          h1 {
+            -webkit-transition: all 0.5s ease-in 0.5s; /* Safari */
+            transition: all 0.5s ease-in 0.5s;
+            height: 277px;
+            vertical-align: center;
+          }
+        }
+
+        h1 {
+          -webkit-transition: all 0.5s ease-in 0.5s; /* Safari */
+          transition: all 0.5s ease-in 0.5s;
+
+          background-color: #3a5278; 
+          color: #eeecec; 
+          text-align: center; 
+          padding: 7px 10px 6px; 
+          font-size: 2em;
+          height: 61px;
+        }
+
+        .ticket-desc {
+          padding: 5px 20px;
+        }
       }
 
-      .ticket-desc {
-        padding: 5px 20px;
-      }
     }
 
   }
