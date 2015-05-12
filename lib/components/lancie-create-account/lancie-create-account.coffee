@@ -26,16 +26,16 @@ Polymer 'create-account',
     if params.confirm
       @$.animatedpages.selected = 5
       @$.progress.value = 100
-      @$.getAccountByHash.go()
+      @$.getAccountByHash.go(true)
     else if params.payment 
       @$.animatedpages.selected = 4
       @$.progress.value = 80
       @$.emailcode = @$.verification.value = @userhash.substring(@userhash.length - 4, @userhash.length)
       @$.getAccountByHash.go()
 
-
   userPaid: ->
     callback = @$.getPaymentUser.response
+    console.log callback
     if callback.details.paid is true
       @userPaid = true
     else 
@@ -46,15 +46,15 @@ Polymer 'create-account',
 
   getAccountByHashLoaded: (flag = false) ->
     callback = @$.getAccountByHash.response
-    console.log callback
     @getAccount(callback.details.account)
     @getProfile(callback.details.profile)
-    # if flag then @$.userPayed.go()
-    # @$.getUserById.go()
-    # @$.getProfileById.go()
+    if flag then @$.getPaymentUser.go()
+    @getPrice()
+
 
 
   getAccount: (account) ->
+    @userId = account.id
     @username = account.username
     @email = account.email
     @chmember = account.chmember
@@ -346,7 +346,7 @@ Polymer 'create-account',
 
   ###
   getPrice: ->
-    price = 0.0
+    price = 0.00
     if @tickettype isnt "area_003"
       price += 17.50
       if @chmember is false
@@ -355,12 +355,12 @@ Polymer 'create-account',
       price += 30.00
       if @chmember is false
         price += 5.00
-    @price_ticket = price
+    @price_ticket = price.toFixed(2)
+
     if @transport is true
-      @price_transport = 2.50
-    else
-      @price_transport = 0.00
-    @price_total = @price_ticket + @price_transport
+      @price_transport = 2.50.toFixed(2)
+
+    @price_total = (parseFloat(@price_ticket) + parseFloat(@price_transport)).toFixed(2)
 
   ###
 

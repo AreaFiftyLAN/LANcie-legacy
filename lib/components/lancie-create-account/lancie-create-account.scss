@@ -41,6 +41,28 @@
     }
   }
 
+  .ticket-type-selector {
+
+    .ticket-type-block {
+      position: relative; 
+      margin: 5px;
+      padding: 0;
+
+      h1 {
+        background-color: #3a5278; 
+        color: #eeecec; 
+        text-align: center; 
+        padding: 7px 10px 6px; 
+        font-size: 2em;
+      }
+
+      .ticket-desc {
+        padding: 5px 20px;
+      }
+    }
+
+  }
+
   .selection {
 
     paper-toggle-button::shadow [checked] .toggle {
