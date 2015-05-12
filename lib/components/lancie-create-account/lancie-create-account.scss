@@ -78,6 +78,18 @@
 
         .ticket-desc {
           padding: 5px 20px;
+
+          div {
+            font-weight: 100;
+            font-size: 20px;
+            color: $default_color;
+
+            h3 {
+              color: $third_blue;
+              margin-left: 5px;
+              font-weight: bold;
+            }
+          }
         }
       }
 
