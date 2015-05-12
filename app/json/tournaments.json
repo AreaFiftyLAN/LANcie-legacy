@@ -33,8 +33,8 @@
       "start_time": "TBA",
       "format": "5 vs 5",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "name": "Sogeti",
+        "src": "/images/logos/sponsors/logo_sogeti.png",
         "prize": [
           "TBA",
           "TBA",
@@ -42,7 +42,7 @@
         ]
       }
     },
-    "color": ""
+    "color": "rgb(241,93,47)"
   },
   {
     "title": "FIFA",
@@ -79,16 +79,14 @@
       "start_time": "TBA",
       "format": "1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "name": "Ordina",
+        "src": "/images/logos/sponsors/tournaments/ordina.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Logitech G910 Orion Spark RGB"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(245,130,32)"
   },
   {
     "title": "HS",
@@ -169,16 +167,14 @@
       "start_time": "TBA",
       "format": "5 vs 5",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/DotA2.gif",
+        "name": "Optiver",
+        "src": "/images/logos/sponsors/logo_optiver.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "5x Bayan Soundbook"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(237,75,28)"
   },
   {
     "title": "UT2004",
