@@ -10,6 +10,7 @@ Polymer 'create-account',
   price_ticket: null
   price_transport: null
   price_total: null
+  dates: null
   person: {}
 
   ###
@@ -361,6 +362,13 @@ Polymer 'create-account',
       @price_transport = 2.50.toFixed(2)
 
     @price_total = (parseFloat(@price_ticket) + parseFloat(@price_transport)).toFixed(2)
+
+    if @tickettype is "area_001"
+      @dates = "12/13"
+    else if @tickettype is "area_002"
+      @dates = "13/14"
+    else
+      @dates = "12/13/14"
 
   ###
 
