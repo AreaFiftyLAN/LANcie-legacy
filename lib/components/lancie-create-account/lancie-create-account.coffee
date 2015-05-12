@@ -51,8 +51,7 @@ Polymer 'create-account',
     @email = callback.email
     @chmember = callback.chmember
     @transport = callback.transport
-    @emailcode = callback.hash.substr(callback.hash.length - 8, 8)
-    console.log "lancieCreateAccountSave.verifyEmail"
+    @emailcode = callback.hash.substr(callback.hash.length - 4, 4)
     @verifyEmail()
 
   getProfileByIdLoaded: ->
@@ -111,9 +110,15 @@ Polymer 'create-account',
   emailcheckToggle: ->
     @$.emailcheck.toggle()
 
+  ###
+
+  ###
   runEmailCheck: ->
     @$.checkEmailAJAX.go()
 
+  ###
+
+  ###
   runUsernameCheck: ->
     @$.checkUsernameAJAX.go()
 
@@ -138,7 +143,8 @@ Polymer 'create-account',
   checkUsername: (e) ->
     if !e.currentTarget.isEmpty
       target = @$.username
-      if @$.checkUsernameAJAX.response is true
+      console.log
+      if @$.checkUsernameAJAX.response.details.exists is true
         target.error = 'This username is already taken, please choose another!'
         return target.isInValid = true
       else
@@ -181,10 +187,10 @@ Polymer 'create-account',
     if !e.currentTarget.isEmpty
       re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       target = e.currentTarget
-      if !re.test(target.value) 
+      if !re.test(target.value)
         target.error = 'Please fill in a valid email address!'
         return target.isInValid = true
-      else if @$.checkEmailAJAX.response is true
+      else if @$.checkEmailAJAX.response.details.exists is true
         target.error = 'This email is already taken, please choose another!'
         return target.isInValid = true
       else
@@ -282,31 +288,40 @@ Polymer 'create-account',
       notes: @notes
     }
     @$.lancieCreateAccountSave.save()
+    console.log @$.lancieCreateAccountSave.value
 
   ###
 
   ###
   changeTicketType: (e) ->
-    console.log e.currentTarget.dataset
     @tickettype = e.currentTarget.dataset.ticket
     @saveData()
 
   ###
     AJAX Request to insert an user into the database
   ###
-  insertUser: ->
-    @$.insertUser.params = @mergeInto(@person.account, @person.profile)
-    @$.insertUser.go()
+  createAccount: ->
+    @$.createAccount.params = @mergeInto(@person.account, @person.profile)
+    @$.createAccount.go()
 
   ###
 
   ###
   callbackUserInsert: ->
-    callback = JSON.parse @$.insertUser.response
-    @emailcode = callback.code
-    @userId = callback.userId
-    @person.account.userId = @userId
-    @$.lancieCreateAccountSave.save()
+    callback = @$.createAccount.response
+    console.log callback
+    if callback.status.code is 471 || callback.status.code is 472
+      @runUsernameCheck()
+      @runEmailCheck()
+      @$.animatedpages.selected = 1
+      @$.progress.value = 20
+    else if callback.status.code is 201
+      @emailcode = callback.details.code
+      @userId = callback.details.userId
+      @person.account.userId = @userId
+      @$.lancieCreateAccountSave.save()
+      @$.animatedpages.selected = 4
+      @$.progress.value = 60
 
   ###
 
@@ -318,7 +333,7 @@ Polymer 'create-account',
 
   ###
   redirUser: ->
-    window.location = @$.getPaymentUrl.response
+    window.location = @$.getPaymentUrl.response.details
 
   ###
 

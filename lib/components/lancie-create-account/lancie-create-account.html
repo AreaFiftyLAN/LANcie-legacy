@@ -8,18 +8,28 @@
   <template>
     <link rel="stylesheet" href="lancie-create-account.css">
     <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>
-
-    <core-ajax id="checkUsernameAJAX" url="https://areafiftylan.nl/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
-    <core-ajax id="checkEmailAJAX" url="https://areafiftylan.nl/api/user/checkemail/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
-    <core-ajax id="verfyEmail" url="https://areafiftylan.nl/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
-    <core-ajax id="getPaymentUrl" url="https://areafiftylan.nl/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
-    <core-ajax id="insertUser" url="https://areafiftylan.nl/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
+    
+    <!-- OUTGOING -->
     <core-ajax id="autoCompleteAddress" url="https://api.postcodeapi.nu/{{zipcode}}/{{number}}" handleAs="json" headers='{"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Accept-Language": "en", "Api-Key": "17f4cdafa5035a4af6f8b2baa14eaed282c8f735"}' on-core-response="{{autoCompleteAddress}}"></core-ajax>
-    <core-ajax id="userPayed" url="https://areafiftylan.nl/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPayedLoaded}}"></core-ajax>
+  
+    <!-- OWN CALLS -->
+    <core-ajax id="createAccount" url="http://localhost:7000/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
+    <core-ajax id="checkUsernameAJAX" url="http://localhost:7000/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
+    <core-ajax id="checkEmailAJAX" url="http://localhost:7000/api/user/check/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
+    <core-ajax id="verfyEmail" url="http://localhost:7000/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
 
-    <core-ajax id="getUserByHash" url="https://areafiftylan.nl/api/user/hash/{{userhash}}" handleAs="json" on-core-response="{{getUserByHashLoaded}}"></core-ajax>
-    <core-ajax id="getUserById" url="https://areafiftylan.nl/api/user/get/{{userId}}" handleAs="json" on-core-response="{{getUserByIdLoaded}}"></core-ajax>
-    <core-ajax id="getProfileById" url="https://areafiftylan.nl/api/profile/get/{{userId}}" handleAs="json" on-core-response="{{getProfileByIdLoaded}}"></core-ajax>
+
+
+  
+    <core-ajax id="getPaymentUrl" url="http://localhost:7000/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
+
+    <core-ajax id="userPayed" url="http://localhost:7000/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPayedLoaded}}"></core-ajax>
+
+    <core-ajax id="getUserByHash" url="http://localhost:7000/api/user/hash/{{userhash}}" handleAs="json" on-core-response="{{getUserByHashLoaded}}"></core-ajax>
+    <core-ajax id="getUserById" url="http://localhost:7000/api/user/get/{{userId}}" handleAs="json" on-core-response="{{getUserByIdLoaded}}"></core-ajax>
+
+    <core-ajax id="getProfileById" url="http://localhost:7000/api/profile/get/{{userId}}" handleAs="json" on-core-response="{{getProfileByIdLoaded}}"></core-ajax>
+
 
     <core-media-query query="max-width: 640px" queryMatches="{{phoneScreen}}"></core-media-query>
 
@@ -44,7 +54,7 @@
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="type">
           <div horizontal layout>
-            <div vertical data-ticket="0" layout flex style="position: relative; margin: 5px;" on-click="{{changeTicketType}}">
+            <div vertical data-ticket="area_001" layout flex style="position: relative; margin: 5px;" on-click="{{changeTicketType}} {{pageNext}}">
               <paper-shadow fit animated></paper-shadow>
               <div vertical="" layout="">
                 <h1 style="background-color: #3a5278; color: #eeecec; text-align: center; padding: 7px 10px 6px; font-size: 2em;">Alien Friday</h1>
@@ -85,7 +95,6 @@
               </div>
             </core-label>
             <paper-button raised disabled?="{{!($.username.isValid && $.password.isValid && $.cpassword.isValid && $.email.isValid && $.terms.checked)}}" on-click="{{pageNext}} {{saveData}}">next</paper-button>
-            <!--<paper-button raised on-click="{{pagePrev}} {{saveData}}">back</paper-button>-->
           </div>
         </section>
 
@@ -185,7 +194,7 @@
               Please make sure <strong>{{email}}</strong> is correct, as we will send a mail containing a verification code.</p>
             
             <paper-button affirmative>Decline</paper-button>
-            <paper-button affirmative autofocus on-click="{{insertUser}} {{pageNext}}">Yes, this is my email</paper-button>
+            <paper-button affirmative autofocus on-click="{{createAccount}} {{pageNext}}">Yes, this is my email</paper-button>
           </paper-action-dialog>
         </section>
 
