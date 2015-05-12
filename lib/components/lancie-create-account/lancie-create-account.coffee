@@ -7,6 +7,9 @@ Polymer 'create-account',
   userId: null
   emailcode: null
   userPayed: false
+  price_ticket: null
+  price_transport: null
+  price_total: null
   person: {}
 
   ###
@@ -334,6 +337,26 @@ Polymer 'create-account',
   ###
   redirUser: ->
     window.location = @$.getPaymentUrl.response.details
+
+  ###
+
+  ###
+  getPrice: ->
+    price = 0.0
+    if @tickettype isnt "area_003"
+      price += 17.50
+      if @chmember is false
+        price += 2.50
+    else
+      price += 30.00
+      if @chmember is false
+        price += 5.00
+    @price_ticket = price
+    if @transport is true
+      @price_transport = 2.50
+    else
+      @price_transport = 0.00
+    @price_total = @price_ticket + @price_transport
 
   ###
 
