@@ -11,31 +11,25 @@
     
     <!-- OUTGOING -->
     <core-ajax id="autoCompleteAddress" url="https://api.postcodeapi.nu/{{zipcode}}/{{number}}" handleAs="json" headers='{"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Accept-Language": "en", "Api-Key": "17f4cdafa5035a4af6f8b2baa14eaed282c8f735"}' on-core-response="{{autoCompleteAddress}}"></core-ajax>
+    
+    <!-- CREATE ACCOUNT -->
+    <core-ajax id="createAccount" url="http://localhost:7000/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
+    <core-ajax id="checkUsernameAJAX" url="http://localhost:7000/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
+    <core-ajax id="checkEmailAJAX" url="http://localhost:7000/api/user/check/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
+    <core-ajax id="verfyEmail" url="http://localhost:7000/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
   
-    <!-- OWN CALLS -->
-    <core-ajax id="createAccount" url="http://localhost/lancie/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
-    <core-ajax id="checkUsernameAJAX" url="http://localhost/lancie/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
-    <core-ajax id="checkEmailAJAX" url="http://localhost/lancie/api/user/check/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
-    <core-ajax id="verfyEmail" url="http://localhost/lancie/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
+    <!-- MONEY -->
+    <core-ajax id="getPaymentUrl" url="http://localhost:7000/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
 
-
-
-  
-    <core-ajax id="getPaymentUrl" url="http://localhost/lancie/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
-
-    <core-ajax id="userPayed" url="http://localhost/lancie/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPayedLoaded}}"></core-ajax>
-
-    <core-ajax id="getUserByHash" url="http://localhost/lancie/api/user/hash/{{userhash}}" handleAs="json" on-core-response="{{getUserByHashLoaded}}"></core-ajax>
-    <core-ajax id="getUserById" url="http://localhost/lancie/api/user/get/{{userId}}" handleAs="json" on-core-response="{{getUserByIdLoaded}}"></core-ajax>
-
-    <core-ajax id="getProfileById" url="http://localhost/lancie/api/profile/get/{{userId}}" handleAs="json" on-core-response="{{getProfileByIdLoaded}}"></core-ajax>
-
-
+    <!-- GET ACCOUNT -->
+    <core-ajax id="getPaymentUser" url="http://localhost:7000/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPaid}}"></core-ajax>
+    <core-ajax id="getAccountByHash" url="http://localhost:7000/api/account/get/{{userhash}}" handleAs="json" on-core-response="{{getAccountByHashLoaded}}"></core-ajax>
+    
     <core-media-query query="max-width: 640px" queryMatches="{{phoneScreen}}"></core-media-query>
-
     <core-localstorage id="lancieCreateAccountSave" name="lancie-create-account-save" value="{{person}}" autoSaveDisabled></core-localstorage>
 
     <h1>Ticket sales - Area FiftyLAN - 12/13/14 June 2015</h1>
+
     <div class="specification">
         <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
     </div>
@@ -254,14 +248,14 @@
           </div>
         </section>
         <section>
-          <h2>{{userPayed ? 'We succesfully received your payment! You will receive a payment confirmation by mail.' : 'We did not receive your payment!'}}</h2>
+          <h2>{{userPaid ? 'We succesfully received your payment! You will receive a payment confirmation by mail.' : 'We did not receive your payment!'}}</h2>
           
-          <template if="{{userPayed}}">
+          <template if="{{userPaid}}">
             Your registration is hereby final and are now a official participant of Area FiftyLAN! Being able to view and edit your personal details will be coming soon on our website. You will also be able to reserve a seat and find team members to participate in the tournaments! We will let you know when these features become available. If you have any questions, please don't hesitate to contact us through the form on the website. <br>
             Thank you for your participation and until the 12th of June! <br><br>
           </template>
 
-          <template if="{{!userPayed}}">
+          <template if="{{!userPaid}}">
             Your payment has expired, this means we did not receive your payment. With the following link you can start your payment again! <a href='http://www.areafiftylan.nl/tickets/?payment=true&hash={{userhash}}'>Click Here</a> <br>
             If you have any questions regarding your payment, please don't hesitate to contact us through the form on the website. <br><br>
           </template>
