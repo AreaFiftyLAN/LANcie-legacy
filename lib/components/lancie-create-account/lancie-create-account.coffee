@@ -21,51 +21,55 @@ Polymer 'create-account',
     @$.lancieCreateAccountSave.save()
 
     if params.confirm
-      @$.animatedpages.selected = 4
+      @$.animatedpages.selected = 5
       @$.progress.value = 100
-      @$.getUserByHash.go(true)
+      @$.getAccountByHash.go()
     else if params.payment 
-      @$.animatedpages.selected = 3
+      @$.animatedpages.selected = 4
       @$.progress.value = 80
-      @$.emailcode = @$.verification.value = @userhash.substring(@userhash.length - 8, @userhash.length)
-      @$.getUserByHash.go()
+      @$.emailcode = @$.verification.value = @userhash.substring(@userhash.length - 4, @userhash.length)
+      @$.getAccountByHash.go()
 
 
-  userPayedLoaded: ->
-    if @$.userPayed.response is true
-      @userPayed = true
+  userPaid: ->
+    callback = @$.getPaymentUser.response
+    if callback.details.paid is true
+      @userPaid = true
     else 
-      @userPayed = false
+      @userPaid = false
     @person = null
     @$.lancieCreateAccountSave.save()
 
-  getUserByHashLoaded: (flag = false) ->
-    @userId = @$.getUserByHash.response
-    if flag then @$.userPayed.go()
-    @$.getUserById.go()
-    @$.getProfileById.go()
 
-  getUserByIdLoaded: ->
-    callback = @$.getUserById.response
-    @username = callback.username
-    @email = callback.email
-    @chmember = callback.chmember
-    @transport = callback.transport
-    @emailcode = callback.hash.substr(callback.hash.length - 4, 4)
+  getAccountByHashLoaded: (flag = false) ->
+    callback = @$.getAccountByHash.response
+    console.log callback
+    @getAccount(callback.details.account)
+    @getProfile(callback.details.profile)
+    # if flag then @$.userPayed.go()
+    # @$.getUserById.go()
+    # @$.getProfileById.go()
+
+
+  getAccount: (account) ->
+    @username = account.username
+    @email = account.email
+    @chmember = account.chmember
+    @transport = account.transport
+    @tickettype = account.tickettype
+    @emailcode = account.hash.substr(account.hash.length - 4, 4)
     @verifyEmail()
 
-  getProfileByIdLoaded: ->
-    callback = @$.getProfileById.response
-    @name = callback.name
-    @surname = callback.surname
-    
-    @zipcode = callback.zipcode
-    @address = callback.address
-    @city = callback.city
-    @tel = callback.tel
-    @notes = callback.notes
-    @saveData()
 
+  getProfile: (profile) ->
+    @name = profile.name
+    @surname = profile.surname
+    @zipcode = profile.zipcode
+    @address = profile.address
+    @city = profile.city
+    @tel = profile.tel
+    @notes = profile.notes
+    @saveData()
 
   getUrlParams: ->
     qs = document.location.search.split('+').join(' ')
@@ -186,7 +190,7 @@ Polymer 'create-account',
     target = undefined
     if !e.currentTarget.isEmpty
       re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      target = e.currentTarget
+      target = @$.email
       if !re.test(target.value)
         target.error = 'Please fill in a valid email address!'
         return target.isInValid = true
