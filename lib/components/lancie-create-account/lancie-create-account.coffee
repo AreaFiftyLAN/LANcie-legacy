@@ -10,6 +10,7 @@ Polymer 'create-account',
   price_ticket: null
   price_transport: null
   price_total: null
+  dates: null
   person: {}
 
   ###
@@ -357,6 +358,13 @@ Polymer 'create-account',
     else
       @price_transport = 0.00
     @price_total = @price_ticket + @price_transport
+
+    if @tickettype is "area_001"
+      @dates = "12/13"
+    else if @tickettype is "area_002"
+      @dates = "13/14"
+    else
+      @dates = "12/13/14"
 
   ###
 
