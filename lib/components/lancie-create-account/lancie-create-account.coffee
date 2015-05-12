@@ -253,6 +253,8 @@ Polymer 'create-account',
 
     if @zipcode? and @number?
       @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = false
+      @zipcode = @zipcode.replace(/\s+/, "") 
+      @number = @number.replace(/\s+/, "")
       @$.autoCompleteAddress.go()
       
   ###

@@ -52,23 +52,21 @@
         display: block;
         height: 290px;
         overflow: hidden;
-        -webkit-transition: all 0.5s ease-in 0.5s; /* Safari */
-        transition: all 0.5s ease-in 0.5s;
 
         &:hover {
           cursor: pointer;
 
           h1 {
-            -webkit-transition: all 0.5s ease-in 0.5s; /* Safari */
-            transition: all 0.5s ease-in 0.5s;
+            -webkit-transition: all 0.2s ease-in-out; /* Safari */
+            transition: all 0.2s ease-in-out 0.2s;
             height: 277px;
             vertical-align: center;
           }
         }
 
         h1 {
-          -webkit-transition: all 0.5s ease-in 0.5s; /* Safari */
-          transition: all 0.5s ease-in 0.5s;
+          -webkit-transition: all 0.2s ease-in-out; /* Safari */
+          transition: all 0.2s ease-in-out;
 
           background-color: #3a5278; 
           color: #eeecec; 
