@@ -143,7 +143,6 @@ Polymer 'create-account',
   checkUsername: (e) ->
     if !e.currentTarget.isEmpty
       target = @$.username
-      console.log
       if @$.checkUsernameAJAX.response.details.exists is true
         target.error = 'This username is already taken, please choose another!'
         return target.isInValid = true
@@ -183,14 +182,15 @@ Polymer 'create-account',
   ###
   checkEmail: (e) ->
     re = undefined
-    target = undefined
+    # target = undefined #
     if !e.currentTarget.isEmpty
       re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      target = e.currentTarget
+      target = @$.email
       if !re.test(target.value)
         target.error = 'Please fill in a valid email address!'
         return target.isInValid = true
       else if @$.checkEmailAJAX.response.details.exists is true
+        console.log "HALLO!"
         target.error = 'This email is already taken, please choose another!'
         return target.isInValid = true
       else
