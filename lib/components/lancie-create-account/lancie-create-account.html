@@ -11,22 +11,21 @@
     
     <!-- OUTGOING -->
     <core-ajax id="autoCompleteAddress" url="https://api.postcodeapi.nu/{{zipcode}}/{{number}}" handleAs="json" headers='{"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Accept-Language": "en", "Api-Key": "17f4cdafa5035a4af6f8b2baa14eaed282c8f735"}' on-core-response="{{autoCompleteAddress}}"></core-ajax>
-  
+    
     <!-- CREATE ACCOUNT -->
     <core-ajax id="createAccount" url="http://localhost:7000/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
     <core-ajax id="checkUsernameAJAX" url="http://localhost:7000/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
     <core-ajax id="checkEmailAJAX" url="http://localhost:7000/api/user/check/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
     <core-ajax id="verfyEmail" url="http://localhost:7000/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
   
-    <!-- MONEY LINK -->
+    <!-- MONEY -->
     <core-ajax id="getPaymentUrl" url="http://localhost:7000/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
-    
+
+    <!-- GET ACCOUNT -->
     <core-ajax id="getPaymentUser" url="http://localhost:7000/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPaid}}"></core-ajax>
     <core-ajax id="getAccountByHash" url="http://localhost:7000/api/account/get/{{userhash}}" handleAs="json" on-core-response="{{getAccountByHashLoaded}}"></core-ajax>
-
-
+    
     <core-media-query query="max-width: 640px" queryMatches="{{phoneScreen}}"></core-media-query>
-
     <core-localstorage id="lancieCreateAccountSave" name="lancie-create-account-save" value="{{person}}" autoSaveDisabled></core-localstorage>
 
     <h1>Ticket sales - Area FiftyLAN - 12/13/14 June 2015</h1>
@@ -200,7 +199,7 @@
               Please make sure <strong>{{email}}</strong> is correct, as we will send a mail containing a verification code.</p>
             
             <paper-button affirmative>Decline</paper-button>
-            <paper-button affirmative autofocus on-click="{{createAccount}} {{pageNext}}">Yes, this is my email</paper-button>
+            <paper-button affirmative autofocus on-click="{{createAccount}} {{pageNext}} {{getPrice}}">Yes, this is my email</paper-button>
           </paper-action-dialog>
         </section>
 
@@ -222,7 +221,7 @@
                 <div>Ticket Area FiftyLAN - 12/13/14 Juni 2015 - {{chmember ? "CH Discount" : "Normal"}}</div>
                 <span class="desc">{{name}} {{surname}} - {{username}} - {{email}}</span>
               </div>
-              <span>€ {{chmember ? "30,00" : "35,00"}}</span>
+              <span>€ {{price_ticket}}</span>
             </div>
             <div class="table-row" horizontal layout hidden?="{{!transport}}">
               <div flex four>
@@ -231,12 +230,12 @@
                   {{address}} {{number}} - {{zipcode}} - {{city}}
                 </span>
               </div>
-              <span>€ 2,50</span>
+              <span>€ {{price_transport}}</span>
             </div>
 
             <div class="table-footer" horizontal layout>
               <div flex four>Total</div>
-              <span>€ {{chmember ? transport ? "32,50" : "30,00" : transport ? "37,50" : "35,00"}}</span>
+              <span>€ {{price_total}}</span>
             </div>
           </div>
 
