@@ -11,16 +11,15 @@
       "start_time": "TBA",
       "format": "5 vs 5 & 1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "name": "Plantronics",
+        "src": "/images/logos/sponsors/plantronics.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "5x Plantronics Gamecom 788"
+
         ]
       }
     },
-    "color": ""
+    "color": "rgb(5,27,100)"
   },
   {
     "title": "CS:GO",
@@ -35,7 +34,7 @@
       "format": "5 vs 5",
       "sponsors": {
         "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/CSGO.gif",
+        "src": "/images/logos/sponsors/tournaments/LoL.gif",
         "prize": [
           "TBA",
           "TBA",
@@ -57,16 +56,16 @@
       "start_time": "TBA",
       "format": "1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/FIFA.gif",
+        "name": "Plantronics",
+        "src": "/images/logos/sponsors/plantronics.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Plantronics BackBeat Pro",
+          "Plantronics Gamecom 788",
+          "Plantronics BackBeat Go 2"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(5,27,100)"
   },
   {
     "title": "LOL",
@@ -147,16 +146,16 @@
       "start_time": "TBA",
       "format": "Free-For-All",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/TMNF.gif",
+        "name": "Plantronics",
+        "src": "/images/logos/sponsors/plantronics.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Plantronics BackBeat Pro",
+          "Plantronics Gamecom 788",
+          "Plantronics BackBeat Go 2"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(5,27,100)"
   },
   {
     "title": "DOTA2",
@@ -194,7 +193,7 @@
       "format": "3 vs 3",
       "sponsors": {
         "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/UT2004.gif",
+        "src": "/images/logos/sponsors/tournaments/DotA2.gif",
         "prize": [
           "TBA",
           "TBA",
