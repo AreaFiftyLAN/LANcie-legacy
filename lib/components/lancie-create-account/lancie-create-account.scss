@@ -11,6 +11,20 @@
 
   .specification {
     margin-bottom: 32px;
+
+    .alert-block {
+      background-color: transparentize($prime_yellow, 0.2);
+      border-color: $prime_yellow;
+      margin: 0;
+      padding: 20px 20px 19px;
+      border-radius: 3px;
+
+      .alert-message{
+        line-height: 1em;
+        color: $third_blue;
+        font-size: 21px;
+      }
+    }
   }
 
   .progress-bar {

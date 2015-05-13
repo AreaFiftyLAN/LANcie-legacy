@@ -31,7 +31,13 @@
     <h1>Ticket sales - Area FiftyLAN - 12/13/14 June 2015</h1>
 
     <div class="specification">
-        <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
+      <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
+      
+      <div class="alert-block">
+        <h2 class="alert-message">
+          <i class="fa fa-exclamation-triangle"></i> Get your ticket before May 20th and win one of the three Plantronics Gamecon 788 PC Headsets!
+        </h2>
+      </div>
     </div>
     <div class="progress-bar" vertical layout>
       <div class="progress-bar-description" horizontal layout around-justified>
@@ -47,7 +53,7 @@
     <form action="#" method="POST" layout vertical>
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="type">
-          <div horizontal layout class="ticket-type-selector">
+          <div horizontal?="{{!phoneScreen}}" vertical?="{{phoneScreen}}" layout class="ticket-type-selector">
             <paper-shadow animated>
               <div class="ticket-type-block" vertical data-ticket="area_001" layout flex on-click="{{changeTicketType}} {{pageNext}}">
                 <div vertical layout>
@@ -65,7 +71,7 @@
                 <div vertical layout>
                   <h1 layout vertical center-center>Classified Saturday</h1>
                   <div vertical layout class="ticket-desc">
-                    <span>Access to the Gaming Event from 19:00 on 12th June till 19:00 on 13th June. Including breakfast, lunch and BBQ on saturday.</span>
+                    <span>Access to the gaming event from 17:00 on the 13th of June till 17:00 on the 14th of June. Including BBQ on saturday and breakfast and lunch on sunday.</span>
                     <div horizontal layout center>Price: <h3>€ 20,-</h3></div>
                     <sub>* Proper tournament participation not guaranteed.</sub>
                   </div>
@@ -77,9 +83,8 @@
                 <div vertical layout>
                   <h1 layout vertical center-center>Top Secret Weekend</h1>
                   <div vertical layout class="ticket-desc">
-                    <span>Access to the Gaming Event from 19:00 on 12th June till 19:00 on 13th June. Including breakfast, lunch and BBQ on saturday.</span>
+                    <span>Access to the gaming event from 17:00 on the 12th of June till 17:00 on the 14th of June. Including breakfast and lunch on both saturday and sunday and a BBQ on saturday.</span>
                     <div horizontal layout center>Price: <h3>€ 35,-</h3></div>
-                    <sub>* Tournament participation guaranteed.</sub>
                   </div>
                 </div>
               </div>
