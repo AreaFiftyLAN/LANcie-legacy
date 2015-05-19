@@ -76,6 +76,12 @@
             height: 277px;
             vertical-align: center;
           }
+
+          .ticket-desc {
+            -webkit-transition: all 0.2s linear; /* Safari */
+            transition: all 0.2s linear 0.2s;
+            display: none;
+          }
         }
 
         h1 {
@@ -91,6 +97,8 @@
         }
 
         .ticket-desc {
+          -webkit-transition: all 0.2s linear; /* Safari */
+          transition: all 0.2s linear 0.2s;
           padding: 5px 20px;
 
           div {

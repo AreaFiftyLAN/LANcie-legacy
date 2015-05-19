@@ -362,6 +362,8 @@ Polymer 'create-account',
 
     if @transport is true
       @price_transport = 2.50.toFixed(2)
+    else
+      @price_transport = 0.00
 
     @price_total = (parseFloat(@price_ticket) + parseFloat(@price_transport)).toFixed(2)
 

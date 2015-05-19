@@ -54,10 +54,21 @@
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="type">
           <div horizontal?="{{!phoneScreen}}" vertical?="{{phoneScreen}}" layout class="ticket-type-selector">
-            <paper-shadow animated>
+            <paper-shadow animated flex>
+              <div class="ticket-type-block" vertical data-ticket="area_003" layout flex on-click="{{changeTicketType}} {{pageNext}}">
+                <div vertical layout>
+                  <h1 layout vertical center-center style="background-color: #1a2b43">Top Secret Weekend</h1>
+                  <div vertical layout class="ticket-desc">
+                    <span>Access to the gaming event from 17:00 on the 12th of June till 17:00 on the 14th of June. Including breakfast and lunch on both saturday and sunday and a BBQ on saturday.</span>
+                    <div horizontal layout center>Price: <h3>€ 35,-</h3></div>
+                  </div>
+                </div>
+              </div>
+            </paper-shadow>
+            <paper-shadow animated flex>
               <div class="ticket-type-block" vertical data-ticket="area_001" layout flex on-click="{{changeTicketType}} {{pageNext}}">
                 <div vertical layout>
-                  <h1 layout vertical center-center>Alien Friday</h1>
+                  <h1 layout vertical center-center>Alien Fri-Sat</h1>
                   <div vertical layout class="ticket-desc">
                     <span>Access to the Gaming Event from 19:00 on 12th June till 19:00 on 13th June. Including breakfast, lunch and BBQ on saturday.</span>
                     <div horizontal layout center>Price: <h3>€ 20,-</h3> </div>
@@ -66,25 +77,14 @@
                 </div>
               </div>
             </paper-shadow>
-            <paper-shadow animated>
+            <paper-shadow animated flex>
               <div class="ticket-type-block" vertical data-ticket="area_002" layout flex on-click="{{changeTicketType}} {{pageNext}}">
                 <div vertical layout>
-                  <h1 layout vertical center-center>Classified Saturday</h1>
+                  <h1 layout vertical center-center>Classified Sat-Sun</h1>
                   <div vertical layout class="ticket-desc">
                     <span>Access to the gaming event from 17:00 on the 13th of June till 17:00 on the 14th of June. Including BBQ on saturday and breakfast and lunch on sunday.</span>
                     <div horizontal layout center>Price: <h3>€ 20,-</h3></div>
                     <sub>* Proper tournament participation not guaranteed.</sub>
-                  </div>
-                </div>
-              </div>
-            </paper-shadow>
-            <paper-shadow animated>
-              <div class="ticket-type-block" vertical data-ticket="area_003" layout flex on-click="{{changeTicketType}} {{pageNext}}">
-                <div vertical layout>
-                  <h1 layout vertical center-center>Top Secret Weekend</h1>
-                  <div vertical layout class="ticket-desc">
-                    <span>Access to the gaming event from 17:00 on the 12th of June till 17:00 on the 14th of June. Including breakfast and lunch on both saturday and sunday and a BBQ on saturday.</span>
-                    <div horizontal layout center>Price: <h3>€ 35,-</h3></div>
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@
 
             <div class="table-row" horizontal layout>
               <div flex four>
-                <div>Ticket Area FiftyLAN - {{tickettype == "area_001" ? "Alien Friday" : ''}}{{tickettype == "area_002" ? "Classified Saturday" : ''}}{{tickettype == "area_003" ? "Top Secret Weekend" : ''}} - {{chmember ? "CH Discount" : "Normal"}}</div>
+                <div>Ticket Area FiftyLAN - {{tickettype == "area_001" ? "Alien Fri-Sat" : ''}}{{tickettype == "area_002" ? "Classified Sat-Sun" : ''}}{{tickettype == "area_003" ? "Top Secret Weekend" : ''}} - {{chmember ? "CH Discount" : "Normal"}}</div>
                 <span class="desc">{{name}} {{surname}} - {{username}} - {{email}}</span>
               </div>
               <span>€ {{price_ticket}}</span>
@@ -274,7 +274,7 @@
 
             <div class="table-row" horizontal layout>
               <div flex four>
-                <div>Ticket Area FiftyLAN - {{tickettype == "area_001" ? "Alien Friday" : ''}}{{tickettype == "area_002" ? "Classified Saturday" : ''}}{{tickettype == "area_003" ? "Top Secret Weekend" : ''}} - {{chmember ? "CH Discount" : "Normal"}}</div>
+                <div>Ticket Area FiftyLAN - {{tickettype == "area_001" ? "Alien Fri-Sat" : ''}}{{tickettype == "area_002" ? "Classified Sat-Sun" : ''}}{{tickettype == "area_003" ? "Top Secret Weekend" : ''}} - {{chmember ? "CH Discount" : "Normal"}}</div>
                 <span class="desc">{{name}} {{surname}} - {{username}} - {{email}}</span>
               </div>
               <span>€ {{price_ticket}}</span>

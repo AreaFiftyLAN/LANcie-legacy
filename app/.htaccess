@@ -1,3 +1,11 @@
 RewriteEngine on
-RewriteRule ^tickets/?$ /view/create_account.php [L]
-RewriteRule ^tickets/?([a-z]+)=([a-z]+)$ /view/create_account.php?$1=$2 [L]
+
+RewriteCond %{REMOTE_ADDR} !^195\.240\.142\.214
+RewriteCond %{REMOTE_ADDR} !^(?:(?:00\.00\.000\.000)|(?:127\.0\.0\.1))$
+
+RewriteCond %{REQUEST_URI} !/construction/ [NC]
+RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif|css|zip) [NC]
+RewriteRule .* /construction/ [R=302,L]
+
+# RewriteRule ^tickets/?$ /view/create_account.php [L]
+# RewriteRule ^tickets/?([a-z]+)=([a-z]+)$ /view/create_account.php?$1=$2 [L]
