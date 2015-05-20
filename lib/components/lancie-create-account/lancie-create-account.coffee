@@ -7,6 +7,10 @@ Polymer 'create-account',
   userId: null
   emailcode: null
   userPayed: false
+  price_ticket: null
+  price_transport: null
+  price_total: null
+  dates: null
   person: {}
 
   ###
@@ -17,53 +21,59 @@ Polymer 'create-account',
     params = @getUrlParams()
     @userhash = params.hash
 
-    if params.confirm
-      @$.animatedpages.selected = 4
-      @$.progress.value = 100
-      @$.getUserByHash.go(true)
-    else if params.payment 
-      @$.animatedpages.selected = 3
-      @$.progress.value = 80
-      @$.emailcode = @$.verification.value = @userhash.substring(@userhash.length - 8, @userhash.length)
-      @$.getUserByHash.go()
-
-
-  userPayedLoaded: ->
-    if @$.userPayed.response is true
-      @userPayed = true
-    else 
-      @userPayed = false
     @person = null
     @$.lancieCreateAccountSave.save()
 
-  getUserByHashLoaded: (flag = false) ->
-    @userId = @$.getUserByHash.response
-    if flag then @$.userPayed.go()
-    @$.getUserById.go()
-    @$.getProfileById.go()
+    if params.confirm
+      @$.animatedpages.selected = 5
+      @$.progress.value = 100
+      @$.getAccountByHash.go(true)
+    else if params.payment 
+      @$.animatedpages.selected = 4
+      @$.progress.value = 80
+      @$.emailcode = @$.verification.value = @userhash.substring(@userhash.length - 4, @userhash.length)
+      @$.getAccountByHash.go()
 
-  getUserByIdLoaded: ->
-    callback = @$.getUserById.response
-    @username = callback.username
-    @email = callback.email
-    @chmember = callback.chmember
-    @transport = callback.transport
-    @emailcode = callback.hash.substr(callback.hash.length - 8, 8)
-    console.log "lancieCreateAccountSave.verifyEmail"
+  userPaid: ->
+    callback = @$.getPaymentUser.response
+    console.log callback
+    if callback.details.paid is true
+      @userPaid = true
+    else 
+      @userPaid = false
+    @person = null
+    @$.lancieCreateAccountSave.save()
+
+
+  getAccountByHashLoaded: (flag = false) ->
+    callback = @$.getAccountByHash.response
+    @getAccount(callback.details.account)
+    @getProfile(callback.details.profile)
+    if flag then @$.getPaymentUser.go()
+    @getPrice()
+
+
+
+  getAccount: (account) ->
+    @userId = account.id
+    @username = account.username
+    @email = account.email
+    @chmember = account.chmember
+    @transport = account.transport
+    @tickettype = account.tickettype
+    @emailcode = account.hash.substr(account.hash.length - 4, 4)
     @verifyEmail()
 
-  getProfileByIdLoaded: ->
-    callback = @$.getProfileById.response
-    @name = callback.name
-    @surname = callback.surname
-    
-    @zipcode = callback.zipcode
-    @address = callback.address
-    @city = callback.city
-    @tel = callback.tel
-    @notes = callback.notes
-    @saveData()
 
+  getProfile: (profile) ->
+    @name = profile.name
+    @surname = profile.surname
+    @zipcode = profile.zipcode
+    @address = profile.address
+    @city = profile.city
+    @tel = profile.tel
+    @notes = profile.notes
+    @saveData()
 
   getUrlParams: ->
     qs = document.location.search.split('+').join(' ')
@@ -109,6 +119,18 @@ Polymer 'create-account',
     @$.emailcheck.toggle()
 
   ###
+
+  ###
+  runEmailCheck: ->
+    @$.checkEmailAJAX.go()
+
+  ###
+
+  ###
+  runUsernameCheck: ->
+    @$.checkUsernameAJAX.go()
+
+  ###
     Brings you to the next page and changes the progressbar
   ###
   pageNext: ->
@@ -129,7 +151,7 @@ Polymer 'create-account',
   checkUsername: (e) ->
     if !e.currentTarget.isEmpty
       target = @$.username
-      if @$.checkUsernameAJAX.response is true
+      if @$.checkUsernameAJAX.response.details.exists is true
         target.error = 'This username is already taken, please choose another!'
         return target.isInValid = true
       else
@@ -168,14 +190,15 @@ Polymer 'create-account',
   ###
   checkEmail: (e) ->
     re = undefined
-    target = undefined
+    # target = undefined #
     if !e.currentTarget.isEmpty
       re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      target = e.currentTarget
-      if !re.test(target.value) 
+      target = @$.email
+      if !re.test(target.value)
         target.error = 'Please fill in a valid email address!'
         return target.isInValid = true
-      else if @$.checkEmailAJAX.response is true
+      else if @$.checkEmailAJAX.response.details.exists is true
+        console.log "HALLO!"
         target.error = 'This email is already taken, please choose another!'
         return target.isInValid = true
       else
@@ -230,6 +253,8 @@ Polymer 'create-account',
 
     if @zipcode? and @number?
       @$.zipcodeDecorator.isInvalid = @$.numberDecorator.isInvalid = false
+      @zipcode = @zipcode.replace(/\s+/, "") 
+      @number = @number.replace(/\s+/, "")
       @$.autoCompleteAddress.go()
       
   ###
@@ -256,6 +281,7 @@ Polymer 'create-account',
       username: @username
       email: @email
       password: @password
+      tickettype: @tickettype
     }
     @person.profile = {
       name: @name 
@@ -272,23 +298,40 @@ Polymer 'create-account',
       notes: @notes
     }
     @$.lancieCreateAccountSave.save()
+    console.log @$.lancieCreateAccountSave.value
+
+  ###
+
+  ###
+  changeTicketType: (e) ->
+    @tickettype = e.currentTarget.dataset.ticket
+    @saveData()
 
   ###
     AJAX Request to insert an user into the database
   ###
-  insertUser: ->
-    @$.insertUser.params = @mergeInto(@person.account, @person.profile)
-    @$.insertUser.go()
+  createAccount: ->
+    @$.createAccount.params = @mergeInto(@person.account, @person.profile)
+    @$.createAccount.go()
 
   ###
 
   ###
   callbackUserInsert: ->
-    callback = JSON.parse @$.insertUser.response
-    @emailcode = callback.code
-    @userId = callback.userId
-    @person.account.userId = @userId
-    @$.lancieCreateAccountSave.save()
+    callback = @$.createAccount.response
+    console.log callback
+    if callback.status.code is 471 || callback.status.code is 472
+      @runUsernameCheck()
+      @runEmailCheck()
+      @$.animatedpages.selected = 1
+      @$.progress.value = 20
+    else if callback.status.code is 201
+      @emailcode = callback.details.code
+      @userId = callback.details.userId
+      @person.account.userId = @userId
+      @$.lancieCreateAccountSave.save()
+      @$.animatedpages.selected = 4
+      @$.progress.value = 60
 
   ###
 
@@ -296,8 +339,40 @@ Polymer 'create-account',
   payNow: ->
     @$.getPaymentUrl.go()
 
+  ###
+
+  ###
   redirUser: ->
-    window.location = @$.getPaymentUrl.response
+    window.location = @$.getPaymentUrl.response.details
+
+  ###
+
+  ###
+  getPrice: ->
+    price = 0.00
+    if @tickettype isnt "area_003"
+      price += 17.50
+      if @chmember is false
+        price += 2.50
+    else
+      price += 30.00
+      if @chmember is false
+        price += 5.00
+    @price_ticket = price.toFixed(2)
+
+    if @transport is true
+      @price_transport = 2.50.toFixed(2)
+    else
+      @price_transport = 0.00
+
+    @price_total = (parseFloat(@price_ticket) + parseFloat(@price_transport)).toFixed(2)
+
+    if @tickettype is "area_001"
+      @dates = "12/13"
+    else if @tickettype is "area_002"
+      @dates = "13/14"
+    else
+      @dates = "12/13/14"
 
   ###
 

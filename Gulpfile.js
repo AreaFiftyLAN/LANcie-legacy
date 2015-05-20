@@ -118,8 +118,7 @@ gulp.task('serve', ['sass:app:serve', 'sass:lib:serve', 'lib:serve', 'json:serve
   gulp.watch(['app/json/**/*.json'],['json:serve', reload]);
 
   gulp.watch([
-    'lib/components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*',
-    'lib/.bower_components/**/*.{css,js,html,swf,eot,svg,ttf,woff,otf}*'
+    'lib/components/**/*.html',
   ], ['lib:serve', reload]);
 });
 
@@ -171,7 +170,7 @@ gulp.task('sass:app:build', function() {
 gulp.task('sass:lib:build', function() {
   return $.rubySass("lib/components/", { style: 'expanded', container: 'gulp-ruby-sass-lib' })
       .on('error', console.error.bind(console))
-      .pipe($.minifyCss())
+      // .pipe($.minifyCss())
       .pipe(gulp.dest('dist/lib/components/'));
 });
 

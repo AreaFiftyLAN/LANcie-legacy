@@ -1,6 +1,7 @@
 @import "../../../app/styles/components/variables";
 
 :host {
+  display: block;
   
   .tournament-element {
     display: inline-block;

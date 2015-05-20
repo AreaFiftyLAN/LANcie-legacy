@@ -1,0 +1,54 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-tooltip/core-tooltip.html">
+<link rel="import" href="/lib/components/paper-button/paper-button.html">
+<link rel="import" href="/lib/components/paper-ripple/paper-ripple.html">
+
+<polymer-element name="lancie-seatmap-seat" attributes="mode, data">
+  <template>
+    <link rel="stylesheet" href="lancie-seatmap-seat.css">
+
+    <template bind="{{getDataFromMode(mode) as status}}">
+      <div class="seatmap-seat-container">
+        <core-tooltip id="coreTooltip" position="right" class="fancy" disabled?="{{status.disabled}}">
+          <div class="seatmap-seat-icon" style="border-color: {{status.icon.color}}">
+            <style>
+              #checkbox {
+                background-color: {{status.colors.default.background}};
+                border-color: {{status.colors.default.border}};
+              }
+
+              #checkbox.checked {
+                background-color: {{status.colors.checked.background}};
+                border-color: {{status.colors.checked.border}};
+              }
+            </style>
+            <div id="checkbox" class="{{ {checked: checked} | tokenList }}"></div>
+            <paper-ripple fit></paper-ripple>
+          </div>
+          <template if="{{status.tooltip || checked}}">
+            <div tip vertical layout>
+              <div class="tip-header">
+                <h3>AreaFiftyLAN - 12/13/14 June</h3>
+              </div>
+              <div class="tip-content">
+                <template if="{{status.tooltip}}">
+                  <div horizontal layout>
+                      <span>Seatnumber:</span>
+                      <b>{{data.seat.label}}</b></div>
+                  <div horizontal layout>
+                      <span>Username:</span> 
+                      <b>{{data.seat.username}}</b></div>
+                </template>
+                <template if="{{checked && !status.tooltip}}"> 
+                  <paper-button raised on-click="{{reserveSeatEvent}}">reserve seat {{data.seat.label}}</paper-button>
+                </template>
+              </div>
+            </div>
+          </template>
+        </core-tooltip>
+      </div>
+    </template>
+  </template>
+
+  <script src="lancie-seatmap-seat.js"></script>
+</polymer-element>

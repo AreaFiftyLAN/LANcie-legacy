@@ -1,0 +1,20 @@
+@import "../../../app/styles/components/variables";
+
+:host {
+  display: block;
+  
+  .seatmap-content {
+    
+    .seatmap-row-header {
+      position: relative;
+      text-align: center;
+      background-color: darken($prime_white, 3%);
+    }
+
+    .seatmap-row-seats {
+      height: 380px; width: 76px;
+      padding-top: 10px;
+      background-color: #ddd;
+    }
+  }
+}

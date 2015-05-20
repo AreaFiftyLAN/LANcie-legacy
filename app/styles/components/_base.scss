@@ -5,32 +5,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.site-padding {
-  padding: 0 32px;
-}
-
-.content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
-  max-width: 1032px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.meta {
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 20px;
-}
-
-.secondary {
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 20px;
-}
-
-.onlyonmobile {
-  display: none;
-}
-
 html {
   margin: 0;
   padding: 0;
@@ -56,22 +30,6 @@ body {
 }
 
 body {
-
-   @media only screen and (max-width: 581px) {
-
-    .onlyonmobile {
-      display: block !important;
-    }
-
-    .notonmobile {
-      display: none;
-    }
-
-    .site-padding, .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
-      padding: 0 16px;
-    }
-
-  }
   
   /deep/ {
 
@@ -166,24 +124,6 @@ body {
       max-width: 100%;
       border: 0;
     }
-
-    .onlyonmobile {
-      display: none;
-    }
-
-    @media only screen and (max-width: 581px) {
-
-      .onlyonmobile {
-        display: block !important;
-      }
-
-      .notonmobile {
-        display: none;
-      }
-      .site-padding, .content-padding, footer > :first-child, .panel, .content-padding, footer > :first-child, .panel {
-        padding: 0 16px;
-      }
-    }
-
+    
   }
 }

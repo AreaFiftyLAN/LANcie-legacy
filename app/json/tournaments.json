@@ -11,16 +11,15 @@
       "start_time": "TBA",
       "format": "5 vs 5 & 1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "name": "Plantronics",
+        "src": "/images/logos/sponsors/plantronics.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "5x Plantronics Gamecom 788"
+
         ]
       }
     },
-    "color": ""
+    "color": "rgb(5,27,100)"
   },
   {
     "title": "CS:GO",
@@ -34,16 +33,14 @@
       "start_time": "TBA",
       "format": "5 vs 5",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/CSGO.gif",
+        "name": "Sogeti",
+        "src": "/images/logos/sponsors/logo_sogeti.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "5x CM Storm QuickFire Ultimate + Steelseries Qck"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(241,93,47)"
   },
   {
     "title": "FIFA",
@@ -57,16 +54,16 @@
       "start_time": "TBA",
       "format": "1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/FIFA.gif",
+        "name": "Plantronics",
+        "src": "/images/logos/sponsors/plantronics.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Plantronics BackBeat Pro",
+          "Plantronics Gamecom 788",
+          "Plantronics BackBeat Go 2"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(5,27,100)"
   },
   {
     "title": "LOL",
@@ -80,17 +77,36 @@
       "start_time": "TBA",
       "format": "1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/LoL.gif",
+        "name": "Ordina",
+        "src": "/images/logos/sponsors/logo_ordina.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Logitech G910 Orion Spark RGB"
         ]
       }
     },
-    "color": ""
+    "color": "rgb(245,130,32)"
   },
+  {
+    "title": "DOTA2",
+    "subtitle": "5 vs 5",
+    "src": "/images/background/tournaments/dota2.jpg",
+    "details": {
+      "name": "DOTA2",
+      "max_players": "TBA",
+      "platform": "PC & Mac",
+      "info": "Dota 2 is a 2013 multiplayer online battle arena game and the stand-alone sequel to the Defense of the Ancients (DotA) Warcraft III: Reign of Chaos and Warcraft III: The Frozen Throne mod. Dota 2 is played in discrete matches involving two teams of five players, each of which occupies a stronghold at a corner of the map. Each stronghold contains a building called the Ancient, which the opposite team must destroy to win the match. Each player controls a Hero character and focuses on leveling up, collecting gold, acquiring items and fighting against the other team to achieve victory.",
+      "start_time": "TBA",
+      "format": "5 vs 5",
+      "sponsors": {
+        "name": "Optiver",
+        "src": "/images/logos/sponsors/logo_optiver.png",
+        "prize": [
+          "5x Bayan Soundbook"
+        ]
+      }
+    },
+    "color": "rgb(237,75,28)"
+  },  
   {
     "title": "HS",
     "subtitle": "1 vs 1",
@@ -147,39 +163,16 @@
       "start_time": "TBA",
       "format": "Free-For-All",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/TMNF.gif",
+        "name": "Plantronics",
+        "src": "/images/logos/sponsors/plantronics.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Plantronics BackBeat Pro",
+          "Plantronics Gamecom 788",
+          "Plantronics BackBeat Go 2"
         ]
       }
     },
-    "color": ""
-  },
-  {
-    "title": "DOTA2",
-    "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/dota2.jpg",
-    "details": {
-      "name": "DOTA2",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Dota 2 is a 2013 multiplayer online battle arena game and the stand-alone sequel to the Defense of the Ancients (DotA) Warcraft III: Reign of Chaos and Warcraft III: The Frozen Throne mod. Dota 2 is played in discrete matches involving two teams of five players, each of which occupies a stronghold at a corner of the map. Each stronghold contains a building called the Ancient, which the opposite team must destroy to win the match. Each player controls a Hero character and focuses on leveling up, collecting gold, acquiring items and fighting against the other team to achieve victory.",
-      "start_time": "TBA",
-      "format": "5 vs 5",
-      "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/DotA2.gif",
-        "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
-        ]
-      }
-    },
-    "color": ""
+    "color": "rgb(5,27,100)"
   },
   {
     "title": "UT2004",

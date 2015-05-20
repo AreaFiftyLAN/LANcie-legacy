@@ -53,19 +53,15 @@
   <link rel="import" href="/lib/components/paper-elements/paper-elements.html">
 
   <!-- OWN ELEMENTS -->
-  <link rel="import" href="/lib/components/lancie-input/lancie-input.html">
-  <link rel="import" href="/lib/components/lancie-terms-agreement/lancie-terms-agreement.html">
+  <link rel="import" href="/lib/components/lancie-contact-form/lancie-contact-form.html">
   <link rel="import" href="/lib/components/lancie-section/lancie-section.html">
+  <link rel="import" href="/lib/components/lancie-seatmap/lancie-seatmap.html">
   <link rel="import" href="/lib/components/lancie-scroll-area/lancie-scroll-area.html">
   <link rel="import" href="/lib/components/lancie-site-banner/lancie-site-banner.html">
   <link rel="import" href="/lib/components/lancie-app-bar/lancie-app-bar.html">
-  <link rel="import" href="/lib/components/lancie-contact-form/lancie-contact-form.html">
-  <link rel="import" href="/lib/components/lancie-create-account/lancie-create-account.html">
 
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="/lib/styles/lancie.css">
-  <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>
-  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 </head>
 <body unresolved>
@@ -115,12 +111,14 @@
       </app-bar></site-banner>
   
   <main>
-    <lancie-section>
-      <create-account></create-account>
+
+    <lancie-section nomargin="true" center>
+      <lancie-seatmap horizontal layout flex></lancie-seatmap>
     </lancie-section>
 
-    <lancie-contact id="contact-form"></lancie-contact>
   </main>
+
+  <lancie-contact id="contact-form"></lancie-contact>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
