@@ -1,223 +1,220 @@
-[
-  {
-    "title": "LOL",
-    "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/lol.jpg",
-    "details": {
-      "name": "League of Legends",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "League of Legends (LoL) is a 2009 multiplayer online battle arena game developed and published by Riot Games. It is a free-to-play game that is inspired by the mod Defense of the Ancients for the video game Warcraft III: The Frozen Throne. In League of Legends, players assume the role of a character, called a champion, with unique abilities, battling with a team against other player-controlled champions. In the most popular game modes, each team's goal is to destroy the opposing team's nexus, a building which lies at the heart of a base protected by defensive structures.",
-      "start_time": "TBA",
-      "format": "5 vs 5 & 1 vs 1",
-      "sponsors": {
-        "name": "Plantronics",
-        "src": "/images/logos/sponsors/plantronics.png",
-        "prize": [
-          "5x Plantronics Gamecom 788"
-
-        ]
-      }
-    },
-    "color": "rgb(5,27,100)"
-  },
-  {
-    "title": "CS:GO",
-    "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/csgo.jpg",
-    "details": {
-      "name": "Counter-Strike : Global Offensive",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Counter-Strike: Global Offensive (CS:GO) is a tactical first-person shooter developed by Valve Corporation and Hidden Path Entertainment. It is the fourth game in the main Counter-Strike franchise. Like the previous games in the series, Global Offensive is an objective-based multiplayer first-person shooter. Each player joins either the Terrorist or Counter-Terrorist team and attempts to complete objectives or eliminate the enemy team. The game operates in short rounds that end when all players on one side are dead or a team's objective is completed.",
-      "start_time": "TBA",
-      "format": "5 vs 5",
-      "sponsors": {
-        "name": "Sogeti",
-        "src": "/images/logos/sponsors/logo_sogeti.png",
-        "prize": [
-          "5x CM Storm QuickFire Ultimate + Steelseries Qck"
-        ]
-      }
-    },
-    "color": "rgb(241,93,47)"
-  },
-  {
-    "title": "FIFA",
-    "subtitle": "1 vs 1",
-    "src": "/images/background/tournaments/fifa.jpg",
-    "details": {
-      "name": "FIFA 2014",
-      "max_players": "TBA",
-      "platform": "PC",
-      "info": "FIFA, also known as FIFA Football or FIFA Soccer, is a series of association football video games or football simulator, released annually by Electronic Arts. When the series began in late 1993, it was notable for being the first to have an official licence from FIFA, the world governing body of football. The latest installments in the series contain many exclusively-licensed leagues including leagues and teams from around the world, allowing the use of real leagues, clubs, and player names and likenesses within the games. In addition, internationally popular clubs from around the world, including some teams from Greece, Turkey, Argentina and South Africa, without those nations' entire leagues.",
-      "start_time": "TBA",
-      "format": "1 vs 1",
-      "sponsors": {
-        "name": "Plantronics",
-        "src": "/images/logos/sponsors/plantronics.png",
-        "prize": [
-          "Plantronics BackBeat Pro",
-          "Plantronics Gamecom 788",
-          "Plantronics BackBeat Go 2"
-        ]
-      }
-    },
-    "color": "rgb(5,27,100)"
-  },
-  {
-    "title": "LOL",
-    "subtitle": "1 vs 1",
-    "src": "/images/background/tournaments/lol.jpg",
-    "details": {
-      "name": "League of Legends",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "League of Legends (LoL) is a 2009 multiplayer online battle arena game developed and published by Riot Games. It is a free-to-play game that is inspired by the mod Defense of the Ancients for the video game Warcraft III: The Frozen Throne. In League of Legends, players assume the role of a character, called a champion, with unique abilities, battling with a team against other player-controlled champions. In the most popular game modes, each team's goal is to destroy the opposing team's nexus, a building which lies at the heart of a base protected by defensive structures.",
-      "start_time": "TBA",
-      "format": "1 vs 1",
-      "sponsors": {
-        "name": "Ordina",
-        "src": "/images/logos/sponsors/logo_ordina.png",
-        "prize": [
-          "Logitech G910 Orion Spark RGB"
-        ]
-      }
-    },
-    "color": "rgb(245,130,32)"
-  },
-  {
-    "title": "DOTA2",
-    "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/dota2.jpg",
-    "details": {
-      "name": "DOTA2",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Dota 2 is a 2013 multiplayer online battle arena game and the stand-alone sequel to the Defense of the Ancients (DotA) Warcraft III: Reign of Chaos and Warcraft III: The Frozen Throne mod. Dota 2 is played in discrete matches involving two teams of five players, each of which occupies a stronghold at a corner of the map. Each stronghold contains a building called the Ancient, which the opposite team must destroy to win the match. Each player controls a Hero character and focuses on leveling up, collecting gold, acquiring items and fighting against the other team to achieve victory.",
-      "start_time": "TBA",
-      "format": "5 vs 5",
-      "sponsors": {
-        "name": "Optiver",
-        "src": "/images/logos/sponsors/logo_optiver.png",
-        "prize": [
-          "5x Bayan Soundbook"
-        ]
-      }
-    },
-    "color": "rgb(237,75,28)"
-  },  
-  {
-    "title": "HS",
-    "subtitle": "1 vs 1",
-    "src": "/images/background/tournaments/hs.jpg",
-    "details": {
-      "name": "Hearthstone: Heroes of Warcraft",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Hearthstone is a digital collectible card game that revolves around turn-based matches between two opponents. Players start the game with a substantial collection of 'basic' cards, but can gain rarer and more powerful cards through purchasing packs of cards, or as reward for competing in the Arena. Hearthstone is set within the Warcraft universe, with its characters, cards and locations drawing from existing lore.",
-      "start_time": "TBA",
-      "format": "1 vs 1",
-      "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/HS.gif",
-        "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
-        ]
-      }
-    },
-    "color": ""
-  },
-  {
-    "title": "COD4",
-    "subtitle": "5 vs 5",
-    "src": "/images/background/tournaments/cod4.jpg",
-    "details": {
-      "name": "Call of Duty 4: Modern Warfare",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Call of Duty 4: Modern Warfare is a 2007 first-person shooter video game, developed by Infinity Ward and published by Activision. It is the fourth installment in the Call of Duty video game series and is the first in the Modern Warfare line of the franchise. The game breaks away from the World War II setting of previous games in the series and is instead set in modern times. ",
-      "start_time": "TBA",
-      "format": "5 vs 5: Search and Destroy",
-      "sponsors": {
-        "name": "Tam Tam",
-        "src": "/images/logos/sponsors/tournaments/TamTam-Los-Rood.png",
-        "prize": [
-          "5x quadcopter"
-        ]
-      }
-    },
-    "color": "rgb(190, 0, 39)"
-  },
-  {
-    "title": "TM:NF",
-    "subtitle": "Free-For-All",
-    "src": "/images/background/tournaments/tmnf.jpg",
-    "details": {
-      "name": "Trackmania Nations Forever",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "TrackMania is a series of racing games developed by the French team Nadeo for the PC. Instead of following the usual trend of choosing a set car and track to play the game, in TrackMania the players can create their own tracks using building blocks. Unlike most other racing games, the TrackMania series lets the player race a track as many times as they want within a time limit. Players may choose to respawn at any time if they land upside down, leave the track or get off to a poor start. In multiplayer games, however, multiple cars race on the same track and cannot collide or otherwise influence each other.",
-      "start_time": "TBA",
-      "format": "Free-For-All",
-      "sponsors": {
-        "name": "Plantronics",
-        "src": "/images/logos/sponsors/plantronics.png",
-        "prize": [
-          "Plantronics BackBeat Pro",
-          "Plantronics Gamecom 788",
-          "Plantronics BackBeat Go 2"
-        ]
-      }
-    },
-    "color": "rgb(5,27,100)"
-  },
-  {
-    "title": "UT2004",
-    "subtitle": "3 vs 3",
-    "src": "/images/background/tournaments/ut4.jpg",
-    "details": {
-      "name": "Unreal Tournament 2004",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Unreal Tournament 2004 is a first-person shooter representing a fast-paced extreme sport of the future. Designed primarily for multiplayer gameplay, UT2004's gameplay mechanics offer multiple ways of movement including double-jumping, dodge-jumping, wall-dodging and shield-jumping, which allow the player to create several attack strategies. UT2004 also features an extensive array of weapons, all of which come with a secondary fire. Some of them were designed specifically for use in vehicle-based gametypes, and typically appear only in those gametypes, such as the Anti-Vehicle Rocket Launcher (AVRiL) and the Grenade Launcher. More than 100 maps are included in the game for all new and existing gametypes",
-      "start_time": "TBA",
-      "format": "3 vs 3",
-      "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/UT2004.gif",
-        "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
-        ]
-      }
-    },
-    "color": ""
-  },
-  {
-    "title": "TF2",
-    "subtitle": "Girls only",
-    "src": "/images/background/tournaments/tf2.jpg",
-    "details": {
-      "name": "Team Fortress 2",
-      "max_players": "TBA",
-      "platform": "PC & Mac",
-      "info": "Team Fortress 2 is a team-based first-person shooter multiplayer video game. It is the sequel to the 1996 mod Team Fortress for Quake and its 1999 remake. In TF2, players join one of two teams comprising nine character classes, battling in a variety of game modes including capture the flag (CTF) and king of the hill (KOTH).",
-      "start_time": "TBA",
-      "format": "Free-For-All",
-      "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/TF2.gif",
-        "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
-        ]
-      }
-    },
-    "color": "rgb(245, 105, 145)"
-  }
+[  
+   {  
+      "title":"LOL",
+      "subtitle":"5 vs 5",
+      "src":"/images/background/tournaments/lol.jpg",
+      "details":{  
+         "name":"League of Legends",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"League of Legends (LoL) is a 2009 multiplayer online battle arena game developed and published by Riot Games. It is a free-to-play game that is inspired by the mod Defense of the Ancients for the video game Warcraft III: The Frozen Throne. In League of Legends, players assume the role of a character, called a champion, with unique abilities, battling with a team against other player-controlled champions. In the most popular game modes, each team's goal is to destroy the opposing team's nexus, a building which lies at the heart of a base protected by defensive structures.",
+         "start_time":"Saturday 10.00",
+         "format":"5 vs 5 & 1 vs 1",
+         "sponsors":{  
+            "name":"Plantronics",
+            "src":"/images/logos/sponsors/plantronics.png",
+            "prize":[  
+               "5x Plantronics Gamecom 788"
+            ]
+         }
+      },
+      "color":"rgb(5,27,100)"
+   },
+   {  
+      "title":"CS:GO",
+      "subtitle":"5 vs 5",
+      "src":"/images/background/tournaments/csgo.jpg",
+      "details":{  
+         "name":"Counter-Strike : Global Offensive",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"Counter-Strike: Global Offensive (CS:GO) is a tactical first-person shooter developed by Valve Corporation and Hidden Path Entertainment. It is the fourth game in the main Counter-Strike franchise. Like the previous games in the series, Global Offensive is an objective-based multiplayer first-person shooter. Each player joins either the Terrorist or Counter-Terrorist team and attempts to complete objectives or eliminate the enemy team. The game operates in short rounds that end when all players on one side are dead or a team's objective is completed.",
+         "start_time":"Saturday 10.00",
+         "format":"5 vs 5",
+         "sponsors":{  
+            "name":"Sogeti",
+            "src":"/images/logos/sponsors/logo_sogeti.png",
+            "prize":[  
+               "5x CM Storm QuickFire Ultimate + Steelseries Qck"
+            ]
+         }
+      },
+      "color":"rgb(241,93,47)"
+   },
+   {  
+      "title":"FIFA",
+      "subtitle":"1 vs 1",
+      "src":"/images/background/tournaments/fifa.jpg",
+      "details":{  
+         "name":"FIFA 2014",
+         "max_players":"TBA",
+         "platform":"PC",
+         "info":"FIFA, also known as FIFA Football or FIFA Soccer, is a series of association football video games or football simulator, released annually by Electronic Arts. When the series began in late 1993, it was notable for being the first to have an official licence from FIFA, the world governing body of football. The latest installments in the series contain many exclusively-licensed leagues including leagues and teams from around the world, allowing the use of real leagues, clubs, and player names and likenesses within the games. In addition, internationally popular clubs from around the world, including some teams from Greece, Turkey, Argentina and South Africa, without those nations' entire leagues.",
+         "start_time":"Sunday 10.00",
+         "format":"1 vs 1",
+         "sponsors":{  
+            "name":"Plantronics",
+            "src":"/images/logos/sponsors/plantronics.png",
+            "prize":[  
+               "Plantronics BackBeat Pro",
+               "Plantronics Gamecom 788",
+               "Plantronics BackBeat Go 2"
+            ]
+         }
+      },
+      "color":"rgb(5,27,100)"
+   },
+   {  
+      "title":"LOL",
+      "subtitle":"1 vs 1",
+      "src":"/images/background/tournaments/lol.jpg",
+      "details":{  
+         "name":"League of Legends",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"League of Legends (LoL) is a 2009 multiplayer online battle arena game developed and published by Riot Games. It is a free-to-play game that is inspired by the mod Defense of the Ancients for the video game Warcraft III: The Frozen Throne. In League of Legends, players assume the role of a character, called a champion, with unique abilities, battling with a team against other player-controlled champions. In the most popular game modes, each team's goal is to destroy the opposing team's nexus, a building which lies at the heart of a base protected by defensive structures.",
+         "start_time":"Saturday 10.00",
+         "format":"1 vs 1",
+         "sponsors":{  
+            "name":"Ordina",
+            "src":"/images/logos/sponsors/logo_ordina.png",
+            "prize":[  
+               "Logitech G910 Orion Spark RGB"
+            ]
+         }
+      },
+      "color":"rgb(245,130,32)"
+   },
+   {  
+      "title":"DOTA2",
+      "subtitle":"5 vs 5",
+      "src":"/images/background/tournaments/dota2.jpg",
+      "details":{  
+         "name":"DOTA2",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"Dota 2 is a 2013 multiplayer online battle arena game and the stand-alone sequel to the Defense of the Ancients (DotA) Warcraft III: Reign of Chaos and Warcraft III: The Frozen Throne mod. Dota 2 is played in discrete matches involving two teams of five players, each of which occupies a stronghold at a corner of the map. Each stronghold contains a building called the Ancient, which the opposite team must destroy to win the match. Each player controls a Hero character and focuses on leveling up, collecting gold, acquiring items and fighting against the other team to achieve victory.",
+         "start_time":"Saturday 10.00",
+         "format":"5 vs 5",
+         "sponsors":{  
+            "name":"Optiver",
+            "src":"/images/logos/sponsors/logo_optiver.png",
+            "prize":[  
+               "5x Bayan Soundbook"
+            ]
+         }
+      },
+      "color":"rgb(237,75,28)"
+   },
+   {  
+      "title":"HS",
+      "subtitle":"1 vs 1",
+      "src":"/images/background/tournaments/hs.jpg",
+      "details":{  
+         "name":"Hearthstone: Heroes of Warcraft",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"Hearthstone is a digital collectible card game that revolves around turn-based matches between two opponents. Players start the game with a substantial collection of 'basic' cards, but can gain rarer and more powerful cards through purchasing packs of cards, or as reward for competing in the Arena. Hearthstone is set within the Warcraft universe, with its characters, cards and locations drawing from existing lore.",
+         "start_time":"Saturday 10.00",
+         "format":"1 vs 1",
+         "sponsors":{  
+            "name":"OCZ",
+            "src":"/images/logos/sponsors/tournaments/ocz_logo.png",
+            "prize":[  
+               "Vector 180 SATA 3 SSD 960GB",
+               "Vector 180 SATA 3 SSD 480GB",
+               "Vector 180 SATA 3 SSD 240GB"
+            ]
+         }
+      },
+      "color":"#005489"
+   },
+   {  
+      "title":"COD4",
+      "subtitle":"5 vs 5",
+      "src":"/images/background/tournaments/cod4.jpg",
+      "details":{  
+         "name":"Call of Duty 4: Modern Warfare",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"Call of Duty 4: Modern Warfare is a 2007 first-person shooter video game, developed by Infinity Ward and published by Activision. It is the fourth installment in the Call of Duty video game series and is the first in the Modern Warfare line of the franchise. The game breaks away from the World War II setting of previous games in the series and is instead set in modern times. ",
+         "start_time":"Saturday 10.00",
+         "format":"5 vs 5: Search and Destroy",
+         "sponsors":{  
+            "name":"Tam Tam",
+            "src":"/images/logos/sponsors/tournaments/TamTam-Los-Rood.png",
+            "prize":[  
+               "5x quadcopter"
+            ]
+         }
+      },
+      "color":"rgb(190, 0, 39)"
+   },
+   {  
+      "title":"TM:NF",
+      "subtitle":"Free-For-All",
+      "src":"/images/background/tournaments/tmnf.jpg",
+      "details":{  
+         "name":"Trackmania Nations Forever",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"TrackMania is a series of racing games developed by the French team Nadeo for the PC. Instead of following the usual trend of choosing a set car and track to play the game, in TrackMania the players can create their own tracks using building blocks. Unlike most other racing games, the TrackMania series lets the player race a track as many times as they want within a time limit. Players may choose to respawn at any time if they land upside down, leave the track or get off to a poor start. In multiplayer games, however, multiple cars race on the same track and cannot collide or otherwise influence each other.",
+         "start_time":"Sunday 10.00",
+         "format":"Free-For-All",
+         "sponsors":{  
+            "name":"Plantronics",
+            "src":"/images/logos/sponsors/plantronics.png",
+            "prize":[  
+               "Plantronics BackBeat Pro",
+               "Plantronics Gamecom 788",
+               "Plantronics BackBeat Go 2"
+            ]
+         }
+      },
+      "color":"rgb(5,27,100)"
+   },
+   {  
+      "title":"UT2004",
+      "subtitle":"3 vs 3",
+      "src":"/images/background/tournaments/ut4.jpg",
+      "details":{  
+         "name":"Unreal Tournament 2004",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"Unreal Tournament 2004 is a first-person shooter representing a fast-paced extreme sport of the future. Designed primarily for multiplayer gameplay, UT2004's gameplay mechanics offer multiple ways of movement including double-jumping, dodge-jumping, wall-dodging and shield-jumping, which allow the player to create several attack strategies. UT2004 also features an extensive array of weapons, all of which come with a secondary fire. Some of them were designed specifically for use in vehicle-based gametypes, and typically appear only in those gametypes, such as the Anti-Vehicle Rocket Launcher (AVRiL) and the Grenade Launcher. More than 100 maps are included in the game for all new and existing gametypes",
+         "start_time":"Sunday 10.00",
+         "format":"3 vs 3",
+         "sponsors":{  
+            "name":"OCZ",
+            "src":"/images/logos/sponsors/tournaments/ocz_logo.png",
+            "prize":[  
+               "3x Vector 180 SATA 3 SSD 480GB"
+            ]
+         }
+      },
+      "color":"#005489"
+   },
+   {  
+      "title":"TF2",
+      "subtitle":"Girls only",
+      "src":"/images/background/tournaments/tf2.jpg",
+      "details":{  
+         "name":"Team Fortress 2",
+         "max_players":"TBA",
+         "platform":"PC & Mac",
+         "info":"Team Fortress 2 is a team-based first-person shooter multiplayer video game. It is the sequel to the 1996 mod Team Fortress for Quake and its 1999 remake. In TF2, players join one of two teams comprising nine character classes, battling in a variety of game modes including capture the flag (CTF) and king of the hill (KOTH).",
+         "start_time":"TBA",
+         "format":"Free-For-All",
+         "sponsors":{  
+            "name":"TBA",
+            "src":"/images/logos/sponsors/tournaments/TF2.gif",
+            "prize":[  
+               "TBA",
+               "TBA",
+               "TBA"
+            ]
+         }
+      },
+      "color":"rgb(245, 105, 145)"
+   }
 ]

@@ -5,10 +5,6 @@
       {
         "time": "19:30 - 20:00",
         "description" : "Opening"
-      },
-      {
-        "time": "21:30 - 01:00",
-        "description" : "Start tournaments"
       }
     ]
   },
@@ -20,7 +16,7 @@
         "description" : "Breakfast"
       },
       {
-        "time": "10:30 - 21:00",
+        "time": "10:00 - 21:00",
         "description" : "Game Tournaments"
       },
       {
@@ -45,15 +41,19 @@
         "description" : "Breakfast"
       },
       {
+        "time": "10:00 - 16:00",
+        "description" : "Sunday Tournaments"
+      },
+      {
         "time": "12:30 - 14:00",
         "description" : "Lunch"
       },
       {
-        "time": "15:30 - 17:00",
+        "time": "16:00 - 17:00",
         "description" : "Awards Ceremony"
       },
       {
-        "time": "17:00 - 17:01",
+        "time": "17:00",
         "description" : "Closing"
       }
     ]
