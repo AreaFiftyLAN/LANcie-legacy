@@ -119,16 +119,16 @@
       "start_time": "TBA",
       "format": "1 vs 1",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/HS.gif",
+        "name": "OCZ",
+        "src": "/images/logos/sponsors/tournaments/ocz_logo.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "Vector 180 SATA 3 SSD 960GB",
+          "Vector 180 SATA 3 SSD 480GB",
+          "Vector 180 SATA 3 SSD 240GB"
         ]
       }
     },
-    "color": ""
+    "color": "#005489"
   },
   {
     "title": "COD4",
@@ -186,16 +186,14 @@
       "start_time": "TBA",
       "format": "3 vs 3",
       "sponsors": {
-        "name": "TBA",
-        "src": "/images/logos/sponsors/tournaments/UT2004.gif",
+        "name": "OCZ",
+        "src": "/images/logos/sponsors/tournaments/ocz_logo.png",
         "prize": [
-          "TBA",
-          "TBA",
-          "TBA"
+          "3x Vector 180 SATA 3 SSD 480GB"
         ]
       }
     },
-    "color": ""
+    "color": "#005489"
   },
   {
     "title": "TF2",

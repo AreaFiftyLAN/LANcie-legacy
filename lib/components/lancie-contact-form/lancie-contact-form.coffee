@@ -22,7 +22,7 @@ Polymer 'lancie-contact',
     @$.sendingMail.removeAttribute "hidden"
     setTimeout =>
       @$.mailAJAX.go()
-    , 1500
+    , 1000
 
   checkEmail: (e) ->
     re = undefined

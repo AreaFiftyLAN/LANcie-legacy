@@ -148,7 +148,7 @@ paper-button[raised] {
 .alert-block {
   background-color: transparentize($prime_yellow, 0.1);
   border-color: $prime_yellow;
-  margin: 0;
+  display: inline-block;
   padding: 20px 20px 19px;
   border-radius: 3px;
 
