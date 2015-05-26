@@ -1,0 +1,64 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+
+<link rel="import" href="/lib/components/paper-dialog/paper-dialog.html">
+
+<polymer-element name="lancie-faq" attributes="">
+  <template>
+    <paper-dialog backdrop id="faqDialog" transition="core-transition-top" 
+      style="width: {{isPhone ? 'calc(120vw)' : '800px'}};">
+
+      <h1>FAQ</h1>
+      <h2>Can I sleep at the event?</h2>
+      <p>Yes! There is a separate hall where you can place your air mattress (or anything else) to sleep on. Be sure to bring your pillow and teddybear!</p>
+
+      <h2>Can I bring friends who don't study at the TU Delft?</h2>
+      <p>Yes, this is an open event, so you can bring people who don't study at the TU Delft! Gaming is better with friends, so make sure you invite them all!</p>
+
+      <h2>What do I need to bring?</h2>
+      <p>
+        <dl>
+          <dt>Entry</dt>
+          <dd>Ticket</dd>
+          <dd>Any official from of ID</dd>
+          <dd>Proof of entry permission by parents/caretakers (if under 18)</dd>
+        </dl>
+        <dl>
+          <dt>Gaming</dt>
+          <dd>PC (or laptop) + accessories (cables etc.)</dd>
+          <dd>Monitor (max 1 allowed)</dd>
+          <dd>Network cable of at least 10m</dd>
+          <dd>Keyboard + mouse</dd>
+          <dd>Headset (no speakers allowed!)</dd>
+
+        </dl>
+        <dl>
+          <dt>Survival</dt>
+          <dd>Sleeping gear (air mattress, sleeping bag, pillow, pyjama)</dd>
+          <dd>Clean clothes</dd>
+          <dd>Toiletries</dd>
+          <dd>Wallet + money for drinks</dd>
+          <dd>Phone + charger (USB cable works too)</dd>
+          <dd>Medicine if needed</dd>
+        </dl>
+        <dl>
+          <dt>Worst case scenario</dt>
+          <dd>Tools to open your PC</dd>
+          <dd>Backup in case of crash (OS, drives)</dd>
+        </dl>
+      </p>
+      <h2>We want to come with a team, how do we make sure we sit together?</h2>
+      <p>Soon, you will be able to select your seats, we’ll have parts reserved for complete teams. If you’d like to reserve a block for your team, please make sure your full team has paid tickets and then contact us to ask for reservation!</p>
+      
+      <h2>Do I need a team to participate in the tournaments?</h2>
+      <p>All tournaments that aren't 1v1 or FFA require a team. If you don't have a team yet, don't worry! You will get the chance to form a team with other people who are also looking for a team at the start of the event.</p>
+
+      <h2>Can I participate in multiple tournaments?</h2>
+      <p>Yes! You can participate in multiple tournaments. However, keep in mind that at the end we need to be finished. Thus, if you are participating in multiple tournaments and there is a time conflict that can not be resolved, we may ask you to drop one of them.</p>
+
+
+    </paper-dialog>
+  </template>
+
+  <script src="lancie-faq.js"></script>
+</polymer-element>
+

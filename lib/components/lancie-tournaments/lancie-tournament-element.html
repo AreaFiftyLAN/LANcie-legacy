@@ -26,8 +26,8 @@
       <ul class="second bg trnsp" style="background-color: {{data.color}};" vertical layout center-center>
         <template bind="{{data.details as d}}">
           <li>
-            <span>Max participants</span> 
-            <span class="info">{{d.max_players}}</span></li>
+            <span>Starting Time</span> 
+            <span class="info">{{d.start_time}}</span></li>
           <li>
             <span>Platform</span>
             <span class="info">{{d.platform}}</span></li>
@@ -53,11 +53,15 @@
                   <td>{{d.format}}</td>
                 </tr>
                 <tr>
-                  <td>Starting time</td>
+                  <td>Starting time<sup>*</sup></td>
                   <td>{{d.start_time}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
                 </tr>
               </tbody>
             </table>
+            <small>*Please note: Tournaments starting on saturday may continue on sunday depending on the number of participants</small>
           </div>
           <div class="sponsor-content" horizontal?="{{xs || s}}" vertical?="{{m}}" layout>
             <core-image preload fade sizing="contain" src="{{d.sponsors.src}}" flex></core-image>
