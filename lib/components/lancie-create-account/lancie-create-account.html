@@ -13,17 +13,17 @@
     <core-ajax id="autoCompleteAddress" url="https://api.postcodeapi.nu/{{zipcode}}/{{number}}" handleAs="json" headers='{"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Accept-Language": "en", "Api-Key": "17f4cdafa5035a4af6f8b2baa14eaed282c8f735"}' on-core-response="{{autoCompleteAddress}}"></core-ajax>
     
     <!-- CREATE ACCOUNT -->
-    <core-ajax id="createAccount" url="http://localhost:7000/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
-    <core-ajax id="checkUsernameAJAX" url="http://localhost:7000/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
-    <core-ajax id="checkEmailAJAX" url="http://localhost:7000/api/user/check/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
-    <core-ajax id="verfyEmail" url="http://localhost:7000/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
+    <core-ajax id="createAccount" url="/api/account/create/" method="POST" handleAs="json" on-core-response="{{callbackUserInsert}}"></core-ajax>
+    <core-ajax id="checkUsernameAJAX" url="/api/user/check/{{username}}" on-core-response="{{checkUsername}}" handleAs="json"></core-ajax>
+    <core-ajax id="checkEmailAJAX" url="/api/user/check/{{email}}" on-core-response="{{checkEmail}}" handleAs="json"></core-ajax>
+    <core-ajax id="verfyEmail" url="/api/user/verify/{{emailEncoded}}/{{emailcode}}" handleAs="json"></core-ajax>
   
     <!-- MONEY -->
-    <core-ajax id="getPaymentUrl" url="http://localhost:7000/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
+    <core-ajax id="getPaymentUrl" url="/api/account/order/{{userId}}" on-core-response="{{redirUser}}" handleAs="json"></core-ajax>
 
     <!-- GET ACCOUNT -->
-    <core-ajax id="getPaymentUser" url="http://localhost:7000/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPaid}}"></core-ajax>
-    <core-ajax id="getAccountByHash" url="http://localhost:7000/api/account/get/{{userhash}}" handleAs="json" on-core-response="{{getAccountByHashLoaded}}"></core-ajax>
+    <core-ajax id="getPaymentUser" url="/api/order/paid/{{userId}}" handleAs="json" on-core-response="{{userPaid}}"></core-ajax>
+    <core-ajax id="getAccountByHash" url="/api/account/get/{{userhash}}" handleAs="json" on-core-response="{{getAccountByHashLoaded}}"></core-ajax>
     
     <core-media-query query="max-width: 640px" queryMatches="{{phoneScreen}}"></core-media-query>
     <core-localstorage id="lancieCreateAccountSave" name="lancie-create-account-save" value="{{person}}" autoSaveDisabled></core-localstorage>
@@ -33,10 +33,10 @@
     <div class="specification">
       <p>Area FiftyLAN is the hottest new gaming event of the TU Delft. This spectacular all-weekend event, from 12 till 14 June 2015, will be organized in cooperation with Unit Sports & Culture. All students are welcome to play their favorite games with their fellow students and friends. You decide what to play! There will be exciting competitive tournaments like FIFA, League of Legends and Trackmania. If you're not into competitive gaming however, no problem! You can play all the games you want, whether that's The Sims, Age of Empires 2, Rollercoaster Tycoon or Minecraft, you decide!</p>
       
-      <div class="alert-block">
-        <h2 class="alert-message">
-          <i class="fa fa-exclamation-triangle"></i> Get your ticket before May 20th and win one of the three Plantronics Gamecon 788 PC Headsets!
-        </h2>
+      <div class="alert-block" layout horizontal center-justified>
+        <h4 class="alert-message">
+          <i class="fa fa-exclamation-triangle"></i> Ticketsale closes on May 26th, so get your tickets now!
+        </h4>
       </div>
     </div>
     <div class="progress-bar" vertical layout>
@@ -54,7 +54,7 @@
       <core-animated-pages id="animatedpages" on-click="{{stuff}}" transitions="cross-fade-all">
         <section id="type">
           <div horizontal?="{{!phoneScreen}}" vertical?="{{phoneScreen}}" layout class="ticket-type-selector">
-            <paper-shadow animated flex>
+            <paper-shadow animated flex?="{{!phoneScreen}}">
               <div class="ticket-type-block" vertical data-ticket="area_003" layout flex on-click="{{changeTicketType}} {{pageNext}}">
                 <div vertical layout>
                   <h1 layout vertical center-center style="background-color: #1a2b43">Top Secret Weekend</h1>
@@ -65,7 +65,7 @@
                 </div>
               </div>
             </paper-shadow>
-            <paper-shadow animated flex>
+            <paper-shadow animated flex?="{{!phoneScreen}}">
               <div class="ticket-type-block" vertical data-ticket="area_001" layout flex on-click="{{changeTicketType}} {{pageNext}}">
                 <div vertical layout>
                   <h1 layout vertical center-center>Alien Fri-Sat</h1>
@@ -77,7 +77,7 @@
                 </div>
               </div>
             </paper-shadow>
-            <paper-shadow animated flex>
+            <paper-shadow animated flex?="{{!phoneScreen}}">
               <div class="ticket-type-block" vertical data-ticket="area_002" layout flex on-click="{{changeTicketType}} {{pageNext}}">
                 <div vertical layout>
                   <h1 layout vertical center-center>Classified Sat-Sun</h1>

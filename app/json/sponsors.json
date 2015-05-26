@@ -19,6 +19,11 @@
         "name": "Optiver",
         "src": "/images/logos/sponsors/logo_optiver.png",
         "site" : "http://www.optiver.com/"
+      },
+      {
+        "name": "Chio",
+        "src": "/images/logos/sponsors/logo_chio.png",
+        "site" : "http://havesomechio.nl/home"
       }
     ]
   }
