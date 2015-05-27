@@ -1,10 +1,7 @@
 <link rel="import" href="/lib/components/polymer/polymer.html">
 <link rel="import" href="/lib/components/ajax-form/ajax-form.html">
 <link rel="import" href="/lib/components/core-ajax/core-ajax.html">
-<link rel="import" href="/lib/components/core-animation/core-animation.html">
-<link rel="import" href="/lib/components/core-animation/core-animation-group.html">
-<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
-<link rel="import" href="/lib/components/core-transition/core-transition.html">
+<link rel="import" href="/lib/components/core-localstorage/core-localstorage.html">
 
 <link rel="import" href="/lib/components/paper-button/paper-button.html">
 <link rel="import" href="/lib/components/paper-dialog/paper-dialog.html">
@@ -15,8 +12,7 @@
 
 <polymer-element name="lancie-login-form" attributes="">
   <template>
-    <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}">
-    </core-media-query>
+    <core-localstorage name="lancie-myarea-storage" value="{{userdata}}"></core-localstorage>
     <core-ajax
       id="loginAJAX"
       method="POST"

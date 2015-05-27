@@ -7,7 +7,8 @@ Polymer 'lancie-login-form',
     console.log callback
     if callback.status.code is 200
       @$.username.isInValid = @$.password.isInValid = false
-      window.location = '/myarea/'
+      @userdata = callback.details
+      # window.location = '/myarea/'
     else
       @$.username.error = 'Username and password do not match!'
       @$.password.error = 'Username and password do not match!'
