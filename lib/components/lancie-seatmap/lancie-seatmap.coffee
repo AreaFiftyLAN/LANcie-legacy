@@ -27,4 +27,9 @@ Polymer 'lancie-seatmap',
 
   ###
   loadedJSON: ->
-    @seats = @$.getAllSeatsAJAX.response
+    callback = @$.getAllSeatsAJAX.response
+    console.log callback
+    if callback.status.code is 470
+      window.location = "/login/"
+    else
+      @seats = callback.details

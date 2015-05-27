@@ -13,16 +13,15 @@
     <core-ajax
       auto
       id="getAllSeatsAJAX"
-      url="https://areafiftylan.nl/api/seatmap/get/seat/"
+      url="//localhost:7000/api/seatmap/get/seats/"
       handleAs="json"
       on-core-response="{{loadedJSON}}"></core-ajax>
 
     <core-ajax
       id="reserveSeatAJAX"
-      url="https://areafiftylan.nl/api/seatmap/set/seat/{{userhash}}/{{seatid}}"
+      url="//localhost:7000/api/seatmap/set/seat/{{userhash}}/{{seatid}}"
       handleAs="json"
       on-core-response="{{updateMap}}"></core-ajax>
-    
     
     <lancie-seatmap-map horizontal layout justified>
       <template repeat="{{row, i in seats}}">
