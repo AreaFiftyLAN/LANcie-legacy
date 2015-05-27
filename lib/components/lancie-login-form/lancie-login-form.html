@@ -18,14 +18,13 @@
     <core-media-query query="max-width: 581px" queryMatches="{{isPhone}}">
     </core-media-query>
     <core-ajax
-    auto
       id="loginAJAX"
       method="POST"
       params='{
-          "username": "{{name}}",
-          "password": "{{email}}"
+          "username": "{{username}}",
+          "password": "{{password}}"
       }'
-      url="https://areafiftylan.nl/api/login/create/session"
+      url="http://localhost:7000/api/login/create/session/"
       handleAs="json"
       on-core-response="{{handleResponse}}"></core-ajax>
 
