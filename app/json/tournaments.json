@@ -119,7 +119,7 @@
          "format":"1 vs 1",
          "sponsors":{  
             "name":"OCZ",
-            "src":"/images/logos/sponsors/tournaments/ocz_logo.png",
+            "src":"/images/logos/sponsors/ocz_logo_toshiba.png",
             "prize":[  
                "Vector 180 SATA 3 SSD 960GB",
                "Vector 180 SATA 3 SSD 480GB",
@@ -186,7 +186,7 @@
          "format":"3 vs 3",
          "sponsors":{  
             "name":"OCZ",
-            "src":"/images/logos/sponsors/tournaments/ocz_logo.png",
+            "src":"/images/logos/sponsors/ocz_logo_toshiba.png",
             "prize":[  
                "3x Vector 180 SATA 3 SSD 480GB"
             ]
@@ -216,5 +216,27 @@
          }
       },
       "color":"rgb(245, 105, 145)"
+   }
+   ,
+   {  
+      "title":"Poker",
+      "subtitle":"Texas Hold 'm",
+      "src":"/images/background/events/poker.jpg",
+      "details":{  
+         "name":"Poker",
+         "max_players":"TBA",
+         "platform":"Offline",
+         "info":"Read your opponent and bluff your way into the finals.",
+         "start_time":"Saturday 22.00",
+         "format":"Texas Hold 'm",
+         "sponsors":{  
+            "name":"Azerty",
+            "src":"/images/logos/sponsors/azerty.png",
+            "prize":[  
+               "3x Azerty Goodiebag"
+            ]
+         }
+      },
+      "color":"rgb(66, 76, 119)"
    }
 ]
