@@ -167,7 +167,7 @@
               <a data-scroll href="javascript:document.getElementById('faq').show()" borderless></a>
             </core-item>            
             <core-item label="Contact" horizontal center layout>
-              <a data-scroll href="javascript:document.getElementById('contact-form').show()" borderless></a>
+              <a data-scroll href="#about" borderless></a>
             </core-item>
           </core-menu>
         </core-dropdown>
@@ -190,7 +190,7 @@
         <a data-scroll href="#tournament">
           <paper-button>TOURNAMENTS</paper-button>
         </a>
-        <a href="javascript:document.getElementById('contact-form').show()">
+        <a data-scroll href="#about">
           <paper-button>contact</paper-button>
         </a>
         <a href="javascript:document.getElementById('faq').show()">
@@ -296,7 +296,9 @@
             <div class="context" vertical layout flex?="{{!md}}">
               <p>The LANcie is the newest and coolest committee of W.I.S.V ‘Christiaan Huygens’. This club of superheroes will ensure that you will never forget this gaming event. The LANcie does not bite and is not afraid of questions or a good conversation about gaming, food, UTP cables or networks. From the start to finish of this adventure we will assist you. With classified regards, the LANcie!</p>
 
-              <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p>
+              <!-- <p>If you have any questions, please do not hesitate to <a href="javascript:document.getElementById('contact-form').show()">contact us</a>.</p> -->
+              <p>If you have any questions, please send a mail to lancie@ch.tudelft.nl</p>
+
             </div>
             <lancie-commission flex two json="/lib/scripts/json/commission-members.json"></lancie-commission>
           </div>
