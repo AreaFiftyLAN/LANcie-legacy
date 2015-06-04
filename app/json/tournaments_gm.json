@@ -1,0 +1,44 @@
+[
+    {
+        "title": "SC2",
+        "subtitle": "1 vs 1",
+        "src": "/images/background/tournaments/sc2.jpg",
+        "details": {
+            "name": "Starcraft II: Heart of the Swarm",
+            "max_players": "TBA",
+            "platform": "PC",
+            "info": "StarCraft II: Heart of the Swarm is an expansion pack to the military science fiction real-time strategy game StarCraft II: Wings of Liberty by Blizzard Entertainment. Heart of the Swarm is the second part of a planned StarCraft II trilogy, with part three titled Legacy of the Void. The expansion includes additional units and multiplayer changes from Wings of Liberty, as well as a continuing campaign focusing on the Zerg race, following Sarah Kerrigan in her effort to regain control of the swarm and exact her revenge on the Terran Dominion's emperor, Arcturus Mengsk.",
+            "start_time": "Sunday",
+            "format": "5 vs 5",
+            "sponsors": {
+                "name": "",
+                "src": "/images/logos/sponsors/tournaments/sc2.png",
+                "prize": [
+                    "TBA"
+                ]
+            }
+        },
+        "color": ""
+    },
+    {
+        "title": "MC",
+        "subtitle": "",
+        "src": "/images/background/tournaments/mc.jpg",
+        "details": {
+            "name": "Minecraft",
+            "max_players": "TBA",
+            "platform": "PC",
+            "info": "We will host a minecraft server where all sorts of mini-events will be organized. Details will be announced on the event.",
+            "start_time": "Friday",
+            "format": "FFA",
+            "sponsors": {
+                "name": "",
+                "src": "/images/logos/sponsors/tournaments/mc.png",
+                "prize": [
+                    "TBA"
+                ]
+            }
+        },
+        "color": ""
+    }
+]
