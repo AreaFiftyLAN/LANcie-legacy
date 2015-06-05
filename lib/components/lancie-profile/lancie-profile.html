@@ -1,0 +1,110 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-ajax/core-ajax.html">
+<link rel="import" href="/lib/components/core-tooltip/core-tooltip.html">
+
+<polymer-element name="lancie-profile" attributes="userhash, userid">
+  <template>
+    <link rel="stylesheet" href="lancie-profile.css">
+    <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>
+
+    <core-ajax
+      auto
+      id="getProfileForUser"
+      url="/api/profile/get/"
+      handleAs="json"
+      on-core-response="{{loadedJSON}}"></core-ajax>
+
+    <core-ajax
+      auto
+      id="getUserForUser"
+      url="/api/user/get/"
+      handleAs="json"
+      on-core-response="{{loadedJSON}}"></core-ajax>
+    
+    <lancie-section center nomargin="true" flex layout vertical>
+      <template bind="{{$.getProfileForUser.response.details as data}}">
+        <form action="#" method="POST" layout vertical flex style="width: 80%">
+          <lancie-input disabled="true" label="Username" value="{{$.getUserForUser.response.details.username}}" id="username"></lancie-input>
+          <lancie-input disabled="true" label="Email" value="{{$.getUserForUser.response.details.email}}" id="email"></lancie-input>
+
+          <div layout horizontal center>
+            <label for="{{name}}" flex two>Firstname *</label>
+            <div flex four horizontal layout>
+              <paper-input-decorator disabled flex four style="margin-right: 16px;" label="Firstname" value="{{name}}">
+                <input disabled is="core-input" value="{{data.name}}" required />
+              </paper-input-decorator>
+
+              <paper-input-decorator disabled flex two label="Initials">
+                <input disabled is="core-input" value="{{data.initials}}" required />
+              </paper-input-decorator>
+            </div>
+          </div>
+
+          <lancie-input disabled="true" label="Surname" id="surname" value="{{data.surname}}"></lancie-input>
+
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>Gender *</label>
+            <div flex four horizontal layout center>
+              <i center class="fa fa-male fa-2x" selected?="{{!gender}}"></i>
+                <paper-toggle-button id="gender" disabled checked="{{gender}}"></paper-toggle-button>
+              <i class="fa fa-female fa-2x" selected?="{{gender}}"></i>
+            </div>
+          </div>
+
+          <div layout horizontal center>
+            <label for="{{name}}" flex two>Address *</label>
+            <div flex four horizontal layout>
+              <paper-input-decorator disabled label="Zipcode" style="margin-right: 16px;" id="zipcodeDecorator">
+                <input disabled is="core-input" id="zipcode" value="{{data.zipcode}}" required>
+              </paper-input-decorator>
+
+              <paper-input-decorator disabled label="Number" id="numberDecorator">
+                <input disabled is="core-input" id="number" value="{{number}}" required>
+              </paper-input-decorator>
+            </div>
+          </div>
+
+          <div layout horizontal center>
+            <label flex two></label>
+            <div flex four horizontal layout>
+              <paper-input flex four style="margin-right: 16px;" disabled label="Street" value="{{address}}"></paper-input>
+              <paper-input flex two disabled label="City" value="{{data.city}}"></paper-input>
+            </div>
+          </div>
+
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>CH Member/Alumni *</label>
+            <div flex four horizontal layout center>
+              <i center class="fa fa-close fa-2x" confirm?="{{!$.getUserForUser.response.details.chmember}}"></i>
+                <paper-toggle-button id="gender" disabled checked="{{$.getUserForUser.response.details.chmember}}"></paper-toggle-button>
+              <i class="fa fa-check fa-2x" confirm?="{{$.getUserForUser.response.details.chmember}}"></i>
+            </div>
+          </div>
+
+          <lancie-input disabled="true" label="Phone number" id="tel" value="{{data.tel}}"></lancie-input>
+
+          <div layout horizontal center class="selection">
+            <label for="" flex two>Notes</label>
+            <div flex four horizontal layout center>
+              <paper-input-decorator disabled label="Remarks, Allergies, etc.">
+                <paper-autogrow-textarea>
+                  <textarea id="notes" maxLength="100" value="{{data.notes}}"></textarea>
+                </paper-autogrow-textarea>
+              </paper-input-decorator>
+            </div>
+          </div>
+          <div layout horizontal center style="height: 60px;" class="selection">
+            <label for="" flex two>Transport service *</label>
+            <div flex four horizontal layout center>
+              <i center class="fa fa-close fa-2x" confirm?="{{!$.getUserForUser.response.details.transport}}"></i>
+                <paper-toggle-button disabled id="transport" checked="{{$.getUserForUser.response.details.transport}}"></paper-toggle-button>
+              <i class="fa fa-check fa-2x" confirm?="{{$.getUserForUser.response.details.transport}}"></i>
+            </div>
+          </div>
+        </form>
+      </template>
+    </lancie-section>
+  </template>
+
+  <script src="lancie-profile.js"></script>
+</polymer-element>

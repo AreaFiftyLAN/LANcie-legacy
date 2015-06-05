@@ -5,10 +5,10 @@ Polymer 'lancie-seatmap-seat',
       colors: 
         default:
           background: "#eeecec"
-          border: "rgba(90, 90, 90, 0.6)"
+          borderColor: "rgba(90, 90, 90, 0.6)"
         checked:
           background: "#3a5278"
-          border: "rgba(90, 90, 90, 0.33)"
+          borderColor: "rgba(90, 90, 90, 0.33)"
       tooltip: false
       disabled: false
     },
@@ -16,8 +16,11 @@ Polymer 'lancie-seatmap-seat',
       name: "occupied"
       colors: 
         default:
+          background: "#ff0000"
+          borderColor: "rgba(90, 90, 90, 0.33)"
+        checked:
           background: "red"
-          border: "rgba(90, 90, 90, 0.33)"
+          borderColor: "rgba(90, 90, 90, 0.33)"
       tooltip: true
       disabled: false
     },
@@ -25,8 +28,8 @@ Polymer 'lancie-seatmap-seat',
       name: "self"
       colors: 
         default:
-          background: "red"
-          border: "rgba(90, 90, 90, 0.1)"
+          background: "#ff0000"
+          borderColor: "rgba(90, 90, 90, 0.1)"
       tooltip: true
       disabled: false
     },
@@ -35,18 +38,11 @@ Polymer 'lancie-seatmap-seat',
       colors: 
         default:
           background: "#eeecec"
-          border: "rgba(90, 90, 90, 0.1)"
+          borderColor: "rgba(90, 90, 90, 0.1)"
       tooltip: false
       disabled: true
     }
   ]
-
-  data:
-    seat:
-      row: "A",
-      column: 11
-    user:
-      name: "Sven Popping"
 
   publish:
     checked:
@@ -64,7 +60,7 @@ Polymer 'lancie-seatmap-seat',
   eventDelegates: tap: 'tap'
 
   ready: ->
-    if parseInt( @data.seat.userid ) isnt 0 
+    if @data.seat.userid isnt null
       @mode = "occupied"
     else 
       @mode = "open"

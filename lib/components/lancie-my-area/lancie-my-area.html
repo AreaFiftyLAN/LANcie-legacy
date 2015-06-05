@@ -1,0 +1,47 @@
+<link rel="import" href="/lib/components/polymer/polymer.html">
+<link rel="import" href="/lib/components/core-media-query/core-media-query.html">
+
+<link rel="import" href="/lib/components/lancie-section/lancie-section.html">
+<link rel="import" href="/lib/components/lancie-seatmap/lancie-seatmap.html">
+<link rel="import" href="/lib/components/lancie-profile/lancie-profile.html">
+
+<polymer-element name="lancie-my-area" attributes="secondary, nomargin" layout vertical>
+  <template>
+    <link rel="stylesheet" href="lancie-my-area.css">
+    <link rel="stylesheet" href="/lib/components/components-font-awesome/css/font-awesome.min.css" no-shim>
+
+    <core-ajax
+      id="sessionDestroyAJAX"
+      url="/api/login/destroy/session"></core-ajax>
+    
+    <core-drawer-panel style="margin-top: 80px;">
+      <core-header-panel drawer style="background: #dddbdb;">
+        <div>
+          <core-menu selected="0" id="myAreaSidemenu">
+            <core-item>
+              <i class="fa fa-user"></i> Profile
+            </core-item>
+            <core-item>
+              <i class="fa fa-pencil-square-o"></i> Seatmap
+            </core-item>
+            <core-item class="sign-out" on-click="{{signOut}}">
+              <i class="fa fa-sign-out"></i> Sign out
+            </core-item>
+          </core-menu>
+        </div>
+      </core-header-panel>
+      <core-header-panel main>
+        <core-pages selected="0" id="pagesHolder">
+          <div>
+            <lancie-profile horizontal userhash="{{userhash}}" userid="{{userid}}" layout flex></lancie-profile>
+          </div>
+          <div>
+            <lancie-seatmap horizontal layout flex></lancie-seatmap>
+          </div>
+        </core-pages>
+      </core-header-panel>
+    </core-drawer-panel>
+  </template>
+
+  <script src="lancie-my-area.js"></script>
+</polymer-element>
