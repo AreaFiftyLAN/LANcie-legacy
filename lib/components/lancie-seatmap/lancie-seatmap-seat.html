@@ -6,23 +6,22 @@
 <polymer-element name="lancie-seatmap-seat" attributes="mode, data">
   <template>
     <link rel="stylesheet" href="lancie-seatmap-seat.css">
-
     <template bind="{{getDataFromMode(mode) as status}}">
       <div class="seatmap-seat-container">
         <core-tooltip id="coreTooltip" position="right" class="fancy" disabled?="{{status.disabled}}">
-          <div class="seatmap-seat-icon" style="border-color: {{status.icon.color}}">
+          <div class="seatmap-seat-icon">
             <style>
-              #checkbox {
+              #checkbox{{data.seat.label}} {
                 background-color: {{status.colors.default.background}};
-                border-color: {{status.colors.default.border}};
+                border-color: {{status.colors.default.borderColor}};
               }
 
-              #checkbox.checked {
+              #checkbox{{data.seat.label}}.checked {
                 background-color: {{status.colors.checked.background}};
-                border-color: {{status.colors.checked.border}};
+                border-color: {{status.colors.checked.borderColor}};
               }
             </style>
-            <div id="checkbox" class="{{ {checked: checked} | tokenList }}"></div>
+            <div id="checkbox{{data.seat.label}}" class="{{ {checked: checked} | tokenList }} checkbox"></div>
             <paper-ripple fit></paper-ripple>
           </div>
           <template if="{{status.tooltip || checked}}">
@@ -37,7 +36,7 @@
                       <b>{{data.seat.label}}</b></div>
                   <div horizontal layout>
                       <span>Username:</span> 
-                      <b>{{data.seat.username}}</b></div>
+                      <b>{{data.seat.userid}}</b></div>
                 </template>
                 <template if="{{checked && !status.tooltip}}"> 
                   <paper-button raised on-click="{{reserveSeatEvent}}">reserve seat {{data.seat.label}}</paper-button>

@@ -10,8 +10,7 @@ Polymer 'lancie-login-form',
       @userdata = callback.details
       window.location = '/myarea/'
     else
-      @$.username.error = 'Username and password do not match!'
-      @$.password.error = 'Username and password do not match!'
+      @$.username.error = @$.password.error = 'Username and password do not match!'
       @$.username.isInValid = @$.password.isInValid = true
 
   submit: ->

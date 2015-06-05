@@ -2,6 +2,7 @@
 
 :host {
   display: block;
+  padding: 30px 0 50px;
   
   .seatmap-content {
     
@@ -12,7 +13,7 @@
     }
 
     .seatmap-row-seats {
-      height: 380px; width: 76px;
+      height: 390px; width: 76px;
       padding-top: 10px;
       background-color: #ddd;
     }

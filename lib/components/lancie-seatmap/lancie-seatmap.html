@@ -13,31 +13,33 @@
     <core-ajax
       auto
       id="getAllSeatsAJAX"
-      url="//localhost:7000/api/seatmap/get/seats/"
+      url="/api/seatmap/get/seats/"
       handleAs="json"
       on-core-response="{{loadedJSON}}"></core-ajax>
 
     <core-ajax
       id="reserveSeatAJAX"
-      url="//localhost:7000/api/seatmap/set/seat/{{userhash}}/{{seatid}}"
+      url="/api/seatmap/set/seat/{{seatid}}"
       handleAs="json"
       on-core-response="{{updateMap}}"></core-ajax>
     
-    <lancie-seatmap-map horizontal layout justified>
-      <template repeat="{{row, i in seats}}">
-        <div vertical layout class="seatmap-content">
-          <div class="seatmap-row-header">
-            <paper-shadow z="1" fit animated></paper-shadow>
-            <h2>{{numberToChar(i)}}</h2>
+    <lancie-section center nomargin="true" style="width: 100%"> 
+      <lancie-seatmap-map horizontal layout justified>
+        <template repeat="{{row, i in seats}}">
+          <div vertical layout class="seatmap-content">
+            <div class="seatmap-row-header">
+              <paper-shadow z="1" fit animated></paper-shadow>
+              <h2>{{numberToChar(i)}}</h2>
+            </div>
+            <div vertical layout wrap class="seatmap-row-seats">
+              <template repeat="{{column in row}}">
+                <lancie-seatmap-seat data="{{column}}"></lancie-seatmap-seat>
+              </template>
+            </div>
           </div>
-          <div vertical layout wrap class="seatmap-row-seats">
-            <template repeat="{{column in row}}">
-              <lancie-seatmap-seat data="{{column}}"></lancie-seatmap-seat>
-            </template>
-          </div>
-        </div>
-      </template>
-    </lancie-seatmap-map>
+        </template>
+      </lancie-seatmap-map>
+    </lancie-section>
 
   </template>
 

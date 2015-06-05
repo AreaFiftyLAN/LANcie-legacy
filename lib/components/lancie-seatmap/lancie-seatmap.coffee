@@ -1,6 +1,7 @@
 Polymer 'lancie-seatmap',
   seats: null
   userhash: "AREA51LAN554113EBCB7F4"
+  currentNode: null
   
   ready: ->
     @.addEventListener 'lancie-seatmap-seat-tap', (event) =>
@@ -21,15 +22,17 @@ Polymer 'lancie-seatmap',
 
   ### 
   updateMap: ->
-    @$.getAllSeatsAJAX.go()
+    if @$.reserveSeatAJAX.response.status.code is 470
+      window.location = "/"
+    else
+      @$.getAllSeatsAJAX.go()
 
   ###
 
   ###
   loadedJSON: ->
     callback = @$.getAllSeatsAJAX.response
-    console.log callback
     if callback.status.code is 470
-      window.location = "/login/"
+      window.location = "/"
     else
       @seats = callback.details
