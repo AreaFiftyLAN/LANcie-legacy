@@ -206,16 +206,16 @@
          "start_time":"TBA",
          "format":"Free-For-All",
          "sponsors":{  
-            "name":"TBA",
-            "src":"/images/logos/sponsors/tournaments/TF2.gif",
+            "name":"Rapoo",
+            "src":"/images/logos/sponsors/rapoo.png",
             "prize":[  
-               "TBA",
-               "TBA",
-               "TBA"
+               "Rapoo 3500P",
+               "Rapoo 3500P",
+               "Rapoo 3500P"
             ]
          }
       },
-      "color":"rgb(245, 105, 145)"
+      "color":"rgb(0, 178, 203)"
    }
    ,
    {  
