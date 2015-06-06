@@ -40,5 +40,26 @@
             }
         },
         "color": ""
+    },
+    {
+        "title": "Magic",
+        "subtitle": "The Gathering",
+        "src": "/images/background/tournaments/mtg.png",
+        "details": {
+            "name": "Magic: The Gathering",
+            "max_players": "",
+            "platform": "Offline",
+            "info": "Bring your own decks and compete in Kai's Magic: The Gathering tournament!",
+            "start_time": "Saturday 22:00",
+            "format": "1v1",
+            "sponsors": {
+                "name": "",
+                "src": "/images/logos/sponsors/tournaments/mtg.png",
+                "prize": [
+                    ""
+                ]
+            }
+        },
+        "color": ""
     }
 ]
